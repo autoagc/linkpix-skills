@@ -37,15 +37,15 @@ npx skills add autoagc/linkpix-skills --list
 
 ## 前置依赖
 
-技能按调用方式分三类，装之前按需准备：
+按技能正文实际调用的工具统计（有 2 个技能同时需要两种，故合计大于 85）：
 
-| 依赖 | 数量 | 准备方式 |
+| 依赖 | 技能数 | 准备方式 |
 |---|---|---|
-| `qhkit` CLI | 56 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
+| `qhkit` CLI | 57 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
 | 青虎 MCP | 26 | 在客户端接入青虎 MCP Server |
-| `ffmpeg` | 3 | 本地安装 ffmpeg，不联网 |
+| ImageMagick / ffmpeg | 4 | 本地安装，纯本地处理不联网 |
 
-每个技能的依赖类型在下方清单的「依赖」列标注。
+每个技能的依赖在下方清单的「依赖」列逐条标注。
 
 ## 能做什么
 
@@ -71,13 +71,13 @@ npx skills add autoagc/linkpix-skills --list
 | `linkpix-ecom-image` | AI生成电商图 &#124; LinkPix | `qhkit` | 专为电商卖家打造的 AI 图像创作工具。只需一张产品图，即可一键完成商品主图+轮播图+商品详情图制作。帮助卖家快速制作适用于抖音、淘宝天猫、拼多多、京东、1688、Amazon、TikTok、Shopee、Ozon 等平台的商品图。 |
 | `linkpix-ecom-video` | AI生成电商视频 &#124; LinkPix | `qhkit` | 专为电商卖家打造的 AI 视频创作工具，一键生成商品展示视频、带货短视频、品牌宣传片和广告素材，支持 AI 脚本、分镜、配音、字幕及视频优化，适用于 TikTok、抖音、Amazon、Shopee 等平台。 |
 | `linkpix-image-ad-assets` | AI电商图文广告素材生成器 &#124; LinkPix | `qhkit` | 自动生成适用于电商推广及广告投放的图文营销素材，提高内容创作效率。 |
-| `linkpix-image-compress` | AI图片压缩工具 &#124; LinkPix | `ffmpeg` | 智能压缩图片体积，在保证画质的同时减少文件大小，提高网页加载及上传效率。 |
+| `linkpix-image-compress` | AI图片压缩工具 &#124; LinkPix | `本地` | 智能压缩图片体积，在保证画质的同时减少文件大小，提高网页加载及上传效率。 |
 | `linkpix-image-eraser` | 商品图片元素智能消除工具 &#124; LinkPix | `qhkit` | 智能擦除图片中的人物、水印、文字及杂物，并自动补全背景，轻松完成商品修图与素材优化。 |
 | `linkpix-image-generate` | AI电商图像生成 &#124; LinkPix | `qhkit` | 按文字描述直出商业级电商图片，支持参考图（图生图），四个画质取向不同的模型可选，覆盖从快速出图到极致效果的全部场景。 |
 | `linkpix-image-text-edit` | 电商商品图文字修改器 &#124; LinkPix | `qhkit` | 自动识别并修改图片中的文字内容，无需重新设计图片，快速替换标题、价格、卖点及促销信息。 |
 | `linkpix-image-translate` | 电商商品图片翻译器 &#124; LinkPix | `qhkit` | 批量翻译商品图片中的文字内容，自动保持原有版式与设计风格，帮助跨境卖家快速完成多语言商品本地化。 |
 | `linkpix-image-variations` | 电商商品图裂变器 &#124; LinkPix | `qhkit` | 基于一张商品图快速生成多种营销版本，支持不同背景、布局和设计风格，轻松制作丰富的广告素材。 |
-| `linkpix-image-watermark-add` | AI图片水印添加工具 &#124; LinkPix | `ffmpeg` | 为商品图片批量添加品牌Logo或版权水印，保护原创素材，提升品牌辨识度。 |
+| `linkpix-image-watermark-add` | AI图片水印添加工具 &#124; LinkPix | `本地` | 为商品图片批量添加品牌Logo或版权水印，保护原创素材，提升品牌辨识度。 |
 | `linkpix-main-image-clone` | 电商爆款主图复刻助手 &#124; LinkPix | `qhkit` | 参考爆款商品图片，智能分析设计风格并生成相似视觉效果，帮助卖家快速打造高点击率主图。 |
 | `linkpix-main-image-optimize` | AI电商主图优化助手 &#124; LinkPix | `qhkit` | AI自动优化商品主图构图、光影、质感及细节，提升商品吸引力，提高点击率与转化率。 |
 | `linkpix-main-image-set` | AI生成电商主图轮播图、主图套图 &#124; LinkPix | `qhkit` | 智能识别商品主体，根据产品图一键快速生成不同图片类型，不同电商平台风格的主图+轮播图。无需写提示词，即刻完成专业级商品图片制作。 |
@@ -97,14 +97,14 @@ npx skills add autoagc/linkpix-skills --list
 | `linkpix-scene-image` | 电商商品场景图生成器 &#124; LinkPix | `qhkit` | 根据商品自动生成真实、高质感的商品场景图，适用于家居、美妆、服饰、数码等行业，提高商品点击率和转化率。 |
 | `linkpix-storyboard` | AI视频分镜生成器 &#124; LinkPix | `qhkit` | 自动生成完整视频分镜方案，包含镜头设计、运镜建议及文案脚本，提升视频制作效率。 |
 | `linkpix-video-ad-assets` | AI电商视频广告素材生成器 &#124; LinkPix | `qhkit` | 根据商品信息快速生成广告视频素材，适用于信息流广告、品牌推广及社交媒体营销。 |
-| `linkpix-video-audio-extract` | AI爆款视频音频提取 &#124; LinkPix | `ffmpeg` | 快速提取视频中的背景音乐、人声及音频内容，方便二次编辑和内容创作。 |
+| `linkpix-video-audio-extract` | AI爆款视频音频提取 &#124; LinkPix | `qhkit` + `本地` | 快速提取视频中的背景音乐、人声及音频内容，方便二次编辑和内容创作。 |
 | `linkpix-video-role-swap` | AI视频角色替换工具 &#124; LinkPix | `qhkit` | 上传原视频及新角色图，一键替换原视频中的人物角色。 |
 | `linkpix-video-subtitle-remove` | AI视频字幕消除工具 &#124; LinkPix | `qhkit` | 自动识别并去除视频字幕，智能修复画面，生成无字幕视频素材。 |
 | `linkpix-video-translate` | AI视频翻译 &#124; LinkPix | `qhkit` | 自动识别视频语音并翻译为多国语言，支持AI配音，帮助视频快速面向全球市场。 |
 | `linkpix-video-upscale` | AI视频超清修复工具 &#124; LinkPix | `qhkit` | AI提升视频分辨率与画质，修复模糊、噪点及压缩痕迹，让视频更加清晰细腻。 |
 | `linkpix-video-watermark-remove` | AI视频去水印工具 &#124; LinkPix | `qhkit` | 一键去除视频水印，保持视频画质清晰，适用于素材整理及二次创作。 |
 | `linkpix-viral-video-clone` | AI爆款视频复刻 &#124; LinkPix | `qhkit` | 智能分析热门短视频内容，一键复刻视频风格、节奏及镜头语言，快速打造同类型营销视频。 |
-| `linkpix-viral-video-toolkit` | AI爆款视频复刻、音频提取 &#124; LinkPix | `qhkit` | 智能分析热门短视频内容，一键复刻视频风格、镜头节奏和创意表现，同时支持视频音频提取，帮助卖家快速打造爆款营销内容，提高短视频创作效率。 |
+| `linkpix-viral-video-toolkit` | AI爆款视频复刻、音频提取 &#124; LinkPix | `qhkit` + `本地` | 智能分析热门短视频内容，一键复刻视频风格、镜头节奏和创意表现，同时支持视频音频提取，帮助卖家快速打造爆款营销内容，提高短视频创作效率。 |
 | `linkpix-white-background` | 电商商品白底图生成，批量抠图工具 &#124; LinkPix | `qhkit` | 支持批量上传商品图片，一键完成高精度抠图，自动生成白底图，大幅提升商品图片处理效率。 |
 
 </details>
