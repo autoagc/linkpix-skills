@@ -36,6 +36,7 @@ qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"�
 qhkit image estimate '{"modelLabel":"智慧模型","prompt":"化妆品高端场景图","imageCount":2}'
 ```
 
+- ⚠️ **用户给了商品图就传进 `uploadedImages`**（四模型均支持，图生图语义、严格基于原图出图）：不要只把图的内容转写成 prompt 文字（会丢原图细节），更不要说"某模型不支持参考图"。
 - `prompt` ≤ 5000 字：写清主体、场景、光影、材质、构图，越具体越稳。
 - `imageCount` 1/2/4/6/8/10；2K 档位积分约为 1K 的两倍。
 - 不要把一个模型的 `sizePreset` 标签套到另一个模型上。

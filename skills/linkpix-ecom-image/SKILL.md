@@ -37,12 +37,16 @@ qhkit image generate '{"modelLabel":"套图模式","uploadedImages":["./商品�
 qhkit image generate '{"modelLabel":"电商详情图","uploadedImages":["./商品图.jpg"],"themeLabel":"海洋蓝"}'
 # 自定义生图：纯文字直出，或带参考图改图（imageCount 1/2/4/6/8/10）
 qhkit image generate '{"modelLabel":"智慧模型","prompt":"化妆品高端场景图","imageCount":2}'
+# 自定义生图 + 参考图（用户给了商品图时这样调，严格基于原图出图）
+qhkit image generate '{"modelLabel":"智慧模型","prompt":"军绿色应急收音机电商主图，专业棚拍质感","uploadedImages":["./商品图.jpg"],"imageCount":2}'
 # 选型/可选值查询（sizePreset、themeLabel、imageCount 因模式而异，务必带 modelLabel 查）
 qhkit image options '{"queryParams":["models"]}'
 qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"套图模式"}'
 ```
 
 `customCopy` ≤ 500 字；`prompt` ≤ 5000 字；套图参考图超过 3 张后每张小额加价（estimate 会自动算）。
+
+> ⚠️ **全部 6 个模式都接受参考图**（自定义生图四模型为可选，是图生图语义）。用户给了商品图就传进 `uploadedImages`，不要只把图的内容转写成 prompt 文字（会丢原图细节），更不要说"某模式不支持参考图"。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）
 
