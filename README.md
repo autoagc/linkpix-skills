@@ -143,3 +143,7 @@ npm i -g @iqinghu/qhkit
 
 遵循 Agent Skills 通用规范：每个技能是一个目录，含 `SKILL.md`（必需）及可选的
 `references/`、`scripts/`、`assets/`。目录名与 frontmatter `name` 保持一致。
+
+## 许可
+
+[MIT](LICENSE) © 青虎AI
