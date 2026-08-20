@@ -1,6 +1,6 @@
 ---
 name: linkpix-image-variations
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）基于一张商品图快速生成多种营销版本，支持不同背景、布局和设计风格，轻松量产广告素材。当用户要求一张图出多个版本、图片裂变、素材裂变、量产不同风格的商品图时必须触发。关键词：LinkPix、qhkit、图像裂变、图片裂变、素材裂变、一图多版、批量版本、风格变体、广告素材量产、A/B测试素材。
+description: 基于一张商品图快速生成多种营销版本，支持不同背景、布局和设计风格，轻松量产广告素材。当用户要求一张图出多个版本、图片裂变、素材裂变、量产不同风格的商品图时必须触发。关键词：LinkPix、qhkit、图像裂变、图片裂变、素材裂变、一图多版、批量版本、风格变体、广告素材量产、A/B测试素材。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🧬","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

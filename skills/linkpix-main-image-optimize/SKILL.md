@@ -1,6 +1,6 @@
 ---
 name: linkpix-main-image-optimize
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）AI 自动优化商品主图的构图、光影、质感及细节，提升商品吸引力与点击率。当用户要求优化主图、提升图片质感、图片变高级、老图翻新、提高点击率时必须触发。关键词：LinkPix、qhkit、主图优化、图片优化、提升质感、画质优化、构图优化、光影优化、老图翻新、点击率优化、图片升级。
+description: AI 自动优化商品主图的构图、光影、质感及细节，提升商品吸引力与点击率。当用户要求优化主图、提升图片质感、图片变高级、老图翻新、提高点击率时必须触发。关键词：LinkPix、qhkit、主图优化、图片优化、提升质感、画质优化、构图优化、光影优化、老图翻新、点击率优化、图片升级。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"✨","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

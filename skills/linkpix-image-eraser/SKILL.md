@@ -1,6 +1,6 @@
 ---
 name: linkpix-image-eraser
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）智能擦除商品图片中的人物、水印、文字及杂物，并自动补全背景，完成商品修图与素材优化。当用户要求去掉图中某个元素、去水印、去文字、去杂物、清理画面时必须触发。关键词：LinkPix、qhkit、消除、AI消除、去水印、去文字、去杂物、擦除、清理图片、路人消除、图片修复、inpainting。
+description: 智能擦除商品图片中的人物、水印、文字及杂物，并自动补全背景，完成商品修图与素材优化。当用户要求去掉图中某个元素、去水印、去文字、去杂物、清理画面时必须触发。关键词：LinkPix、qhkit、消除、AI消除、去水印、去文字、去杂物、擦除、清理图片、路人消除、图片修复、inpainting。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🧽","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

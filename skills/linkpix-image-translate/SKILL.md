@@ -1,6 +1,6 @@
 ---
 name: linkpix-image-translate
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）批量翻译商品图片中的文字内容，自动保持原有版式与设计风格，帮助跨境卖家完成多语言商品图本地化。当用户要求翻译图片文字、图片多语言化、主图/详情图翻译成英语/西语等语言时必须触发。关键词：LinkPix、qhkit、译图、图片翻译、批量翻译、图片本地化、多语言主图、跨境电商、翻译详情图、图片改语言。
+description: 批量翻译商品图片中的文字内容，自动保持原有版式与设计风格，帮助跨境卖家完成多语言商品图本地化。当用户要求翻译图片文字、图片多语言化、主图/详情图翻译成英语/西语等语言时必须触发。关键词：LinkPix、qhkit、译图、图片翻译、批量翻译、图片本地化、多语言主图、跨境电商、翻译详情图、图片改语言。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🌐","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

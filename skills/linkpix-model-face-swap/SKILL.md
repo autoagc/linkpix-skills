@@ -1,6 +1,6 @@
 ---
 name: linkpix-model-face-swap
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）在保持服装、姿势不变的前提下替换商品图中的模特形象，支持不同国家、肤色及年龄，满足跨境电商本地化展示；视频里的人物替换同样支持。当用户要求换模特、换脸、模特本地化、把模特换成欧美/东南亚面孔时必须触发。关键词：LinkPix、qhkit、换脸、换模特、模特替换、模特本地化、跨境模特、欧美模特、换人、人物替换、数字人替换。
+description: 在保持服装、姿势不变的前提下替换商品图中的模特形象，支持不同国家、肤色及年龄，满足跨境电商本地化展示；视频里的人物替换同样支持。当用户要求换模特、换脸、模特本地化、把模特换成欧美/东南亚面孔时必须触发。关键词：LinkPix、qhkit、换脸、换模特、模特替换、模特本地化、跨境模特、欧美模特、换人、人物替换、数字人替换。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🧑","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

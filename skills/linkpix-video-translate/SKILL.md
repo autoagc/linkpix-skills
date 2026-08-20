@@ -1,6 +1,6 @@
 ---
 name: linkpix-video-translate
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）自动识别视频语音并翻译为多国语言，支持 AI 配音、字幕与对口型，帮助视频快速面向全球市场。当用户要求翻译视频、视频配外语音、加外语字幕、视频出海本地化时必须触发。关键词：LinkPix、qhkit、视频翻译、翻译配音、外语字幕、对口型、视频本地化、出海视频、多语言视频、dubbing、字幕翻译。
+description: 自动识别视频语音并翻译为多国语言，支持 AI 配音、字幕与对口型，帮助视频快速面向全球市场。当用户要求翻译视频、视频配外语音、加外语字幕、视频出海本地化时必须触发。关键词：LinkPix、qhkit、视频翻译、翻译配音、外语字幕、对口型、视频本地化、出海视频、多语言视频、dubbing、字幕翻译。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🌍","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

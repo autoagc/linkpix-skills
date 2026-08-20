@@ -1,6 +1,6 @@
 ---
 name: linkpix-video-subtitle-remove
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）自动识别并去除视频字幕，智能修复画面，生成无字幕的干净视频素材。当用户要求去字幕、消除视频文字、要无字幕版本时必须触发。关键词：LinkPix、qhkit、去字幕、视频去字幕、字幕消除、无字幕素材、擦除字幕、硬字幕去除。
+description: 自动识别并去除视频字幕，智能修复画面，生成无字幕的干净视频素材。当用户要求去字幕、消除视频文字、要无字幕版本时必须触发。关键词：LinkPix、qhkit、去字幕、视频去字幕、字幕消除、无字幕素材、擦除字幕、硬字幕去除。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"📃","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

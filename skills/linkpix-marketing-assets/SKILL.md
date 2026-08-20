@@ -1,6 +1,6 @@
 ---
 name: linkpix-marketing-assets
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）一站式生成电商营销素材：商品主图、场景图、详情页、促销海报、广告图片与广告视频，覆盖商品包装、活动推广和品牌营销。当用户要求做营销素材、广告素材、推广素材、投放素材、活动素材时必须触发。关键词：LinkPix、qhkit、营销素材、广告素材、推广素材、投放素材、信息流素材、活动素材、素材包、品牌营销、素材量产。
+description: 一站式生成电商营销素材：商品主图、场景图、详情页、促销海报、广告图片与广告视频，覆盖商品包装、活动推广和品牌营销。当用户要求做营销素材、广告素材、推广素材、投放素材、活动素材时必须触发。关键词：LinkPix、qhkit、营销素材、广告素材、推广素材、投放素材、信息流素材、活动素材、素材包、品牌营销、素材量产。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🧰","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

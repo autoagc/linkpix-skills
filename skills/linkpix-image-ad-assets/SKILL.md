@@ -1,6 +1,6 @@
 ---
 name: linkpix-image-ad-assets
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）自动生成适用于电商推广及广告投放的图文营销素材：广告图片、促销图，以及从视频反推的图文种草内容。当用户要求做图文素材、广告图、种草图文、推广图文、笔记素材时必须触发。关键词：LinkPix、qhkit、图文素材、广告图、种草图文、图文笔记、推广图、信息流图片、小红书素材、图文创作。
+description: 自动生成适用于电商推广及广告投放的图文营销素材：广告图片、促销图，以及从视频反推的图文种草内容。当用户要求做图文素材、广告图、种草图文、推广图文、笔记素材时必须触发。关键词：LinkPix、qhkit、图文素材、广告图、种草图文、图文笔记、推广图、信息流图片、小红书素材、图文创作。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🖼️","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

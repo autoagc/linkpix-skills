@@ -1,6 +1,6 @@
 ---
 name: linkpix-pod-pattern-extract
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）一键提取图片中的印花图案，生成高清、平铺、可复用的图案素材，适用于 POD 定制及服装设计。当用户要求提取印花、抠图案、把衣服上的图案拿出来、图案素材化时必须触发。关键词：LinkPix、qhkit、印花提取、图案提取、提取花纹、POD素材、图案素材、印花设计稿、pattern。
+description: 一键提取图片中的印花图案，生成高清、平铺、可复用的图案素材，适用于 POD 定制及服装设计。当用户要求提取印花、抠图案、把衣服上的图案拿出来、图案素材化时必须触发。关键词：LinkPix、qhkit、印花提取、图案提取、提取花纹、POD素材、图案素材、印花设计稿、pattern。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🧵","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

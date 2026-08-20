@@ -1,6 +1,6 @@
 ---
 name: linkpix-scene-image
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）根据商品自动生成真实、高质感的商品场景图，适用于家居、美妆、服饰、数码等行业。当用户要求生成商品场景图、使用场景展示图、氛围图、生活方式图（lifestyle）时必须触发。关键词：LinkPix、qhkit、场景图、商品场景、使用场景、氛围图、lifestyle、生活方式图、实景图、家居场景、美妆场景、点击率、转化率。
+description: 根据商品自动生成真实、高质感的商品场景图，适用于家居、美妆、服饰、数码等行业。当用户要求生成商品场景图、使用场景展示图、氛围图、生活方式图（lifestyle）时必须触发。关键词：LinkPix、qhkit、场景图、商品场景、使用场景、氛围图、lifestyle、生活方式图、实景图、家居场景、美妆场景、点击率、转化率。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🏞️","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

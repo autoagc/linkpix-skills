@@ -1,6 +1,6 @@
 ---
 name: linkpix-white-background
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）批量把商品图处理成干净的纯白底图：自动识别商品主体、去除杂乱背景，适配平台白底图规范。当用户要求抠图、做白底图、去背景、商品图变纯色底、批量处理商品图背景时必须触发。关键词：LinkPix、qhkit、抠图、批量抠图、白底图、去背景、去底、纯色背景、主图白底、平台白底规范、商品图清理。
+description: 批量把商品图处理成干净的纯白底图：自动识别商品主体、去除杂乱背景，适配平台白底图规范。当用户要求抠图、做白底图、去背景、商品图变纯色底、批量处理商品图背景时必须触发。关键词：LinkPix、qhkit、抠图、批量抠图、白底图、去背景、去底、纯色背景、主图白底、平台白底规范、商品图清理。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"⬜","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

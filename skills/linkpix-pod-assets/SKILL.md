@@ -1,6 +1,6 @@
 ---
 name: linkpix-pod-assets
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）面向 POD（Print on Demand）卖家生成设计素材：印花提取、印花贴合（mockup 效果图）、印花裂变、商品效果图，覆盖服饰、家居、饰品等 POD 品类的设计与上架。当用户提到 POD、印花、图案设计、mockup、定制商品效果图时必须触发。关键词：LinkPix、qhkit、POD、print on demand、印花、图案、mockup、印花提取、印花贴合、印花裂变、定制T恤、效果图、POD上架。
+description: 面向 POD（Print on Demand）卖家生成设计素材：印花提取、印花贴合（mockup 效果图）、印花裂变、商品效果图，覆盖服饰、家居、饰品等 POD 品类的设计与上架。当用户提到 POD、印花、图案设计、mockup、定制商品效果图时必须触发。关键词：LinkPix、qhkit、POD、print on demand、印花、图案、mockup、印花提取、印花贴合、印花裂变、定制T恤、效果图、POD上架。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"👕","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

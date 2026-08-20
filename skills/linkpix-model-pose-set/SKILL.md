@@ -1,6 +1,6 @@
 ---
 name: linkpix-model-pose-set
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）根据一张服装模特图自动生成多种姿势及展示角度的套图，丰富商品展示效果，适用于服装详情页及社交媒体营销。当用户要求模特多姿势、多角度展示图、服装套图、一张模特图出一组时必须触发。关键词：LinkPix、qhkit、多姿势、姿势套图、多角度、模特套图、服装展示、详情页套图、社媒素材、pose。
+description: 根据一张服装模特图自动生成多种姿势及展示角度的套图，丰富商品展示效果，适用于服装详情页及社交媒体营销。当用户要求模特多姿势、多角度展示图、服装套图、一张模特图出一组时必须触发。关键词：LinkPix、qhkit、多姿势、姿势套图、多角度、模特套图、服装展示、详情页套图、社媒素材、pose。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🕺","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

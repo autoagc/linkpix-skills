@@ -1,6 +1,6 @@
 ---
 name: linkpix-pod-pattern-variations
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）基于一个印花快速生成多个设计版本，支持不同风格、颜色及元素组合，提高 POD 设计效率。当用户要求印花裂变、图案变体、衍生设计、一个图案出多版时必须触发。关键词：LinkPix、qhkit、印花裂变、图案裂变、衍生设计、图案变体、配色版本、设计裂变、POD设计、图案量产。
+description: 基于一个印花快速生成多个设计版本，支持不同风格、颜色及元素组合，提高 POD 设计效率。当用户要求印花裂变、图案变体、衍生设计、一个图案出多版时必须触发。关键词：LinkPix、qhkit、印花裂变、图案裂变、衍生设计、图案变体、配色版本、设计裂变、POD设计、图案量产。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🌀","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

@@ -1,6 +1,6 @@
 ---
 name: linkpix-product-swap
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）一键替换图片中的商品主体，自动保留场景、构图及光影效果，大幅提升商品素材复用效率。当用户要求把图里的商品换成另一个商品、场景图复用给新品、替换产品主体时必须触发。关键词：LinkPix、qhkit、产品替换、商品替换、换商品、主体替换、场景复用、素材复用、新品套用老图。
+description: 一键替换图片中的商品主体，自动保留场景、构图及光影效果，大幅提升商品素材复用效率。当用户要求把图里的商品换成另一个商品、场景图复用给新品、替换产品主体时必须触发。关键词：LinkPix、qhkit、产品替换、商品替换、换商品、主体替换、场景复用、素材复用、新品套用老图。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🔄","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

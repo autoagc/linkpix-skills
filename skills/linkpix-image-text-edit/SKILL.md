@@ -1,6 +1,6 @@
 ---
 name: linkpix-image-text-edit
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）自动识别并修改图片中的文字内容，无需重新设计图片，快速替换标题、价格、卖点及促销信息。当用户要求改图片上的文字、换价格、改标题、改促销信息时必须触发。关键词：LinkPix、qhkit、改文字、文字修改、改价格、换文案、图片改字、修改标题、促销信息更新、免PS改图。
+description: 自动识别并修改图片中的文字内容，无需重新设计图片，快速替换标题、价格、卖点及促销信息。当用户要求改图片上的文字、换价格、改标题、改促销信息时必须触发。关键词：LinkPix、qhkit、改文字、文字修改、改价格、换文案、图片改字、修改标题、促销信息更新、免PS改图。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"✏️","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

@@ -1,6 +1,6 @@
 ---
 name: linkpix-promo-poster
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）快速生成双11、黑五、圣诞节等营销活动海报与折扣营销图，适用于新品发布、促销活动及品牌宣传。当用户要求做促销海报、活动图、折扣图、节日营销图、大促素材时必须触发。关键词：LinkPix、qhkit、促销海报、活动海报、折扣图、营销图、双11、黑五、圣诞、618、大促素材、新品海报、品牌宣传图。
+description: 快速生成双11、黑五、圣诞节等营销活动海报与折扣营销图，适用于新品发布、促销活动及品牌宣传。当用户要求做促销海报、活动图、折扣图、节日营销图、大促素材时必须触发。关键词：LinkPix、qhkit、促销海报、活动海报、折扣图、营销图、双11、黑五、圣诞、618、大促素材、新品海报、品牌宣传图。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎉","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

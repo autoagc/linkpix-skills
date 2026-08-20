@@ -1,6 +1,6 @@
 ---
 name: linkpix-background-swap
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）智能识别商品主体，一键替换图片背景，生成不同风格的营销场景图，无需 PS。当用户要求给商品图换背景、替换场景、白底图换成场景图、把商品放到某个场景里时必须触发。关键词：LinkPix、qhkit、换背景、更换背景、背景替换、场景替换、白底换场景、商品换背景、营销场景图、免PS。
+description: 智能识别商品主体，一键替换图片背景，生成不同风格的营销场景图，无需 PS。当用户要求给商品图换背景、替换场景、白底图换成场景图、把商品放到某个场景里时必须触发。关键词：LinkPix、qhkit、换背景、更换背景、背景替换、场景替换、白底换场景、商品换背景、营销场景图、免PS。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🪄","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

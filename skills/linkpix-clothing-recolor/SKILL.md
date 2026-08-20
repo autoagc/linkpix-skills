@@ -1,6 +1,6 @@
 ---
 name: linkpix-clothing-recolor
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）一键生成服装的不同颜色版本，保持版型、材质及光影一致，无需重新拍摄即可完成 SKU 色卡图制作。当用户要求服装换色、出其他颜色版本、SKU 配色图、色卡图时必须触发。关键词：LinkPix、qhkit、服装换色、换色、改颜色、SKU图、色卡、配色版本、多色版本、免拍摄。
+description: 一键生成服装的不同颜色版本，保持版型、材质及光影一致，无需重新拍摄即可完成 SKU 色卡图制作。当用户要求服装换色、出其他颜色版本、SKU 配色图、色卡图时必须触发。关键词：LinkPix、qhkit、服装换色、换色、改颜色、SKU图、色卡、配色版本、多色版本、免拍摄。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🌈","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

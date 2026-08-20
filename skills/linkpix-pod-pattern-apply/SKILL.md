@@ -1,6 +1,6 @@
 ---
 name: linkpix-pod-pattern-apply
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）自动将印花图案精准贴合到服装、帽子、杯子等商品上，随布料褶皱与透视自然变形，快速生成真实展示效果图（mockup）。当用户要求把图案印到商品上、做 mockup、印花上身效果、定制效果图时必须触发。关键词：LinkPix、qhkit、印花贴合、mockup、样机图、上身效果、印到T恤、定制效果图、POD效果图、图案上产品。
+description: 自动将印花图案精准贴合到服装、帽子、杯子等商品上，随布料褶皱与透视自然变形，快速生成真实展示效果图（mockup）。当用户要求把图案印到商品上、做 mockup、印花上身效果、定制效果图时必须触发。关键词：LinkPix、qhkit、印花贴合、mockup、样机图、上身效果、印到T恤、定制效果图、POD效果图、图案上产品。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎽","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}

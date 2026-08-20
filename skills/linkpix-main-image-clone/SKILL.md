@@ -1,6 +1,6 @@
 ---
 name: linkpix-main-image-clone
-description: 通过 qhkit CLI（npm @iqinghu/qhkit）参考爆款商品图片，智能分析其设计风格并用你的商品生成相似视觉效果，快速打造高点击率主图。当用户要求照着某张爆款图做主图、对标竞品主图、复刻图片风格时必须触发。关键词：LinkPix、qhkit、主图复刻、爆款复刻、对标主图、竞品图风格、风格迁移、照着做、相似风格主图、高点击率主图。
+description: 参考爆款商品图片，智能分析其设计风格并用你的商品生成相似视觉效果，快速打造高点击率主图。当用户要求照着某张爆款图做主图、对标竞品主图、复刻图片风格时必须触发。关键词：LinkPix、qhkit、主图复刻、爆款复刻、对标主图、竞品图风格、风格迁移、照着做、相似风格主图、高点击率主图。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🔁","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
