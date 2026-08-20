@@ -30,7 +30,10 @@ npx skills add autoagc/linkpix-skills --list
 ```
 
 兼容 Claude Code、Cursor、Codex、GitHub Copilot、Cline、OpenClaw 等 18+ 客户端。
-`skills` CLI 需要 **Node.js ≥ 22.20.0**。
+
+> `skills` CLI 的 package.json 声明 `engines: node >= 22.20.0`，低版本 npm 会打
+> `EBADENGINE` 警告。实测 Node 20 下安装与使用均正常（它只依赖 `tar` 与 `yaml`），
+> 这个警告可以忽略。
 
 ## 前置依赖
 
