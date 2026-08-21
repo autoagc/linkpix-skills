@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-detail-page",
   "displayName": "电商商品详情图生成器 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "自动生成商品详情页图片，整合卖点、场景、参数及营销内容，帮助卖家快速制作高转化详情页。",
   "publishedAt": 1786492800000
 }

@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-image-translate",
   "displayName": "电商商品图片翻译器 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "批量翻译商品图片中的文字内容，自动保持原有版式与设计风格，帮助跨境卖家快速完成多语言商品本地化。",
   "publishedAt": 1786492800000
 }

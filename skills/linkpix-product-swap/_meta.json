@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-product-swap",
   "displayName": "电商商品图智能替换产品工具 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "一键替换图片中的商品主体，自动保留场景、构图及光影效果，大幅提升商品素材复用效率。",
   "publishedAt": 1786492800000
 }

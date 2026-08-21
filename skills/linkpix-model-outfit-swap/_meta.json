@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-model-outfit-swap",
   "displayName": "AI电商模特换装工具 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "上传服装即可生成真人试穿效果，支持不同模特、体型和国家风格，帮助服装卖家快速制作商品展示图。",
   "publishedAt": 1786492800000
 }

@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-model-pose-set",
   "displayName": "电商服装模特多姿势套图生成器 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "自动生成多种模特姿势及展示角度，丰富商品展示效果，适用于服装详情页及社交媒体营销。",
   "publishedAt": 1786492800000
 }

@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-pod-pattern-variations",
   "displayName": "电商pod印花裂变设计生成器 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "基于一个印花快速生成多个设计版本，支持不同风格、颜色及元素组合，提高设计效率。",
   "publishedAt": 1786492800000
 }

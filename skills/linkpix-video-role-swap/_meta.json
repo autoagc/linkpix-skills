@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-video-role-swap",
   "displayName": "AI视频角色替换工具 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "上传原视频及新角色图，一键替换原视频中的人物角色。",
   "publishedAt": 1786492800000
 }

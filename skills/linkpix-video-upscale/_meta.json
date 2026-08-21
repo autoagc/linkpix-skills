@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-video-upscale",
   "displayName": "AI视频超清修复工具 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "AI提升视频分辨率与画质，修复模糊、噪点及压缩痕迹，让视频更加清晰细腻。",
   "publishedAt": 1786492800000
 }
