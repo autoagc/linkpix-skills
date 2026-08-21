@@ -34,6 +34,7 @@ qhkit video-inspire status   '{"inspireTaskId":276}'   # 返回里的 playVideo 
 ffmpeg -i "<playVideo 直链>" -vn -acodec libmp3lame -q:a 2 音频.mp3
 ```
 
+- `video-inspire` 解析通常 **1 分钟内**出直链，`status` 轮询 20–30 秒一次即可；**超过 10 分钟仍是 pending，说明后端已判超时失败**，重新提交一次即可。
 - 交付：给出本地文件路径；当前环境支持文件外发时按渠道约定发送音频文件。
 - 顺带产出的 `videoScript`（脚本）如果对用户有用可以一并交付。
 
