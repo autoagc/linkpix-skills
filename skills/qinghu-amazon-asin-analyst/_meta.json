@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-amazon-asin-analyst",
   "displayName": "亚马逊-ASIN解析专家 | 青虎AI",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "查询商品 ASIN 详情，价格趋势等",
   "publishedAt": 1787011200000
 }

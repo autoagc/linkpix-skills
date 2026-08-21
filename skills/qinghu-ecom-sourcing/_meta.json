@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-ecom-sourcing",
   "displayName": "AI电商选品上货 | 青虎AI",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "基于 AI 的智能选品与上货助手，覆盖 Amazon、TikTok Shop、Shopee、Ozon、1688 等多个电商平台，提供爆款挖掘、竞品分析、关键词选品、商品采集及智能上架等能力，帮助卖家提升运营效率。",
   "publishedAt": 1787011200000
 }

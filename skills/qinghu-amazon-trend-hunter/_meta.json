@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-amazon-trend-hunter",
   "displayName": "亚马逊-爆款趋势挖掘师 | 青虎AI",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "帮助选品开发人员在亚马逊海量商品中，基于特定条件过滤并挖掘出当前的爆款和潜力热卖单品。",
   "publishedAt": 1787011200000
 }
