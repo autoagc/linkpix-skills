@@ -1,6 +1,6 @@
 ---
 name: linkpix
-description: 调用青虎 AI 媒体能力：AI 生图（套图/电商详情图/自定义生图四模型）、AI 生视频（Seedance2.0、全能电商2.0、Happy Horse、可灵3.0 Omni、品牌质感大片等多模型多时长）、一键成片、角色替换/模特换脸、视频翻译、去水印/去字幕/画质提升、复刻爆款视频出脚本、爆款视频转图文、分镜脚本与分镜图、广告素材模板批量出片（视频/图片）、POD 印花素材（印花提取/贴合/裂变 + 产品图库）、青虎工作台「AI 应用」的 AI 工作流（电影质感 TVC 广告大片、爆款视频模仿与仿拍、模特换装高一致性还原、超清修复与去 AI 感、图像去水印、短视频与达人数据引擎），均含任务状态查询。当用户要求生成/制作商品图、主图、详情图、营销图、广告视频、带货视频、口播视频，或要求翻译视频、去水印、去字幕、提升画质、换人物/换脸、复刻某条爆款视频、把视频转成图文笔记、写分镜脚本，或要求做电影质感 TVC 广告大片/品牌广告片、仿拍某条爆款视频、给模特换装、把图片超清修复/去 AI 感、跑短视频或达人数据引擎分析时必须触发。支持关键词：LinkPix、linkpix、qhkit、青虎、爆款素材、电商素材、量产素材、生图、AI绘图、商品图、主图、套图、详情图、广告素材、投放素材、POD素材、POD、印花、印花提取、印花贴合、印花裂变、生视频、AI视频、带货视频、广告片、一键成片、成片、换脸、换模特、数字人替换、视频翻译、翻译配音、去水印、去字幕、画质提升、超分、复刻爆款、对标视频、视频转图文、图文笔记、分镜、脚本、storyboard、AI应用、AI工作流、工作流、workflow、TVC、TVC广告、广告大片、品牌广告片、电影质感、爆款视频模仿、仿拍、模特换装、换装、超清修复、去AI感、图像去水印、数据引擎、短视频数据、达人数据。
+description: 调用青虎 AI 媒体能力：AI 生图（套图/电商详情图/自定义生图四模型 + 提示词润色）、批量生图玩法（批量生图/批量改图/批量替换/主图复刻/姿势套图/批量译图）、AI 生视频（Seedance2.0、全能电商2.0、Happy Horse、可灵3.0 Omni、品牌质感大片等多模型多时长，支持多参考视频与参考音频）、一键成片、角色替换/模特换脸、视频翻译、去水印/去字幕/画质提升、复刻爆款视频出脚本、爆款视频转图文、分镜脚本与分镜图、广告素材模板批量出片（视频/图片）、POD 印花素材（印花提取/贴合/裂变 + 产品图库）、青虎工作台「AI 应用」的 AI 工作流（电影质感 TVC 广告大片、爆款视频模仿与仿拍、模特换装高一致性还原、超清修复与去 AI 感、图像去水印、短视频与达人数据引擎），均含任务状态查询。当用户要求生成/制作商品图、主图、详情图、营销图、广告视频、带货视频、口播视频，或要求批量出图、批量改图、把产品换进参考图、复刻别人的主图风格、生成服装模特多姿势套图、翻译图片上的文字，或要求翻译视频、去水印、去字幕、提升画质、换人物/换脸、复刻某条爆款视频、把视频转成图文笔记、写分镜脚本，或要求做电影质感 TVC 广告大片/品牌广告片、仿拍某条爆款视频、给模特换装、把图片超清修复/去 AI 感、跑短视频或达人数据引擎分析时必须触发。支持关键词：LinkPix、linkpix、qhkit、青虎、爆款素材、电商素材、量产素材、生图、AI绘图、商品图、主图、套图、详情图、批量生图、批量改图、批量替换、主图复刻、套图复刻、姿势套图、服装套图、批量译图、图片翻译、译图、白底图、提示词润色、广告素材、投放素材、POD素材、POD、印花、印花提取、印花贴合、印花裂变、生视频、AI视频、带货视频、广告片、一键成片、成片、换脸、换模特、数字人替换、视频翻译、翻译配音、去水印、去字幕、画质提升、超分、复刻爆款、对标视频、视频转图文、图文笔记、分镜、脚本、storyboard、AI应用、AI工作流、工作流、workflow、TVC、TVC广告、广告大片、品牌广告片、电影质感、爆款视频模仿、仿拍、模特换装、换装、超清修复、去AI感、图像去水印、数据引擎、短视频数据、达人数据。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
@@ -19,6 +19,13 @@ LinkPix 是青虎工作台的电商素材创作能力（主图 / 详情图 / 广
 | 生成商品图/主图/套图、"给这张图做几张营销图" | `image`（套图模式） | 图片 |
 | 按文字描述直出一张商业大图（可带参考图） | `image`（自定义生图：专图模式 / 智慧模型 / 图片 5.0 Lite / 图片 5.0 Pro，`uploadedImages` 可选） | 图片 |
 | 生成电商详情页长图 | `image`（电商详情图） | 图片 |
+| "帮我写一条生图提示词"、按商品图/卖点出提示词 | `image`（`polish`） | 提示词文本 |
+| 一张产品图 × 多条提示词各出一张、"批量出 N 张不同的图" | `image-batch`（批量生图） | 图片 |
+| 多张图批量执行同一条修改指令（如批量白底图） | `image-batch`（批量改图） | 图片 |
+| "把我的产品换进这些参考图里" | `image-batch`（批量替换） | 图片 |
+| "照这张爆款主图的风格，给我的产品做主图" | `image-batch`（主图复刻） | 图片 |
+| 服装图出多姿势模特套图 | `image-batch`（姿势套图） | 图片 |
+| 翻译图片上的文字（批量译图） | `image-batch`（批量译图） | 图片 |
 | 做广告视频/产品视频（有参考图） | `video` | 视频 |
 | "把这几张图做成一条带货视频"、一键成片 | `video-quick` | 视频 |
 | 换人/换模特/换脸（对已有视频） | `video-replace` | 视频 |
@@ -35,13 +42,11 @@ LinkPix 是青虎工作台的电商素材创作能力（主图 / 详情图 / 广
 
 **能力边界**：上表之外的媒体需求（如音乐/MV 生成、数字人口播、直播切片、长视频剪辑）qhkit 不支持——明确告知用户当前不支持，建议其到青虎工作台（https://www.iqinghu.com）确认能力或改用其他技能，**不要硬套最接近的命令凑合**。
 
-> **活动海报已于 2026-08 下线**（线上工作台入口已移除，`qhkit poster` 命令随之删除）。用户要"做海报/促销海报"时：如实说明该能力已下线，再按需求改道——要长图促销页走 `image` 的**电商详情图**，要单张营销图走 `image` 的**自定义生图**（把海报文案写进 `prompt`）。不要再尝试调用 `poster`。
-
 ## 1. 前置：环境自举（缺什么装什么，不要因为环境缺失放弃任务）
 
 按顺序检测，缺失就地补齐：
 
-1. **有 qhkit 吗？** `qhkit config show` 能跑通即已安装。**再确认版本**：`workflow`（AI 工作流应用）命令自 **v0.10.0** 起提供，`qhkit --version` 低于 0.10.0，或执行 `workflow` 返回 `{"ok":false,"stage":"runtime","message":"未知命令：workflow。..."}` 时，按下面「更新方式」升级后再用——**未注册的命令走不到版本门禁**，所以 `config show` 通过并不代表 `workflow` 可用。两项都满足就跳到第 4 步。
+1. **有 qhkit 吗？** `qhkit config show` 能跑通即已安装，跳到第 4 步。
 2. **没有 qhkit 但有 node/npm**（OpenClaw/Hermes 机器部署流程保证自带 Node 22+）→ **全局安装（推荐方式）**：
    ```bash
    npm i -g @iqinghu/qhkit --registry=https://registry.npmmirror.com
@@ -54,7 +59,12 @@ LinkPix 是青虎工作台的电商素材创作能力（主图 / 详情图 / 广
    export PATH="/usr/local/lib/node-v22.22.3-linux-x64/bin:$PATH"
    ```
    macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
-4. **密钥**：OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时自动复用、零配置。其他机器执行 `qhkit config set --token <密钥> --env prod`（密钥让用户从 https://www.iqinghu.com/workbench/dashboard/api-keys 获取），或设环境变量 `QHKIT_TOKEN`。
+4. **密钥**：OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时自动复用、零配置。其他机器无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
+   > 1. 打开 https://www.iqinghu.com 注册/登录
+   > 2. 进入控制台 → 工作台的 APIKeys 页面：https://www.iqinghu.com/workbench/dashboard/api-keys
+   > 3. 点「创建/复制」生成密钥，生成后将 API 密钥发我
+   >
+   > 图文获取密钥教程：https://xcnzsfe4uxrw.feishu.cn/wiki/KJ0Ywsyw8iAXmRkz5l4cddDbn6g
 5. 自检：`qhkit config show` 输出脱敏配置即全部就绪。
 
 **更新方式**：qhkit 已全局安装时，升级同样由你（智能体）执行全局安装完成：
@@ -79,6 +89,13 @@ qhkit <命令> <action> @params.json     # 参数写进文件，避免 shell 转
 - 返回是**直接的数据结果**（无预渲染呈现字段）：产物 URL 从 `images` / `videos` / `primaryVideo` 取，文本产物在 `videoScript` / `imageText` / `script`，积分在 `credits`，任务号在各类 taskId 字段。如何展示给用户由你按当前环境决定。
 - stderr 可能出现提示行（如版本/模型目录告警），**不是错误**，不要当成失败。
 - 传参里的 `uploadedImages` / `urls` / 视频参数**直接填本地文件路径即可**（CLI 自动上传换取 URL，这是最常见用法）；素材已在公网上时也可以直接填 http(s) URL。唯一例外：`video-inspire` 的 `resourceUrl` 只收 http(s) 链接（抖音等平台分享链接，后端按链接拉取，不是上传文件）。
+- **图片体积上限 10MB**：3–10MB 的本地图 CLI 会在上传后自动追加 COS 缩略参数（2048px 内等比缩小、只缩不放）防止大图导致下游断连，此时 stderr 有一行提示——**是提示不是错误**。公网 URL 只对青虎/COS 域名做该处理；用户给的**外站大图 URL 建议先下载到本地再以路径传入**，让 CLI 走这条防线。
+- **超过 10MB 被拦下时，不要把问题抛回给用户，你（智能体）就地压缩后重试**（目标：2048px 内等比缩小、只缩不放，输出 jpg；压完把新文件路径传回原命令重试一次）。只走两条路，按序探测：
+  1. **优先 Python**（`python --version` 或 `python3 --version` 能跑即可；缺 Pillow 先装：`pip install pillow -i https://pypi.tuna.tsinghua.edu.cn/simple`）：
+     `python -c "from PIL import Image, ImageOps; im=ImageOps.exif_transpose(Image.open('原图')); im.thumbnail((2048,2048)); im.convert('RGB').save('压缩后.jpg', quality=85)"`
+  2. **没有 Python 就用 Node**（qhkit 能跑说明 Node 一定在），用 npm 的 sharp-cli 压缩：
+     `npx --yes --registry=https://registry.npmmirror.com sharp-cli -i 原图 -o 压缩后.jpg resize 2048`（首次联网下载，之后有缓存）
+  外站大图 URL 同理：先下载到本地再走上面的流程。两条路都失败才如实告知用户，请其提供 10MB 内的图片；压缩重试仍失败则转述 CLI 的 message，不要反复重试。
 - 标签类参数（`modelLabel`、`sizePreset`、`themeLabel` 等）必须与 `options` 返回的候选值**逐字一致**，不要自造或翻译。拿不准就先调 `options`。
 - `options` 查 `modelLabel` 时若返回 `catalogNotice`，说明线上有当前版本尚不支持的新模型：先按「更新方式」升级 qhkit 再查一次；升级后仍不支持就如实告知用户该模型暂不可用，不要硬试。
 
@@ -113,8 +130,8 @@ qhkit <命令> <action> @params.json     # 参数写进文件，避免 shell 转
 > ⚠️ **全部 6 个模式都接受参考图**（自定义生图四模型为可选，是图生图语义，2026-08-20 实测智慧模型带参考图出图与原图细节逐一对齐）。用户给了商品图就传进 `uploadedImages`，不要只把图的内容转写成 prompt 文字（会丢原图细节），更不要说"某模式不支持参考图"。
 
 ```bash
-# 套图：参考图 + 可选文案（imageCount 1/6/7/8/9/10）
-qhkit image generate '{"modelLabel":"套图模式","uploadedImages":["./素材/商品图.jpg"],"customCopy":"限时5折","sizePreset":"1:1 商品主图 · 抖音","imageCount":6}'
+# 套图：参考图 + 可选文案 + 发布平台（imageCount 1/6/7/8/9/10，缺省 9）
+qhkit image generate '{"modelLabel":"套图模式","uploadedImages":["./素材/商品图.jpg"],"customCopy":"限时5折","platform":"抖音","imageCount":6}'
 # 自定义生图：提示词直出，参考图可选（imageCount 1/2/4/6/8/10）
 qhkit image generate '{"modelLabel":"专图模式","prompt":"化妆品高端场景图","sizePreset":"默认 1:1 2K（2048×2048）"}'
 qhkit image generate '{"modelLabel":"智慧模型","prompt":"化妆品高端场景图","imageCount":2}'
@@ -122,16 +139,48 @@ qhkit image generate '{"modelLabel":"智慧模型","prompt":"化妆品高端场�
 qhkit image generate '{"modelLabel":"智慧模型","prompt":"军绿色应急收音机电商主图，专业棚拍质感","uploadedImages":["./素材/收音机.jpg"],"imageCount":2}'
 # 详情图：参考图 + 配色主题
 qhkit image generate '{"modelLabel":"电商详情图","uploadedImages":["./素材/商品图.jpg"],"themeLabel":"海洋蓝"}'
+# 提示词润色：商品图/产品名/卖点至少给一个，返回 AI 写好的生图提示词（不建任务、不扣生图积分）
+qhkit image polish '{"uploadedImages":["./素材/商品图.jpg"],"productName":"保温杯","pointDescription":"钛合金内胆 24h 保温"}'
 # 报价：generate 同参数换个 action，返回本次实际会扣的积分（含折扣/画质/免费额度）——报积分给用户前先跑这条
 qhkit image estimate '{"modelLabel":"套图模式","uploadedImages":["./素材/商品图.jpg"],"imageCount":6}'
 # 选型速查：各模型卖点 + 实时积分 + 免费额度（不确定选哪个时先跑这条）
 qhkit image options '{"queryParams":["models"]}'
-# 可选值查询（sizePreset/themeLabel/imageCount 因模式而异，务必带 modelLabel 查）
+# 可选值查询（sizePreset/platform/themeLabel/imageCount 因模式而异，务必带 modelLabel 查）
 qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"图片 5.0 Pro"}'
 ```
 
 套图/详情图需要至少一张参考图；自定义生图必须有 `prompt`（参考图可选）。generate 返回即含图片 URL（自带轮询）。
 **`sizePreset` 逐模型不同**（自定义生图四模型的尺寸表各自独立），不要把一个模型的尺寸标签套到另一个模型上——先 `options` 查。
+**默认画质是 `1K`**；要 2K（价格约为 1K 两倍）时显式传 `"quality":"2K"`。**套图默认出 9 张**（与官网一致）——确认参数时务必把张数、画质与 `estimate` 积分报给用户，积分数字一律以 estimate 返回值为准。
+**套图发布平台用 `platform` 传**（淘宝/抖音/拼多多/1688/京东/Amazon/Shopee/TikTok Shop/Lazada/Temu/Ozon/Wildberries/SHEIN，`options` 查 `platform` 看全量）：影响套图的构图与文案排版策略，用户提到目标平台就传上。
+
+### image-batch — 批量生图玩法（mode 六选一）
+
+官网首页「AI 能力」卡片对应的批量玩法，全部自带轮询（阻塞到出图）。**没有数量参数**——出图张数由 prompts / 图片 / 动作条数决定（单批上限 10）：
+
+| mode | 用途 | 关键入参 | 张数 |
+|---|---|---|---|
+| `批量生图` | 单产品 × 多条提示词，每条出一张 | `prompts[]` + `uploadedImages`（参考图必填 1-10 张） | = prompts 条数 |
+| `批量改图` | 多张图共用一条改图指令（批量白底图等） | `prompt` + `uploadedImages`（1-10 张） | = 图片张数 |
+| `批量替换` | 把产品换进每张参考图 | `referenceImages` + `productImage`（1 张）+ `productName` | = 参考图张数 |
+| `主图复刻` | 复刻参考图风格，产品图出新主图（当前仅 1:1） | `referenceImages` + `productImages`（1-6 张） | = 参考图张数 |
+| `姿势套图` | 服装专用：1 张商品图 × 多组动作 | `uploadedImages`（仅 1 张）+ `poseActions[]`（每条 ≤300 字） | = 动作条数 |
+| `批量译图` | 翻译图上文字 | `prompt`（**必须写明目标语言**）+ `uploadedImages`（1-10 张） | = 图片张数 |
+
+```bash
+qhkit image-batch options '{}'   # 六种 mode 的参数说明
+qhkit image-batch generate '{"mode":"批量生图","prompts":["白底图","户外场景图"],"uploadedImages":["./素材/商品图.jpg"]}'
+qhkit image-batch generate '{"mode":"批量改图","prompt":"统一换成纯白背景","uploadedImages":["./a.jpg","./b.jpg"]}'
+qhkit image-batch generate '{"mode":"批量替换","referenceImages":["./场景1.jpg","./场景2.jpg"],"productImage":"./产品.jpg","productName":"保温杯"}'
+qhkit image-batch generate '{"mode":"主图复刻","referenceImages":["./爆款主图.jpg"],"productImages":["./我的产品.jpg"]}'
+qhkit image-batch generate '{"mode":"姿势套图","uploadedImages":["./连衣裙.jpg"],"poseActions":["双手叉腰正面站立","侧身回眸"]}'
+qhkit image-batch generate '{"mode":"批量译图","prompt":"翻译成英语","uploadedImages":["./中文主图.jpg"]}'
+qhkit image-batch estimate '{"mode":"姿势套图","uploadedImages":["./连衣裙.jpg"],"poseActions":["正面","侧面"]}'   # 报价（姿势套图每张 +0.5 积分）
+```
+
+- 批量生图/改图/替换/姿势套图可传 `modelLabel`（自定义生图四模型，缺省智慧模型）与 `sizePreset`/`quality`；主图复刻与批量译图的模型固定。
+- 批量替换的 `referenceImages` 元素可写 `{"url":"...","replaceText":"替换到图中的花瓶位置"}` 指定替换部位；主图复刻同理可带 `hint`（自定义复刻要求），或整体传 `"removeText":true` 去除参考图文字。
+- 批量译图按张计费；姿势套图不走免费额度。
 
 ### video — AI 生视频（modelLabel 用「模型名 + 时长秒」）
 
@@ -175,9 +224,10 @@ qhkit video estimate '{"modelLabel":"Seedance2.0 15秒","uploadedVideo":"./素�
 - 积分不够或用户在意成本时，按上表成本档位从低到高推荐；最终告知用户的消耗数字用 `estimate` 拿。
 
 - **参考图规则按模型走**（`options` 的 `models` 里逐条给出）：`multi_reference` 多张、每张可带 `imageUsage` 用途文案；`first_frame` 只收 1 张首帧；`first_last_frame` 收 2 张（**首帧在前、尾帧在后**），这两种模式不接受用途文案。只有 `referenceImageRequired: true` 的模型（品牌质感大片）强制要图，其余可纯文字生成。
-- **参考视频**（`uploadedVideo`）只有 `supportsReferenceVideo: true` 的模型支持（Seedance2.0 15秒 / 全能电商2.0 15秒 / 可灵3.0 Omni 10秒）。
+- **参考视频**（`uploadedVideo`）只有 `supportsReferenceVideo: true` 的模型支持（Seedance2.0 15秒 / 全能电商2.0 15秒 / 可灵3.0 Omni 10秒）；**可传数组**（多参考视频），数量上限按线上模型规则自动校验。
+- **参考音频**（`uploadedAudio`，如 BGM/口播干音）只有 `supportsReferenceAudio: true` 的模型支持，本地文件 ≤50MB 自动上传。
 - `orientationLabel` 逐模型不同：都支持 `竖屏 9:16`（默认）/ `横屏 16:9`，部分另支持 `方屏 1:1` / `3:4` / `4:3`。
-- `languageLabel` 可选（如 `英语`），不传由服务端按提示词决定；`count` 1–8。
+- `languageLabel` 可选（如 `英语`，17 种语言与生图一致），不传由服务端按提示词决定；`count` 1–8。
 
 > 上面两张选型表是内置快照，分工记清楚：**多模型间权衡选型 → `options` 的 `models`**（线上目录：卖点、免费额度、`maintenance:true` 维护拦截、`notice` 如「即将下线」）；**确定参数后向用户报积分 → `estimate`**（与提交走同一个计价接口，折扣、画质、张数、参考视频加价、免费额度全都算进去，返回值就是实扣值）。`options` 里的 `credits` 是目录单价，可能与实扣有出入，不要拿它报价。
 

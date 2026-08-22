@@ -17,17 +17,24 @@ metadata: {"openclaw":{"emoji":"🔁","requires":{"bins":["qhkit"]},"install":[{
 
 ## 使用配方
 
+走官方「主图复刻」通道（`image-batch`，独立 SKU `IMAGE_SET_REPLICATION`，与 LinkPix 工作台主图复刻卡片同链路）：参考图只用于 AI 分析风格版式，出图只用你的产品图，天然不会把参考图里的商品或品牌元素带出来。
+
 ```bash
-qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./爆款参考图.jpg","./我的商品图.jpg"],"prompt":"分析图1的构图版式、配色方案、光影氛围与视觉风格，将图2的商品按照相同的风格重新生成一张主图；只借鉴风格与版式，不要出现图1中的商品、品牌名、logo 或水印"}'
+# 参考图（1–10 张，每张出一张）+ 我的产品图（1–6 张）
+qhkit image-batch generate '{"mode":"主图复刻","referenceImages":["./爆款参考图.jpg"],"productImages":["./我的商品图.jpg"]}'
+# 逐张指定复刻要求：元素写成 {url, hint}
+qhkit image-batch generate '{"mode":"主图复刻","referenceImages":[{"url":"./爆款参考图.jpg","hint":"只借鉴构图与配色，文案换成「买一送一」"}],"productImages":["./我的商品图.jpg"]}'
+# 去掉参考图上的文字
+qhkit image-batch generate '{"mode":"主图复刻","referenceImages":["./爆款参考图.jpg"],"productImages":["./我的商品图.jpg"],"removeText":true}'
+# 报价（同参数换 estimate）
+qhkit image-batch estimate '{"mode":"主图复刻","referenceImages":["./爆款参考图.jpg"],"productImages":["./我的商品图.jpg"]}'
 ```
 
-- 关键约束「不要出现图1中的商品/品牌名/logo/水印」必须保留——只复刻风格，不抄袭品牌元素。
-- 参考图里有文案版式时，让用户提供自己的替换文案写进提示词。
-- 出多张备选：`imageCount` 2–4 张，让用户挑。
+- **出图张数 = 参考图张数**（上限 10 张），没有 `imageCount` 参数；`productImages` 1–6 张，是同一个产品的多个角度，不会按产品图数量翻倍出图。
+- **当前仅支持 1:1**，尺寸参数在这个 mode 下不生效。
+- 参考图里有文案版式时：要保留版式但换成自己的文案 → 写进该张的 `hint`；要整体去掉参考图文字 → 传 `"removeText":true`。
+- 需要多模型对比、或参考图与产品图必须放进同一条提示词描述时，才退回 `qhkit image generate` 双图 + 提示词的老写法（此时务必写明「不要出现图1中的商品、品牌名、logo 或水印」）。
 
-**模型选择**：默认 `智慧模型`（效果好、有免费额度，LinkPix 工作台各图片编辑功能同用此模型）；要更强真实感或更快换 `图片 5.0 Pro`；多张产出之间要细节一致用 `图片 5.0 Lite`；用户明确要最好效果且不赶时间用 `专图模式`。
-**尺寸**：`sizePreset` 逐模型独立，先查再传：`qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`；`imageCount` 可选 1/2/4/6/8/10。
-**提示词**：官方模板中的 `【】` 表示需填入/替换的内容，生成时保留【】并把实际内容写在里面即可；可在模板后追加细节要求。
 **注意**：这是生成式重绘，不是像素级修图——主体细节可能有轻微差异，出图后应引导用户核对关键细节（文字、logo、商品结构）。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）
@@ -51,10 +58,15 @@ qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./爆款�
    ```
 
    macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
-4. **密钥**：OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时自动复用、零配置。其他机器执行 `qhkit config set --token <密钥> --env prod`（密钥让用户从 https://www.iqinghu.com/workbench/dashboard/api-keys 获取），或设环境变量 `QHKIT_TOKEN`。
+4. **密钥**：OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时自动复用、零配置。其他机器无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
+   > 1. 打开 https://www.iqinghu.com 注册/登录
+   > 2. 进入控制台 → 工作台的 APIKeys 页面：https://www.iqinghu.com/workbench/dashboard/api-keys
+   > 3. 点「创建/复制」生成密钥，生成后将 API 密钥发我
+   >
+   > 图文获取密钥教程：https://xcnzsfe4uxrw.feishu.cn/wiki/KJ0Ywsyw8iAXmRkz5l4cddDbn6g
 5. **自检**：`qhkit config show` 输出脱敏配置即全部就绪。
 
-**升级**：出现以下任一信号，先升级再重试原命令——命令返回 `{"ok":false,"stage":"version",...}`（版本门禁，message 里就是升级命令，照做即可）；stderr 提示有新版本；`options` 返回 `catalogNotice` 且用户恰好要用那个新模型；报「模式在线上已下架或配置变更，请升级 qhkit」。
+**升级**：出现以下任一信号，先升级再重试原命令——命令返回 `{"ok":false,"stage":"version",...}`（版本门禁，message 里就是升级命令，照做即可）；命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：…"}`（本机 qhkit 太老、还没有这个命令——注意它 `stage` 是 `runtime` 不是 `version`，走不到版本门禁，别当成用法错误）；stderr 提示有新版本；`options` 返回 `catalogNotice` 且用户恰好要用那个新模型；报「模式在线上已下架或配置变更，请升级 qhkit」。
 
 ```bash
 npm i -g @iqinghu/qhkit@latest --registry=https://registry.npmmirror.com
@@ -67,14 +79,16 @@ npm i -g @iqinghu/qhkit@latest --registry=https://registry.npmmirror.com
 - 形式：`qhkit <命令> <action> '<json>'`，或 `qhkit <命令> <action> @params.json`（参数写进文件，避免 shell 转义问题，推荐）。
 - stdout 恒为一行 JSON；失败为 `{"ok":false,"stage":"...","message":"..."}` 且退出码 1，把 message 原样转告用户。stderr 可能出现提示行，不是错误。
 - 图片/视频参数直接填本地文件路径（CLI 自动上传换取 URL），素材已在公网时填 http(s) URL 也可。
+- **图片体积上限 10MB**：3–10MB 的本地图 CLI 上传后自动追加 COS 缩略参数（2048px 内等比缩小、只缩不放），stderr 那行提示**不是错误**；外站大图 URL 建议先下载到本地再以路径传入，好让 CLI 走这条防线。
+- **超过 10MB 被拦下时不要把问题抛回用户，你（智能体）就地压缩后重试**（2048px 内等比缩小、只缩不放、输出 jpg，压完把新文件路径传回原命令重试一次）：优先 Python —— `python -c "from PIL import Image, ImageOps; im=ImageOps.exif_transpose(Image.open('原图')); im.thumbnail((2048,2048)); im.convert('RGB').save('压缩后.jpg', quality=85)"`（缺 Pillow 先 `pip install pillow -i https://pypi.tuna.tsinghua.edu.cn/simple`）；没有 Python 就用 Node —— `npx --yes --registry=https://registry.npmmirror.com sharp-cli -i 原图 -o 压缩后.jpg resize 2048`。两条都失败才请用户换 10MB 以内的图，不要反复重试。
 - 标签类参数（`modelLabel`、`sizePreset`、`themeLabel` 等）必须与 `options` 返回的候选值逐字一致，不要自造或翻译；拿不准先调 `options`。
 
 ## 报价、轮询与交付
 
 - **提交前确认（硬规则）**：`generate` 会创建任务、消耗积分，发起前必须把本次提交的关键参数一次性列给用户——模型/模板、出图张数或视频时长、尺寸与画质、语言、用到哪几张参考图，以及 `estimate` 报出的预计扣除积分（不支持 estimate 的命令如实说「以实际扣费为准」）——**等用户明确同意后才能执行提交**。参数全部来自用户原话时也要复述确认一遍（口头描述与实际枚举值可能有出入，任务提交后不可取消）。只读 action（`options` / `estimate` / `status` / `templates` 等）无需确认。
-- **报价**：要把积分数字报给用户时，先跑 `qhkit image estimate '<与 generate 完全相同的参数>'`，报它返回的 `credits`（实扣值，秒回、无副作用）；`enough:false` 时提前告知余额不足。不要引用文档快照报价。
-- **轮询**：`image generate` 自带轮询，阻塞到出图（最长约 14 分钟），返回里直接有图片 URL，不需要再查 status。
-- **交付**：产物 URL 在返回的 `images` 字段里，按当前环境的媒体交付约定发给用户；产物必须和「生成完成」写在同一轮回复，并附返回里的实扣 `credits`（「本次实际消耗 X 积分」）。
+- **报价**：要把积分数字报给用户时，先跑 `qhkit image-batch estimate '<与 generate 完全相同的参数>'`，报它返回的 `credits`（实扣值，秒回、无副作用）；`enough:false` 时提前告知余额不足。不要引用文档快照报价。
+- **轮询**：`image-batch generate` 自带轮询，阻塞到批次内全部子任务出终态（最长约 14 分钟），返回里直接有图片 URL，不需要再查 status；只有事后补查才用 `qhkit image-batch status '{"batchTaskId":"batch-..."}'`。
+- **交付**：产物 URL 在返回的 `images` 字段里，按当前环境的媒体交付约定发给用户；产物必须和「生成完成」写在同一轮回复，并附返回里的实扣 `credits`（「本次实际消耗 X 积分」）。**批量任务允许单张失败**（失败的那张自动退款），出图张数少于提交张数时要如实说清是哪几张没出来。
 - **失败**：转述 CLI 的 message（已是面向用户的中文，常见：积分不足、内容审核未通过），不要重试轰炸。
 
 ## 能力边界

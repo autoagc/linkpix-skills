@@ -26,7 +26,7 @@ ffmpeg -i "输入视频.mp4" -vn -acodec libmp3lame -q:a 2 输出音频.mp3
 ffmpeg -i "输入视频.mp4" -vn -acodec pcm_s16le 输出音频.wav
 ```
 
-只有抖音等平台**分享链接**（不是直链）时，先用 qhkit 解析。缺 qhkit（npm 包 `@iqinghu/qhkit`，需 Node ≥ 18）就地安装：`npm i -g @iqinghu/qhkit --registry=https://registry.npmmirror.com`；OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时零配置，其他机器 `qhkit config set --token <密钥> --env prod`（密钥从 https://www.iqinghu.com/workbench/dashboard/api-keys 获取）：
+只有抖音等平台**分享链接**（不是直链）时，先用 qhkit 解析。缺 qhkit（npm 包 `@iqinghu/qhkit`，需 Node ≥ 18）就地安装：`npm i -g @iqinghu/qhkit --registry=https://registry.npmmirror.com`；OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时零配置，其他机器 `qhkit config set --token <密钥> --env prod`（让用户在 https://www.iqinghu.com 注册/登录后，到工作台 APIKeys 页 https://www.iqinghu.com/workbench/dashboard/api-keys 创建密钥发给你；图文教程 https://xcnzsfe4uxrw.feishu.cn/wiki/KJ0Ywsyw8iAXmRkz5l4cddDbn6g）：
 
 ```bash
 qhkit video-inspire generate '{"resourceUrl":"https://v.douyin.com/xxxx/"}'

@@ -30,8 +30,9 @@ qhkit video estimate '{"modelLabel":"全能电商2.0 15秒","uploadedImages":[".
 ```
 
 - 选型：默认 `全能电商2.0 15秒`；要最好/点名 Seedance → `Seedance2.0 15秒`（50）；预算敏感 → `全能电商2.0 10秒`（18）或 `电商热卖引擎 10秒`（8）。
-- 参考视频（模仿运镜）只有 `Seedance2.0 15秒`/`全能电商2.0 15秒`/`可灵3.0 Omni 10秒` 支持。
-- 提示词写商品名+核心卖点即可（这些模型提示词要求低），投放语言用 `languageLabel`（如 `英语`）。
+- 参考视频（模仿运镜）只有 `Seedance2.0 15秒`/`全能电商2.0 15秒`/`可灵3.0 Omni 10秒` 支持；**`uploadedVideo` 可传数组**（多参考视频，数量上限按线上模型规则自动校验，Seedance2.0 15秒 / 全能电商2.0 15秒 最多 3 个）。
+- **参考音频**（`uploadedAudio`，BGM 或口播干音）只有 `options` 的 `models` 里 `supportsReferenceAudio: true` 的模型支持，本地文件 ≤50MB 自动上传；不确定就先 `qhkit video options '{"queryParams":["models"]}'` 查。
+- 提示词写商品名+核心卖点即可（这些模型提示词要求低），投放语言用 `languageLabel`（如 `英语`），共 17 种（简体中文/繁体中文/英语/西班牙语/法语/德语/日语/韩语/越南语/葡萄牙语/意大利语/阿拉伯语/俄语/泰语/马来语/印尼语/菲律宾语）。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）
 
@@ -54,10 +55,15 @@ qhkit video estimate '{"modelLabel":"全能电商2.0 15秒","uploadedImages":[".
    ```
 
    macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
-4. **密钥**：OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时自动复用、零配置。其他机器执行 `qhkit config set --token <密钥> --env prod`（密钥让用户从 https://www.iqinghu.com/workbench/dashboard/api-keys 获取），或设环境变量 `QHKIT_TOKEN`。
+4. **密钥**：OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时自动复用、零配置。其他机器无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
+   > 1. 打开 https://www.iqinghu.com 注册/登录
+   > 2. 进入控制台 → 工作台的 APIKeys 页面：https://www.iqinghu.com/workbench/dashboard/api-keys
+   > 3. 点「创建/复制」生成密钥，生成后将 API 密钥发我
+   >
+   > 图文获取密钥教程：https://xcnzsfe4uxrw.feishu.cn/wiki/KJ0Ywsyw8iAXmRkz5l4cddDbn6g
 5. **自检**：`qhkit config show` 输出脱敏配置即全部就绪。
 
-**升级**：出现以下任一信号，先升级再重试原命令——命令返回 `{"ok":false,"stage":"version",...}`（版本门禁，message 里就是升级命令，照做即可）；stderr 提示有新版本；`options` 返回 `catalogNotice` 且用户恰好要用那个新模型；报「模式在线上已下架或配置变更，请升级 qhkit」。
+**升级**：出现以下任一信号，先升级再重试原命令——命令返回 `{"ok":false,"stage":"version",...}`（版本门禁，message 里就是升级命令，照做即可）；命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：…"}`（本机 qhkit 太老、还没有这个命令——注意它 `stage` 是 `runtime` 不是 `version`，走不到版本门禁，别当成用法错误）；stderr 提示有新版本；`options` 返回 `catalogNotice` 且用户恰好要用那个新模型；报「模式在线上已下架或配置变更，请升级 qhkit」。
 
 ```bash
 npm i -g @iqinghu/qhkit@latest --registry=https://registry.npmmirror.com
@@ -70,6 +76,8 @@ npm i -g @iqinghu/qhkit@latest --registry=https://registry.npmmirror.com
 - 形式：`qhkit <命令> <action> '<json>'`，或 `qhkit <命令> <action> @params.json`（参数写进文件，避免 shell 转义问题，推荐）。
 - stdout 恒为一行 JSON；失败为 `{"ok":false,"stage":"...","message":"..."}` 且退出码 1，把 message 原样转告用户。stderr 可能出现提示行，不是错误。
 - 图片/视频参数直接填本地文件路径（CLI 自动上传换取 URL），素材已在公网时填 http(s) URL 也可。
+- **图片体积上限 10MB**：3–10MB 的本地图 CLI 上传后自动追加 COS 缩略参数（2048px 内等比缩小、只缩不放），stderr 那行提示**不是错误**；外站大图 URL 建议先下载到本地再以路径传入，好让 CLI 走这条防线。
+- **超过 10MB 被拦下时不要把问题抛回用户，你（智能体）就地压缩后重试**（2048px 内等比缩小、只缩不放、输出 jpg，压完把新文件路径传回原命令重试一次）：优先 Python —— `python -c "from PIL import Image, ImageOps; im=ImageOps.exif_transpose(Image.open('原图')); im.thumbnail((2048,2048)); im.convert('RGB').save('压缩后.jpg', quality=85)"`（缺 Pillow 先 `pip install pillow -i https://pypi.tuna.tsinghua.edu.cn/simple`）；没有 Python 就用 Node —— `npx --yes --registry=https://registry.npmmirror.com sharp-cli -i 原图 -o 压缩后.jpg resize 2048`。两条都失败才请用户换 10MB 以内的图，不要反复重试。
 - 标签类参数（`modelLabel`、`sizePreset`、`themeLabel` 等）必须与 `options` 返回的候选值逐字一致，不要自造或翻译；拿不准先调 `options`。
 
 ## 报价、轮询与交付
