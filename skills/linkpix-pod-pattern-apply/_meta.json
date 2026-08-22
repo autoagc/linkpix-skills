@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-pod-pattern-apply",
   "displayName": "电商pod印花智能贴合工具 | LinkPix",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "desc": "自动将印花精准贴合到服装、帽子、杯子等商品，快速生成真实展示效果图。",
   "publishedAt": 1786492800000
 }

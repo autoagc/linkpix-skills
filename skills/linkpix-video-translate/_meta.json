@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-video-translate",
   "displayName": "AI视频翻译 | LinkPix",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "desc": "自动识别视频语音并翻译为多国语言，支持AI配音，帮助视频快速面向全球市场。",
   "publishedAt": 1786492800000
 }

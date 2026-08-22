@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-shortvideo-data-engine",
   "displayName": "短视频数据引擎 | 青虎AI",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "desc": "自动抓取抖音、小红书、B 站视频每日数据，实现短视频数据自动统计，覆盖视频播放、点赞、分享、收藏、评论全维度相关数据，支持定时更新并导出 Excel，全面替代手动统计，高效监测自有及竞品带货视频热度转化表现",
   "publishedAt": 1787011200000
 }

@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-main-image-set",
   "displayName": "AI生成电商主图轮播图、主图套图 | LinkPix",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "desc": "智能识别商品主体，根据产品图一键快速生成不同图片类型，不同电商平台风格的主图+轮播图。无需写提示词，即刻完成专业级商品图片制作。",
   "publishedAt": 1786492800000
 }

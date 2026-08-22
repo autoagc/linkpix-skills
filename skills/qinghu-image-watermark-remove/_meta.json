@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-image-watermark-remove",
   "displayName": "图片去水印 | 青虎AI",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "desc": "极速版AI图片去水印工具，自动清除满屏和局部图片Logo、文字、图形水印，智能还原背景纹理，运行成功率100%，适配电商素材、自媒体配图处理",
   "publishedAt": 1787011200000
 }

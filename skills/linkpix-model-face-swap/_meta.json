@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-model-face-swap",
   "displayName": "AI电商模特换脸工具 | LinkPix",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "desc": "在保持服装、姿势不变的前提下，一键替换模特形象，支持不同国家、肤色及年龄，满足跨境电商本地化展示需求。",
   "publishedAt": 1786492800000
 }

@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-model-outfit-restore",
   "displayName": "模特换装高一致性还原 | 青虎AI",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "desc": "上传模特图与衣物图，一键完成精准换装。保持人物姿态、光影高度一致，细节还原到位，适配电商穿搭快速出图",
   "publishedAt": 1787011200000
 }

@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-sales-video",
   "displayName": "AI电商带货视频生成器 | LinkPix",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "desc": "上传商品素材即可自动生成带货短视频，支持AI脚本、配音、字幕及转场，适用于TikTok、抖音等平台。",
   "publishedAt": 1786492800000
 }
