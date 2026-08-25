@@ -19,16 +19,16 @@ LinkPix 电商图像生成的总入口：一条 `qhkit image` 命令覆盖主图
 
 ## 使用配方
 
-`modelLabel` 六选一决定模式：
+`modelLabel` 决定模式：两个固定产品模式（`套图模式` / `电商详情图`，专属流程）+ 自定义生图家族（实时清单，线上新增/下架自动跟随）。
 
-| modelLabel | 什么时候选 | 必要输入 |
+| modelLabel（**必填、无默认**；下表是 2026-08-25 时点参考，实际以 `qhkit image options '{"queryParams":["modelLabel","models"]}'` 返回为准） | 什么时候选 | 必要输入 |
 |---|---|---|
 | `套图模式` | 一张商品图出一组风格统一的主图+轮播图 | 参考图或 `customCopy` 至少一个 |
 | `电商详情图` | 详情页长图（多张短图拼接） | 参考图必填 + `themeLabel` |
-| `智慧模型` | 自定义生图默认首选，效果好、有免费额度 | `prompt`（可选参考图） |
+| `智慧模型` | 自定义生图家族：效果好、有免费额度 | `prompt`（可选参考图） |
 | `图片 5.0 Pro` | 要真实感、要快 | `prompt`（可选参考图） |
 | `图片 5.0 Lite` | 多张之间细节一致 | `prompt`（可选参考图） |
-| `专图模式` | 最好效果、不赶时间 | `prompt`（可选参考图） |
+| `专图模型` | 最好效果、不赶时间（历史写法 `专图模式` 仍作别名可用） | `prompt`（可选参考图） |
 
 ```bash
 # 套图：参考图 + 可选文案 + 发布平台（imageCount 1/6/7/8/9/10，**缺省 9**）
@@ -52,7 +52,7 @@ qhkit image options '{"queryParams":["platform","sizePreset","imageCount"],"mode
 - **套图的发布平台用独立的 `platform` 参数**（淘宝 / 抖音 / 拼多多 / 1688 / 京东 / Amazon / Shopee / TikTok Shop / Lazada / Temu / Ozon / Wildberries / SHEIN，`options` 查 `platform` 看全量）：它决定套图提示词的平台适配策略，用户提到目标平台就传上；`sizePreset` 只管出图尺寸。
 - **一次要处理多张图或多条提示词时改走 `image-batch`**（六种官方批量玩法：批量生图 / 批量改图 / 批量替换 / 主图复刻 / 姿势套图 / 批量译图，单批 ≤10）——`image generate` 一次只处理一组入参，不要写循环逐张调。
 
-> ⚠️ **全部 6 个模式都接受参考图**（自定义生图四模型为可选，是图生图语义）。用户给了商品图就传进 `uploadedImages`，不要只把图的内容转写成 prompt 文字（会丢原图细节），更不要说"某模式不支持参考图"。
+> ⚠️ **全部 6 个模式都接受参考图**（自定义生图家族为可选，是图生图语义）。用户给了商品图就传进 `uploadedImages`，不要只把图的内容转写成 prompt 文字（会丢原图细节），更不要说"某模式不支持参考图"。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）
 
@@ -62,20 +62,22 @@ qhkit image options '{"queryParams":["platform","sizePreset","imageCount"],"mode
 2. **没有 qhkit 但有 node/npm**（OpenClaw/Hermes 机器部署流程保证自带 Node 22+）→ 全局安装（推荐）：
 
    ```bash
-   npm i -g @iqinghu/qhkit --registry=https://registry.npmmirror.com
+   npm i -g @iqinghu/qhkit
    ```
 
-   仅当全局安装因权限失败且无法提权时，才退而用 `npx @iqinghu/qhkit <命令> ...`（npx 必须写包全名）。
+   默认走 npm 官方源；官方源访问慢或超时（国内网络常见）时，再加镜像参数 `--registry=https://registry.npmmirror.com`（阿里维护的 npm 官方镜像，仅作网络兜底）。仅当全局安装因权限失败且无法提权时，才退而用 `npx @iqinghu/qhkit <命令> ...`（npx 必须写包全名）。
 3. **连 node 都没有**（要求 Node ≥ 18）：先装 Node 再回到第 2 步。
 
    ```bash
-   # Linux 二进制安装（无需 root 包管理器）：
-   curl -fsSL https://registry.npmmirror.com/-/binary/node/v22.22.3/node-v22.22.3-linux-x64.tar.xz | tar -xJ -C /usr/local/lib/
-   export PATH="/usr/local/lib/node-v22.22.3-linux-x64/bin:$PATH"
+   # Linux 二进制安装（装到用户目录，无需 root；先校验官方 SHA256 再解包）：
+   cd /tmp && curl -fsSLO https://nodejs.org/dist/v22.22.3/node-v22.22.3-linux-x64.tar.xz
+   cd /tmp && curl -fsSL https://nodejs.org/dist/v22.22.3/SHASUMS256.txt | grep ' node-v22.22.3-linux-x64.tar.xz$' | sha256sum -c -
+   mkdir -p "$HOME/.local/lib" && tar -xJf /tmp/node-v22.22.3-linux-x64.tar.xz -C "$HOME/.local/lib"
+   export PATH="$HOME/.local/lib/node-v22.22.3-linux-x64/bin:$PATH"
    ```
 
-   macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
-4. **密钥**：OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时自动复用、零配置。其他机器无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
+   校验行输出 `OK` 才继续；校验失败就删掉重下，**绝不解包未通过校验的文件**。nodejs.org 访问不通时，把两个下载 URL 的前缀 `https://nodejs.org/dist` 整体换成镜像 `https://registry.npmmirror.com/-/binary/node`（目录结构相同，SHASUMS256.txt 也有镜像，校验步骤不变）。`export PATH` 只对当前 shell 生效，跨命令调用时每个新 shell 都要先执行这行（或追加进 `~/.bashrc`）。macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
+4. **密钥**：无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
    > 1. 打开 https://www.iqinghu.com 注册/登录
    > 2. 进入控制台 → 工作台的 APIKeys 页面：https://www.iqinghu.com/workbench/dashboard/api-keys
    > 3. 点「创建/复制」生成密钥，生成后将 API 密钥发我
@@ -83,11 +85,13 @@ qhkit image options '{"queryParams":["platform","sizePreset","imageCount"],"mode
    > 图文获取密钥教程：https://xcnzsfe4uxrw.feishu.cn/wiki/KJ0Ywsyw8iAXmRkz5l4cddDbn6g
 5. **自检**：`qhkit config show` 输出脱敏配置即全部就绪。
 
-**升级**：出现以下任一信号，先升级再重试原命令——命令返回 `{"ok":false,"stage":"version",...}`（版本门禁，message 里就是升级命令，照做即可）；命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：…"}`（本机 qhkit 太老、还没有这个命令——注意它 `stage` 是 `runtime` 不是 `version`，走不到版本门禁，别当成用法错误）；stderr 提示有新版本；`options` 返回 `catalogNotice` 且用户恰好要用那个新模型；报「模式在线上已下架或配置变更，请升级 qhkit」。
+**升级**：出现以下任一信号，先升级再重试原命令——命令返回 `{"ok":false,"stage":"version",...}`（版本门禁，message 里就是升级命令，照做即可）；命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：…"}`（本机 qhkit 太老、还没有这个命令——注意它 `stage` 是 `runtime` 不是 `version`，走不到版本门禁，别当成用法错误）；stderr 提示有新版本；报「模式在线上已下架或配置变更，请升级 qhkit」。（`image`/`video` 的模型清单 0.12.0 起实时读取，线上新增模型不需要升级 CLI。）
 
 ```bash
-npm i -g @iqinghu/qhkit@latest --registry=https://registry.npmmirror.com
+npm i -g @iqinghu/qhkit@latest
 ```
+
+官方源慢或超时时同样加 `--registry=https://registry.npmmirror.com`。
 
 安装/配置失败时把具体报错告诉用户（常见：无写权限 → 提示用户提权或改用 npx；无网络 → 让用户处理网络）。
 
@@ -97,8 +101,9 @@ npm i -g @iqinghu/qhkit@latest --registry=https://registry.npmmirror.com
 - stdout 恒为一行 JSON；失败为 `{"ok":false,"stage":"...","message":"..."}` 且退出码 1，把 message 原样转告用户。stderr 可能出现提示行，不是错误。
 - 图片/视频参数直接填本地文件路径（CLI 自动上传换取 URL），素材已在公网时填 http(s) URL 也可。
 - **图片体积上限 10MB**：3–10MB 的本地图 CLI 上传后自动追加 COS 缩略参数（2048px 内等比缩小、只缩不放），stderr 那行提示**不是错误**；外站大图 URL 建议先下载到本地再以路径传入，好让 CLI 走这条防线。
-- **超过 10MB 被拦下时不要把问题抛回用户，你（智能体）就地压缩后重试**（2048px 内等比缩小、只缩不放、输出 jpg，压完把新文件路径传回原命令重试一次）：优先 Python —— `python -c "from PIL import Image, ImageOps; im=ImageOps.exif_transpose(Image.open('原图')); im.thumbnail((2048,2048)); im.convert('RGB').save('压缩后.jpg', quality=85)"`（缺 Pillow 先 `pip install pillow -i https://pypi.tuna.tsinghua.edu.cn/simple`）；没有 Python 就用 Node —— `npx --yes --registry=https://registry.npmmirror.com sharp-cli -i 原图 -o 压缩后.jpg resize 2048`。两条都失败才请用户换 10MB 以内的图，不要反复重试。
+- **超过 10MB 被拦下时不要把问题抛回用户，你（智能体）就地压缩后重试**（2048px 内等比缩小、只缩不放、输出 jpg，压完把新文件路径传回原命令重试一次）：优先 Python —— `python -c "from PIL import Image, ImageOps; im=ImageOps.exif_transpose(Image.open('原图')); im.thumbnail((2048,2048)); im.convert('RGB').save('压缩后.jpg', quality=85)"`（缺 Pillow 先 `pip install pillow -i https://pypi.tuna.tsinghua.edu.cn/simple`）；没有 Python 就用 Node —— `npx --yes sharp-cli -i 原图 -o 压缩后.jpg resize 2048`（官方源慢时加 `--registry=https://registry.npmmirror.com`）。两条都失败才请用户换 10MB 以内的图，不要反复重试。
 - 标签类参数（`modelLabel`、`sizePreset`、`themeLabel` 等）必须与 `options` 返回的候选值逐字一致，不要自造或翻译；拿不准先调 `options`。
+- **`image` / `video` 的模型清单是实时的**（0.12.0 起直接读线上目录，新增/下架/调价自动跟随，无需升级 CLI），且**均无默认模型**——`modelLabel` 必填，缺失会报错并列出当前可选项。当次会话第一次选模型前先跑 `options` 查 `modelLabel`/`models` 拿当前清单，不要凭记忆或本文档的快照直接报模型名。拉不到目录（断网/密钥问题）时命令会明确报错，按提示引导用户检查配置。
 
 ## 报价、轮询与交付
 

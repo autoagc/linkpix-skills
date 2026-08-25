@@ -32,23 +32,14 @@ qhkit video options '{"queryParams":["modelLabel","models"]}'
 qhkit video estimate '{"modelLabel":"全能电商2.0 15秒","uploadedImages":["./商品图.jpg"]}'
 ```
 
-**模型速查**（积分是成本档位，只用于横向比较；报给用户以 `estimate` 为准；可用性以 `options` 的 `models` 为准，`maintenance:true` 表示维护中）：
+**模型清单实时读取线上目录**（0.12.0 起）：新增/下架/调价/维护自动跟随，**没有默认模型**——`modelLabel` 必填，不传会报错并列出当前可选项（带 `duration` 时按时长收窄）。流程固定为：先 `options` 查 `models` 拿当前清单与能力规则 → `estimate` 报价 → 用户确认 → `generate`。上面命令里的模型名只是示例，不要照抄当默认值。
 
-| modelLabel | 定位 | 特点 | 参考视频 | 档位 |
-|---|---|---|---|---|
-| `全能电商2.0 15秒` | 带货视频·默认首选 | 效果好、提示词要求低 | ✅ 最多3 | 30 |
-| `全能电商2.0 10秒` | 带货视频·最省 | 同上 | ❌ | 18 |
-| `Seedance2.0 15秒` | 带货视频·效果最好 | 智能规划镜头组 | ✅ 最多3 | 50 |
-| `Happy Horse 1.1 15秒` | 营销素材 | 音视频一体、画面稳定 | ❌ | 30 |
-| `可灵3.0 Omni 15秒` | 营销素材 | 角色统一、原生音画 | ❌ | 50 |
-| `可灵3.0 Omni 10秒` | 营销素材 | 同上 10 秒版 | ✅ 最多1 | 40 |
-| `品牌质感大片 15秒` | 主图视频·电影级 | 参考图必填、提示词要精准 | ❌ | 10 |
-| `品牌质感大片 5秒` | 主图视频·试水 | 有免费额度、参考图必填（首帧+尾帧） | ❌ | 2 |
-| `电商热卖引擎 10秒` | 爆款直出·最省 | 营销逻辑重构镜头 | ❌ | 8 |
+**时点参考**（2026-08-25 国内版目录，仅帮你建立感觉，**以 `options` 实时返回为准**）：19 个模型、时长 5–30 秒。当时的亮点：`阿里wanx3.0 15秒`（25 积分限时5折，参考视频≤5）、`Seedance2.5 15/20/30秒`（种草/营销广告档，**参考图必填**，参考视频≤10，15秒档还收参考音频≤3）、`MiniMax H3 5/10/15秒`（5–10 积分性价比档，768p，新增 `超宽屏 21:9` 画幅，不收参考视频）、`Seedance2.0 15秒`/`全能电商2.0`（经典带货档）、`Happy Horse 1.1 15秒`/`可灵3.0 Omni`（营销素材档，角色统一、原生音画）、`品牌质感大片 5秒`（免费额度内，参考图必填，提示词要求「精准」）、`电商热卖引擎 10秒`（最省的爆款直出档）。
 
-- 「提示词要求精准」的模型（品牌质感大片）给一句话会出废片——先帮用户把镜头、光影、材质补充完整再提交。
-- `orientationLabel`：`竖屏 9:16`（默认）/`横屏 16:9`，部分模型另有方屏；`languageLabel` 可选（共 17 种（简体中文/繁体中文/英语/西班牙语/法语/德语/日语/韩语/越南语/葡萄牙语/意大利语/阿拉伯语/俄语/泰语/马来语/印尼语/菲律宾语）），不传由服务端按提示词判断；`count` 1–8。
-- **参考视频 `uploadedVideo` 可传数组**（多参考视频，上表「最多 N」即上限，CLI 按线上模型规则校验）；**参考音频 `uploadedAudio`**（BGM / 口播干音，本地文件 ≤50MB 自动上传）只有 `options` 的 `models` 里 `supportsReferenceAudio: true` 的模型支持——两者都拿不准就先查 `qhkit video options '{"queryParams":["models"]}'`。
+怎么选（原则，不绑定具体模型名）：按用户诉求在 `models` 里过滤——要模仿运镜 → `supportsReferenceVideo: true`（上限见 `maxReferenceVideos`）；要配 BGM/口播干音 → `supportsReferenceAudio: true`（上限见 `maxReferenceAudios`）；纯文字起步 → `referenceImageRequired: false`；在意成本 → 按 `credits` 从低到高（留意 `activityBadge` 限时折扣）。`maintenance: true` 的模型不可提交，`notice` 含「即将下线」的不要再推荐。`propertyTags` 里「提示词要求」是「精准」的模型给一句话会出废片——先帮用户把镜头、光影、材质补充完整再提交。用户没点名模型时，把 2–3 个候选（含单价）列给用户选，不要替用户拍板。
+
+- `orientationLabel` 逐模型不同（`models` 里给全）：常见 `竖屏 9:16`（默认）/`横屏 16:9`，部分另有 `方屏 1:1`/`3:4`/`4:3`，个别有 `超宽屏 21:9`，新画幅 code 会原样透传；`languageLabel` 可选（共 17 种（简体中文/繁体中文/英语/西班牙语/法语/德语/日语/韩语/越南语/葡萄牙语/意大利语/阿拉伯语/俄语/泰语/马来语/印尼语/菲律宾语）），不传由服务端按提示词判断；`count` 1–8。
+- **参考视频 `uploadedVideo` 可传数组**（多参考视频，上限见 `models` 里的 `maxReferenceVideos`，CLI 提交前校验）；**参考音频 `uploadedAudio`**（BGM / 口播干音，本地文件 ≤50MB 自动上传）只有 `options` 的 `models` 里 `supportsReferenceAudio: true` 的模型支持——两者都拿不准就先查 `qhkit video options '{"queryParams":["models"]}'`。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）
 
@@ -58,20 +49,22 @@ qhkit video estimate '{"modelLabel":"全能电商2.0 15秒","uploadedImages":[".
 2. **没有 qhkit 但有 node/npm**（OpenClaw/Hermes 机器部署流程保证自带 Node 22+）→ 全局安装（推荐）：
 
    ```bash
-   npm i -g @iqinghu/qhkit --registry=https://registry.npmmirror.com
+   npm i -g @iqinghu/qhkit
    ```
 
-   仅当全局安装因权限失败且无法提权时，才退而用 `npx @iqinghu/qhkit <命令> ...`（npx 必须写包全名）。
+   默认走 npm 官方源；官方源访问慢或超时（国内网络常见）时，再加镜像参数 `--registry=https://registry.npmmirror.com`（阿里维护的 npm 官方镜像，仅作网络兜底）。仅当全局安装因权限失败且无法提权时，才退而用 `npx @iqinghu/qhkit <命令> ...`（npx 必须写包全名）。
 3. **连 node 都没有**（要求 Node ≥ 18）：先装 Node 再回到第 2 步。
 
    ```bash
-   # Linux 二进制安装（无需 root 包管理器）：
-   curl -fsSL https://registry.npmmirror.com/-/binary/node/v22.22.3/node-v22.22.3-linux-x64.tar.xz | tar -xJ -C /usr/local/lib/
-   export PATH="/usr/local/lib/node-v22.22.3-linux-x64/bin:$PATH"
+   # Linux 二进制安装（装到用户目录，无需 root；先校验官方 SHA256 再解包）：
+   cd /tmp && curl -fsSLO https://nodejs.org/dist/v22.22.3/node-v22.22.3-linux-x64.tar.xz
+   cd /tmp && curl -fsSL https://nodejs.org/dist/v22.22.3/SHASUMS256.txt | grep ' node-v22.22.3-linux-x64.tar.xz$' | sha256sum -c -
+   mkdir -p "$HOME/.local/lib" && tar -xJf /tmp/node-v22.22.3-linux-x64.tar.xz -C "$HOME/.local/lib"
+   export PATH="$HOME/.local/lib/node-v22.22.3-linux-x64/bin:$PATH"
    ```
 
-   macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
-4. **密钥**：OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时自动复用、零配置。其他机器无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
+   校验行输出 `OK` 才继续；校验失败就删掉重下，**绝不解包未通过校验的文件**。nodejs.org 访问不通时，把两个下载 URL 的前缀 `https://nodejs.org/dist` 整体换成镜像 `https://registry.npmmirror.com/-/binary/node`（目录结构相同，SHASUMS256.txt 也有镜像，校验步骤不变）。`export PATH` 只对当前 shell 生效，跨命令调用时每个新 shell 都要先执行这行（或追加进 `~/.bashrc`）。macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
+4. **密钥**：无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
    > 1. 打开 https://www.iqinghu.com 注册/登录
    > 2. 进入控制台 → 工作台的 APIKeys 页面：https://www.iqinghu.com/workbench/dashboard/api-keys
    > 3. 点「创建/复制」生成密钥，生成后将 API 密钥发我
@@ -79,11 +72,13 @@ qhkit video estimate '{"modelLabel":"全能电商2.0 15秒","uploadedImages":[".
    > 图文获取密钥教程：https://xcnzsfe4uxrw.feishu.cn/wiki/KJ0Ywsyw8iAXmRkz5l4cddDbn6g
 5. **自检**：`qhkit config show` 输出脱敏配置即全部就绪。
 
-**升级**：出现以下任一信号，先升级再重试原命令——命令返回 `{"ok":false,"stage":"version",...}`（版本门禁，message 里就是升级命令，照做即可）；命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：…"}`（本机 qhkit 太老、还没有这个命令——注意它 `stage` 是 `runtime` 不是 `version`，走不到版本门禁，别当成用法错误）；stderr 提示有新版本；`options` 返回 `catalogNotice` 且用户恰好要用那个新模型；报「模式在线上已下架或配置变更，请升级 qhkit」。
+**升级**：出现以下任一信号，先升级再重试原命令——命令返回 `{"ok":false,"stage":"version",...}`（版本门禁，message 里就是升级命令，照做即可）；命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：…"}`（本机 qhkit 太老、还没有这个命令——注意它 `stage` 是 `runtime` 不是 `version`，走不到版本门禁，别当成用法错误）；stderr 提示有新版本；报「模式在线上已下架或配置变更，请升级 qhkit」。（`image`/`video` 的模型清单 0.12.0 起实时读取，线上新增模型不需要升级 CLI。）
 
 ```bash
-npm i -g @iqinghu/qhkit@latest --registry=https://registry.npmmirror.com
+npm i -g @iqinghu/qhkit@latest
 ```
+
+官方源慢或超时时同样加 `--registry=https://registry.npmmirror.com`。
 
 安装/配置失败时把具体报错告诉用户（常见：无写权限 → 提示用户提权或改用 npx；无网络 → 让用户处理网络）。
 
@@ -93,8 +88,9 @@ npm i -g @iqinghu/qhkit@latest --registry=https://registry.npmmirror.com
 - stdout 恒为一行 JSON；失败为 `{"ok":false,"stage":"...","message":"..."}` 且退出码 1，把 message 原样转告用户。stderr 可能出现提示行，不是错误。
 - 图片/视频参数直接填本地文件路径（CLI 自动上传换取 URL），素材已在公网时填 http(s) URL 也可。
 - **图片体积上限 10MB**：3–10MB 的本地图 CLI 上传后自动追加 COS 缩略参数（2048px 内等比缩小、只缩不放），stderr 那行提示**不是错误**；外站大图 URL 建议先下载到本地再以路径传入，好让 CLI 走这条防线。
-- **超过 10MB 被拦下时不要把问题抛回用户，你（智能体）就地压缩后重试**（2048px 内等比缩小、只缩不放、输出 jpg，压完把新文件路径传回原命令重试一次）：优先 Python —— `python -c "from PIL import Image, ImageOps; im=ImageOps.exif_transpose(Image.open('原图')); im.thumbnail((2048,2048)); im.convert('RGB').save('压缩后.jpg', quality=85)"`（缺 Pillow 先 `pip install pillow -i https://pypi.tuna.tsinghua.edu.cn/simple`）；没有 Python 就用 Node —— `npx --yes --registry=https://registry.npmmirror.com sharp-cli -i 原图 -o 压缩后.jpg resize 2048`。两条都失败才请用户换 10MB 以内的图，不要反复重试。
+- **超过 10MB 被拦下时不要把问题抛回用户，你（智能体）就地压缩后重试**（2048px 内等比缩小、只缩不放、输出 jpg，压完把新文件路径传回原命令重试一次）：优先 Python —— `python -c "from PIL import Image, ImageOps; im=ImageOps.exif_transpose(Image.open('原图')); im.thumbnail((2048,2048)); im.convert('RGB').save('压缩后.jpg', quality=85)"`（缺 Pillow 先 `pip install pillow -i https://pypi.tuna.tsinghua.edu.cn/simple`）；没有 Python 就用 Node —— `npx --yes sharp-cli -i 原图 -o 压缩后.jpg resize 2048`（官方源慢时加 `--registry=https://registry.npmmirror.com`）。两条都失败才请用户换 10MB 以内的图，不要反复重试。
 - 标签类参数（`modelLabel`、`sizePreset`、`themeLabel` 等）必须与 `options` 返回的候选值逐字一致，不要自造或翻译；拿不准先调 `options`。
+- **`image` / `video` 的模型清单是实时的**（0.12.0 起直接读线上目录，新增/下架/调价自动跟随，无需升级 CLI），且**均无默认模型**——`modelLabel` 必填，缺失会报错并列出当前可选项。当次会话第一次选模型前先跑 `options` 查 `modelLabel`/`models` 拿当前清单，不要凭记忆或本文档的快照直接报模型名。拉不到目录（断网/密钥问题）时命令会明确报错，按提示引导用户检查配置。
 
 ## 报价、轮询与交付
 

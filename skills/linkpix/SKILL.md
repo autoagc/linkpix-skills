@@ -1,12 +1,12 @@
 ---
 name: linkpix
-description: 调用青虎 AI 媒体能力：AI 生图（套图/电商详情图/自定义生图四模型 + 提示词润色）、批量生图玩法（批量生图/批量改图/批量替换/主图复刻/姿势套图/批量译图）、AI 生视频（Seedance2.0、全能电商2.0、Happy Horse、可灵3.0 Omni、品牌质感大片等多模型多时长，支持多参考视频与参考音频）、一键成片、角色替换/模特换脸、视频翻译、去水印/去字幕/画质提升、复刻爆款视频出脚本、爆款视频转图文、分镜脚本与分镜图、广告素材模板批量出片（视频/图片）、POD 印花素材（印花提取/贴合/裂变 + 产品图库）、青虎工作台「AI 应用」的 AI 工作流（电影质感 TVC 广告大片、爆款视频模仿与仿拍、模特换装高一致性还原、超清修复与去 AI 感、图像去水印、短视频与达人数据引擎），均含任务状态查询。当用户要求生成/制作商品图、主图、详情图、营销图、广告视频、带货视频、口播视频，或要求批量出图、批量改图、把产品换进参考图、复刻别人的主图风格、生成服装模特多姿势套图、翻译图片上的文字，或要求翻译视频、去水印、去字幕、提升画质、换人物/换脸、复刻某条爆款视频、把视频转成图文笔记、写分镜脚本，或要求做电影质感 TVC 广告大片/品牌广告片、仿拍某条爆款视频、给模特换装、把图片超清修复/去 AI 感、跑短视频或达人数据引擎分析时必须触发。支持关键词：LinkPix、linkpix、qhkit、青虎、爆款素材、电商素材、量产素材、生图、AI绘图、商品图、主图、套图、详情图、批量生图、批量改图、批量替换、主图复刻、套图复刻、姿势套图、服装套图、批量译图、图片翻译、译图、白底图、提示词润色、广告素材、投放素材、POD素材、POD、印花、印花提取、印花贴合、印花裂变、生视频、AI视频、带货视频、广告片、一键成片、成片、换脸、换模特、数字人替换、视频翻译、翻译配音、去水印、去字幕、画质提升、超分、复刻爆款、对标视频、视频转图文、图文笔记、分镜、脚本、storyboard、AI应用、AI工作流、工作流、workflow、TVC、TVC广告、广告大片、品牌广告片、电影质感、爆款视频模仿、仿拍、模特换装、换装、超清修复、去AI感、图像去水印、数据引擎、短视频数据、达人数据。
+description: 调用青虎 AI 媒体能力：AI 生图（套图/电商详情图/自定义生图家族实时清单：智慧模型、图片 5.0 Lite、专图模型、图片 5.0 Pro 等 + 提示词润色）、批量生图玩法（批量生图/批量改图/批量替换/主图复刻/姿势套图/批量译图）、AI 生视频（模型清单实时读取线上目录，含 Seedance2.5、Seedance2.0、阿里wanx3.0、MiniMax H3、全能电商2.0、Happy Horse、可灵3.0 Omni、品牌质感大片等多模型多时长 5–30 秒，支持多参考视频与参考音频）、一键成片、角色替换/模特换脸、视频翻译、去水印/去字幕/画质提升、复刻爆款视频出脚本、爆款视频转图文、分镜脚本与分镜图、广告素材模板批量出片（视频/图片）、POD 印花素材（印花提取/贴合/裂变 + 产品图库）、青虎工作台「AI 应用」的 AI 工作流（电影质感 TVC 广告大片、爆款视频模仿与仿拍、模特换装高一致性还原、超清修复与去 AI 感、图像去水印、短视频与达人数据引擎），均含任务状态查询。当用户要求生成/制作商品图、主图、详情图、营销图、广告视频、带货视频、口播视频，或要求批量出图、批量改图、把产品换进参考图、复刻别人的主图风格、生成服装模特多姿势套图、翻译图片上的文字，或要求翻译视频、去水印、去字幕、提升画质、换人物/换脸、复刻某条爆款视频、把视频转成图文笔记、写分镜脚本，或要求做电影质感 TVC 广告大片/品牌广告片、仿拍某条爆款视频、给模特换装、把图片超清修复/去 AI 感、跑短视频或达人数据引擎分析时必须触发。支持关键词：LinkPix、linkpix、qhkit、青虎、爆款素材、电商素材、量产素材、生图、AI绘图、商品图、主图、套图、详情图、批量生图、批量改图、批量替换、主图复刻、套图复刻、姿势套图、服装套图、批量译图、图片翻译、译图、白底图、提示词润色、广告素材、投放素材、POD素材、POD、印花、印花提取、印花贴合、印花裂变、生视频、AI视频、带货视频、广告片、一键成片、成片、换脸、换模特、数字人替换、视频翻译、翻译配音、去水印、去字幕、画质提升、超分、复刻爆款、对标视频、视频转图文、图文笔记、分镜、脚本、storyboard、AI应用、AI工作流、工作流、workflow、TVC、TVC广告、广告大片、品牌广告片、电影质感、爆款视频模仿、仿拍、模特换装、换装、超清修复、去AI感、图像去水印、数据引擎、短视频数据、达人数据。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
 ---
 
-# LinkPix — 电商 AI 爆款素材生成（qhkit CLI）
+# LinkPix — 电商 AI 爆款素材生成
 
 LinkPix 是青虎工作台的电商素材创作能力（主图 / 详情图 / 广告素材 / POD 素材 / AI 生成视频 / 爆款视频复刻 / 视频翻译 / AI 工具），
 命令行入口是 `qhkit`（npm 包 `@iqinghu/qhkit`，安装后命令名就是 `qhkit`）。下文所有命令都以 `qhkit` 开头。
@@ -17,7 +17,7 @@ LinkPix 是青虎工作台的电商素材创作能力（主图 / 详情图 / 广
 | 用户意图（示例说法） | 命令 | 产物 |
 |---|---|---|
 | 生成商品图/主图/套图、"给这张图做几张营销图" | `image`（套图模式） | 图片 |
-| 按文字描述直出一张商业大图（可带参考图） | `image`（自定义生图：专图模式 / 智慧模型 / 图片 5.0 Lite / 图片 5.0 Pro，`uploadedImages` 可选） | 图片 |
+| 按文字描述直出一张商业大图（可带参考图） | `image`（自定义生图家族，实时清单：智慧模型 / 图片 5.0 Lite / 专图模型 / 图片 5.0 Pro 等，`uploadedImages` 可选） | 图片 |
 | 生成电商详情页长图 | `image`（电商详情图） | 图片 |
 | "帮我写一条生图提示词"、按商品图/卖点出提示词 | `image`（`polish`） | 提示词文本 |
 | 一张产品图 × 多条提示词各出一张、"批量出 N 张不同的图" | `image-batch`（批量生图） | 图片 |
@@ -49,17 +49,19 @@ LinkPix 是青虎工作台的电商素材创作能力（主图 / 详情图 / 广
 1. **有 qhkit 吗？** `qhkit config show` 能跑通即已安装，跳到第 4 步。
 2. **没有 qhkit 但有 node/npm**（OpenClaw/Hermes 机器部署流程保证自带 Node 22+）→ **全局安装（推荐方式）**：
    ```bash
-   npm i -g @iqinghu/qhkit --registry=https://registry.npmmirror.com
+   npm i -g @iqinghu/qhkit
    ```
-   仅当全局安装因权限失败且无法提权时，才退而用 `npx @iqinghu/qhkit <命令> ...`（npx 必须写包全名）。
+   默认走 npm 官方源；官方源访问慢或超时（国内网络常见）时，再加镜像参数 `--registry=https://registry.npmmirror.com`（阿里维护的 npm 官方镜像，仅作网络兜底）。仅当全局安装因权限失败且无法提权时，才退而用 `npx @iqinghu/qhkit <命令> ...`（npx 必须写包全名）。
 3. **连 node 都没有**（要求 Node ≥ 18）：先装 Node 再回到第 2 步。
    ```bash
-   # Linux 二进制安装（无需 root 包管理器）：
-   curl -fsSL https://registry.npmmirror.com/-/binary/node/v22.22.3/node-v22.22.3-linux-x64.tar.xz | tar -xJ -C /usr/local/lib/
-   export PATH="/usr/local/lib/node-v22.22.3-linux-x64/bin:$PATH"
+   # Linux 二进制安装（装到用户目录，无需 root；先校验官方 SHA256 再解包）：
+   cd /tmp && curl -fsSLO https://nodejs.org/dist/v22.22.3/node-v22.22.3-linux-x64.tar.xz
+   cd /tmp && curl -fsSL https://nodejs.org/dist/v22.22.3/SHASUMS256.txt | grep ' node-v22.22.3-linux-x64.tar.xz$' | sha256sum -c -
+   mkdir -p "$HOME/.local/lib" && tar -xJf /tmp/node-v22.22.3-linux-x64.tar.xz -C "$HOME/.local/lib"
+   export PATH="$HOME/.local/lib/node-v22.22.3-linux-x64/bin:$PATH"
    ```
-   macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
-4. **密钥**：OpenClaw 机器存在 `/root/.openclaw/qinghu_config.json` 时自动复用、零配置。其他机器无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
+   校验行输出 `OK` 才继续；校验失败就删掉重下，**绝不解包未通过校验的文件**。nodejs.org 访问不通时，把两个下载 URL 的前缀 `https://nodejs.org/dist` 整体换成镜像 `https://registry.npmmirror.com/-/binary/node`（目录结构相同，SHASUMS256.txt 也有镜像，校验步骤不变）。`export PATH` 只对当前 shell 生效，跨命令调用时每个新 shell 都要先执行这行（或追加进 `~/.bashrc`）。macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
+4. **密钥**：无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
    > 1. 打开 https://www.iqinghu.com 注册/登录
    > 2. 进入控制台 → 工作台的 APIKeys 页面：https://www.iqinghu.com/workbench/dashboard/api-keys
    > 3. 点「创建/复制」生成密钥，生成后将 API 密钥发我
@@ -70,10 +72,10 @@ LinkPix 是青虎工作台的电商素材创作能力（主图 / 详情图 / 广
 **更新方式**：qhkit 已全局安装时，升级同样由你（智能体）执行全局安装完成：
 
 ```bash
-npm i -g @iqinghu/qhkit@latest --registry=https://registry.npmmirror.com
+npm i -g @iqinghu/qhkit@latest
 ```
 
-出现以下任一信号就先升级再继续：命令返回 `{"ok":false,"stage":"version",...}`（版本门禁：有新版时 generate/script 会被直接阻断，message 里就是升级命令，照做即可）；**命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：<命令>。运行 qhkit --help 查看用法。"}`（本机 qhkit 太老、还没有这个命令——注意这条不会被版本门禁拦下，`stage` 是 `runtime` 不是 `version`，别当成用法错误）**；stderr 提示有新版本；`options` 返回 `catalogNotice`（线上有当前版本不支持的模型）且用户恰好要用那个模型；命令报「模式在线上已下架或配置变更，请升级 qhkit」。升级后重试原命令。
+官方源慢或超时时同样加 `--registry=https://registry.npmmirror.com`。出现以下任一信号就先升级再继续：命令返回 `{"ok":false,"stage":"version",...}`（版本门禁：有新版时 generate/script 会被直接阻断，message 里就是升级命令，照做即可）；**命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：<命令>。运行 qhkit --help 查看用法。"}`（本机 qhkit 太老、还没有这个命令——注意这条不会被版本门禁拦下，`stage` 是 `runtime` 不是 `version`，别当成用法错误）**；stderr 提示有新版本；命令报「模式在线上已下架或配置变更，请升级 qhkit」。升级后重试原命令。（`video` 的模型清单 0.12.0 起实时读取，线上新增模型不需要升级 CLI。）
 
 安装/配置失败时把具体报错告诉用户（常见：无写权限 → 提示用户提权或改用 npx；无网络 → 让用户处理网络）。
 
@@ -94,10 +96,10 @@ qhkit <命令> <action> @params.json     # 参数写进文件，避免 shell 转
   1. **优先 Python**（`python --version` 或 `python3 --version` 能跑即可；缺 Pillow 先装：`pip install pillow -i https://pypi.tuna.tsinghua.edu.cn/simple`）：
      `python -c "from PIL import Image, ImageOps; im=ImageOps.exif_transpose(Image.open('原图')); im.thumbnail((2048,2048)); im.convert('RGB').save('压缩后.jpg', quality=85)"`
   2. **没有 Python 就用 Node**（qhkit 能跑说明 Node 一定在），用 npm 的 sharp-cli 压缩：
-     `npx --yes --registry=https://registry.npmmirror.com sharp-cli -i 原图 -o 压缩后.jpg resize 2048`（首次联网下载，之后有缓存）
+     `npx --yes sharp-cli -i 原图 -o 压缩后.jpg resize 2048`（首次联网下载，之后有缓存；官方源慢时加 `--registry=https://registry.npmmirror.com`）
   外站大图 URL 同理：先下载到本地再走上面的流程。两条路都失败才如实告知用户，请其提供 10MB 内的图片；压缩重试仍失败则转述 CLI 的 message，不要反复重试。
 - 标签类参数（`modelLabel`、`sizePreset`、`themeLabel` 等）必须与 `options` 返回的候选值**逐字一致**，不要自造或翻译。拿不准就先调 `options`。
-- `options` 查 `modelLabel` 时若返回 `catalogNotice`，说明线上有当前版本尚不支持的新模型：先按「更新方式」升级 qhkit 再查一次；升级后仍不支持就如实告知用户该模型暂不可用，不要硬试。
+- **`video` 与 `image` 的模型清单都是实时的**（0.12.0 起直接读线上目录，新增/下架/调价自动跟随，无需升级 CLI），且**均无默认模型**——`modelLabel` 必填，缺失会报错并列出当前可选项。当次会话第一次选模型前先跑 `options` 查 `modelLabel`/`models` 拿当前清单，不要凭记忆或本文档的快照直接报模型名。拉不到目录（断网/密钥问题）时命令会明确报错，按提示引导用户检查配置。
 
 **⛔ 提交前必须经用户确认（硬规则）**：任何会创建任务、消耗积分的 action（各命令的 `generate`，含 `storyboard` 的 `script`）发起前，必须先把本次提交的关键参数一次性列给用户——模型/模板、出图张数或视频时长、尺寸与画质、语言、用到哪几张参考图，以及 `estimate` 报出的预计扣除积分——**等用户明确同意后才能执行提交**。参数全部来自用户原话时也要复述确认一遍（口头描述与实际枚举值可能有出入，任务提交后不可取消）。只读 action（`options` / `estimate` / `status` / `templates` / `products` / `config show`）无需确认，可直接调用。
 
@@ -110,22 +112,24 @@ qhkit <命令> <action> @params.json     # 参数写进文件，避免 shell 转
 
 ## 4. 命令速查
 
-### image — AI 生图（modelLabel 六选一）
+### image — AI 生图（modelLabel 必填，清单实时）
 
-**选型表**（积分列是内置快照的**成本档位**，只用于模型间横向比较；**报给用户的数字一律以 `estimate` 返回为准**，快照会随运营调价漂移）：
+固定两模式（`套图模式` / `电商详情图`，专属流程）+ **自定义生图家族（实时清单）**：`businessType=image` 下除套图外的全部可见模型，线上新增/下架/调价自动跟随。**没有默认模型**——`modelLabel` 必填，先 `options` 查 `modelLabel`/`models` 拿当前清单再选。
 
-| modelLabel | 官方卖点 | 什么时候选 | 输入 | 成本档位/张（1K，2026-08 快照） |
+**时点参考**（2026-08-25 目录，仅帮你建立感觉，以 `options` 实时返回为准）：
+
+| modelLabel | 官方卖点 | 什么时候选 | 输入 | 目录单价/张（1K 时点值） |
 |---|---|---|---|---|
 | `套图模式` | 上传参考图，智能生成专业主图套图 | 要一组风格统一的商品主图 | 参考图 或 `customCopy`（至少一个） | 1.5 |
-| `智慧模型` | 图片生成效果最好，画质佳，图图都是精选 | **默认首选**；效果优先，且有免费额度 | `prompt`（必填）+ 参考图（可选） | 1.5（有免费额度） |
+| `智慧模型` | 图片生成效果最好，画质佳，图图都是精选 | 效果优先，且有免费额度 | `prompt`（必填）+ 参考图（可选） | 1.5（有免费额度） |
 | `图片 5.0 Pro` | 真实，速度快 | 要真实感、要快 | `prompt`（必填）+ 参考图（可选） | 2 |
 | `图片 5.0 Lite` | 细节一致性高 | 多张之间要保持细节一致 | `prompt`（必填）+ 参考图（可选） | 1.5 |
-| `专图模式` | 图片生成效果最好，速度最慢 | 用户明确要最好效果且不赶时间 | `prompt`（必填）+ 参考图（可选） | 1.5 |
+| `专图模型` | 图片生成效果最好，速度最慢 | 用户明确要最好效果且不赶时间 | `prompt`（必填）+ 参考图（可选） | 1.5 |
 | `电商详情图` | 不可编辑，多张短图，图像质量高 | 要详情页长图 | 参考图（必填）+ `themeLabel` | 2 |
 
 2K 档位约为 1K 的两倍；参考图超过免费张数（3 张）后每张另有小额加价——这些 `estimate` 都会自动算进去。
 
-中间四个是**自定义生图**，入参完全一致（`prompt` 必填 + 可选 `uploadedImages`/`sizePreset`/`imageCount`），只是画质取向和积分不同——所以选型只看上表的「什么时候选」。用户没指定时用 `智慧模型`；点名了就按名字传（`专图模式` 线上叫「专图模型」，两种写法都收）。
+中间四个是**自定义生图家族**，入参完全一致（`prompt` 必填 + 可选 `uploadedImages`/`sizePreset`/`imageCount`），只是画质取向和积分不同。规范标签即线上模型名（历史写法 `专图模式` 等仍作为别名可用）；用户没指定模型时，把候选（含 `models` 里的卖点与单价）列给用户选，不要替用户拍板。
 
 > ⚠️ **全部 6 个模式都接受参考图**（自定义生图四模型为可选，是图生图语义，2026-08-20 实测智慧模型带参考图出图与原图细节逐一对齐）。用户给了商品图就传进 `uploadedImages`，不要只把图的内容转写成 prompt 文字（会丢原图细节），更不要说"某模式不支持参考图"。
 
@@ -133,7 +137,7 @@ qhkit <命令> <action> @params.json     # 参数写进文件，避免 shell 转
 # 套图：参考图 + 可选文案 + 发布平台（imageCount 1/6/7/8/9/10，缺省 9）
 qhkit image generate '{"modelLabel":"套图模式","uploadedImages":["./素材/商品图.jpg"],"customCopy":"限时5折","platform":"抖音","imageCount":6}'
 # 自定义生图：提示词直出，参考图可选（imageCount 1/2/4/6/8/10）
-qhkit image generate '{"modelLabel":"专图模式","prompt":"化妆品高端场景图","sizePreset":"默认 1:1 2K（2048×2048）"}'
+qhkit image generate '{"modelLabel":"专图模型","prompt":"化妆品高端场景图","sizePreset":"默认 1:1 2K（2048×2048）"}'
 qhkit image generate '{"modelLabel":"智慧模型","prompt":"化妆品高端场景图","imageCount":2}'
 # 自定义生图 + 参考图（用户给了商品图时这样调，严格基于原图出图）
 qhkit image generate '{"modelLabel":"智慧模型","prompt":"军绿色应急收音机电商主图，专业棚拍质感","uploadedImages":["./素材/收音机.jpg"],"imageCount":2}'
@@ -178,58 +182,45 @@ qhkit image-batch generate '{"mode":"批量译图","prompt":"翻译成英语","u
 qhkit image-batch estimate '{"mode":"姿势套图","uploadedImages":["./连衣裙.jpg"],"poseActions":["正面","侧面"]}'   # 报价（姿势套图每张 +0.5 积分）
 ```
 
-- 批量生图/改图/替换/姿势套图可传 `modelLabel`（自定义生图四模型，缺省智慧模型）与 `sizePreset`/`quality`；主图复刻与批量译图的模型固定。
+- 批量生图/改图/替换/姿势套图**必须传** `modelLabel`（自定义生图家族，实时清单、无默认，先 `image options` 查 `modelLabel`）与可选 `sizePreset`/`quality`；主图复刻与批量译图的模型固定。
 - 批量替换的 `referenceImages` 元素可写 `{"url":"...","replaceText":"替换到图中的花瓶位置"}` 指定替换部位；主图复刻同理可带 `hint`（自定义复刻要求），或整体传 `"removeText":true` 去除参考图文字。
 - 批量译图按张计费；姿势套图不走免费额度。
 
-### video — AI 生视频（modelLabel 用「模型名 + 时长秒」）
+### video — AI 生视频（modelLabel 用「模型名 + 时长秒」，清单实时）
 
 线上一条「时长 + 生成渠道」就是一个模型，同名模型常有多个时长，所以标签形如 `Seedance2.0 15秒`。只写模型名时：唯一即命中，多时长会报错要求补 `duration`。
 
+**模型清单实时读取线上目录**（0.12.0 起）：新增/下架/调价/维护/限时折扣自动跟随，**没有默认模型**——`modelLabel` 必填，不传会报错并列出当前可选项（带 `duration` 时按时长收窄）。所以流程固定为：先 `options` 查 `models` 拿当前清单和能力规则，选定后 `estimate` 报价，确认后 `generate`。
+
 ```bash
-# 先看有哪些模型、各自的参考图/画幅规则
+# 第一步永远是它：当前有哪些模型、各自的参考图/视频/音频/画幅规则、目录单价与活动角标
 qhkit video options '{"queryParams":["modelLabel","models"]}'
 # 素材既可以是公网 URL，也可以是本地文件路径（本地文件 CLI 会自动上传换取 URL）
 qhkit video generate '{"modelLabel":"Seedance2.0 15秒","prompt":"户外工作灯广告","uploadedImages":["./素材/商品图.jpg"],"uploadedVideo":"./素材/参考视频.mp4"}'
 qhkit video generate '{"modelLabel":"全能电商2.0","duration":10,"prompt":"户外工作灯广告","uploadedImages":["./素材/商品图.jpg"]}'
 qhkit video status   '{"videoTaskId":"task-123"}'
-# 报价：generate 同参数换个 action（带 uploadedVideo 时会算进参考视频加价）——报积分给用户前先跑这条
+# 报价：generate 同参数换个 action——报积分给用户前先跑这条
 qhkit video estimate '{"modelLabel":"Seedance2.0 15秒","uploadedVideo":"./素材/参考视频.mp4"}'
 ```
 
-**选型表**（积分列是内置快照的**成本档位**，只用于模型间横向比较；报给用户以 `estimate` 为准。可用性查 `options` 的 `models`，维护中的模型会带 `maintenance:true`）：
+`options` 的 `models` 每条给全选型所需字段：`description`/`propertyTags`（效果、稳定性、提示词要求、画质）、`credits`（目录单价）、`activityBadge`（如「限时5折」）、`free`、`maintenance`、`notice`（如「即将下线」）、`category`（主图视频/带货视频/营销素材/种草视频/营销广告/投流素材）、参考素材规则（见下）。
 
-| modelLabel | 定位 | 官方卖点 | 效果/稳定性/提示词 | 参考图 | 参考视频 | 成本档位 |
-|---|---|---|---|---|---|---|
-| `Seedance2.0 15秒` | 带货视频 | 基于产品卖点词，智能规划镜头组，生成全场景电商视频 | 好 / 高 / 简单 | 多张可选 | ✅ 最多 3 | 50（带视频 60） |
-| `全能电商2.0 15秒` | 带货视频 | 同上，更省积分 | 好 / 高 / 简单 | 多张可选 | ✅ 最多 3 | 30 |
-| `全能电商2.0 10秒` | 带货视频 | 同上，最省的带货档 | 好 / 高 / 简单 | 多张可选 | ❌ | 18 |
-| `Happy Horse 1.1 15秒` | 营销素材 | 音视频一体生成，画面稳定流畅，适配多场景视频量产 | 好 / 高 / 简单 | 多张可选 | ❌ | 30 |
-| `可灵3.0 Omni 15秒` | 营销素材 | 角色统一，一体叙事，原生音画，秒变专业导演 | 真实 / **极高** / 简洁 | 多张可选 | ❌ | 50 |
-| `可灵3.0 Omni 10秒` | 营销素材 | 同上，10 秒版 | 真实 / **极高** / 简洁 | 多张可选 | ✅ 最多 1 | 40（带视频 65） |
-| `品牌质感大片 15秒` | 主图视频 | 基于物理渲染，描述光影场景，输出电影级细腻画面 | 真实 / 极高 / **精准** | **必填**，多张 | ❌ | 10 |
-| `品牌质感大片 5秒` | 主图视频 | 同上无声版 | 真实 / 极高 / **精准** | **必填**，首帧+尾帧 | ❌ | 2（**有免费额度**） |
-| `电商爆款直出Pro 12秒` | 带货视频 | 输入商品名与卖点，一键生成高质感带货短视频 | 真实 / 高 / 简洁 | 仅首帧 1 张 | ❌ | 25 ⚠️即将下线 |
-| `电商热卖引擎 10秒` | 爆款直出 | 基于营销逻辑重构镜头语言，智能匹配光影与运镜 | 真实 / 一般 / 简洁 | 多张可选 | ❌ | 8 |
+**时点参考**（2026-08-25 国内版目录，仅帮你建立感觉，**以 `options` 实时返回为准**）：19 个模型、时长 5–30 秒。当时的亮点：`阿里wanx3.0 15秒`（25 积分限时5折，参考视频≤5）、`Seedance2.5 15/20/30秒`（种草/营销广告档，**参考图必填**，参考视频≤10，15秒档还收参考音频≤3）、`MiniMax H3 5/10/15秒`（5–10 积分性价比档，768p，新增 `超宽屏 21:9` 画幅，不收参考视频）、`Seedance2.0 15秒`/`全能电商2.0`（经典带货档）、`品牌质感大片 5秒`（免费额度内，参考图必填，提示词要求「精准」）。
 
-怎么选：
+怎么选（原则，不绑定具体模型名）：
 
-- **默认**（用户只说"做条带货视频"）→ `全能电商2.0 15秒`：效果与 Seedance2.0 同级但只要 30 积分。
-- **要最好效果 / 用户点名 Seedance** → `Seedance2.0 15秒`。
-- **有参考视频要模仿运镜** → 只有 `Seedance2.0 15秒`、`全能电商2.0 15秒`、`可灵3.0 Omni 10秒` 支持。
-- **要人物/角色前后统一、要原生音画** → `可灵3.0 Omni`。
-- **只要一个商品主图动效、想省钱或先试水** → `品牌质感大片 5秒`（有免费额度，但**必须给参考图**，且提示词要写得具体——它的「提示词要求」是「精准」）。
-- **提示词只有一句话、用户写不细** → 选「提示词要求: 简单」的（全能电商2.0 / Seedance2.0 / Happy Horse）。
-- ⚠️ 「提示词要求: 精准」的模型（品牌质感大片）给一句话会出废片，先帮用户把镜头、光影、材质补充完整再提交。
-- 积分不够或用户在意成本时，按上表成本档位从低到高推荐；最终告知用户的消耗数字用 `estimate` 拿。
+- 按用户诉求在 `models` 里过滤：要模仿运镜 → `supportsReferenceVideo: true`；要配 BGM/口播干音 → `supportsReferenceAudio: true`；纯文字起步 → `referenceImageRequired: false`；在意成本 → 按 `credits` 从低到高（留意 `activityBadge` 限时折扣）。
+- **提示词要求**（`propertyTags` 的「提示词要求」）：「简单/简洁」的模型一句话卖点即可；「精准」的模型（如品牌质感大片、阿里wanx3.0）给一句话会出废片，先帮用户把镜头、光影、材质补充完整再提交。
+- `maintenance: true` 的模型不可提交（CLI 会拦截），`notice` 里有「即将下线」的不要再推荐。
+- 用户没点名模型时，把 2–3 个候选（含单价）列给用户选，不要替用户拍板。
 
-- **参考图规则按模型走**（`options` 的 `models` 里逐条给出）：`multi_reference` 多张、每张可带 `imageUsage` 用途文案；`first_frame` 只收 1 张首帧；`first_last_frame` 收 2 张（**首帧在前、尾帧在后**），这两种模式不接受用途文案。只有 `referenceImageRequired: true` 的模型（品牌质感大片）强制要图，其余可纯文字生成。
-- **参考视频**（`uploadedVideo`）只有 `supportsReferenceVideo: true` 的模型支持（Seedance2.0 15秒 / 全能电商2.0 15秒 / 可灵3.0 Omni 10秒）；**可传数组**（多参考视频），数量上限按线上模型规则自动校验。
-- **参考音频**（`uploadedAudio`，如 BGM/口播干音）只有 `supportsReferenceAudio: true` 的模型支持，本地文件 ≤50MB 自动上传。
-- `orientationLabel` 逐模型不同：都支持 `竖屏 9:16`（默认）/ `横屏 16:9`，部分另支持 `方屏 1:1` / `3:4` / `4:3`。
+- **参考图规则按模型走**（`options` 的 `models` 里逐条给出）：`multi_reference` 多张、每张可带 `imageUsage` 用途文案；`first_frame` 只收 1 张首帧；`first_last_frame` 收 2 张（**首帧在前、尾帧在后**），这两种模式不接受用途文案。`referenceImageRequired: true` 的模型强制要图，其余可纯文字生成。
+- **参考视频**（`uploadedVideo`）只有 `supportsReferenceVideo: true` 的模型支持，**可传数组**，上限见 `maxReferenceVideos`（提交前 CLI 校验）。注意：`models` 里该字段已按后端权威口径折算（开关与规则同时成立才算支持），照着用即可。
+- **参考音频**（`uploadedAudio`，如 BGM/口播干音）只有 `supportsReferenceAudio: true` 的模型支持，上限见 `maxReferenceAudios`；本地文件 ≤50MB 自动上传。
+- `orientationLabel` 逐模型不同（`models` 里 `orientationLabel` 给全）：常见 `竖屏 9:16`（默认）/ `横屏 16:9` / `方屏 1:1` / `3:4` / `4:3`，个别模型有 `超宽屏 21:9`；新画幅 code 会原样透传，照 `options` 返回的写。
 - `languageLabel` 可选（如 `英语`，17 种语言与生图一致），不传由服务端按提示词决定；`count` 1–8。
 
-> 上面两张选型表是内置快照，分工记清楚：**多模型间权衡选型 → `options` 的 `models`**（线上目录：卖点、免费额度、`maintenance:true` 维护拦截、`notice` 如「即将下线」）；**确定参数后向用户报积分 → `estimate`**（与提交走同一个计价接口，折扣、画质、张数、参考视频加价、免费额度全都算进去，返回值就是实扣值）。`options` 里的 `credits` 是目录单价，可能与实扣有出入，不要拿它报价。
+> 分工记清楚：**多模型间权衡选型 → `options` 的 `models`**（实时目录：卖点、免费额度、`maintenance` 维护拦截、`notice`、`activityBadge`）；**确定参数后向用户报积分 → `estimate`**（与提交走同一个计价接口，折扣、张数、免费额度全都算进去，返回值就是实扣值）。`options` 里的 `credits` 是目录单价，可能与实扣有出入，不要拿它报价。
 
 ### video-quick — 一键成片
 
