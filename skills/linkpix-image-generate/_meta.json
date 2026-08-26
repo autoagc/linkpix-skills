@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-image-generate",
   "displayName": "AI电商图像生成 | LinkPix",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "desc": "按文字描述直出商业级电商图片，支持参考图（图生图），自定义生图家族实时清单可选（画质取向各不同），覆盖从快速出图到极致效果的全部场景。",
   "publishedAt": 1786492800000
 }
