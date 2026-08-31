@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "linkpix-amazon-image",
+  "displayName": "亚马逊 商品图、主图套图、详情图、活动图生成 | LinkPix",
+  "version": "0.1.0",
+  "desc": "帮助亚马逊卖家、跨境电商美工、外贸团队通过青虎AI完成“亚马逊商品图”：支持生成亚马逊标准纯白底图、主副图（附场景图）、A+页面图、对比图、卖点图、多语言图。可调用GPT Image 2、Seedream 5.0等大模型，严格把控合规性、高清尺寸和原生质感，适配美国、欧洲、日本等不同站点的审美要求。适用于Amazon、Amazon Prime、Amazon Vine等平台视觉营销。Use this skill for 亚马逊商品图, 白底图, 主副图, A+页面, 卖点图, 多语言图片, 跨境电商, GPT Image 2, Seedream 5.0, AIGC图像生成。通过青虎AI统一接入，支持素材上传、实时模型配置、任务轮询和结果下载。",
+  "publishedAt": 1788134400000
+}

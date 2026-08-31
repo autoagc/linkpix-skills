@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "linkpix-temu-image",
+  "displayName": "Temu 商品图、主图套图、详情图、活动图生成 | LinkPix",
+  "version": "0.1.0",
+  "desc": "帮助Temu卖家、全托管卖家通过青虎AI完成“Temu商品图”：支持生成极致性价比海报、低价感主图、大促满减图、白底图、多SKU组合图。可调用Seedream 5.0、GPT Image 2等大模型，快速生成北美下沉市场的平台视觉标准图，突出商品的“爆款”、“白菜价”属性，适配拼多多海外版流量池。适用于Temu、Temu半托管等全品类出海场景。Use this skill for Temu商品图, 极致性价比, 低价感, 大促满减, 白底图, 下沉市场, Seedream 5.0, GPT Image 2, AIGC图像生成, 跨境电商。通过青虎AI统一接入，支持素材上传、实时模型配置、任务轮询和结果下载。",
+  "publishedAt": 1788134400000
+}

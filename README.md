@@ -1,11 +1,11 @@
 # LinkPix Agent Skills
 
-电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **85 个技能**。
+电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **125 个技能**。
 
 覆盖商品主图 / 详情图 / 广告素材 / 带货短视频 / 爆款复刻 / 视频翻译 / POD 印花，
 以及 TikTok、Shopee、Ozon、Amazon、1688、抖音、小红书等平台的选品与达人分析。
 
-> **English** — 85 Agent Skills for e-commerce content generation and product research
+> **English** — 125 Agent Skills for e-commerce content generation and product research
 > by LinkPix (青虎AI): product images, sales videos, viral video cloning, POD patterns,
 > and cross-border market analysis for TikTok, Shopee, Ozon, Amazon and 1688.
 > Install with `npx skills add autoagc/linkpix-skills`.
@@ -37,11 +37,11 @@ npx skills add autoagc/linkpix-skills --list
 
 ## 前置依赖
 
-按技能正文实际调用的工具统计（有 2 个技能同时需要两种，故合计大于 85）：
+按技能正文实际调用的工具统计（有 2 个技能同时需要两种，故合计大于 125）：
 
 | 依赖 | 技能数 | 准备方式 |
 |---|---|---|
-| `qhkit` CLI | 57 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
+| `qhkit` CLI | 97 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
 | 青虎 MCP | 26 | 在客户端接入青虎 MCP Server |
 | ImageMagick / ffmpeg | 4 | 本地安装，纯本地处理不联网 |
 
@@ -54,6 +54,8 @@ npx skills add autoagc/linkpix-skills --list
 - **爆款复刻** —— 视频仿拍、角色替换、模特换装、脚本拆解、视频转图文
 - **视频处理** —— 去水印、去字幕、画质超清、智能补帧、视频翻译配音、音频提取
 - **POD 印花** —— 印花提取、智能贴合、图案裂变、产品图库
+- **热门模型截流** —— Seedream / Qwen-Image / GPT Image 2 / Nano Banana、可灵 Kling / Seedance / Vidu / 阿里 Wanx / MiniMax / HappyHorse / Grok
+- **平台专项素材** —— 淘宝天猫、抖音小店、拼多多、京东、1688、Amazon、Shopee、TikTok Shop、Lazada、Temu、Ozon、Wildberries、SHEIN 的商品图，以及抖音 / 小红书 / 视频号 / TikTok / YouTube 爆款视频
 - **选品分析** —— TikTok / Shopee / Ozon / Amazon / 1688 / 抖音的类目蓝海、爆款跟卖、关键词、竞店截流、达人建联
 
 ## 技能清单
@@ -106,6 +108,54 @@ npx skills add autoagc/linkpix-skills --list
 | `linkpix-viral-video-clone` | AI爆款视频复刻 &#124; LinkPix | `qhkit` | 智能分析热门短视频内容，一键复刻视频风格、节奏及镜头语言，快速打造同类型营销视频。 |
 | `linkpix-viral-video-toolkit` | AI爆款视频复刻、音频提取 &#124; LinkPix | `qhkit` + `本地` | 智能分析热门短视频内容，一键复刻视频风格、镜头节奏和创意表现，同时支持视频音频提取，帮助卖家快速打造爆款营销内容，提高短视频创作效率。 |
 | `linkpix-white-background` | 电商商品白底图生成，批量抠图工具 &#124; LinkPix | `qhkit` | 支持批量上传商品图片，一键完成高精度抠图，自动生成白底图，大幅提升商品图片处理效率。 |
+
+</details>
+
+<details>
+<summary><b>LinkPix 热门模型与平台（40 个）</b></summary>
+
+| 技能 | 名称 | 依赖 | 说明 |
+|---|---|---|---|
+| `linkpix-seedream-5-pro` | Seedream 5.0 Pro 爆款电商图 &#124; LinkPix | `qhkit` | Seedream 5.0 / 图片 5.0 Pro 电商全场景生图，文生图与图生图，适配淘宝天猫京东及跨境平台。 |
+| `linkpix-seedream-5-lite` | Seedream 5.0 Lite 生成电商图 &#124; LinkPix | `qhkit` | Qwen-Image / 图片 5.0 Lite 国内电商爆款排版图，强化中文渲染与 2K 输出。 |
+| `linkpix-gpt-image-2` | GPT Image 2 爆款电商主图 &#124; LinkPix | `qhkit` | GPT Image 2 / 智慧模型跨境多平台主图精修，支持参考图控制主体与风格。 |
+| `linkpix-nano-banana-2` | Nano Banana 2 电商爆款素材生成 &#124; LinkPix | `qhkit` | Nano Banana 2 / 专图模型高质量图生图与可控编辑，适合直通车钻展等高频素材。 |
+| `linkpix-kling-3-sales` | 可灵 Kling 3.0 电商带货视频 &#124; LinkPix | `qhkit` | 可灵 3.0 长镜头、多图参考与商品一致性带货视频。 |
+| `linkpix-kling-3-clone` | 可灵 Kling 3.0 爆款视频复刻 &#124; LinkPix | `qhkit` | 拆解爆款镜头语言后用可灵 3.0 重演结构。 |
+| `linkpix-seedance-2-sales` | Seedance 2.0 电商带货视频 &#124; LinkPix | `qhkit` | Seedance 2.0 多参考图与首尾帧控制的动态商品展示。 |
+| `linkpix-seedance-2-clone` | Seedance 2.0 爆款视频复刻 &#124; LinkPix | `qhkit` | 用 Seedance 2.0 复刻热门构图与运动节奏。 |
+| `linkpix-seedance-25-sales` | Seedance 2.5 电商带货视频 &#124; LinkPix | `qhkit` | Seedance 2.5 更高真实感与电影感的产品宣传片。 |
+| `linkpix-seedance-25-clone` | Seedance 2.5 爆款视频复刻 &#124; LinkPix | `qhkit` | 提取爆款情感节奏与画面质感，平移到自家商品。 |
+| `linkpix-vidu-q3-sales` | Vidu Q3 电商带货视频 &#124; LinkPix | `qhkit` | Vidu Q3 材质与包装细节高置信还原，适合珠宝服装家具。 |
+| `linkpix-vidu-q3-clone` | Vidu Q3 爆款视频复刻 &#124; LinkPix | `qhkit` | 还原机位、转场与定格动画感的时尚开箱二创。 |
+| `linkpix-vidu-q2-sales` | Vidu Q2 电商带货视频 &#124; LinkPix | `qhkit` | Vidu Q2 参考图一致性带货视频，适合精细类目展示。 |
+| `linkpix-vidu-q2-clone` | Vidu Q2 爆款视频复刻 &#124; LinkPix | `qhkit` | Vidu Q2 复刻快节奏穿搭、开箱与特效类爆款。 |
+| `linkpix-wanx-3-sales` | 阿里Wanx 3.0 电商带货视频 &#124; LinkPix | `qhkit` | 通义万相 / 阿里 wanx3.0 适配淘系主图视频与阿里妈妈投放。 |
+| `linkpix-wanx-3-clone` | 阿里Wanx 3.0 爆款视频复刻 &#124; LinkPix | `qhkit` | 淘宝逛逛 / 点淘向的爆款结构复刻，也支持外站转淘系。 |
+| `linkpix-minimax-h3-sales` | MiniMax H3 电商带货视频 &#124; LinkPix | `qhkit` | MiniMax H3 多模态口播与音画同步带货视频。 |
+| `linkpix-minimax-h3-clone` | MiniMax H3 爆款视频复刻 &#124; LinkPix | `qhkit` | 提取爆款话术音色情绪，批量素人种草与多语言复刻。 |
+| `linkpix-happyhorse-sales` | HappyHorse 1.1 电商带货视频 &#124; LinkPix | `qhkit` | Happy Horse 1.1 文/图/音视频可控的产品展示与种草片。 |
+| `linkpix-happyhorse-clone` | HappyHorse 1.1 爆款视频复刻 &#124; LinkPix | `qhkit` | 强运镜转场控制，复刻抖音 TikTok 投放向爆款。 |
+| `linkpix-grok-sales` | Grok 电商带货视频 &#124; LinkPix | `qhkit` | 网感话题向商品介绍视频，适合小红书抖音 TikTok Reels。 |
+| `linkpix-grok-clone` | Grok 爆款视频复刻 &#124; LinkPix | `qhkit` | 挖爆款情绪爆点做老梗新拍，套用到自家商品。 |
+| `linkpix-taobao-tmall-image` | 淘宝天猫 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | 淘系白底图、主图套图、详情页、直通车与钻展活动图。 |
+| `linkpix-douyin-shop-image` | 抖音小店 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | 抖音主图、短视频封面、直播贴片与高饱和吸睛图。 |
+| `linkpix-pinduoduo-image` | 拼多多 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | 拼多多白底图、满减海报与下沉市场强对比活动图。 |
+| `linkpix-1688-image` | 1688 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | 1688 工厂风主图、参数图、细节拆解与多 SKU 组合图。 |
+| `linkpix-jd-image` | 京东 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | 京东高质感主图、白底图、3C 参数图与营销 KV。 |
+| `linkpix-amazon-image` | 亚马逊 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | Amazon 合规白底主图、主副图、A+ 与多语言卖点图。 |
+| `linkpix-shopee-image` | Shopee 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | Shopee 方形主图、促销贴纸与东南亚多语言营销图。 |
+| `linkpix-tiktok-shop-image` | TikTok Shop 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | TikTok Shop 封面、高点击主图与种草投流图。 |
+| `linkpix-lazada-image` | Lazada 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | Lazada / LazMall 方图、节日大促与东南亚本地化海报。 |
+| `linkpix-temu-image` | Temu 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | Temu 低价感主图、满减活动图与多 SKU 组合图。 |
+| `linkpix-ozon-image` | Ozon 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | Ozon 合规白底图、俄文卖点图与实用场景图。 |
+| `linkpix-wildberries-image` | Wildberries 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | Wildberries 俄语排版主图、白底图与街拍穿搭图。 |
+| `linkpix-shein-image` | SHEIN 商品图、主图套图、详情图、活动图生成 &#124; LinkPix | `qhkit` | SHEIN 快时尚模特穿搭、平铺图与欧美风场景图。 |
+| `linkpix-douyin-viral-video` | 抖音 爆款视频生成 &#124; LinkPix | `qhkit` | 抖音前 3 秒抓人的口播、切片、反转与测评带货视频。 |
+| `linkpix-xiaohongshu-viral-video` | 小红书 爆款视频生成 &#124; LinkPix | `qhkit` | 小红书 Vlog 种草、开箱测评与氛围感短片。 |
+| `linkpix-shipinhao-viral-video` | 视频号 爆款视频生成 &#124; LinkPix | `qhkit` | 视频号情感故事、好物分享与私域引流视频。 |
+| `linkpix-tiktok-viral-video` | TikTok 爆款视频生成 &#124; LinkPix | `qhkit` | TikTok Shop / Ads 多语言口播、卡点变装与跨境种草。 |
+| `linkpix-youtube-viral-video` | YouTube 爆款视频生成 &#124; LinkPix | `qhkit` | YouTube 开箱测评、品牌 TVC 与横屏深度种草。 |
 
 </details>
 

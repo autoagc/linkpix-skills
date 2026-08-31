@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "linkpix-shopee-image",
+  "displayName": "Shopee 商品图、主图套图、详情图、活动图生成 | LinkPix",
+  "version": "0.1.0",
+  "desc": "帮助Shopee卖家、东南亚电商运营通过青虎AI完成“Shopee商品图”：支持生成方形主图、促销贴纸图、白底图、买手秀风格图、多站点（不同语言）营销图。可调用Nano Banana 2 、GPT Image 2等大模型，生成迎合东南亚消费群体喜好、充满性价比与热销氛围的商品图。适用于Shopee、Shoppee Mall、Shopee Live等不同站点的商品视觉需求。Use this skill for Shopee商品图, 方形主图, 促销贴纸, 买手秀, 东南亚, 多语言, Nano Banana 2 , GPT Image 2, AIGC图像生成, 跨境电商。通过青虎AI统一接入，支持素材上传、实时模型配置、任务轮询和结果下载。",
+  "publishedAt": 1788134400000
+}
