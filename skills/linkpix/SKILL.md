@@ -6,7 +6,7 @@ homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
 ---
 
-# LinkPix｜AI 电商素材：商品图、详情页、带货视频、批量修图、TVC 广告大片、POD 印花、视频翻译、电商套图、豆包生图、Seedream 5.0、Seedance 2.0、阿里万相 Wanx 3.0、MiniMax H3、可灵 3.0 Omni、HappyHorse 1.1、Vidu Q3 Turbo、去水印、去字幕、画质提升、视频剪辑、去 AI 感、爆款复刻、视频分析
+# 青虎AI-LinkPix｜AI 电商素材：商品图、详情页、带货视频、批量修图、TVC 广告大片、POD 印花、视频翻译、电商套图、豆包生图、Seedream 5.0、Seedance 2.0、阿里万相 Wanx 3.0、MiniMax H3、可灵 3.0 Omni、HappyHorse 1.1、Vidu Q3 Turbo、去水印、去字幕、画质提升、视频剪辑、去 AI 感、爆款复刻、视频分析
 
 LinkPix 是青虎工作台的全栈电商内容生产能力：从商品图、主图、详情页、电商套图，到批量修图、广告投放素材、带货视频与电影质感 TVC 广告大片；从 POD 印花、视频翻译与视频编辑，到爆款复刻、视频转图文、分镜创作及短视频/达人数据分析，均可在一个入口完成。
 
@@ -40,7 +40,7 @@ LinkPix 是青虎工作台的全栈电商内容生产能力：从商品图、主
 
 模糊时优先问自己：产物是图还是视频？输入是文字、图，还是已有视频？按上表就能落到唯一命令。
 
-**能力边界**：上表之外的媒体需求（如音乐/MV 生成、数字人口播、直播切片、长视频剪辑）qhkit 不支持——明确告知用户当前不支持，建议其到青虎工作台（https://www.iqinghu.com）确认能力或改用其他技能，**不要硬套最接近的命令凑合**。
+**能力边界**：上表之外的媒体需求（如音乐/MV 生成、数字人口播、直播切片、长视频剪辑）qhkit 不支持——明确告知用户当前不支持，建议其到青虎工作台（ https://www.iqinghu.com ）确认能力或改用其他技能，**不要硬套最接近的命令凑合**。
 
 ## 1. 前置：环境自举（缺什么装什么，不要因为环境缺失放弃任务）
 
