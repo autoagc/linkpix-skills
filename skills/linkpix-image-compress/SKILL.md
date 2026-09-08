@@ -6,7 +6,7 @@ homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🗜️"}}
 ---
 
-# AI图片压缩工具 | LinkPix
+# AI图片压缩 | 批量压缩 | 减小体积 | 优化加载 | LinkPix
 
 本地 ImageMagick/ffmpeg 完成确定性的批量压缩（质量、尺寸、格式精确可控），不走生成式模型、不消耗积分。
 
@@ -37,4 +37,4 @@ mkdir -p compressed && for f in *.jpg; do magick "$f" -resize "1600x1600>" -qual
 
 ## 能力边界
 
-- 放大/提升画质是反方向需求：图片走「AI电商主图优化助手 | LinkPix」，视频走「AI视频超清修复工具 | LinkPix」。
+- 放大/提升画质是反方向需求：图片走「AI电商主图优化 | 主图美化 | 点击率提升 | 图片增强 | LinkPix」，视频走「AI视频超清修复 | 画质提升 | 超分辨率 | 视频增强 | LinkPix」。

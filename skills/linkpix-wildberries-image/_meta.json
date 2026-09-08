@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-wildberries-image",
   "displayName": "Wildberries 商品图、主图套图、详情图、活动图生成 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "帮助Wildberries卖家、俄罗斯跨境电商团队通过青虎AI完成“Wildberries商品图”：支持生成符合俄语区审美的商品主图、白底图、街拍风穿搭图、材质细节图，并能直接生成带俄文排版的高清图。可调用GPT Image 2、Nano Banana 2 等大模型，快速制作出在当地具有高点击率的商品视觉素材。适用于Wildberries、WB等独联体国家电商平台的业务拓展。Use this skill for Wildberries商品图, 俄语排版, 白底图, 穿搭图, 高点击率, GPT Image 2, Nano Banana 2 , AIGC图像生成, 俄罗斯电商。通过青虎AI统一接入，支持素材上传、实时模型配置、任务轮询和结果下载。",
   "publishedAt": 1788134400000
 }

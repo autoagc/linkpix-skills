@@ -27,7 +27,7 @@ metadata: {"openclaw":{"emoji":"🎯"}}
 | --- | --- |
 | 地址 | `POST https://www.iqinghu.com/api/desktop/qh/mcp` |
 | 必需请求头 | `Authorization: Bearer <青虎密钥>`、`Content-Type: application/json` |
-| 密钥来源 | 向用户索取，或读环境变量 `QINGHU_TOKEN` / `QHKIT_TOKEN`；用户先打开 https://www.iqinghu.com/workbench/login?urlCode=agentgit 注册/登录，再到 https://www.iqinghu.com/workbench/dashboard/api-keys 生成 |
+| 密钥来源 | 向用户索取，或读环境变量 `QINGHU_TOKEN` / `QHKIT_TOKEN`；用户先打开 https://www.iqinghu.com/workbench/login?type=1&urlCode=1788417527636 注册/登录，再到 https://www.iqinghu.com/workbench/dashboard/api-keys 生成 |
 
 **HTTP 401 + 空响应体不一定是密钥的问题，按这个顺序排查**：
 ① **先原样重试一次**——2026-08-18 实测过同一把有效密钥间歇性返回 401 空体、隔一会儿再请求就正常，别一遇到 401 就下结论；

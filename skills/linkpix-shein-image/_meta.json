@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-shein-image",
   "displayName": "SHEIN 商品图、主图套图、详情图、活动图生成 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "帮助SHEIN卖家、服装跨境独立站通过青虎AI完成“SHEIN商品图”：支持生成时尚模特穿搭图、服装平铺图、细节图、欧美流行风场景图、多角度展示图。可调用GPT Image 2、Nano Banana 2 等大模型，结合欧美时尚圈的流行元素和高清质感，快速打造符合快时尚审美的商品图。适用于SHEIN、SHEIN快时尚独立站等服装类目爆款打造。Use this skill for SHEIN商品图, 时尚穿搭, 模特图, 快时尚, 欧美风格, 流行元素, GPT Image 2, Nano Banana 2 , AIGC图像生成, 服装电商。通过青虎AI统一接入，支持素材上传、实时模型配置、任务轮询和结果下载。",
   "publishedAt": 1788134400000
 }

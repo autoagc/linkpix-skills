@@ -6,7 +6,7 @@ homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🏷️"}}
 ---
 
-# AI图片水印添加工具 | LinkPix
+# AI图片加水印 | 批量水印 | 版权水印 | 品牌水印 | LinkPix
 
 本地 ImageMagick/ffmpeg 完成确定性的批量加水印（位置、透明度、缩放精确可控），不走生成式模型、不消耗积分。
 
@@ -35,5 +35,5 @@ ffmpeg -i 商品图.jpg -i logo.png -filter_complex "[1]format=rgba,colorchannel
 
 ## 能力边界
 
-- **去**水印：图片走「商品图片元素智能消除工具 | LinkPix」，视频走「AI视频去水印工具 | LinkPix」。
+- **去**水印：图片走「商品图消除 | 去水印 | 去除杂物 | 智能擦除 | LinkPix」，视频走「AI视频去水印 | 去水印 | 去除水印 | 视频水印移除 | LinkPix」。
 - 平铺满屏防盗水印（tile 模式）可用 `magick -tile` 实现，用户提出时再展开。

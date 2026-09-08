@@ -1,8 +1,8 @@
 {
   "ownerId": "iqinghu.com",
   "slug": "linkpix-image-eraser",
-  "displayName": "商品图片元素智能消除工具 | LinkPix",
-  "version": "0.1.4",
+  "displayName": "商品图消除 | 去水印 | 去除杂物 | 智能擦除 | LinkPix",
+  "version": "0.1.5",
   "desc": "智能擦除图片中的人物、水印、文字及杂物，并自动补全背景，轻松完成商品修图与素材优化。",
   "publishedAt": 1786492800000
 }

@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-youtube-viral-video",
   "displayName": "YouTube 爆款视频生成 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "YouTube 爆款带货视频生成。帮助品牌出海团队、知识博主、广告创意团队通过青虎AI完成“YouTube 爆款带货视频生成”：可调用可灵Kling 3.0、阿里Wanx 3.0、MiniMax H3、Seedance 2.0、Seedance 2.5、HappyHorse 1.1等大模型，生成高质量开箱测评、长视频解说、品牌TVC、深度种草等视频类型，完美适配YouTube高画质、长留存、强品牌信任度的平台特性。适用于YouTube Ads、品牌频道、联盟营销、独立站引流等长线营销场景。Use this skill for YouTube爆款视频, 开箱测评, 长视频解说, 品牌TVC, 深度种草, YouTube Ads, 独立站引流, 高画质, 长留存, 品牌信任, Seedance, Vidu Q2, 可灵Kling, AIGC视频生成。通过青虎AI统一接入，支持素材上传、任务轮询和结果下载。",
   "publishedAt": 1788134400000
 }

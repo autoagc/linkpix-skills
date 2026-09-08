@@ -1,8 +1,8 @@
 {
   "ownerId": "iqinghu.com",
   "slug": "qinghu-image-upscale-detail",
-  "displayName": "超清修复强化细节质感 | 青虎AI",
-  "version": "0.1.4",
+  "displayName": "超清修复强化细节 | 细节质感 | 图片超分 | 分块放大 | LinkPix",
+  "version": "0.1.5",
   "desc": "采用分块放大算法对各类图片超清修复放大，完整留存原图原有细节不篡改，适配商品、人像、景物等全品类图像优化",
   "publishedAt": 1787011200000
 }

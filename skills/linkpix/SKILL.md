@@ -6,7 +6,7 @@ homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
 ---
 
-# 青虎AI-LinkPix｜AI 电商素材：商品图、详情页、带货视频、批量修图、TVC 广告大片、POD 印花、视频翻译、电商套图、豆包生图、Seedream 5.0、Seedance 2.0、阿里万相 Wanx 3.0、MiniMax H3、可灵 3.0 Omni、HappyHorse 1.1、Vidu Q3 Turbo、去水印、去字幕、画质提升、视频剪辑、去 AI 感、爆款复刻、视频分析
+# 青虎AI-AI电商助手 | 选品上货 | 数据采集 | AI生图 | AI生视频
 
 LinkPix 是青虎工作台的全栈电商内容生产能力：从商品图、主图、详情页、电商套图，到批量修图、广告投放素材、带货视频与电影质感 TVC 广告大片；从 POD 印花、视频翻译与视频编辑，到爆款复刻、视频转图文、分镜创作及短视频/达人数据分析，均可在一个入口完成。
 
@@ -62,7 +62,7 @@ LinkPix 是青虎工作台的全栈电商内容生产能力：从商品图、主
    ```
    校验行输出 `OK` 才继续；校验失败就删掉重下，**绝不解包未通过校验的文件**。nodejs.org 访问不通时，把两个下载 URL 的前缀 `https://nodejs.org/dist` 整体换成镜像 `https://registry.npmmirror.com/-/binary/node`（目录结构相同，SHASUMS256.txt 也有镜像，校验步骤不变）。`export PATH` 只对当前 shell 生效，跨命令调用时每个新 shell 都要先执行这行（或追加进 `~/.bashrc`）。macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
 4. **密钥**：无密钥时（命令返回 `stage:"config"`），把下面的引导文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod`（或设环境变量 `QHKIT_TOKEN`）：
-   > 1. 打开 https://www.iqinghu.com/workbench/login?urlCode=agentgit 注册/登录
+   > 1. 打开 https://www.iqinghu.com/workbench/login?type=1&urlCode=1788417527636 注册/登录
    > 2. 进入控制台 → 工作台的 APIKeys 页面：https://www.iqinghu.com/workbench/dashboard/api-keys
    > 3. 点「创建/复制」生成密钥，生成后将 API 密钥发我
    >

@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-happyhorse-sales",
   "displayName": "HappyHorse 1.1 电商带货视频 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "帮助电商运营、品牌商品团队、直播带货团队与商业内容创作者通过青虎AI完成“HappyHorse 1.1 电商带货视频”：既可只输入文字从零生成，也可加入图片、视频或音频控制结果，支持首尾帧控制，生成前自动上传素材。适用于AI广告、TVC、电商产品展示视频、竖屏种草视频、短剧漫剧等。精准服务于淘宝天猫、京东、拼多多、抖音、快手、小红书、TikTok、Amazon、Temu、Shopee等平台的动态商品演示和品牌营销需求。 Use this skill for HappyHorse1.1电商视频, 通义万相视频, 图生视频, 首尾帧, 产品展示, 带货, 种草, 短剧, 漫剧, 淘宝, 京东, 抖音, TikTok, Shopee, AIGC视频生成。通过青虎AI统一接入，支持素材上传、任务轮询和结果下载。",
   "publishedAt": 1788134400000
 }

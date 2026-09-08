@@ -1,8 +1,8 @@
 {
   "ownerId": "iqinghu.com",
   "slug": "linkpix-image-text-edit",
-  "displayName": "电商商品图文字修改器 | LinkPix",
-  "version": "0.1.4",
+  "displayName": "电商图文字修改 | 图片改字 | 替换文字 | 修改价格文字 | LinkPix",
+  "version": "0.1.5",
   "desc": "自动识别并修改图片中的文字内容，无需重新设计图片，快速替换标题、价格、卖点及促销信息。",
   "publishedAt": 1786492800000
 }

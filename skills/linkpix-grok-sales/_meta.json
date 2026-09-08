@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-grok-sales",
   "displayName": "Grok 电商带货视频 | LinkPix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "帮助跨境卖家、智能内容团队通过青虎AI完成“Grok 电商带货视频”：利用Grok对互联网内容和流行语的高度敏感，生成极具网感和话题度的商品介绍视频，精准捕捉年轻人的喜好。特别适用于小红书热点种草、抖音原生搞笑/反转剧情带货、TikTok病毒式营销视频、Instagram Reels潮流内容展示，以及Amazon/Shopee的社媒引流视频。通过青虎AI统一接入，自动生成声情并茂的口播，让产品极具社交传播力。 Use this skill for Grok电商视频, 社媒视频, 病毒式营销, 网感, 小红书, 抖音, TikTok, Reels, Amazon, Shopee, 引流视频, AI视频生成, 智能口播, AIGC视频生成。通过青虎AI统一接入，支持素材上传、任务轮询和结果下载。",
   "publishedAt": 1788134400000
 }
