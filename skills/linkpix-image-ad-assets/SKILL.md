@@ -8,27 +8,46 @@ metadata: {"openclaw":{"emoji":"🖼️","requires":{"bins":["qhkit"]},"install"
 
 # AI电商图文广告 | 图文广告 | 营销图文 | 广告海报生成 | LinkPix
 
-图 + 文两条产线：广告图走 `qhkit image`（文案写进 prompt），图文正文走 `qhkit video-to-text`（把带货视频转成图文种草内容）。
+投放用的「图 + 文」广告素材：广告文案由你直接撰写，广告图走 `qhkit image`（文案写进提示词、商品图作参考图）。另可把带货视频反推成图文种草正文（`qhkit video-to-text`）。
 
 ## 何时触发
 
-- 「出几张投放用的广告图」「做图文种草素材/笔记」
-- 「把这条视频转成图文笔记」（→ video-to-text）
+- 「出几张投放用的广告图」「做信息流/朋友圈/小红书广告素材」「给这个商品配几条广告文案」
+- 「做图文种草素材/笔记」「把这条视频转成图文笔记」（→ 路线二）
+- 只要海报式大促活动图时优先用「电商促销海报」技能；要视频广告用「AI电商视频广告」技能。
 
-## 使用配方
+## 工作流程（路线一：广告图 + 广告文案，最常用）
+
+1. **收集信息**：商品是什么、核心卖点（1–3 个）、目标人群、投放渠道、有无商品图、是否有价格/优惠。缺关键信息先问一次，其余按常识补全并在交付时说明假设。
+2. **先写文案（不调用任何接口，直接产出）**：给出 3 组可选广告文案，每组含主标题（≤12 字）、副标题（≤20 字）、行动号召（如「立即抢购」）；再附 1 段 50–80 字的投放正文。文案要具体到卖点和数字，避免「品质卓越」这类空话，也不要写「最」「第一」等广告法禁用词。
+3. **按渠道定尺寸**：信息流/朋友圈常用 1:1 或 4:3，小红书/抖音用 3:4 或 9:16，横幅用 16:9。`sizePreset` 逐模型不同，先查再选：
+   `qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`
+4. **出图**：用选定文案组写提示词，标题和副标题用「」原样写进提示词，其余写版式与风格。
+5. **核对**：生成式文字可能出错，逐张核对图上的标题、数字和商品外观，有错就改提示词重出。
+6. **交付**：同一轮给齐——广告图按当前环境的媒体交付约定逐张发出，文案 3 组 + 投放正文以文本贴出，并附实扣积分。
 
 ```bash
-# 广告图：促销文案直接写进 prompt（文字用引号写死）
-qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./商品图.jpg"],"prompt":"信息流广告图：商品居中，标题「持久续航 露营无忧」，副标题「限时8折」，高对比配色，点击欲强的电商广告风格","imageCount":4}'
-# 图文正文：从爆款视频反推（id/playVideo 来自 video-inspire status 的返回）
-qhkit video-inspire generate '{"resourceUrl":"https://v.douyin.com/xxxx/"}'
-qhkit video-inspire status   '{"inspireTaskId":276}'
-qhkit video-to-text generate '{"id":276,"playVideo":"https://x/v.mp4"}'
-qhkit video-to-text status   '{"id":276}'   # data 非空即图文正文
+# 有商品图（推荐）：商品作参考图，文案写进提示词
+qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./商品图.jpg"],"prompt":"信息流广告图：商品居中偏左，右侧大字标题「持久续航 露营无忧」，副标题「限时8折」，底部按钮「立即抢购」，户外露营场景，高对比配色，干净的电商广告版式","imageCount":4}'
+# 无商品图：纯文字直出
+qhkit image generate '{"modelLabel":"智慧模型","prompt":"小红书风格种草广告图，米白色背景上的保温杯，标题「一杯热水 暖一整天」，手写体副标题「12小时保温」，清新生活感","imageCount":2}'
 ```
 
-- 图文套装交付：广告图按当前环境的媒体交付约定逐张发出 + 图文正文全文贴出，同一轮给齐。
-- 图上文字出图后必须目检核对。
+**模型选择**：默认 `智慧模型`（效果好、有免费额度）；要更强真实感换 `图片 5.0 Pro`；多张之间要细节一致用 `图片 5.0 Lite`。标签必须与 `options` 返回值逐字一致。
+**失败兜底**：未配置密钥或出图失败时，照常交付第 2 步的文案与每张图的提示词，告诉用户配置好密钥后可直接用这些提示词出图，不要空手结束。
+
+## 路线二：带货视频 → 图文种草正文
+
+需要一条带货视频的分享链接（抖音/快手等 http(s) 链接）。先解析视频，再用解析结果反推图文：
+
+```bash
+qhkit video-inspire generate '{"resourceUrl":"<视频分享链接>"}'      # 返回 inspireTaskId
+qhkit video-inspire status   '{"inspireTaskId":<上一步的 inspireTaskId>}'  # 轮询到完成，记下返回里的 id 与 playVideo
+qhkit video-to-text generate '{"id":<上一步的 id>,"playVideo":"<上一步的 playVideo>"}'
+qhkit video-to-text status   '{"id":<同一个 id>}'                      # data 非空即图文正文
+```
+
+拿到正文后按目标平台润色（小红书加分段与表情、朋友圈精简），需要配图时回到路线一出图。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）
 
