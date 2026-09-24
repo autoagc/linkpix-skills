@@ -19,7 +19,7 @@ metadata: {"openclaw":{"emoji":"🎯","requires":{"bins":["qhkit"]},"install":[{
 
 ## 使用配方
 
-**首选模型**：本技能对外对应 **可灵 3.0 / Kling 3.0（目录里常见 `可灵3.0 Omni`）**。先跑 `qhkit video options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，在 `models`/`modelLabel` 里按别名匹配：`可灵3.0` / `可灵 3.0` / `Kling 3.0` / `Kling3.0` / `Omni`。命中后把返回的标签**逐字**当作 `modelLabel`（视频模型常带时长，如 `Seedance2.0 15秒`，只写模型名且存在多时长时按 CLI 提示补 `duration`）。
+**首选模型**：本技能对外对应 **可灵 3.0 / Kling 3.0（目录里常见 `可灵3.0 Omni`）**。先跑 `qhkit video options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，在 `models`/`modelLabel` 里按别名匹配：`可灵3.0` / `可灵 3.0` / `Kling 3.0` / `Kling3.0` / `Omni`。命中后把返回的模型名**逐字**当作 `modelLabel`；时长用 `duration` 在该模型的 `durationRange` / `durationOptions` 内按秒自选（**必须显式传**，不传 CLI 会报错并给出可选范围；用户说了时长就用用户的，没说就提议 `defaultDuration` 并在确认参数时告诉用户）。
 
 - 清单里暂时没有对应项：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架 可灵 3.0 / Kling 3.0（目录里常见 `可灵3.0 Omni`）」，不要自造标签硬提交。
 - `maintenance: true` 或 `notice` 含「即将下线」的不要推荐。
@@ -31,9 +31,9 @@ qhkit video-inspire generate '{"resourceUrl":"https://v.douyin.com/xxxx/"}'
 qhkit video-inspire status   '{"inspireTaskId":276}'
 # 2. 你来改写：保留镜头结构与节奏，替换成用户商品与卖点，把改写版读给用户确认
 # 3. 成片（modelLabel 换成 options 返回的逐字标签；有 playVideo 直链且模型支持参考视频时再传）
-qhkit video generate '{"modelLabel":"可灵3.0 Omni","prompt":"<改写后的脚本>","uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
+qhkit video generate '{"modelLabel":"可灵3.0 Omni","duration":10,"prompt":"<改写后的脚本>","uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
 qhkit video status   '{"videoTaskId":"task-123"}'
-qhkit video estimate '{"modelLabel":"可灵3.0 Omni","uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
+qhkit video estimate '{"modelLabel":"可灵3.0 Omni","duration":10,"uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
 ```
 
 - 中间步骤交付「原脚本 + 改写版」对照，确认后再提交成片。

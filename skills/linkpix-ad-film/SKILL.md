@@ -8,7 +8,7 @@ metadata: {"openclaw":{"emoji":"🎥","requires":{"bins":["qhkit"]},"install":[{
 
 # AI商品广告大片 | TVC生成 | 电影级广告 | 品牌宣传片 | LinkPix
 
-电影级质感的商品广告：主力模型 `品牌质感大片`（参考图必填、提示词要精准），角色叙事型广告用 `可灵3.0 Omni`。
+电影级质感的商品广告：主力模型 `Viduq3-turbo`（原「品牌质感大片」，5–16 秒自选，参考图必填、提示词要精准），角色叙事型广告用 `可灵3.0 Omni`。
 
 ## 何时触发
 
@@ -19,18 +19,18 @@ metadata: {"openclaw":{"emoji":"🎥","requires":{"bins":["qhkit"]},"install":[{
 
 ```bash
 # 15 秒正片（参考图必填，多张可选）
-qhkit video generate '{"modelLabel":"品牌质感大片 15秒","prompt":"深色影棚，一束顶光缓缓扫过腕表表盘，金属拉丝质感特写，慢镜头推近，微尘在光柱中漂浮，冷峻高级的电影调色","uploadedImages":["./商品图.jpg"]}'
+qhkit video generate '{"modelLabel":"Viduq3-turbo","duration":15,"prompt":"深色影棚，一束顶光缓缓扫过腕表表盘，金属拉丝质感特写，慢镜头推近，微尘在光柱中漂浮，冷峻高级的电影调色","uploadedImages":["./商品图.jpg"]}'
 # 5 秒试水（有免费额度；参考图为首帧+尾帧两张，顺序：首帧在前）
-qhkit video generate '{"modelLabel":"品牌质感大片 5秒","prompt":"<同样写精准>","uploadedImages":["./首帧.jpg","./尾帧.jpg"]}'
+qhkit video generate '{"modelLabel":"Viduq2-turbo","duration":5,"prompt":"<同样写精准>","uploadedImages":["./首帧.jpg","./尾帧.jpg"]}'
 # 角色统一、原生音画的叙事广告
-qhkit video generate '{"modelLabel":"可灵3.0 Omni 15秒","prompt":"<简洁描述剧情与商品>","uploadedImages":["./商品图.jpg"]}'
+qhkit video generate '{"modelLabel":"可灵3.0 Omni","duration":15,"prompt":"<简洁描述剧情与商品>","uploadedImages":["./商品图.jpg"]}'
 qhkit video status '{"videoTaskId":"task-123"}'
 # 报价
-qhkit video estimate '{"modelLabel":"品牌质感大片 15秒","uploadedImages":["./商品图.jpg"]}'
+qhkit video estimate '{"modelLabel":"Viduq3-turbo","duration":15,"uploadedImages":["./商品图.jpg"]}'
 ```
 
-- **品牌质感大片的提示词要求是「精准」**：一句话会出废片。提交前帮用户补齐：镜头（推/拉/摇/特写）、光影（光源方向与氛围）、材质（金属/玻璃/织物质感）、调色风格。
-- 用户预算敏感或先试效果 → `品牌质感大片 5秒`（免费额度，但必须给参考图）。
+- **Viduq3-turbo（原品牌质感大片）的提示词要求是「精准」**：一句话会出废片。提交前帮用户补齐：镜头（推/拉/摇/特写）、光影（光源方向与氛围）、材质（金属/玻璃/织物质感）、调色风格。
+- 用户预算敏感或先试效果 → `Viduq2-turbo`（原「品牌质感大片 5秒」，仅 5 秒，有免费额度，但必须给首帧+尾帧参考图）。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）
 

@@ -1,6 +1,6 @@
 ---
 name: linkpix-wanx-3-sales
-description: "帮助淘宝、天猫、1688商家以及淘系运营团队通过青虎AI完成“阿里Wanx 3.0 电商带货视频”：深度适配淘系电商视觉生态，支持文字极速生成视频、图片一键生成动态视频，以及精细的局部动态控制。特别适用于淘宝主图视频、天猫大促活动视频、1688工厂直供展示、淘系直播间引流花絮、以及阿里妈妈信息流广告投放素材。完美融合中文语境和电商卖点，大大提升淘系店铺的转化率。 Use this skill for 阿里Wanx3.0电商视频, 通义万相视频, 淘宝主图视频, 天猫大促, 1688视频, 阿里妈妈, 直播间引流, 淘系电商, AI视频生成, 动态商品图, AIGC视频生成。通过青虎AI统一接入，支持素材上传、任务轮询和结果下载。 当用户要求用 阿里Wanx 3.0 电商带货视频 或 阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`） 做带货/商品/种草/广告视频时必须触发。关键词：LinkPix、qhkit、青虎、阿里Wanx 3.0、通义万相、wanx3.0、淘宝主图视频、天猫大促、1688、阿里妈妈、淘系电商、动态商品图。"
+description: "帮助淘宝、天猫、1688商家以及淘系运营团队通过青虎AI完成“阿里Wanx 3.0 电商带货视频”：深度适配淘系电商视觉生态，支持文字极速生成视频、图片一键生成动态视频，以及精细的局部动态控制。特别适用于淘宝主图视频、天猫大促活动视频、1688工厂直供展示、淘系直播间引流花絮、以及阿里妈妈信息流广告投放素材。完美融合中文语境和电商卖点，大大提升淘系店铺的转化率。 Use this skill for 阿里Wanx3.0电商视频, 通义万相视频, 淘宝主图视频, 天猫大促, 1688视频, 阿里妈妈, 直播间引流, 淘系电商, AI视频生成, 动态商品图, AIGC视频生成。通过青虎AI统一接入，支持素材上传、任务轮询和结果下载。 当用户要求用 阿里Wanx 3.0 电商带货视频 或 阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选） 做带货/商品/种草/广告视频时必须触发。关键词：LinkPix、qhkit、青虎、阿里Wanx 3.0、通义万相、wanx3.0、淘宝主图视频、天猫大促、1688、阿里妈妈、淘系电商、动态商品图。"
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
@@ -10,29 +10,29 @@ metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{
 
 帮助淘宝、天猫、1688商家以及淘系运营团队通过青虎AI完成“阿里Wanx 3.0 电商带货视频”：深度适配淘系电商视觉生态，支持文字极速生成视频、图片一键生成动态视频，以及精细的局部动态控制。特别适用于淘宝主图视频、天猫大促活动视频、1688工厂直供展示、淘系直播间引流花絮、以及阿里妈妈信息流广告投放素材。完美融合中文语境和电商卖点，大大提升淘系店铺的转化率。 Use this skill for 阿里Wanx3.0电商视频, 通义万相视频, 淘宝主图视频, 天猫大促, 1688视频, 阿里妈妈, 直播间引流, 淘系电商, AI视频生成, 动态商品图, AIGC视频生成。通过青虎AI统一接入，支持素材上传、任务轮询和结果下载。
 
-商品图 + 卖点 → 带货短视频。成片走 `qhkit video`，多图快速拼片走 `qhkit video-quick`。本技能默认优先 **阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`）**。提示词要求常为「精准」：镜头、光影、材质、卖点要写全，一句话提示容易出废片。
+商品图 + 卖点 → 带货短视频。成片走 `qhkit video`，多图快速拼片走 `qhkit video-quick`。本技能默认优先 **阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选）**。提示词要求常为「精准」：镜头、光影、材质、卖点要写全，一句话提示容易出废片。
 
 ## 何时触发
 
-- 「用 阿里Wanx / 阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`） 做带货视频 / 商品视频 / 种草视频」
+- 「用 阿里Wanx / 阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选） 做带货视频 / 商品视频 / 种草视频」
 - 用户点名该模型出电商展示片、主图视频、信息流广告视频
 
 ## 使用配方
 
-**首选模型**：本技能对外对应 **阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`）**。先跑 `qhkit video options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，在 `models`/`modelLabel` 里按别名匹配：`阿里wanx3.0` / `wanx3.0` / `Wanx 3.0` / `通义万相`。命中后把返回的标签**逐字**当作 `modelLabel`（视频模型常带时长，如 `Seedance2.0 15秒`，只写模型名且存在多时长时按 CLI 提示补 `duration`）。
+**首选模型**：本技能对外对应 **阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选）**。先跑 `qhkit video options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，在 `models`/`modelLabel` 里按别名匹配：`阿里wanx3.0` / `wanx3.0` / `Wanx 3.0` / `通义万相`。命中后把返回的模型名**逐字**当作 `modelLabel`；时长用 `duration` 在该模型的 `durationRange` / `durationOptions` 内按秒自选（**必须显式传**，不传 CLI 会报错并给出可选范围；用户说了时长就用用户的，没说就提议 `defaultDuration` 并在确认参数时告诉用户）。
 
-- 清单里暂时没有对应项：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架 阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`）」，不要自造标签硬提交。
+- 清单里暂时没有对应项：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架 阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选）」，不要自造标签硬提交。
 - `maintenance: true` 或 `notice` 含「即将下线」的不要推荐。
 - 用户明确点了别的模型，以用户为准。
 
 ```bash
 qhkit video options '{"queryParams":["modelLabel","models"]}'
-# modelLabel 必须换成 options 返回的逐字标签（常带时长）
-qhkit video generate '{"modelLabel":"阿里wanx3.0 15秒","prompt":"户外工作灯，超长续航，露营必备","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16"}'
+# modelLabel 用 options 返回的模型名；duration 在该模型可选范围内自选（秒）
+qhkit video generate '{"modelLabel":"阿里wanx3.0","duration":15,"prompt":"户外工作灯，超长续航，露营必备","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16"}'
 qhkit video status   '{"videoTaskId":"task-123"}'
 # 多图一键成片（不绑模型，8–60 秒）
 qhkit video-quick generate '{"prompt":"户外工作灯广告","duration":15,"creative":"1","orientation":"portrait","language":"zh","uploadedImages":["./图1.jpg","./图2.jpg"]}'
-qhkit video estimate '{"modelLabel":"阿里wanx3.0 15秒","uploadedImages":["./商品图.jpg"]}'
+qhkit video estimate '{"modelLabel":"阿里wanx3.0","duration":15,"uploadedImages":["./商品图.jpg"]}'
 ```
 
 - 参考视频只在 `supportsReferenceVideo: true` 时传，`uploadedVideo` 可数组，上限见 `maxReferenceVideos`。

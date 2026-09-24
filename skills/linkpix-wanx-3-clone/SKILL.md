@@ -1,6 +1,6 @@
 ---
 name: linkpix-wanx-3-clone
-description: "帮助电商短视频团队通过青虎AI完成“阿里Wanx 3.0 爆款视频复刻”：精准识别淘系平台的爆款视频逻辑，自动提取热门的展示节奏、卖点文案和脚本结构，生成同类型的优质短视频，抢占淘宝首猜、逛逛、点淘等淘系内容流量池。也支持复制抖音、快手等外站爆款，将其转化为适配天猫淘宝环境的视频，助力商家以更低成本、更高效率获取站内免费流量。 Use this skill for 阿里Wanx3.0爆款复刻, 淘系爆款, 淘宝逛逛, 点淘流量, 短视频引流, 站外爆款转化, 电商脚本复用, AI视频复刻。通过青虎AI统一接入，支持视频分析、任务轮询和结果下载。 当用户要求用 阿里Wanx 3.0 爆款视频复刻 或 阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`） 复刻/对标/照着做爆款视频时必须触发。关键词：LinkPix、qhkit、青虎、阿里Wanx 3.0、淘系爆款、淘宝逛逛、点淘、站外爆款转化、阿里妈妈、AI视频复刻。"
+description: "帮助电商短视频团队通过青虎AI完成“阿里Wanx 3.0 爆款视频复刻”：精准识别淘系平台的爆款视频逻辑，自动提取热门的展示节奏、卖点文案和脚本结构，生成同类型的优质短视频，抢占淘宝首猜、逛逛、点淘等淘系内容流量池。也支持复制抖音、快手等外站爆款，将其转化为适配天猫淘宝环境的视频，助力商家以更低成本、更高效率获取站内免费流量。 Use this skill for 阿里Wanx3.0爆款复刻, 淘系爆款, 淘宝逛逛, 点淘流量, 短视频引流, 站外爆款转化, 电商脚本复用, AI视频复刻。通过青虎AI统一接入，支持视频分析、任务轮询和结果下载。 当用户要求用 阿里Wanx 3.0 爆款视频复刻 或 阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选） 复刻/对标/照着做爆款视频时必须触发。关键词：LinkPix、qhkit、青虎、阿里Wanx 3.0、淘系爆款、淘宝逛逛、点淘、站外爆款转化、阿里妈妈、AI视频复刻。"
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎯","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
@@ -10,18 +10,18 @@ metadata: {"openclaw":{"emoji":"🎯","requires":{"bins":["qhkit"]},"install":[{
 
 帮助电商短视频团队通过青虎AI完成“阿里Wanx 3.0 爆款视频复刻”：精准识别淘系平台的爆款视频逻辑，自动提取热门的展示节奏、卖点文案和脚本结构，生成同类型的优质短视频，抢占淘宝首猜、逛逛、点淘等淘系内容流量池。也支持复制抖音、快手等外站爆款，将其转化为适配天猫淘宝环境的视频，助力商家以更低成本、更高效率获取站内免费流量。 Use this skill for 阿里Wanx3.0爆款复刻, 淘系爆款, 淘宝逛逛, 点淘流量, 短视频引流, 站外爆款转化, 电商脚本复用, AI视频复刻。通过青虎AI统一接入，支持视频分析、任务轮询和结果下载。
 
-链接进、成片出：`video-inspire` 反推脚本 → 改写成用户商品 → `video` 用 **阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`）** 成片。外站爆款转淘系时，改写脚本要换成淘宝逛逛/点淘语气和卖点结构。
+链接进、成片出：`video-inspire` 反推脚本 → 改写成用户商品 → `video` 用 **阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选）** 成片。外站爆款转淘系时，改写脚本要换成淘宝逛逛/点淘语气和卖点结构。
 
 ## 何时触发
 
-- 「用 阿里Wanx / 阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`） 复刻这条爆款 / 对标 / 照着做」
+- 「用 阿里Wanx / 阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选） 复刻这条爆款 / 对标 / 照着做」
 - 用户同时点名该模型 + 给了抖音/TikTok/快手/视频号链接
 
 ## 使用配方
 
-**首选模型**：本技能对外对应 **阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`）**。先跑 `qhkit video options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，在 `models`/`modelLabel` 里按别名匹配：`阿里wanx3.0` / `wanx3.0` / `Wanx 3.0` / `通义万相`。命中后把返回的标签**逐字**当作 `modelLabel`（视频模型常带时长，如 `Seedance2.0 15秒`，只写模型名且存在多时长时按 CLI 提示补 `duration`）。
+**首选模型**：本技能对外对应 **阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选）**。先跑 `qhkit video options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，在 `models`/`modelLabel` 里按别名匹配：`阿里wanx3.0` / `wanx3.0` / `Wanx 3.0` / `通义万相`。命中后把返回的模型名**逐字**当作 `modelLabel`；时长用 `duration` 在该模型的 `durationRange` / `durationOptions` 内按秒自选（**必须显式传**，不传 CLI 会报错并给出可选范围；用户说了时长就用用户的，没说就提议 `defaultDuration` 并在确认参数时告诉用户）。
 
-- 清单里暂时没有对应项：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架 阿里 Wanx 3.0 / 通义万相（目录里常见 `阿里wanx3.0 15秒`）」，不要自造标签硬提交。
+- 清单里暂时没有对应项：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架 阿里 Wanx 3.0 / 通义万相（目录名 `阿里wanx3.0`，5–30 秒自选）」，不要自造标签硬提交。
 - `maintenance: true` 或 `notice` 含「即将下线」的不要推荐。
 - 用户明确点了别的模型，以用户为准。
 
@@ -31,9 +31,9 @@ qhkit video-inspire generate '{"resourceUrl":"https://v.douyin.com/xxxx/"}'
 qhkit video-inspire status   '{"inspireTaskId":276}'
 # 2. 你来改写：保留镜头结构与节奏，替换成用户商品与卖点，把改写版读给用户确认
 # 3. 成片（modelLabel 换成 options 返回的逐字标签；有 playVideo 直链且模型支持参考视频时再传）
-qhkit video generate '{"modelLabel":"阿里wanx3.0 15秒","prompt":"<改写后的脚本>","uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
+qhkit video generate '{"modelLabel":"阿里wanx3.0","duration":15,"prompt":"<改写后的脚本>","uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
 qhkit video status   '{"videoTaskId":"task-123"}'
-qhkit video estimate '{"modelLabel":"阿里wanx3.0 15秒","uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
+qhkit video estimate '{"modelLabel":"阿里wanx3.0","duration":15,"uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
 ```
 
 - 中间步骤交付「原脚本 + 改写版」对照，确认后再提交成片。

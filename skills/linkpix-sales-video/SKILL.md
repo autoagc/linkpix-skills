@@ -8,7 +8,7 @@ metadata: {"openclaw":{"emoji":"🛒","requires":{"bins":["qhkit"]},"install":[{
 
 # AI电商带货视频 | 带货视频生成 | 商品展示视频 | 短视频带货 | LinkPix
 
-商品图 + 卖点一句话 → 成品带货短视频（含脚本/配音/字幕）：默认 `全能电商2.0 15秒`，多图快速成片走 `video-quick`。
+商品图 + 卖点一句话 → 成品带货短视频（含脚本/配音/字幕）：默认 `全能电商2.0`（时长 5–15 秒用 `duration` 自选），多图快速成片走 `video-quick`。
 
 ## 何时触发
 
@@ -18,19 +18,19 @@ metadata: {"openclaw":{"emoji":"🛒","requires":{"bins":["qhkit"]},"install":[{
 ## 使用配方
 
 ```bash
-# 默认：全能电商2.0 15秒（效果与 Seedance 同级、只要 30 积分）
-qhkit video generate '{"modelLabel":"全能电商2.0 15秒","prompt":"户外工作灯，超长续航，露营必备","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16"}'
+# 默认：全能电商2.0（5–15 秒自选，这里 15 秒；效果与 Seedance 同级、每秒约 2 积分）
+qhkit video generate '{"modelLabel":"全能电商2.0","duration":15,"prompt":"户外工作灯，超长续航，露营必备","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16"}'
 qhkit video status   '{"videoTaskId":"task-123"}'
 # 要最好效果 / 有参考视频要模仿运镜
-qhkit video generate '{"modelLabel":"Seedance2.0 15秒","prompt":"户外工作灯广告","uploadedImages":["./商品图.jpg"],"uploadedVideo":"./参考视频.mp4"}'
+qhkit video generate '{"modelLabel":"Seedance2.0","duration":15,"prompt":"户外工作灯广告","uploadedImages":["./商品图.jpg"],"uploadedVideo":"./参考视频.mp4"}'
 # 多图一键成片（1–7 张图，8–60 秒）
 qhkit video-quick generate '{"prompt":"户外工作灯广告","duration":15,"creative":"1","orientation":"portrait","language":"zh","uploadedImages":["./图1.jpg","./图2.jpg","./图3.jpg"]}'
 # 报价
-qhkit video estimate '{"modelLabel":"全能电商2.0 15秒","uploadedImages":["./商品图.jpg"]}'
+qhkit video estimate '{"modelLabel":"全能电商2.0","duration":15,"uploadedImages":["./商品图.jpg"]}'
 ```
 
-- 选型：默认 `全能电商2.0 15秒`；要最好/点名 Seedance → `Seedance2.0 15秒`（50）；预算敏感 → `全能电商2.0 10秒`（18）或 `电商热卖引擎 10秒`（8）。
-- 参考视频（模仿运镜）只有 `Seedance2.0 15秒`/`全能电商2.0 15秒`/`可灵3.0 Omni 10秒` 支持。
+- 选型：默认 `全能电商2.0`；要最好/点名 Seedance → `Seedance2.0`；要超过 15 秒的长视频 → `Seedance2.5` / `阿里wanx3.0`（5–30 秒）；预算敏感 → 缩短 `duration`（按秒计费），或换 `MiniMax H3`（每秒约 1 积分）。时长用 `duration` 自选且必须显式传，用户没说就提议默认时长并在确认时说明。
+- 参考视频（模仿运镜）只在 `options` 的 `models` 里 `supportsReferenceVideo: true` 的模型可用（2026-09 为 Seedance2.0/2.5、全能电商2.0、阿里wanx3.0、可灵3.0 Omni）；参考视频按实际时长另计积分。
 - 提示词写商品名+核心卖点即可（这些模型提示词要求低），投放语言用 `languageLabel`（如 `英语`）。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）

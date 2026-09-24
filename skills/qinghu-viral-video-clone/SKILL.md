@@ -22,15 +22,15 @@ metadata: {"openclaw":{"emoji":"🎯","requires":{"bins":["qhkit"]},"install":[{
 qhkit video-inspire generate '{"resourceUrl":"https://v.douyin.com/xxxx/"}'
 qhkit video-inspire status   '{"inspireTaskId":276}'   # 拿 videoScript 和 playVideo
 # 2. 把脚本中的商品与卖点替换成用户自己的（你来改写，保留镜头结构与节奏）
-# 3. 成片：脚本 + 商品图；要模仿运镜时把原片直链当参考视频（仅 Seedance2.0 15秒/全能电商2.0 15秒/可灵3.0 Omni 10秒 支持）
-qhkit video generate '{"modelLabel":"Seedance2.0 15秒","prompt":"<改写后的脚本>","uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
+# 3. 成片：脚本 + 商品图；要模仿运镜时把原片直链当参考视频（仅 `supportsReferenceVideo: true` 的模型支持，2026-09 为 Seedance2.0/2.5、全能电商2.0、阿里wanx3.0、可灵3.0 Omni）
+qhkit video generate '{"modelLabel":"Seedance2.0","duration":15,"prompt":"<改写后的脚本>","uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
 qhkit video status   '{"videoTaskId":"task-123"}'
 # 报价
-qhkit video estimate '{"modelLabel":"Seedance2.0 15秒","uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
+qhkit video estimate '{"modelLabel":"Seedance2.0","duration":15,"uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
 ```
 
 - 中间步骤交付脚本给用户过目（原脚本 + 改写版对照），确认后再提交成片，避免白扣积分。
-- 带参考视频有加价，`estimate` 会算进去。
+- 带参考视频按其实际时长另计积分，`estimate` 会算进去（本地参考视频会先上传再报价）。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）
 

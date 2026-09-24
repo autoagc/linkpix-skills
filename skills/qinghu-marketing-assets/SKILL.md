@@ -25,12 +25,12 @@ metadata: {"openclaw":{"emoji":"🧰","requires":{"bins":["qhkit"]},"install":[{
 | 场景图/氛围图 | `image` 自定义生图 + 参考图 |
 | 促销海报 | `image` 自定义生图（文案写进 prompt） |
 | 详情页 | `image` 电商详情图模式 |
-| 广告视频 | `video`（默认 `全能电商2.0 15秒`） |
+| 广告视频 | `video`（默认 `全能电商2.0`，时长 `duration` 5–15 秒自选） |
 
 ```bash
 qhkit image generate '{"modelLabel":"套图模式","uploadedImages":["./商品图.jpg"],"imageCount":6}'
 qhkit image generate '{"modelLabel":"电商详情图","uploadedImages":["./商品图.jpg"],"themeLabel":"海洋蓝"}'
-qhkit video generate '{"modelLabel":"全能电商2.0 15秒","prompt":"<商品+卖点>","uploadedImages":["./商品图.jpg"]}'
+qhkit video generate '{"modelLabel":"全能电商2.0","duration":15,"prompt":"<商品+卖点>","uploadedImages":["./商品图.jpg"]}'
 ```
 
 - 「一套素材」的默认配比：主图套图 6 张 + 详情页 1 套 + 广告视频 1 条；先 `estimate` 汇总报价、经用户确认后再批量提交。

@@ -22,7 +22,7 @@ metadata: {"openclaw":{"emoji":"🔥","requires":{"bins":["qhkit"]},"install":[{
 qhkit video-inspire generate '{"resourceUrl":"https://v.douyin.com/xxxx/"}'
 qhkit video-inspire status   '{"inspireTaskId":276}'   # 返回 videoScript（脚本）和 playVideo（直链）
 # 链路A · 复刻成片：脚本 + 用户商品图 → video
-qhkit video generate '{"modelLabel":"Seedance2.0 15秒","prompt":"<videoScript 全文或按用户商品改写后的脚本>","uploadedImages":["./我的商品图.jpg"]}'
+qhkit video generate '{"modelLabel":"Seedance2.0","duration":15,"prompt":"<videoScript 全文或按用户商品改写后的脚本>","uploadedImages":["./我的商品图.jpg"]}'
 qhkit video status   '{"videoTaskId":"task-123"}'
 # 链路B · 音频提取：直链 → ffmpeg（缺 ffmpeg 就先装）
 ffmpeg -i "<playVideo 直链>" -vn -acodec libmp3lame -q:a 2 音频.mp3

@@ -21,10 +21,10 @@ metadata: {"openclaw":{"emoji":"📕","requires":{"bins":["qhkit"]},"install":[{
 
 ```bash
 qhkit video options '{"queryParams":["modelLabel","models"]}'
-# 在 models 里按名称匹配首选模型；modelLabel 必须逐字来自返回值（常带时长）
-qhkit video generate '{"modelLabel":"Seedance2.0 15秒","prompt":"<按下方平台提示词改写>","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16","languageLabel":"简体中文"}'
+# 在 models 里按名称匹配首选模型；modelLabel 必须逐字来自返回值（时长另用 `duration` 自选）
+qhkit video generate '{"modelLabel":"Seedance2.0","duration":15,"prompt":"<按下方平台提示词改写>","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16","languageLabel":"简体中文"}'
 qhkit video status   '{"videoTaskId":"task-123"}'
-qhkit video estimate '{"modelLabel":"Seedance2.0 15秒","uploadedImages":["./商品图.jpg"]}'
+qhkit video estimate '{"modelLabel":"Seedance2.0","duration":15,"uploadedImages":["./商品图.jpg"]}'
 # 多图一键成片
 qhkit video-quick generate '{"prompt":"<平台向卖点>","duration":15,"creative":"1","orientation":"portrait","language":"zh","uploadedImages":["./图1.jpg","./图2.jpg"]}'
 # 先写分镜再成片

@@ -1,6 +1,6 @@
 ---
 name: linkpix
-description: "调用青虎 AI 媒体能力：AI 生图（套图/电商详情图/自定义生图家族实时清单：智慧模型、图片 5.0 Lite、专图模型、图片 5.0 Pro 等 + 提示词润色）、批量生图玩法（批量生图/批量改图/批量替换/主图复刻/姿势套图/批量译图）、AI 生视频（模型清单实时读取线上目录，含 Seedance2.5、Seedance2.0、阿里wanx3.0、MiniMax H3、全能电商2.0、Happy Horse、可灵3.0 Omni、品牌质感大片等多模型多时长 5–30 秒，支持多参考视频与参考音频）、一键成片、角色替换/模特换脸、视频翻译、去水印/去字幕/画质提升、复刻爆款视频出脚本、爆款视频转图文、分镜脚本与分镜图、广告素材模板批量出片（视频/图片）、POD 印花素材（印花提取/贴合/裂变 + 产品图库）、青虎工作台「AI 应用」的 AI 工作流（电影质感 TVC 广告大片、爆款视频模仿与仿拍、模特换装高一致性还原、超清修复与去 AI 感、图像去水印、短视频与达人数据引擎），均含任务状态查询。当用户要求生成/制作商品图、主图、详情图、营销图、广告视频、带货视频、口播视频，或要求批量出图、批量改图、把产品换进参考图、复刻别人的主图风格、生成服装模特多姿势套图、翻译图片上的文字，或要求翻译视频、去水印、去字幕、提升画质、换人物/换脸、复刻某条爆款视频、把视频转成图文笔记、写分镜脚本，或要求做电影质感 TVC 广告大片/品牌广告片、仿拍某条爆款视频、给模特换装、把图片超清修复/去 AI 感、跑短视频或达人数据引擎分析时必须触发。支持关键词：LinkPix、linkpix、qhkit、青虎、爆款素材、电商素材、量产素材、生图、AI绘图、商品图、主图、套图、详情图、批量生图、批量改图、批量替换、主图复刻、套图复刻、姿势套图、服装套图、批量译图、图片翻译、译图、白底图、提示词润色、广告素材、投放素材、POD素材、POD、印花、印花提取、印花贴合、印花裂变、生视频、AI视频、带货视频、广告片、一键成片、成片、换脸、换模特、数字人替换、视频翻译、翻译配音、去水印、去字幕、画质提升、超分、复刻爆款、对标视频、视频转图文、图文笔记、分镜、脚本、storyboard、AI应用、AI工作流、工作流、workflow、TVC、TVC广告、广告大片、品牌广告片、电影质感、爆款视频模仿、仿拍、模特换装、换装、超清修复、去AI感、图像去水印、数据引擎、短视频数据、达人数据。"
+description: "调用青虎 AI 媒体能力：AI 生图（套图/电商详情图/自定义生图家族实时清单：智慧模型、图片 5.0 Lite、专图模型、图片 5.0 Pro 等 + 提示词润色）、批量生图玩法（批量生图/批量改图/批量替换/主图复刻/姿势套图/批量译图）、AI 生视频（模型清单实时读取线上目录，含 Seedance2.5、Seedance2.0、阿里wanx3.0、MiniMax H3、全能电商2.0、Happy Horse、可灵3.0 Omni、Viduq3-turbo 等多模型，时长按秒自选 5–30 秒，支持多参考视频与参考音频）、一键成片、角色替换/模特换脸、视频翻译、去水印/去字幕/画质提升、复刻爆款视频出脚本、爆款视频转图文、分镜脚本与分镜图、广告素材模板批量出片（视频/图片）、POD 印花素材（印花提取/贴合/裂变 + 产品图库）、青虎工作台「AI 应用」的 AI 工作流（电影质感 TVC 广告大片、爆款视频模仿与仿拍、模特换装高一致性还原、超清修复与去 AI 感、图像去水印、短视频与达人数据引擎），均含任务状态查询。当用户要求生成/制作商品图、主图、详情图、营销图、广告视频、带货视频、口播视频，或要求批量出图、批量改图、把产品换进参考图、复刻别人的主图风格、生成服装模特多姿势套图、翻译图片上的文字，或要求翻译视频、去水印、去字幕、提升画质、换人物/换脸、复刻某条爆款视频、把视频转成图文笔记、写分镜脚本，或要求做电影质感 TVC 广告大片/品牌广告片、仿拍某条爆款视频、给模特换装、把图片超清修复/去 AI 感、跑短视频或达人数据引擎分析时必须触发。支持关键词：LinkPix、linkpix、qhkit、青虎、爆款素材、电商素材、量产素材、生图、AI绘图、商品图、主图、套图、详情图、批量生图、批量改图、批量替换、主图复刻、套图复刻、姿势套图、服装套图、批量译图、图片翻译、译图、白底图、提示词润色、广告素材、投放素材、POD素材、POD、印花、印花提取、印花贴合、印花裂变、生视频、AI视频、带货视频、广告片、一键成片、成片、换脸、换模特、数字人替换、视频翻译、翻译配音、去水印、去字幕、画质提升、超分、复刻爆款、对标视频、视频转图文、图文笔记、分镜、脚本、storyboard、AI应用、AI工作流、工作流、workflow、TVC、TVC广告、广告大片、品牌广告片、电影质感、爆款视频模仿、仿拍、模特换装、换装、超清修复、去AI感、图像去水印、数据引擎、短视频数据、达人数据。"
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
@@ -75,7 +75,7 @@ LinkPix 是青虎工作台的全栈电商内容生产能力：从商品图、主
 npm i -g @iqinghu/qhkit@latest
 ```
 
-官方源慢或超时时同样加 `--registry=https://registry.npmmirror.com`。出现以下任一信号就先升级再继续：命令返回 `{"ok":false,"stage":"version",...}`（版本门禁：有新版时 generate/script 会被直接阻断，message 里就是升级命令，照做即可）；**命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：<命令>。运行 qhkit --help 查看用法。"}`（本机 qhkit 太老、还没有这个命令——注意这条不会被版本门禁拦下，`stage` 是 `runtime` 不是 `version`，别当成用法错误）**；stderr 提示有新版本；命令报「模式在线上已下架或配置变更，请升级 qhkit」。升级后重试原命令。（`video` 的模型清单 0.12.0 起实时读取，线上新增模型不需要升级 CLI。）
+官方源慢或超时时同样加 `--registry=https://registry.npmmirror.com`。出现以下任一信号就先升级再继续：命令返回 `{"ok":false,"stage":"version",...}`（版本门禁：有新版时 generate/script 会被直接阻断，message 里就是升级命令，照做即可）；**命令返回 `{"ok":false,"stage":"runtime","message":"未知命令：<命令>。运行 qhkit --help 查看用法。"}`（本机 qhkit 太老、还没有这个命令——注意这条不会被版本门禁拦下，`stage` 是 `runtime` 不是 `version`，别当成用法错误）**；stderr 提示有新版本；命令报「模式在线上已下架或配置变更，请升级 qhkit」。升级后重试原命令。（`video` 的模型清单 0.12.0 起实时读取，线上新增模型不需要升级 CLI；**时长自选需要 0.13.0+**——旧版本不认模型名 + `duration` 的写法，报「不支持 N 秒」时先升级。）
 
 安装/配置失败时把具体报错告诉用户（常见：无写权限 → 提示用户提权或改用 npx；无网络 → 让用户处理网络）。
 
@@ -86,7 +86,7 @@ qhkit <命令> <action> '<json>'
 qhkit <命令> <action> @params.json     # 参数写进文件，避免 shell 转义问题（推荐）
 ```
 
-- action 三段式：`options`（查可选值/列表）→ `generate`(提交) → `status`(轮询)。`storyboard` 多一个 `script`；`ad` 用 `templates` 查模板；`pod` 另有 `products` 查产品图库；`image`/`video`/`ad`/`pod`/`workflow` 另有 **`estimate`（报价）**——与 `generate` 完全相同的参数，返回本次提交会**实际扣除**的积分（`credits`）与余额是否足够（`enough`），不提交任务。前四个不上传文件、秒回；**`workflow estimate` 是例外，本地素材会真上传**（工作流报价需要真实素材 URL）。
+- action 三段式：`options`（查可选值/列表）→ `generate`(提交) → `status`(轮询)。`storyboard` 多一个 `script`；`ad` 用 `templates` 查模板；`pod` 另有 `products` 查产品图库；`image`/`video`/`ad`/`pod`/`workflow` 另有 **`estimate`（报价）**——与 `generate` 完全相同的参数，返回本次提交会**实际扣除**的积分（`credits`）与余额是否足够（`enough`），不提交任务。前四个基本不上传文件、秒回；例外：**`workflow estimate` 会真上传本地素材**（工作流报价需要真实素材 URL），**`video estimate` 带本地参考视频时也会先上传**（按参考视频实际时长计价）。
 - stdout 恒为**一行 JSON**；成功含业务字段，失败为 `{"ok":false,"stage":"...","message":"..."}` 且退出码 1。把 message 原样转告用户即可。
 - 返回是**直接的数据结果**（无预渲染呈现字段）：产物 URL 从 `images` / `videos` / `primaryVideo` 取，文本产物在 `videoScript` / `imageText` / `script`，积分在 `credits`，任务号在各类 taskId 字段。如何展示给用户由你按当前环境决定。
 - stderr 可能出现提示行（如版本/模型目录告警），**不是错误**，不要当成失败。
@@ -101,7 +101,7 @@ qhkit <命令> <action> @params.json     # 参数写进文件，避免 shell 转
 - 标签类参数（`modelLabel`、`sizePreset`、`themeLabel` 等）必须与 `options` 返回的候选值**逐字一致**，不要自造或翻译。拿不准就先调 `options`。
 - **`video` 与 `image` 的模型清单都是实时的**（0.12.0 起直接读线上目录，新增/下架/调价自动跟随，无需升级 CLI），且**均无默认模型**——`modelLabel` 必填，缺失会报错并列出当前可选项。当次会话第一次选模型前先跑 `options` 查 `modelLabel`/`models` 拿当前清单，不要凭记忆或本文档的快照直接报模型名。拉不到目录（断网/密钥问题）时命令会明确报错，按提示引导用户检查配置。
 
-**⛔ 提交前必须经用户确认（硬规则）**：任何会创建任务、消耗积分的 action（各命令的 `generate`，含 `storyboard` 的 `script`）发起前，必须先把本次提交的关键参数一次性列给用户——模型/模板、出图张数或视频时长、尺寸与画质、语言、用到哪几张参考图，以及 `estimate` 报出的预计扣除积分——**等用户明确同意后才能执行提交**。参数全部来自用户原话时也要复述确认一遍（口头描述与实际枚举值可能有出入，任务提交后不可取消）。只读 action（`options` / `estimate` / `status` / `templates` / `products` / `config show`）无需确认，可直接调用。
+**⛔ 提交前必须经用户确认（硬规则）**：任何会创建任务、消耗积分的 action（各命令的 `generate`，含 `storyboard` 的 `script`）发起前，必须先把本次提交的关键参数一次性列给用户——模型/模板、出图张数或**视频时长（秒）**、尺寸与画质、语言、用到哪几张参考图，以及 `estimate` 报出的预计扣除积分——**等用户明确同意后才能执行提交**。参数全部来自用户原话时也要复述确认一遍（口头描述与实际枚举值可能有出入，任务提交后不可取消）。只读 action（`options` / `estimate` / `status` / `templates` / `products` / `config show`）无需确认，可直接调用。
 
 ## 3. 轮询规则（重要）
 
@@ -186,41 +186,42 @@ qhkit image-batch estimate '{"mode":"姿势套图","uploadedImages":["./连衣�
 - 批量替换的 `referenceImages` 元素可写 `{"url":"...","replaceText":"替换到图中的花瓶位置"}` 指定替换部位；主图复刻同理可带 `hint`（自定义复刻要求），或整体传 `"removeText":true` 去除参考图文字。
 - 批量译图按张计费；姿势套图不走免费额度。
 
-### video — AI 生视频（modelLabel 用「模型名 + 时长秒」，清单实时）
+### video — AI 生视频（modelLabel 写模型名，时长用 duration 自选，清单实时）
 
-线上一条「时长 + 生成渠道」就是一个模型，同名模型常有多个时长，所以标签形如 `Seedance2.0 15秒`。只写模型名时：唯一即命中，多时长会报错要求补 `duration`。
+与青虎工作台一致（2026-08 起）：**一个模型一个 `modelLabel`**（如 `Seedance2.5`），**时长用 `duration` 在该模型的范围内按秒自选**——区间型（如 `Seedance2.5` 5–30 秒任选整数）或档位型（如 `电商热卖引擎` 只有 10 / 15 秒）。**`duration` 必须传**（只有一个时长的模型如 `Viduq2-turbo` 可省略）：没传时 CLI 会报错并给出该模型的可选范围与写法，照提示补上即可。积分按「每秒单价 × 时长」计，所以时长直接影响价格。历史写法 `Seedance2.0 15秒` 仍可用（等价于 `modelLabel` + `duration`），但新写法优先。
 
-**模型清单实时读取线上目录**（0.12.0 起）：新增/下架/调价/维护/限时折扣自动跟随，**没有默认模型**——`modelLabel` 必填，不传会报错并列出当前可选项（带 `duration` 时按时长收窄）。所以流程固定为：先 `options` 查 `models` 拿当前清单和能力规则，选定后 `estimate` 报价，确认后 `generate`。
+**模型清单实时读取线上目录**：新增/下架/调价/维护/限时折扣自动跟随，**没有默认模型**——`modelLabel` 必填，不传会报错并列出当前可选项与各自时长范围。流程固定为：先 `options` 查 `models` 拿当前清单、时长范围和能力规则，和用户定下模型与时长后 `estimate` 报价，确认后 `generate`。
 
 ```bash
-# 第一步永远是它：当前有哪些模型、各自的参考图/视频/音频/画幅规则、目录单价与活动角标
+# 第一步永远是它：当前有哪些模型、各自可选时长（durationRange/durationOptions/defaultDuration）、按秒单价、参考图/视频/音频/画幅规则、活动角标
 qhkit video options '{"queryParams":["modelLabel","models"]}'
 # 素材既可以是公网 URL，也可以是本地文件路径（本地文件 CLI 会自动上传换取 URL）
-qhkit video generate '{"modelLabel":"Seedance2.0 15秒","prompt":"户外工作灯广告","uploadedImages":["./素材/商品图.jpg"],"uploadedVideo":"./素材/参考视频.mp4"}'
-qhkit video generate '{"modelLabel":"全能电商2.0","duration":10,"prompt":"户外工作灯广告","uploadedImages":["./素材/商品图.jpg"]}'
+qhkit video generate '{"modelLabel":"Seedance2.0","duration":12,"prompt":"户外工作灯广告","uploadedImages":["./素材/商品图.jpg"],"uploadedVideo":"./素材/参考视频.mp4"}'
+qhkit video generate '{"modelLabel":"全能电商2.0","duration":8,"prompt":"户外工作灯广告","uploadedImages":["./素材/商品图.jpg"]}'
 qhkit video status   '{"videoTaskId":"task-123"}'
-# 报价：generate 同参数换个 action——报积分给用户前先跑这条
-qhkit video estimate '{"modelLabel":"Seedance2.0 15秒","uploadedVideo":"./素材/参考视频.mp4"}'
+# 报价：generate 同参数换个 action——报积分给用户前先跑这条（时长不同价格不同，duration 一定要带上）
+qhkit video estimate '{"modelLabel":"Seedance2.0","duration":12,"uploadedVideo":"./素材/参考视频.mp4"}'
 ```
 
-`options` 的 `models` 每条给全选型所需字段：`description`/`propertyTags`（效果、稳定性、提示词要求、画质）、`credits`（目录单价）、`activityBadge`（如「限时5折」）、`free`、`maintenance`、`notice`（如「即将下线」）、`category`（主图视频/带货视频/营销素材/种草视频/营销广告/投流素材）、参考素材规则（见下）。
+`options` 的 `models` 每个模型一条，给全选型所需字段：时长规格 `durationMode`（`range` 区间 / `options` 档位 / `fixed` 固定）+ `durationRange` 或 `durationOptions` + `defaultDuration`；`creditsPerSecond`（按秒单价）与 `credits`（默认时长的参考价）；`description`/`propertyTags`（效果、稳定性、提示词要求、画质）、`activityBadge`（如「限时6折」）、`free`、`supportsBatch:false`（只能生成 1 条）、`maintenance`、`notice`（如「即将下线」）、`category`；参考素材规则（见下）。
 
-**时点参考**（2026-08-25 国内版目录，仅帮你建立感觉，**以 `options` 实时返回为准**）：19 个模型、时长 5–30 秒。当时的亮点：`阿里wanx3.0 15秒`（25 积分限时5折，参考视频≤5）、`Seedance2.5 15/20/30秒`（种草/营销广告档，**参考图必填**，参考视频≤10，15秒档还收参考音频≤3）、`MiniMax H3 5/10/15秒`（5–10 积分性价比档，768p，新增 `超宽屏 21:9` 画幅，不收参考视频）、`Seedance2.0 15秒`/`全能电商2.0`（经典带货档）、`品牌质感大片 5秒`（免费额度内，参考图必填，提示词要求「精准」）。
+**时点参考**（2026-09-24 国内版目录，仅帮你建立感觉，**以 `options` 实时返回为准**）：10 个模型、时长 5–30 秒自选。`Seedance2.5`（5–30 秒，**参考图必填**，参考视频≤10、参考音频≤3，约 3.6 积分/秒）、`阿里wanx3.0`（5–30 秒，限时折扣，参考视频≤5 且「参考视频总时长 + 生成时长」≤30 秒，约 1.8 积分/秒）、`Seedance2.0`/`全能电商2.0`（5–15 秒，经典带货档，参考视频≤3）、`MiniMax H3`（5–15 秒，约 1 积分/秒性价比档，768p，有 `超宽屏 21:9`，收参考音频不收参考视频）、`可灵3.0 Omni`（5–15 秒，参考图仅 jpg/png）、`Viduq3-turbo`（原「品牌质感大片」，5–16 秒，参考图必填，提示词要求「精准」）、`Viduq2-turbo`（原「品牌质感大片 5秒」，仅 5 秒首尾帧，免费额度内，只能 1 条）。
 
 怎么选（原则，不绑定具体模型名）：
 
-- 按用户诉求在 `models` 里过滤：要模仿运镜 → `supportsReferenceVideo: true`；要配 BGM/口播干音 → `supportsReferenceAudio: true`；纯文字起步 → `referenceImageRequired: false`；在意成本 → 按 `credits` 从低到高（留意 `activityBadge` 限时折扣）。
-- **提示词要求**（`propertyTags` 的「提示词要求」）：「简单/简洁」的模型一句话卖点即可；「精准」的模型（如品牌质感大片、阿里wanx3.0）给一句话会出废片，先帮用户把镜头、光影、材质补充完整再提交。
+- 按用户诉求在 `models` 里过滤：要模仿运镜 → `supportsReferenceVideo: true`；要配 BGM/口播干音 → `supportsReferenceAudio: true`；纯文字起步 → `referenceImageRequired: false`；要长视频（>15 秒）→ 看 `durationRange` 上限；在意成本 → 按 `creditsPerSecond` 从低到高（留意 `activityBadge` 限时折扣）。
+- **时长**：用户说了时长就用用户的（CLI 会校验是否在该模型范围内，超出会报错并给出可选范围）；没说就先问用户，或提议 `defaultDuration` 并在确认参数时明确告诉用户时长、可以改——提交时一定显式传 `duration`。带货短视频常见 8–15 秒。
+- **提示词要求**（`propertyTags` 的「提示词要求」）：「简单/简洁」的模型一句话卖点即可；「精准」的模型（如 Viduq3-turbo、阿里wanx3.0）给一句话会出废片，先帮用户把镜头、光影、材质补充完整再提交。
 - `maintenance: true` 的模型不可提交（CLI 会拦截），`notice` 里有「即将下线」的不要再推荐。
-- 用户没点名模型时，把 2–3 个候选（含单价）列给用户选，不要替用户拍板。
+- 用户没点名模型时，把 2–3 个候选（含时长范围与按秒单价）列给用户选，不要替用户拍板。
 
-- **参考图规则按模型走**（`options` 的 `models` 里逐条给出）：`multi_reference` 多张、每张可带 `imageUsage` 用途文案；`first_frame` 只收 1 张首帧；`first_last_frame` 收 2 张（**首帧在前、尾帧在后**），这两种模式不接受用途文案。`referenceImageRequired: true` 的模型强制要图，其余可纯文字生成。
-- **参考视频**（`uploadedVideo`）只有 `supportsReferenceVideo: true` 的模型支持，**可传数组**，上限见 `maxReferenceVideos`（提交前 CLI 校验）。注意：`models` 里该字段已按后端权威口径折算（开关与规则同时成立才算支持），照着用即可。
-- **参考音频**（`uploadedAudio`，如 BGM/口播干音）只有 `supportsReferenceAudio: true` 的模型支持，上限见 `maxReferenceAudios`；本地文件 ≤50MB 自动上传。
+- **参考图规则按模型走**（`options` 的 `models` 里逐条给出）：`multi_reference` 多张（上限见 `maxReferenceImages`，7–30 张不等）、每张可带 `imageUsage` 用途文案；`first_frame` 只收 1 张首帧；`first_last_frame` 收 2 张（**首帧在前、尾帧在后**），这两种模式不接受用途文案。`referenceImageRequired: true` 的模型强制要图。`referenceImageRules` 给出格式、最短边、宽高比要求，不符的本地图 CLI 会在上传前报错。
+- **参考视频**（`uploadedVideo`）只有 `supportsReferenceVideo: true` 的模型支持，**可传数组**，上限见 `maxReferenceVideos`；`referenceVideoRules` 给出格式、单条时长、总时长，以及个别模型的「参考视频总时长 + 生成时长」上限（`inputOutputDurationLimit`）——超了 CLI 会报错并算出当前还能选的最长生成时长，照着调 `duration` 或换短一点的参考视频。
+- **参考音频**（`uploadedAudio`，如 BGM/口播干音）只有 `supportsReferenceAudio: true` 的模型支持，上限见 `maxReferenceAudios`；`referenceAudioRules` 给出格式（多为 wav/mp3）与时长要求。
 - `orientationLabel` 逐模型不同（`models` 里 `orientationLabel` 给全）：常见 `竖屏 9:16`（默认）/ `横屏 16:9` / `方屏 1:1` / `3:4` / `4:3`，个别模型有 `超宽屏 21:9`；新画幅 code 会原样透传，照 `options` 返回的写。
-- `languageLabel` 可选（如 `英语`，17 种语言与生图一致），不传由服务端按提示词决定；`count` 1–8。
+- `languageLabel` 可选（如 `英语`，17 种语言与生图一致），不传由服务端按提示词决定；`count` 1–8（`supportsBatch: false` 的模型只能 1）。
 
-> 分工记清楚：**多模型间权衡选型 → `options` 的 `models`**（实时目录：卖点、免费额度、`maintenance` 维护拦截、`notice`、`activityBadge`）；**确定参数后向用户报积分 → `estimate`**（与提交走同一个计价接口，折扣、张数、免费额度全都算进去，返回值就是实扣值）。`options` 里的 `credits` 是目录单价，可能与实扣有出入，不要拿它报价。
+> 分工记清楚：**多模型间权衡选型 → `options` 的 `models`**（实时目录：时长范围、按秒单价、卖点、免费额度、`maintenance` 维护拦截、`notice`、`activityBadge`）；**确定模型与时长后向用户报积分 → `estimate`**（与提交走同一个计价接口，时长、折扣、条数、参考视频实际时长全都算进去，返回值就是实扣值；带本地参考视频时会先上传，需要等一会儿）。`options` 里的 `credits` 只是默认时长的参考价，不要拿它报价。
 
 ### video-quick — 一键成片
 
@@ -348,7 +349,8 @@ qhkit workflow stop     '{"logId":"75141"}'
 
 - **报价规则（硬性）**：凡是要把积分消耗数字报给用户（确认参数、答复"要花多少积分"），`image`/`video`/`ad`/`pod`/`workflow` 必须先跑 `estimate`（generate 同参数），报它返回的 `credits`；**不要引用本文选型表或 `options` 里的数字报价**——那是会漂移的快照/目录价，`estimate` 才是实扣值。`enough:false` 时提前告知余额不足。`estimate` 失败（`stage:"estimate"`）或该命令不支持 estimate（video-quick 等）时，如实说「以实际扣费为准」，不要编数字。
   - **`workflow estimate` 有一种「成功但没报出价」的分支**：返回 `ok:true` / `stage:"estimate"`，但**没有 `credits`，只有 `creditsNotice`**（线上未返回预估积分，文案里给的是目录价）。这**不是失败**，别当报错处理，也别把缺失的 `credits` 读成 0 或自己补一个数——把 `creditsNotice` 的原话转告用户即可。
-  - **`workflow estimate` 会真实上传本地素材**（其他命令的 estimate 都不上传）：工作流报价需要真实素材 URL，按视频秒数计费的应用尤其依赖它。素材大时报价会等上传，只想问价可以先给一个已有的 http(s) URL。
+  - **`video estimate` 带本地参考视频时会先上传**（服务端按参考视频实际时长计价）；只想问价可以先给已有的 http(s) URL。
+  - **`workflow estimate` 会真实上传本地素材**（image/ad/pod 的 estimate 都不上传）：工作流报价需要真实素材 URL，按视频秒数计费的应用尤其依赖它。素材大时报价会等上传，只想问价可以先给一个已有的 http(s) URL。
 - **提交前必须确认（见第 2 节硬规则）**：无论参数是否齐全，`generate` 前都要把模型/模板、张数或时长、尺寸/画质、语言、参考图与 `estimate` 预估积分列给用户，**用户明确同意后才提交**。意图模糊（没说清模式/尺寸/语言等且默认值可能不符预期）时，先用 `options` 的候选值和用户对齐再确认，不要替用户猜大参数。
 - **提交后立即告知**：任务 ID、预计耗时、正在轮询；完成后汇报产物。
 - **交付（产物要让用户当场看见）**：交付格式**以工作区 `AGENTS.md`「媒体产物的交付格式」节为准**，

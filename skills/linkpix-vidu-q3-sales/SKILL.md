@@ -19,7 +19,7 @@ metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{
 
 ## 使用配方
 
-**首选模型**：本技能对外对应 **Vidu Q3**。先跑 `qhkit video options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，在 `models`/`modelLabel` 里按别名匹配：`Vidu Q3` / `ViduQ3` / `Vidu`。命中后把返回的标签**逐字**当作 `modelLabel`（视频模型常带时长，如 `Seedance2.0 15秒`，只写模型名且存在多时长时按 CLI 提示补 `duration`）。
+**首选模型**：本技能对外对应 **Vidu Q3**。先跑 `qhkit video options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，在 `models`/`modelLabel` 里按别名匹配：`Vidu Q3` / `ViduQ3` / `Vidu`。命中后把返回的模型名**逐字**当作 `modelLabel`；时长用 `duration` 在该模型的 `durationRange` / `durationOptions` 内按秒自选（**必须显式传**，不传 CLI 会报错并给出可选范围；用户说了时长就用用户的，没说就提议 `defaultDuration` 并在确认参数时告诉用户）。
 
 - 清单里暂时没有对应项：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架 Vidu Q3」，不要自造标签硬提交。
 - `maintenance: true` 或 `notice` 含「即将下线」的不要推荐。
@@ -27,12 +27,12 @@ metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{
 
 ```bash
 qhkit video options '{"queryParams":["modelLabel","models"]}'
-# modelLabel 必须换成 options 返回的逐字标签（常带时长）
-qhkit video generate '{"modelLabel":"Vidu Q3","prompt":"户外工作灯，超长续航，露营必备","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16"}'
+# modelLabel 用 options 返回的模型名；duration 在该模型可选范围内自选（秒）
+qhkit video generate '{"modelLabel":"Vidu Q3","duration":15,"prompt":"户外工作灯，超长续航，露营必备","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16"}'
 qhkit video status   '{"videoTaskId":"task-123"}'
 # 多图一键成片（不绑模型，8–60 秒）
 qhkit video-quick generate '{"prompt":"户外工作灯广告","duration":15,"creative":"1","orientation":"portrait","language":"zh","uploadedImages":["./图1.jpg","./图2.jpg"]}'
-qhkit video estimate '{"modelLabel":"Vidu Q3","uploadedImages":["./商品图.jpg"]}'
+qhkit video estimate '{"modelLabel":"Vidu Q3","duration":15,"uploadedImages":["./商品图.jpg"]}'
 ```
 
 - 参考视频只在 `supportsReferenceVideo: true` 时传，`uploadedVideo` 可数组，上限见 `maxReferenceVideos`。

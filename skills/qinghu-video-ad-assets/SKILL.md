@@ -8,7 +8,7 @@ metadata: {"openclaw":{"emoji":"📹","requires":{"bins":["qhkit"]},"install":[{
 
 # AI电商视频广告 | 视频广告素材 | 信息流广告 | 广告视频生成 | 青虎AI
 
-投放导向的视频量产：信息流用 `全能电商2.0`/`电商热卖引擎`（省、快），品牌向用 `品牌质感大片`/`可灵3.0 Omni`，`count` 一次多条。
+投放导向的视频量产：信息流用 `全能电商2.0`/`电商热卖引擎`（省、快），品牌向用 `Viduq3-turbo`（原品牌质感大片）/`可灵3.0 Omni`，`count` 一次多条。
 
 ## 何时触发
 
@@ -19,14 +19,14 @@ metadata: {"openclaw":{"emoji":"📹","requires":{"bins":["qhkit"]},"install":[{
 
 ```bash
 # 信息流量产：count 一次出多条（1–8）
-qhkit video generate '{"modelLabel":"全能电商2.0 15秒","prompt":"户外工作灯，超长续航","uploadedImages":["./商品图.jpg"],"count":4,"orientationLabel":"竖屏 9:16"}'
+qhkit video generate '{"modelLabel":"全能电商2.0","duration":15,"prompt":"户外工作灯，超长续航","uploadedImages":["./商品图.jpg"],"count":4,"orientationLabel":"竖屏 9:16"}'
 # 预算敏感的走量素材
-qhkit video generate '{"modelLabel":"电商热卖引擎 10秒","prompt":"<商品+卖点>","uploadedImages":["./商品图.jpg"]}'
+qhkit video generate '{"modelLabel":"电商热卖引擎","duration":10,"prompt":"<商品+卖点>","uploadedImages":["./商品图.jpg"]}'
 # 品牌向素材
-qhkit video generate '{"modelLabel":"品牌质感大片 15秒","prompt":"<精准的镜头/光影/材质描述>","uploadedImages":["./商品图.jpg"]}'
+qhkit video generate '{"modelLabel":"Viduq3-turbo","duration":15,"prompt":"<精准的镜头/光影/材质描述>","uploadedImages":["./商品图.jpg"]}'
 qhkit video status '{"videoTaskId":"task-123"}'
 # 量产前先报总价
-qhkit video estimate '{"modelLabel":"全能电商2.0 15秒","uploadedImages":["./商品图.jpg"],"count":4}'
+qhkit video estimate '{"modelLabel":"全能电商2.0","duration":15,"uploadedImages":["./商品图.jpg"],"count":4}'
 ```
 
 - 画幅按投放位选：信息流/短视频 `竖屏 9:16`，横版广告位 `横屏 16:9`；海外投放加 `languageLabel`（如 `英语`）。
