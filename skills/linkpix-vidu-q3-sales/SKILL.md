@@ -35,8 +35,10 @@ qhkit video-quick generate '{"prompt":"户外工作灯广告","duration":15,"cre
 qhkit video estimate '{"modelLabel":"Vidu Q3","duration":15,"uploadedImages":["./商品图.jpg"]}'
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 - 参考视频只在 `supportsReferenceVideo: true` 时传，`uploadedVideo` 可数组，上限见 `maxReferenceVideos`。
-- 参考音频（BGM / 口播干音）只在 `supportsReferenceAudio: true` 时传，本地文件 ≤50MB。
+- 参考音频（用户自带的音频文件）只在 `supportsReferenceAudio: true` 时传，本地文件 ≤50MB。
 - `orientationLabel` / `languageLabel` 必须来自 options；`count` 1–8。
 - `propertyTags` 里提示词要求为「精准」的模型，先补全镜头、光影、材质再提交。
 
@@ -102,4 +104,4 @@ npm i -g @iqinghu/qhkit@latest
 ## 能力边界
 
 - 复刻对标链接走「Vidu Q3 爆款视频复刻 | LinkPix」；只要脚本走「AI电商带货脚本生成器 | LinkPix」；电影级 TVC 走「AI商品广告大片生成器 | LinkPix」。
-- 音乐/MV、数字人口播、直播切片、长视频剪辑 qhkit 不支持，如实告知。
+- 音乐/MV、直播切片、长视频剪辑 qhkit 不支持，如实告知。

@@ -29,6 +29,8 @@ qhkit video status   '{"videoTaskId":"task-123"}'
 qhkit video estimate '{"modelLabel":"Seedance2.0","duration":15,"uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 - 中间步骤交付脚本给用户过目（原脚本 + 改写版对照），确认后再提交成片，避免白扣积分。
 - 带参考视频按其实际时长另计积分，`estimate` 会算进去（本地参考视频会先上传再报价）。
 

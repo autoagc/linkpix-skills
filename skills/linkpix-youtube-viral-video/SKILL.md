@@ -31,6 +31,8 @@ qhkit video-quick generate '{"prompt":"<平台向卖点>","duration":15,"creativ
 qhkit storyboard script '{"uploadedImages":["./商品图.jpg"],"productName":"保温杯","pointDescription":"316不锈钢·24h保温"}'
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 平台提示词：默认横屏 16:9、更长时长（能选 20/30 秒就优先）；开箱测评、品牌 TVC、深度种草要把材质和光影写准。Shorts 时再改回竖屏。qhkit 单段最长约 30 秒，更长内容分段生成后告知用户需自行拼接。
 
 - 用户没点名模型时，把首选列表里当前在架的 2–3 个（含单价）列给用户选，不要替用户拍板。
@@ -100,4 +102,4 @@ npm i -g @iqinghu/qhkit@latest
 
 - 用户点名了可灵 / Seedance / Wanx / MiniMax / HappyHorse / Grok，改走对应的模型专项技能。
 - 复刻一条已有链接走对应模型的「爆款视频复刻」或「AI爆款视频复刻 | LinkPix」。
-- 音乐/MV、数字人口播、直播切片、超长视频剪辑 qhkit 不支持，如实告知。
+- 音乐/MV、直播切片、超长视频剪辑 qhkit 不支持，如实告知。

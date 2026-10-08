@@ -32,6 +32,8 @@ qhkit video options '{"queryParams":["modelLabel","models"]}'
 qhkit video estimate '{"modelLabel":"全能电商2.0","duration":15,"uploadedImages":["./商品图.jpg"]}'
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 **模型速查**（2026-09 国内版时点快照；时长用 `duration` 在范围内按秒自选，积分按「每秒单价 × 时长」计；每秒单价只用于横向比较，报给用户以 `estimate` 为准；可用性以 `options` 的 `models` 为准，`maintenance:true` 表示维护中）：
 
 | modelLabel | 可选时长（默认） | 定位 | 特点 | 参考视频 | 积分/秒 |
@@ -104,4 +106,4 @@ npm i -g @iqinghu/qhkit@latest
 ## 能力边界
 
 - 带货专项走「AI电商带货视频 | 带货视频生成 | 商品展示视频 | 短视频带货 | 青虎AI」，广告大片走「AI商品广告大片 | TVC生成 | 电影级广告 | 品牌宣传片 | 青虎AI」，脚本/分镜走「AI电商带货脚本 | 脚本生成 | 口播文案 | 种草脚本 | 青虎AI」「AI视频分镜 | 分镜图生成 | 镜头设计 | 运镜方案 | 青虎AI」，换人走「AI视频角色替换 | 换人 | 人物替换 | 角色换脸 | 模特换脸 | 青虎AI」。
-- 音乐/MV、数字人口播、直播切片、长视频剪辑 qhkit 不支持，如实告知并建议到青虎工作台（https://www.iqinghu.com）确认。
+- 音乐/MV、直播切片、长视频剪辑 qhkit 不支持，如实告知，并建议到青虎工作台（https://www.iqinghu.com）确认。

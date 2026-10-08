@@ -28,6 +28,8 @@ qhkit video status   '{"videoTaskId":"task-123"}'
 ffmpeg -i "<playVideo 直链>" -vn -acodec libmp3lame -q:a 2 音频.mp3
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 - `resourceUrl` 只收 http(s) 分享链接（抖音等平台），后端按链接拉取，不是上传本地文件。
 - 复刻前把脚本里的商品/卖点替换成用户自己的，避免照搬原视频台词。
 

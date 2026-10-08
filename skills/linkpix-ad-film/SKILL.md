@@ -29,6 +29,8 @@ qhkit video status '{"videoTaskId":"task-123"}'
 qhkit video estimate '{"modelLabel":"Viduq3-turbo","duration":15,"uploadedImages":["./商品图.jpg"]}'
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 - **Viduq3-turbo（原品牌质感大片）的提示词要求是「精准」**：一句话会出废片。提交前帮用户补齐：镜头（推/拉/摇/特写）、光影（光源方向与氛围）、材质（金属/玻璃/织物质感）、调色风格。
 - 用户预算敏感或先试效果 → `Viduq2-turbo`（原「品牌质感大片 5秒」，仅 5 秒，有免费额度，但必须给首帧+尾帧参考图）。
 

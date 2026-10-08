@@ -33,6 +33,8 @@ qhkit image generate '{"modelLabel":"电商详情图","uploadedImages":["./商�
 qhkit video generate '{"modelLabel":"全能电商2.0","duration":15,"prompt":"<商品+卖点>","uploadedImages":["./商品图.jpg"]}'
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 - 「一套素材」的默认配比：主图套图 6 张 + 详情页 1 套 + 广告视频 1 条；先 `estimate` 汇总报价、经用户确认后再批量提交。
 - 交付时按素材类型分组展示，全部产物同一轮给齐。
 

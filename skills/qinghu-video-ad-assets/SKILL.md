@@ -29,6 +29,8 @@ qhkit video status '{"videoTaskId":"task-123"}'
 qhkit video estimate '{"modelLabel":"全能电商2.0","duration":15,"uploadedImages":["./商品图.jpg"],"count":4}'
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 - 画幅按投放位选：信息流/短视频 `竖屏 9:16`，横版广告位 `横屏 16:9`；海外投放加 `languageLabel`（如 `英语`）。
 - 多条量产先 `estimate` 报总价，经用户确认再提交。
 

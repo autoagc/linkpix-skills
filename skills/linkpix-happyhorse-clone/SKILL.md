@@ -36,6 +36,8 @@ qhkit video status   '{"videoTaskId":"task-123"}'
 qhkit video estimate '{"modelLabel":"Happy Horse 1.1","duration":15,"uploadedImages":["./我的商品图.jpg"],"uploadedVideo":"<playVideo 直链>"}'
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 - 中间步骤交付「原脚本 + 改写版」对照，确认后再提交成片。
 - 模型不支持参考视频时不要传 `uploadedVideo`，改用脚本约束运镜。
 - `uploadedVideo` / `uploadedAudio` 可数组，上限见 options。
@@ -104,4 +106,4 @@ npm i -g @iqinghu/qhkit@latest
 ## 能力边界
 
 - 只要脚本不要成片走「AI电商带货脚本生成器 | LinkPix」；不复刻、直接带货走「HappyHorse 1.1 电商带货视频 | LinkPix」。
-- 音乐/MV、数字人口播、长视频剪辑 qhkit 不支持，如实告知。
+- 音乐/MV、长视频剪辑 qhkit 不支持，如实告知。

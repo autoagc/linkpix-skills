@@ -29,6 +29,8 @@ qhkit video-quick generate '{"prompt":"户外工作灯广告","duration":15,"cre
 qhkit video estimate '{"modelLabel":"全能电商2.0","duration":15,"uploadedImages":["./商品图.jpg"]}'
 ```
 
+- **生成的视频自带声音**（所有模型都是）：台词、旁白、口播、音效等由 prompt 决定。
+
 - 选型：默认 `全能电商2.0`；要最好/点名 Seedance → `Seedance2.0`；要超过 15 秒的长视频 → `Seedance2.5` / `阿里wanx3.0`（5–30 秒）；预算敏感 → 缩短 `duration`（按秒计费），或换 `MiniMax H3`（每秒约 1 积分）。时长用 `duration` 自选且必须显式传，用户没说就提议默认时长并在确认时说明。
 - 参考视频（模仿运镜）只在 `options` 的 `models` 里 `supportsReferenceVideo: true` 的模型可用（2026-09 为 Seedance2.0/2.5、全能电商2.0、阿里wanx3.0、可灵3.0 Omni）；参考视频按实际时长另计积分。
 - 提示词写商品名+核心卖点即可（这些模型提示词要求低），投放语言用 `languageLabel`（如 `英语`）。
