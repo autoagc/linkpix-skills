@@ -10,7 +10,7 @@ metadata: {"openclaw":{"emoji":"🎵","requires":{"bins":["qhkit"]},"install":[{
 
 抖音 爆款带货视频生成。帮助抖音电商运营、直播团队、短视频创作者通过青虎AI完成“抖音 爆款带货视频生成”：可调用可灵Kling 3.0、阿里Wanx 3.0、MiniMax H3、Seedance 2.0、Seedance 2.5、HappyHorse 1.1等大模型，完美适配抖音前3秒抓人、快节奏、高完播率的算法特性。生成直播间切片、口播带货、剧情反转、好物测评、热点跟拍等视频类型，帮助店铺快速起号，大幅提升抖音商城及直播间的转化率。Use this skill for 抖音爆款视频, 短视频带货, 直播间切片, 口播带货, 剧情反转, 好物测评, 热点跟拍, 起号, 高转化率, 可灵Kling, 阿里Wanx, MiniMax H3, Seedance, AIGC视频生成。通过青虎AI统一接入，支持素材上传、任务轮询和结果下载。
 
-平台向的电商视频总入口（第 1 批 `linkpix-ecom-video` 的拆分）：`qhkit video` 多模型成片 + `video-quick` 多图成片 + 需要分镜时 `storyboard`。默认画幅 **竖屏 9:16**，默认语言 **简体中文**。模型优先从目录里找：可灵3.0 Omni、阿里wanx3.0、MiniMax H3、Seedance2.0、Seedance2.5、Happy Horse 1.1。
+平台向的电商视频总入口（第 1 批 `linkpix-ecom-video` 的拆分）：`qhkit video` 多模型成片 + `video-quick` 多图成片 + 需要分镜时 `storyboard`。默认画幅 **竖屏 9:16**，默认语言 **简体中文**。用户没点名模型时按 `Seedance2.5` → `阿里wanx3.0` → `Seedance2.0` → `全能电商2.0` 的顺序推荐。
 
 ## 何时触发
 
@@ -21,10 +21,10 @@ metadata: {"openclaw":{"emoji":"🎵","requires":{"bins":["qhkit"]},"install":[{
 
 ```bash
 qhkit video options '{"queryParams":["modelLabel","models"]}'
-# 在 models 里按名称匹配首选模型；modelLabel 必须逐字来自返回值（时长另用 `duration` 自选）
-qhkit video generate '{"modelLabel":"Seedance2.0","duration":15,"prompt":"<按下方平台提示词改写>","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16","languageLabel":"简体中文"}'
+# 按默认推荐顺序在 models 里匹配模型；modelLabel 必须逐字来自返回值（时长另用 `duration` 自选）
+qhkit video generate '{"modelLabel":"Seedance2.5","duration":15,"prompt":"<按下方平台提示词改写>","uploadedImages":["./商品图.jpg"],"orientationLabel":"竖屏 9:16","languageLabel":"简体中文"}'
 qhkit video status   '{"videoTaskId":"task-123"}'
-qhkit video estimate '{"modelLabel":"Seedance2.0","duration":15,"uploadedImages":["./商品图.jpg"]}'
+qhkit video estimate '{"modelLabel":"Seedance2.5","duration":15,"uploadedImages":["./商品图.jpg"]}'
 # 多图一键成片
 qhkit video-quick generate '{"prompt":"<平台向卖点>","duration":15,"creative":"1","orientation":"portrait","language":"zh","uploadedImages":["./图1.jpg","./图2.jpg"]}'
 # 先写分镜再成片
@@ -35,7 +35,7 @@ qhkit storyboard script '{"uploadedImages":["./商品图.jpg"],"productName":"�
 
 平台提示词：前 3 秒给钩子（冲突/反转/利益点），快节奏切镜，口播短句，竖屏 9:16，适合直播切片、口播带货、剧情反转、好物测评、热点跟拍。
 
-- 用户没点名模型时，把首选列表里当前在架的 2–3 个（含单价）列给用户选，不要替用户拍板。
+- **默认推荐顺序**（用户没点名模型时）：`Seedance2.5` → `阿里wanx3.0` → `Seedance2.0` → `全能电商2.0`。按这个顺序列候选（含时长范围与按秒单价），排第一的标为推荐，用户没有异议就用它；某个模型不满足本次条件（没有必填的参考图、时长超出范围、不支持要用的参考视频/音频、维护中）就顺延到下一个，并告诉用户原因或请用户补齐素材。其他模型只在用户点名时使用。
 - 参考视频 / 参考音频是否可传以当次 `models` 为准。
 - `orientationLabel` 必须来自该模型的候选；目录没有 竖屏 9:16 时改用最接近的竖/横屏并告诉用户。
 

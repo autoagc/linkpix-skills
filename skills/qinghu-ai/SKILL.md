@@ -210,13 +210,13 @@ qhkit video estimate '{"modelLabel":"Seedance2.0","duration":12,"uploadedVideo":
 
 **时点参考**（2026-09-24 国内版目录，仅帮你建立感觉，**以 `options` 实时返回为准**）：10 个模型、时长 5–30 秒自选。`Seedance2.5`（5–30 秒，**参考图必填**，参考视频≤10、参考音频≤3，约 3.6 积分/秒）、`阿里wanx3.0`（5–30 秒，限时折扣，参考视频≤5 且「参考视频总时长 + 生成时长」≤30 秒，约 1.8 积分/秒）、`Seedance2.0`/`全能电商2.0`（5–15 秒，经典带货档，参考视频≤3）、`MiniMax H3`（5–15 秒，约 1 积分/秒性价比档，768p，有 `超宽屏 21:9`，收参考音频不收参考视频）、`可灵3.0 Omni`（5–15 秒，**参考图必填**，仅 jpg/png）、`Viduq3-turbo`（原「品牌质感大片」，5–16 秒，参考图必填，提示词要求「精准」）、`Viduq2-turbo`（原「品牌质感大片 5秒」，仅 5 秒首尾帧，免费额度内，只能 1 条）。
 
-怎么选（原则，不绑定具体模型名）：
+怎么选：
 
-- 按用户诉求在 `models` 里过滤：要模仿运镜 → `supportsReferenceVideo: true`；要用用户自带的音频 → `supportsReferenceAudio: true`；纯文字起步 → `referenceImageRequired: false`；要长视频（>15 秒）→ 看 `durationRange` 上限；在意成本 → 按 `creditsPerSecond` 从低到高（留意 `activityBadge` 限时折扣）。
+- **默认推荐顺序**（用户没点名模型时）：`Seedance2.5` → `阿里wanx3.0` → `Seedance2.0` → `全能电商2.0`。按这个顺序列候选（含时长范围与按秒单价），排第一的标为推荐，用户没有异议就用它；某个模型不满足本次条件（没有必填的参考图、时长超出范围、不支持用户要的参考视频/音频、维护中）就顺延到下一个，并告诉用户原因或请用户补齐素材。其他模型只在用户点名时使用；用户点名了就以用户为准。
+- 按用户诉求在 `models` 里过滤：要模仿运镜 → `supportsReferenceVideo: true`；要用用户自带的音频 → `supportsReferenceAudio: true`；纯文字起步 → `referenceImageRequired: false`；要长视频（>15 秒）→ 看 `durationRange` 上限。
 - **时长**：用户说了时长就用用户的（CLI 会校验是否在该模型范围内，超出会报错并给出可选范围）；没说就先问用户，或提议 `defaultDuration` 并在确认参数时明确告诉用户时长、可以改——提交时一定显式传 `duration`。带货短视频常见 8–15 秒。
 - **提示词要求**（`propertyTags` 的「提示词要求」）：「简单/简洁」的模型一句话卖点即可；「精准」的模型（如 Viduq3-turbo、阿里wanx3.0）给一句话会出废片，先帮用户把镜头、光影、材质补充完整再提交。
 - `maintenance: true` 的模型不可提交（CLI 会拦截），`notice` 里有「即将下线」的不要再推荐。
-- 用户没点名模型时，把 2–3 个候选（含时长范围与按秒单价）列给用户选，不要替用户拍板。
 
 - **参考图规则按模型走**（`options` 的 `models` 里逐条给出）：`multi_reference` 多张（上限见 `maxReferenceImages`，7–30 张不等）、每张可带 `imageUsage` 用途文案；`first_frame` 只收 1 张首帧；`first_last_frame` 收 2 张（**首帧在前、尾帧在后**），这两种模式不接受用途文案。`referenceImageRequired: true` 的模型强制要图：用户没给商品图时先要图，不要只凭文字描述提交；`estimate` 返回里带 `referenceImageRequired: true` 就说明本次入参还没有图，确认参数时一并向用户索要。`referenceImageRules` 给出格式、最短边、宽高比要求，不符的本地图 CLI 会在上传前报错。
 - **参考视频**（`uploadedVideo`）只有 `supportsReferenceVideo: true` 的模型支持，**可传数组**，上限见 `maxReferenceVideos`；`referenceVideoRules` 给出格式、单条时长、总时长，以及个别模型的「参考视频总时长 + 生成时长」上限（`inputOutputDurationLimit`）——超了 CLI 会报错并算出当前还能选的最长生成时长，照着调 `duration` 或换短一点的参考视频。
