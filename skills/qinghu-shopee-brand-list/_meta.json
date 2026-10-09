@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-brand-list",
+  "displayName": "Shopee-品牌库筛选 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "从 Shopee 品牌库（T+1）按类目、品牌名模糊搜索，并按商品数、销量、销售额、店铺数排序",
+  "publishedAt": 1791475200000
+}

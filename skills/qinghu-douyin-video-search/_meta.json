@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-douyin-video-search",
+  "displayName": "抖音-关键词搜视频 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按关键词搜索抖音视频，返回视频 ID、作者、发布时间、标题、下载地址、点赞收藏评论分享等，可筛排序、时长、发布时间",
+  "publishedAt": 1791475200000
+}

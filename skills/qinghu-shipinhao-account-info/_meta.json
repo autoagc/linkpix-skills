@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shipinhao-account-info",
+  "displayName": "视频号-账号认证信息 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询视频号账号的 IP 属地、认证主体、主体类型、服务类别、认证时间等",
+  "publishedAt": 1791475200000
+}

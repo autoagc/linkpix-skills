@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-bilibili-comments",
+  "displayName": "B站-视频评论采集 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按视频链接采集 B 站视频下的全部评论",
+  "publishedAt": 1791475200000
+}

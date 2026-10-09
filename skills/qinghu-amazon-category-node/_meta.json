@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-amazon-category-node",
+  "displayName": "亚马逊-类目节点查询 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "通过关键词、类目名称、节点路径或节点 ID 查亚马逊类目，返回层级路径、名称和商品数量；也是其他亚马逊工具 nodeIdPath 的来源",
+  "publishedAt": 1791475200000
+}

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-keyword-list",
+  "displayName": "Shopee-热搜词库筛选 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "从 Shopee 热搜词库（T+1）按类目、商品所在地、30 天销量、推荐出价等条件筛选关键词",
+  "publishedAt": 1791475200000
+}

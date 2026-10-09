@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-category-daily-trend",
+  "displayName": "Shopee-类目每日趋势 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按类目 ID 查询每天的销量、销售额等指标（最长 720 天）",
+  "publishedAt": 1791475200000
+}

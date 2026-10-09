@@ -1,11 +1,11 @@
 # LinkPix Agent Skills
 
-电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **125 个技能**。
+电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **264 个技能**。
 
 覆盖商品主图 / 详情图 / 广告素材 / 带货短视频 / 爆款复刻 / 视频翻译 / POD 印花，
-以及 TikTok、Shopee、Ozon、Amazon、1688、抖音、小红书等平台的选品与达人分析。
+以及 TikTok、Shopee、Ozon、Amazon、1688、抖音、小红书、B站、视频号等平台的选品、达人与社媒数据查询。
 
-> **English** — 125 Agent Skills for e-commerce content generation and product research
+> **English** — 264 Agent Skills for e-commerce content generation and product research
 > by LinkPix (青虎AI): product images, sales videos, viral video cloning, POD patterns,
 > and cross-border market analysis for TikTok, Shopee, Ozon, Amazon and 1688.
 > Install with `npx skills add autoagc/linkpix-skills`.
@@ -37,12 +37,13 @@ npx skills add autoagc/linkpix-skills --list
 
 ## 前置依赖
 
-按技能正文实际调用的工具统计（有 2 个技能同时需要两种，故合计大于 125）：
+按技能正文实际调用的工具统计（有 2 个技能同时需要两种，故合计大于 264）：
 
 | 依赖 | 技能数 | 准备方式 |
 |---|---|---|
 | `qhkit` CLI | 97 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
 | 青虎 MCP | 26 | 在客户端接入青虎 MCP Server |
+| `qhkit mcp`（青虎数据工具） | 139 | 同 `qhkit` CLI（需 0.14.0+），无需另配 MCP Server |
 | ImageMagick / ffmpeg | 4 | 本地安装，纯本地处理不联网 |
 
 每个技能的依赖在下方清单的「依赖」列逐条标注。
@@ -57,6 +58,7 @@ npx skills add autoagc/linkpix-skills --list
 - **热门模型截流** —— Seedream / Qwen-Image / GPT Image 2 / Nano Banana、可灵 Kling / Seedance / Vidu / 阿里 Wanx / MiniMax / HappyHorse / Grok
 - **平台专项素材** —— 淘宝天猫、抖音小店、拼多多、京东、1688、Amazon、Shopee、TikTok Shop、Lazada、Temu、Ozon、Wildberries、SHEIN 的商品图，以及抖音 / 小红书 / 视频号 / TikTok / YouTube 爆款视频
 - **选品分析** —— TikTok / Shopee / Ozon / Amazon / 1688 / 抖音的类目蓝海、爆款跟卖、关键词、竞店截流、达人建联
+- **数据工具单项技能** —— 每个青虎数据工具一个技能：榜单、商品 / 店铺 / 品牌 / 达人详情、关键词挖掘与反查、类目价格分布、趋势快照、评论采集、热搜榜、AI 生成内容检测等
 
 ## 技能清单
 
@@ -205,6 +207,153 @@ npx skills add autoagc/linkpix-skills --list
 | `qinghu-viral-video-mens` | 爆款视频模仿(男装) &#124; 青虎AI | `qhkit` | 精准完成男装模特动作迁移，适配真人 / 虚拟形象，高效还原动作细节，快速制作优质男装带货短视频。 |
 | `qinghu-viral-video-womens` | 爆款视频模仿(女装) &#124; 青虎AI | `qhkit` | 精准完成女装模特动作迁移，适配真人 / 虚拟形象，高效还原动作细节，快速制作优质女装带货短视频。 |
 | `qinghu-workflow-apps` | AI电商工作流应用 &#124; 青虎AI | `qhkit` | 集成电商 AI 工作流应用，覆盖商品图片制作、视频生成、爆款仿拍、达人分析、数据洞察、商品优化等多个业务场景，通过标准化 AI 工作流帮助卖家自动完成复杂运营任务，全面提升内容生产与店铺运营效率。 |
+
+</details>
+
+<details>
+<summary><b>青虎AI 数据工具（139 个，一个数据工具一个技能）</b></summary>
+
+| 技能 | 名称 | 依赖 | 说明 |
+|---|---|---|---|
+| `qinghu-amazon-asin-detail` | 亚马逊-ASIN详情查询 &#124; 青虎AI | `qhkit mcp` | 查询单个 ASIN 的基础信息、类目与 BSR、价格、评论、卖家、变体和运营标识。 |
+| `qinghu-amazon-category-node` | 亚马逊-类目节点查询 &#124; 青虎AI | `qhkit mcp` | 通过关键词、类目名称、节点路径或节点 ID 查亚马逊类目，返回层级路径、名称和商品数量；也是其他亚马逊工具 nodeIdPath 的来源。 |
+| `qinghu-amazon-competitor` | 亚马逊-同行竞品查询 &#124; 青虎AI | `qhkit mcp` | 按市场、月份、品牌、卖家、ASIN、类目、关键词筛选商品列表，返回销量、销售额、BSR、价格、评分等运营指标。 |
+| `qinghu-amazon-demand-trend` | 亚马逊-类目需求趋势 &#124; 青虎AI | `qhkit mcp` | 分析指定类目节点的页面浏览量、商品总数、退货率、搜索购买比等需求趋势指标。 |
+| `qinghu-amazon-keyword-miner` | 亚马逊-关键词挖掘 &#124; 青虎AI | `qhkit mcp` | 围绕种子词系统挖掘亚马逊关键词，评估搜索量、购买量、购买率、商品数、广告竞品、PPC 竞价、点击集中度、SPR。 |
+| `qinghu-amazon-keyword-trend` | 亚马逊-关键词搜索趋势 &#124; 青虎AI | `qhkit mcp` | 查询关键词的搜索量、购买量、购买率及同比、环比、近三个月增长率。 |
+| `qinghu-amazon-market-list` | 亚马逊-类目市场筛选 &#124; 青虎AI | `qhkit mcp` | 从类目维度评估市场规模、竞争强度、垄断程度、利润空间与新品机会，按条件筛选可进入的类目。 |
+| `qinghu-amazon-market-stats` | 亚马逊-类目市场统计 &#124; 青虎AI | `qhkit mcp` | 对已选定的类目节点做深度统计：市场规模与成熟度、头部垄断程度、新品存活与成长、价格利润销量差距。 |
+| `qinghu-amazon-order-keyword` | 亚马逊-ASIN出单词反查 &#124; 青虎AI | `qhkit mcp` | 反查一个或多个 ASIN 在指定周期内真正带来曝光与转化的关键词，判断转化结构在改善还是恶化。 |
+| `qinghu-amazon-price-band` | 亚马逊-类目价格分布 &#124; 青虎AI | `qhkit mcp` | 分析指定类目节点下商品的价格区间分布、销量占比、销售效率和评分表现，找可切入价格带。 |
+| `qinghu-amazon-price-history` | 亚马逊-商品历史趋势 &#124; 青虎AI | `qhkit mcp` | 查询单个 ASIN 的价格、成交价、BSR、评论数、评分、卖家数、Buy Box 等历史趋势，以及 FBA 费用、尺寸重量（不含销量）。 |
+| `qinghu-amazon-product-research` | 亚马逊-热卖产品筛选 &#124; 青虎AI | `qhkit mcp` | 按关键词、类目、价格、销量、销售额、BSR 及增长、评分、利润率、配送方式等多维条件筛选亚马逊商品。 |
+| `qinghu-amazon-review` | 亚马逊-商品评论查询 &#124; 青虎AI | `qhkit mcp` | 按星级、评论类型拉取指定 ASIN 的评论标题、内容、评分、评论时间。 |
+| `qinghu-amazon-seller-origin` | 亚马逊-卖家所属地分布 &#124; 青虎AI | `qhkit mcp` | 统计指定类目节点下卖家所属国家/地区的商品数量与销量、销售额占比，判断是否中国卖家主导。 |
+| `qinghu-amazon-traffic-keyword` | 亚马逊-ASIN流量词反查 &#124; 青虎AI | `qhkit mcp` | 反查指定 ASIN 实际获得曝光的关键词，含搜索量、自然排名、广告排名、流量占比和 PPC 竞价参考。 |
+| `qinghu-tiktok-creator-detail` | TikTok-达人详情查询 &#124; 青虎AI | `qhkit mcp` | 按 user_id 或 unique_id（@用户名）批量查询达人详情（单次最多 10 个）。 |
+| `qinghu-tiktok-creator-products` | TikTok-达人带货商品 &#124; 青虎AI | `qhkit mcp` | 按 user_id 查询达人带过的商品（直播、视频、橱窗来源）。 |
+| `qinghu-tiktok-creator-search` | TikTok-达人筛选库 &#124; 青虎AI | `qhkit mcp` | 从 TikTok 达人库（T+1 更新）按站点、粉丝数、互动率、带货类目、性别、语言等条件批量筛选达人。 |
+| `qinghu-tiktok-creator-videos` | TikTok-达人视频列表 &#124; 青虎AI | `qhkit mcp` | 按 user_id 或 unique_id 查询达人发布的视频列表。 |
+| `qinghu-tiktok-product-creators` | TikTok-商品带货达人 &#124; 青虎AI | `qhkit mcp` | 按 product_id 查询带过这个商品的达人列表（达人明细需再查达人详情）。 |
+| `qinghu-tiktok-product-detail` | TikTok-商品详情查询 &#124; 青虎AI | `qhkit mcp` | 按 product_id 批量查询 TikTok Shop 商品详情（单次最多 10 个）。 |
+| `qinghu-tiktok-product-lives` | TikTok-商品带货直播 &#124; 青虎AI | `qhkit mcp` | 按 product_id 查询该商品关联的带货直播列表。 |
+| `qinghu-tiktok-product-rank` | TikTok-商品榜单 &#124; 青虎AI | `qhkit mcp` | 按站点、类目查询 TikTok Shop 商品热销榜 / 热推榜（日 / 周 / 月榜，返回周期增量）。 |
+| `qinghu-tiktok-product-reviews` | TikTok-商品评论 &#124; 青虎AI | `qhkit mcp` | 按 product_id 获取 TikTok Shop 已采集的商品评论列表。 |
+| `qinghu-tiktok-product-videos` | TikTok-商品带货视频 &#124; 青虎AI | `qhkit mcp` | 按 product_id 查询该商品关联的带货视频列表。 |
+| `qinghu-tiktok-search` | TikTok-站内搜索 &#124; 青虎AI | `qhkit mcp` | 模拟 TikTok 搜索框搜索达人、商品、小店、视频、直播（最多 30 条），同时是 TikTok 类目 ID 的唯一来源。 |
+| `qinghu-tiktok-shop-creators` | TikTok-店铺带货达人 &#124; 青虎AI | `qhkit mcp` | 按 seller_id 查询为该店铺带货的达人列表。 |
+| `qinghu-tiktok-shop-products` | TikTok-店铺商品列表 &#124; 青虎AI | `qhkit mcp` | 按 seller_id 查询 TikTok 小店已收录的全部商品。 |
+| `qinghu-tiktok-video-comments` | TikTok-视频评论 &#124; 青虎AI | `qhkit mcp` | 按 video_id 实时获取 TikTok 视频评论列表。 |
+| `qinghu-tiktok-video-detail` | TikTok-视频详情查询 &#124; 青虎AI | `qhkit mcp` | 按 video_id 批量查询 TikTok 视频详情（单次最多 10 个）。 |
+| `qinghu-tiktok-video-rank` | TikTok-视频榜单 &#124; 青虎AI | `qhkit mcp` | 按站点、类目查询 TikTok 热门视频榜 / 带货视频榜（日 / 周 / 月榜，返回周期增量）。 |
+| `qinghu-shopee-brand-categories` | Shopee-品牌类目分布 &#124; 青虎AI | `qhkit mcp` | 按品牌名查询该品牌热销商品在各子类目的分布（近 30 天销量降序）。 |
+| `qinghu-shopee-brand-daily-trend` | Shopee-品牌每日趋势 &#124; 青虎AI | `qhkit mcp` | 按品牌名查询品牌每天的产品数、销量、销售额、店铺数（最长 720 天）。 |
+| `qinghu-shopee-brand-detail` | Shopee-品牌详情 &#124; 青虎AI | `qhkit mcp` | 按品牌名批量查询 Shopee 品牌的产品数、销量、销售额、店铺数（单次最多 10 个）。 |
+| `qinghu-shopee-brand-list` | Shopee-品牌库筛选 &#124; 青虎AI | `qhkit mcp` | 从 Shopee 品牌库（T+1）按类目、品牌名模糊搜索，并按商品数、销量、销售额、店铺数排序。 |
+| `qinghu-shopee-brand-price-band` | Shopee-品牌价格分布 &#124; 青虎AI | `qhkit mcp` | 按品牌名查询该品牌商品在各价格区间的商品数、店铺数、近 30 天销量及占比。 |
+| `qinghu-shopee-brand-products` | Shopee-品牌热销商品 &#124; 青虎AI | `qhkit mcp` | 按品牌名查询该品牌下的热销商品列表（日 / 周 / 月榜）。 |
+| `qinghu-shopee-brand-rank` | Shopee-品牌榜单 &#124; 青虎AI | `qhkit mcp` | 按类目查询 Shopee 品牌热销榜 / 飙升榜（日 / 周 / 月榜）。 |
+| `qinghu-shopee-brand-shops` | Shopee-品牌店铺列表 &#124; 青虎AI | `qhkit mcp` | 按品牌名查询售卖该品牌的热销店铺列表。 |
+| `qinghu-shopee-brand-sites` | Shopee-品牌站点分布 &#124; 青虎AI | `qhkit mcp` | 查询品牌在 Shopee 各站点的近 30 天销量、销售额及占比（无需指定站点）。 |
+| `qinghu-shopee-brand-trend` | Shopee-品牌长期趋势 &#124; 青虎AI | `qhkit mcp` | 按月 / 季 / 年颗粒度查询品牌的长期趋势，支持多站点同时对比（最长 720 天）。 |
+| `qinghu-shopee-category-daily-trend` | Shopee-类目每日趋势 &#124; 青虎AI | `qhkit mcp` | 按类目 ID 查询每天的销量、销售额等指标（最长 720 天）。 |
+| `qinghu-shopee-category-l1` | Shopee-一级类目查询 &#124; 青虎AI | `qhkit mcp` | 按站点和语言查询 Shopee 一级类目 ID 与名称——各类榜单 / 列表工具的 categoryId 都从这里起步。 |
+| `qinghu-shopee-category-l2` | Shopee-二级类目查询 &#124; 青虎AI | `qhkit mcp` | 按一级类目 ID 查询 Shopee 二级类目 ID 与名称。 |
+| `qinghu-shopee-category-l3` | Shopee-三级类目查询 &#124; 青虎AI | `qhkit mcp` | 按二级类目 ID 查询 Shopee 三级（最细）类目 ID 与名称。 |
+| `qinghu-shopee-category-list` | Shopee-站点类目数据 &#124; 青虎AI | `qhkit mcp` | 查询某站点同一级别下所有类目的销量、销售额、商品数等汇总指标。 |
+| `qinghu-shopee-category-price-band` | Shopee-类目价格分布 &#124; 青虎AI | `qhkit mcp` | 查询二 / 三级类目在各价格区间的销量、销售额、商品数及占比，找主流价格带。 |
+| `qinghu-shopee-category-rank` | Shopee-类目榜单 &#124; 青虎AI | `qhkit mcp` | 按类目查询子行业的热销榜 / 飙升榜（日 / 周 / 月榜），看哪些子行业表现最好或增长最快。 |
+| `qinghu-shopee-category-trend` | Shopee-类目长期趋势 &#124; 青虎AI | `qhkit mcp` | 按月 / 季 / 年颗粒度查询类目长期趋势，支持多站点对比、产品类型与所在地筛选。 |
+| `qinghu-shopee-item-keywords` | Shopee-商品引流词分析 &#124; 青虎AI | `qhkit mcp` | 按商品 ID 查询近 30 天的引流词（搜什么词进来的），或推荐同类目热词。 |
+| `qinghu-shopee-keyword-detail` | Shopee-热搜词详情 &#124; 青虎AI | `qhkit mcp` | 按关键词批量查询 Shopee 热搜词的销量、销售额、搜索指数、所属类目等（单次最多 10 个）。 |
+| `qinghu-shopee-keyword-list` | Shopee-热搜词库筛选 &#124; 青虎AI | `qhkit mcp` | 从 Shopee 热搜词库（T+1）按类目、商品所在地、30 天销量、推荐出价等条件筛选关键词。 |
+| `qinghu-shopee-keyword-products` | Shopee-热搜词热销商品 &#124; 青虎AI | `qhkit mcp` | 按热搜词 ID 查询该词下的热销商品列表。 |
+| `qinghu-shopee-keyword-rank` | Shopee-热搜词榜单 &#124; 青虎AI | `qhkit mcp` | 按类目查询 Shopee 热搜词热销榜 / 飙升榜（日 / 周 / 月榜）。 |
+| `qinghu-shopee-keyword-trend` | Shopee-热搜词趋势 &#124; 青虎AI | `qhkit mcp` | 按热搜词 ID 查询近 30 天每天的销量、销售额、搜索指数趋势，支持模糊与精准搜索。 |
+| `qinghu-shopee-product-daily-trend` | Shopee-商品每日趋势 &#124; 青虎AI | `qhkit mcp` | 按商品 ID 查询每天的价格、销量、GMV、评分、点赞、评论数（最长 720 天）。 |
+| `qinghu-shopee-product-detail` | Shopee-商品详情 &#124; 青虎AI | `qhkit mcp` | 按商品 ID 批量查询 Shopee 商品的销量、销售额、商品类型、店铺类型（单次最多 10 个）。 |
+| `qinghu-shopee-product-rank` | Shopee-商品榜单 &#124; 青虎AI | `qhkit mcp` | 按类目查询 Shopee 商品热销榜 / 飙升榜（日 / 周 / 月榜），可筛跨境 / 本土、店铺类型。 |
+| `qinghu-shopee-product-trend` | Shopee-商品长期趋势 &#124; 青虎AI | `qhkit mcp` | 按月 / 季 / 年颗粒度查询商品的长期聚合趋势（最长 720 天）。 |
+| `qinghu-shopee-shop-brands` | Shopee-店铺品牌分析 &#124; 青虎AI | `qhkit mcp` | 按店铺 ID 分析店铺在售品牌的产品数、销量、销售额。 |
+| `qinghu-shopee-shop-categories` | Shopee-店铺类目分布 &#124; 青虎AI | `qhkit mcp` | 按店铺 ID 查询店铺热销商品的类目分布与销量占比。 |
+| `qinghu-shopee-shop-daily-trend` | Shopee-店铺每日趋势 &#124; 青虎AI | `qhkit mcp` | 按店铺 ID 查询每天的销量、销售额、商品数、评分（最长 720 天）。 |
+| `qinghu-shopee-shop-detail` | Shopee-店铺详情 &#124; 青虎AI | `qhkit mcp` | 按店铺 ID 批量查询 Shopee 店铺的销量、销售额、商品数、评分（单次最多 10 个）。 |
+| `qinghu-shopee-shop-list` | Shopee-店铺库筛选 &#124; 青虎AI | `qhkit mcp` | 从 Shopee 店铺库（T+1）按类目、店铺类型（优选 / 商城）、本土 / 跨境、开店时间等条件筛选店铺。 |
+| `qinghu-shopee-shop-price-band` | Shopee-店铺价格分布 &#124; 青虎AI | `qhkit mcp` | 按店铺 ID 查询店铺热销商品的价格区间分布（日 / 周 / 月榜，按销量或销售额）。 |
+| `qinghu-shopee-shop-products` | Shopee-店铺热销商品 &#124; 青虎AI | `qhkit mcp` | 按店铺 ID 查询店铺热销商品，可按 30 天销量、销售额、上架时间、价格、累计销量排序。 |
+| `qinghu-shopee-shop-rank` | Shopee-店铺榜单 &#124; 青虎AI | `qhkit mcp` | 按类目查询 Shopee 店铺热销榜 / 飙升榜（日 / 周 / 月榜），可筛店铺类型与本土 / 跨境。 |
+| `qinghu-shopee-shop-trend` | Shopee-店铺长期趋势 &#124; 青虎AI | `qhkit mcp` | 按月 / 季 / 年颗粒度查询店铺长期趋势，可按类目、产品类型、所在地筛选（最长 720 天）。 |
+| `qinghu-shopee-site-overview` | Shopee-站点大盘数据 &#124; 青虎AI | `qhkit mcp` | 查询 Shopee 站点的整体销量、销售额、在线商品数、客单价等大盘指标（最长 720 天）。 |
+| `qinghu-shopee-subcategory` | Shopee-子类目数据 &#124; 青虎AI | `qhkit mcp` | 查询某类目下全部子类目的基础数据，用于逐级下钻。 |
+| `qinghu-ozon-brand-detail` | Ozon-品牌详情 &#124; 青虎AI | `qhkit mcp` | 按品牌名批量查询 Ozon 品牌销售详情（单次最多 10 个）。 |
+| `qinghu-ozon-brand-products` | Ozon-品牌商品销售 &#124; 青虎AI | `qhkit mcp` | 按品牌名查询该品牌商品近 28 天的销售数据，可按销量 / 销售额 / 价格排序。 |
+| `qinghu-ozon-brand-rank` | Ozon-品牌Top榜 &#124; 青虎AI | `qhkit mcp` | 按类目、品牌名、账期查询 Ozon 品牌 Top 榜销售数据，按销量 / 销售额 / 价格排序。 |
+| `qinghu-ozon-category-l1` | Ozon-一级类目查询 &#124; 青虎AI | `qhkit mcp` | 按语言和名称关键词查询 Ozon 公共一级类目——Ozon 类目类工具的类目 ID 从这里起步。 |
+| `qinghu-ozon-category-l2` | Ozon-二级类目查询 &#124; 青虎AI | `qhkit mcp` | 按一级类目 ID 查询 Ozon 公共二级类目。 |
+| `qinghu-ozon-category-l3` | Ozon-三级类目查询 &#124; 青虎AI | `qhkit mcp` | 按二级类目 ID 查询 Ozon 公共三级类目，返回类目类型 ID（typeId，三级类目查数据时必带）。 |
+| `qinghu-ozon-category-rank` | Ozon-行业热销榜 &#124; 青虎AI | `qhkit mcp` | 按类目查询热销 Top 行业的销售数据，可按周期、账期排序分页。 |
+| `qinghu-ozon-category-sales` | Ozon-类目市场销售数据 &#124; 青虎AI | `qhkit mcp` | 按三级类目 ID + 类目类型 ID 查询类目市场销售详情。 |
+| `qinghu-ozon-category-trend` | Ozon-行业趋势 &#124; 青虎AI | `qhkit mcp` | 按类目 ID 查询类目历史趋势快照。 |
+| `qinghu-ozon-china-zone-products` | Ozon-中国专区产品榜 &#124; 青虎AI | `qhkit mcp` | 查询 Ozon 中国专区（跨境卖家）商品销售数据，按类目、周期、销量 / 销售额 / 价格区间筛选。 |
+| `qinghu-ozon-keyword-detail` | Ozon-关键词详情 &#124; 青虎AI | `qhkit mcp` | 按关键词 ID 批量查询搜索指数、转化指数、曝光指数、供需比、订单金额等（单次最多 10 个）。 |
+| `qinghu-ozon-keyword-products` | Ozon-关键词关联商品 &#124; 青虎AI | `qhkit mcp` | 按关键词 ID 查询该词下的商品数据，可筛价格区间、商品类型、账期。 |
+| `qinghu-ozon-keyword-rank` | Ozon-热搜词榜单 &#124; 青虎AI | `qhkit mcp` | 查询 Ozon 热搜词的搜索指数、转化指数、曝光指数、供需比、订单金额、竞争对手数等，按类目、周期和指标区间筛选排序。 |
+| `qinghu-ozon-keyword-trend` | Ozon-关键词趋势 &#124; 青虎AI | `qhkit mcp` | 按关键词 ID 查询历史趋势快照（周 / 月 / 季 / 年，周榜最多 90 天）。 |
+| `qinghu-ozon-market-trend` | Ozon-大盘趋势 &#124; 青虎AI | `qhkit mcp` | 查询 Ozon 全站大盘的历史趋势快照（按天或自然月）。 |
+| `qinghu-ozon-product-detail` | Ozon-商品详情 &#124; 青虎AI | `qhkit mcp` | 按商品 ID 批量查询 Ozon 商品基础信息与销售数据（单次最多 10 个）。 |
+| `qinghu-ozon-product-keywords` | Ozon-商品流量词 &#124; 青虎AI | `qhkit mcp` | 按商品 ID 查询自然流量词、主题标签和广告流量词。 |
+| `qinghu-ozon-product-rank` | Ozon-热销产品榜 &#124; 青虎AI | `qhkit mcp` | 按类目、周期、销量 / 销售额 / 价格区间、上架时间、发货模式、跨境禁售权限等条件筛选 Ozon 热销产品。 |
+| `qinghu-ozon-product-tracker` | Ozon-商品信息追踪 &#124; 青虎AI | `qhkit mcp` | 按商品 ID 追踪价格变化、评论数、评分、竞品跟卖和变体（默认 30 天，最多 90 天）。 |
+| `qinghu-ozon-product-trend` | Ozon-商品销售趋势 &#124; 青虎AI | `qhkit mcp` | 按商品 ID 查询各账期的销售明细快照（近 7 天 / 28 天 / 自然月 / 季 / 年）。 |
+| `qinghu-ozon-shop-detail` | Ozon-店铺详情 &#124; 青虎AI | `qhkit mcp` | 按店铺 ID 批量查询 Ozon 店铺详情（单次最多 10 个）。 |
+| `qinghu-ozon-shop-products` | Ozon-店铺商品列表 &#124; 青虎AI | `qhkit mcp` | 按店铺名称或 ID 查询店铺热门商品，可按类目、周期、销量 / 销售额 / 价格排序。 |
+| `qinghu-ozon-shop-rank` | Ozon-店铺热销榜 &#124; 青虎AI | `qhkit mcp` | 按账期、类目、店铺级别 / 类型、销量销售额区间、评分、开店时间等筛选 Ozon 热销店铺。 |
+| `qinghu-ozon-shop-trend` | Ozon-店铺趋势 &#124; 青虎AI | `qhkit mcp` | 按店铺名称或 ID 查询店铺历史趋势快照（最多 90 天）。 |
+| `qinghu-1688-goods-detail` | 1688-商品详情查询 &#124; 青虎AI | `qhkit mcp` | 按 1688 商品 ID（offer_id）查询标题、价格、销量、店铺等详情。 |
+| `qinghu-1688-image-search` | 1688-以图搜货 &#124; 青虎AI | `qhkit mcp` | 给一张商品图片链接，在 1688 匹配同款或相似货源，返回供应商、价格、销量等。 |
+| `qinghu-1688-keyword-search` | 1688-关键词找货 &#124; 青虎AI | `qhkit mcp` | 按关键词在 1688 搜索货源，可按销量、价格区间、48 小时揽收率等条件筛选并排序。 |
+| `qinghu-douyin-comments` | 抖音-视频评论采集 &#124; 青虎AI | `qhkit mcp` | 按视频链接采集抖音视频评论（每页 10 条）。 |
+| `qinghu-douyin-creator-profile` | 抖音-达人数据查询 &#124; 青虎AI | `qhkit mcp` | 按主页链接查询抖音达人的粉丝数、关注数、作品数、获赞数、IP 属地、简介等。 |
+| `qinghu-douyin-creator-videos` | 抖音-达人主页视频 &#124; 青虎AI | `qhkit mcp` | 按主页链接获取抖音用户发布的视频列表（每页 20 条，按游标翻页）。 |
+| `qinghu-douyin-fans-portrait` | 抖音-达人粉丝画像 &#124; 青虎AI | `qhkit mcp` | 按主页链接获取抖音账号的粉丝画像：年龄、性别、兴趣、设备、省份城市分布、城市等级。 |
+| `qinghu-douyin-hashtag` | 抖音-话题详情 &#124; 青虎AI | `qhkit mcp` | 按话题 ID 获取抖音话题的详情数据（播放量、参与人数等）。 |
+| `qinghu-douyin-hashtag-videos` | 抖音-话题下视频 &#124; 青虎AI | `qhkit mcp` | 按话题 ID 获取话题下的视频列表，可按热度 / 时间排序、游标翻页。 |
+| `qinghu-douyin-hot-search` | 抖音-热搜榜 &#124; 青虎AI | `qhkit mcp` | 获取抖音实时热搜榜。 |
+| `qinghu-douyin-link-convert` | 抖音-短链转换 &#124; 青虎AI | `qhkit mcp` | 把抖音分享短链（v.douyin.com）或主页分享链接转换为正式网页链接，免费。 |
+| `qinghu-douyin-play-count` | 抖音-视频播放量 &#124; 青虎AI | `qhkit mcp` | 按视频链接只查询抖音视频的播放量。 |
+| `qinghu-douyin-video-basic` | 抖音-视频基础信息 &#124; 青虎AI | `qhkit mcp` | 按视频链接获取抖音视频基础信息（不含播放量）：作者、点赞、收藏、评论、标题、音乐、发布时间、图文集。 |
+| `qinghu-douyin-video-data` | 抖音-视频数据（含播放量） &#124; 青虎AI | `qhkit mcp` | 按视频链接获取抖音视频的作者、播放、点赞、收藏、评论、标题、音乐、发布时间等。 |
+| `qinghu-douyin-video-search` | 抖音-关键词搜视频 &#124; 青虎AI | `qhkit mcp` | 按关键词搜索抖音视频，返回视频 ID、作者、发布时间、标题、下载地址、点赞收藏评论分享等，可筛排序、时长、发布时间。 |
+| `qinghu-rednote-comments` | 小红书-笔记评论采集 &#124; 青虎AI | `qhkit mcp` | 按笔记链接采集小红书评论，可选排序、是否带二级回复。 |
+| `qinghu-rednote-creator-notes` | 小红书-博主主页笔记 &#124; 青虎AI | `qhkit mcp` | 按主页链接采集小红书博主发布的笔记列表。 |
+| `qinghu-rednote-creator-profile` | 小红书-博主数据 &#124; 青虎AI | `qhkit mcp` | 按主页链接采集小红书博主的粉丝数、获赞收藏、简介等。 |
+| `qinghu-rednote-hot-search` | 小红书-热搜榜 &#124; 青虎AI | `qhkit mcp` | 获取小红书实时热搜榜。 |
+| `qinghu-rednote-note-data` | 小红书-笔记数据 &#124; 青虎AI | `qhkit mcp` | 按笔记链接获取小红书笔记的标题、正文、图片、点赞收藏评论等数据。 |
+| `qinghu-rednote-note-search` | 小红书-关键词搜笔记 &#124; 青虎AI | `qhkit mcp` | 按关键词搜索小红书笔记，可选笔记类型、发布时间、排序方式。 |
+| `qinghu-rednote-publish-code` | 小红书-种草码生成 &#124; 青虎AI | `qhkit mcp` | 把标题、正文、图片或视频生成小红书种草码，浏览器扫码一键跳转小红书并自动加载笔记内容。 |
+| `qinghu-bilibili-comments` | B站-视频评论采集 &#124; 青虎AI | `qhkit mcp` | 按视频链接采集 B 站视频下的全部评论。 |
+| `qinghu-bilibili-creator-profile` | B站-UP主数据 &#124; 青虎AI | `qhkit mcp` | 按主页链接获取 B 站 UP 主的账号名、签名、关注数、粉丝数、获赞数、播放量。 |
+| `qinghu-bilibili-creator-videos` | B站-UP主投稿视频 &#124; 青虎AI | `qhkit mcp` | 按主页链接获取 UP 主的投稿视频列表，含播放、点赞、投币、收藏、转发、评论等。 |
+| `qinghu-bilibili-hot-search` | B站-热搜榜 &#124; 青虎AI | `qhkit mcp` | 获取哔哩哔哩实时热搜榜。 |
+| `qinghu-bilibili-video-data` | B站-视频数据 &#124; 青虎AI | `qhkit mcp` | 按视频链接解析 B 站视频的播放、点赞、投币、收藏、分享、评论数等。 |
+| `qinghu-bilibili-video-search` | B站-关键词搜视频 &#124; 青虎AI | `qhkit mcp` | 按关键词搜索 B 站视频，返回标题、时长、播放、收藏、弹幕、是否合作视频等。 |
+| `qinghu-shipinhao-account-info` | 视频号-账号认证信息 &#124; 青虎AI | `qhkit mcp` | 查询视频号账号的 IP 属地、认证主体、主体类型、服务类别、认证时间等。 |
+| `qinghu-shipinhao-account-search` | 视频号-账号内搜视频 &#124; 青虎AI | `qhkit mcp` | 在指定视频号账号内按关键词搜索视频。 |
+| `qinghu-shipinhao-collection-videos` | 视频号-合集内视频 &#124; 青虎AI | `qhkit mcp` | 按合集 topic_id 查询合集内的视频列表，支持游标翻页。 |
+| `qinghu-shipinhao-collections` | 视频号-合集列表 &#124; 青虎AI | `qhkit mcp` | 查询视频号账号发布的合集列表，返回合集 topic_id / topic_type。 |
+| `qinghu-shipinhao-comments` | 视频号-作品评论 &#124; 青虎AI | `qhkit mcp` | 查询视频号作品评论，支持翻页与展开二级回复。 |
+| `qinghu-shipinhao-id-convert` | 视频号-ID转username &#124; 青虎AI | `qhkit mcp` | 把 sph 开头的视频号 ID 转成后续接口需要的 finder username（v2_...@finder）。 |
+| `qinghu-shipinhao-live-detail` | 视频号-直播间详情 &#124; 青虎AI | `qhkit mcp` | 按 live_id 查询视频号直播间详情。 |
+| `qinghu-shipinhao-live-replays` | 视频号-直播回放列表 &#124; 青虎AI | `qhkit mcp` | 查询视频号账号的直播回放列表，用于直播频次与回放素材分析。 |
+| `qinghu-shipinhao-profile` | 视频号-账号主页资料 &#124; 青虎AI | `qhkit mcp` | 查询视频号账号主页资料与统计信息，用于账号画像与运营分析。 |
+| `qinghu-shipinhao-share-link` | 视频号-生成作品分享链接 &#124; 青虎AI | `qhkit mcp` | 按作品 object_id 生成视频号作品分享短链。 |
+| `qinghu-shipinhao-video-data` | 视频号-作品详情 &#124; 青虎AI | `qhkit mcp` | 按 object_id、export_id 或分享短链查询视频号作品详情。 |
+| `qinghu-shipinhao-videos` | 视频号-账号作品列表 &#124; 青虎AI | `qhkit mcp` | 查询视频号账号发布的作品列表，支持游标翻页。 |
+| `qinghu-ai-image-detect` | AI生成图片检测 &#124; 青虎AI | `qhkit mcp` | 检测图片是否由 AI 生成，返回 AI 生成置信度（0–1，越接近 1 越可能是 AI 图）。 |
+| `qinghu-ai-text-detect` | AI生成文本检测 &#124; 青虎AI | `qhkit mcp` | 检测文本的 AI / 人工占比，返回整体 AI 置信度、疑似 AI 占比、各类型占比和分段明细。 |
+| `qinghu-baidu-hot-search` | 百度-热榜 &#124; 青虎AI | `qhkit mcp` | 获取百度实时热榜。 |
+| `qinghu-google-trends` | Google-关键词趋势 &#124; 青虎AI | `qhkit mcp` | 查询 Google Trends 中关键词在指定市场的搜索热度变化，判断是上升期、稳定期、衰退期还是周期性波动。 |
+| `qinghu-weibo-hot-search` | 微博-热搜榜 &#124; 青虎AI | `qhkit mcp` | 获取微博实时热搜榜。 |
 
 </details>
 

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shipinhao-comments",
+  "displayName": "视频号-作品评论 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询视频号作品评论，支持翻页与展开二级回复",
+  "publishedAt": 1791475200000
+}

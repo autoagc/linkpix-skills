@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-shop-products",
+  "displayName": "Shopee-店铺热销商品 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按店铺 ID 查询店铺热销商品，可按 30 天销量、销售额、上架时间、价格、累计销量排序",
+  "publishedAt": 1791475200000
+}

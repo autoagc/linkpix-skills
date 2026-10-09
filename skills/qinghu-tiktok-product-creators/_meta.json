@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-tiktok-product-creators",
+  "displayName": "TikTok-商品带货达人 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按 product_id 查询带过这个商品的达人列表（达人明细需再查达人详情）",
+  "publishedAt": 1791475200000
+}

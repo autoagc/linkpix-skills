@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-amazon-review",
+  "displayName": "亚马逊-商品评论查询 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按星级、评论类型拉取指定 ASIN 的评论标题、内容、评分、评论时间",
+  "publishedAt": 1791475200000
+}

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shipinhao-share-link",
+  "displayName": "视频号-生成作品分享链接 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按作品 object_id 生成视频号作品分享短链",
+  "publishedAt": 1791475200000
+}

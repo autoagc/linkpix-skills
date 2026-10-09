@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-tiktok-product-rank",
+  "displayName": "TikTok-商品榜单 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按站点、类目查询 TikTok Shop 商品热销榜 / 热推榜（日 / 周 / 月榜，返回周期增量）",
+  "publishedAt": 1791475200000
+}

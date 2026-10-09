@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-douyin-video-data",
+  "displayName": "抖音-视频数据（含播放量） | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按视频链接获取抖音视频的作者、播放、点赞、收藏、评论、标题、音乐、发布时间等",
+  "publishedAt": 1791475200000
+}

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-ai-text-detect",
+  "displayName": "AI生成文本检测 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "检测文本的 AI / 人工占比，返回整体 AI 置信度、疑似 AI 占比、各类型占比和分段明细",
+  "publishedAt": 1791475200000
+}

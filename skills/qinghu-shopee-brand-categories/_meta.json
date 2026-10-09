@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-brand-categories",
+  "displayName": "Shopee-品牌类目分布 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按品牌名查询该品牌热销商品在各子类目的分布（近 30 天销量降序）",
+  "publishedAt": 1791475200000
+}

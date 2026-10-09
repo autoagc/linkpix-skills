@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-site-overview",
+  "displayName": "Shopee-站点大盘数据 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询 Shopee 站点的整体销量、销售额、在线商品数、客单价等大盘指标（最长 720 天）",
+  "publishedAt": 1791475200000
+}

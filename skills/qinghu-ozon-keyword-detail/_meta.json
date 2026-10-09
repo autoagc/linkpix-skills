@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-ozon-keyword-detail",
+  "displayName": "Ozon-关键词详情 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按关键词 ID 批量查询搜索指数、转化指数、曝光指数、供需比、订单金额等（单次最多 10 个）",
+  "publishedAt": 1791475200000
+}

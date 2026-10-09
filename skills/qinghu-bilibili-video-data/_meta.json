@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-bilibili-video-data",
+  "displayName": "B站-视频数据 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按视频链接解析 B 站视频的播放、点赞、投币、收藏、分享、评论数等",
+  "publishedAt": 1791475200000
+}

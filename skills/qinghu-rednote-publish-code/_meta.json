@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-rednote-publish-code",
+  "displayName": "小红书-种草码生成 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "把标题、正文、图片或视频生成小红书种草码，浏览器扫码一键跳转小红书并自动加载笔记内容",
+  "publishedAt": 1791475200000
+}

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-ozon-product-tracker",
+  "displayName": "Ozon-商品信息追踪 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按商品 ID 追踪价格变化、评论数、评分、竞品跟卖和变体（默认 30 天，最多 90 天）",
+  "publishedAt": 1791475200000
+}

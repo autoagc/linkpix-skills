@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-tiktok-search",
+  "displayName": "TikTok-站内搜索 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "模拟 TikTok 搜索框搜索达人、商品、小店、视频、直播（最多 30 条），同时是 TikTok 类目 ID 的唯一来源",
+  "publishedAt": 1791475200000
+}

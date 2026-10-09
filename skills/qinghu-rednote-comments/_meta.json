@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-rednote-comments",
+  "displayName": "小红书-笔记评论采集 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按笔记链接采集小红书评论，可选排序、是否带二级回复",
+  "publishedAt": 1791475200000
+}

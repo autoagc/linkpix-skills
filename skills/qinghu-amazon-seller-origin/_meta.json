@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-amazon-seller-origin",
+  "displayName": "亚马逊-卖家所属地分布 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "统计指定类目节点下卖家所属国家/地区的商品数量与销量、销售额占比，判断是否中国卖家主导",
+  "publishedAt": 1791475200000
+}

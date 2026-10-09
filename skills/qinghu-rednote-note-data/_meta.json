@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-rednote-note-data",
+  "displayName": "小红书-笔记数据 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按笔记链接获取小红书笔记的标题、正文、图片、点赞收藏评论等数据",
+  "publishedAt": 1791475200000
+}

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-douyin-creator-videos",
+  "displayName": "抖音-达人主页视频 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按主页链接获取抖音用户发布的视频列表（每页 20 条，按游标翻页）",
+  "publishedAt": 1791475200000
+}

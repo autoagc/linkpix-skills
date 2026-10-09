@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-amazon-price-history",
+  "displayName": "亚马逊-商品历史趋势 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询单个 ASIN 的价格、成交价、BSR、评论数、评分、卖家数、Buy Box 等历史趋势，以及 FBA 费用、尺寸重量（不含销量）",
+  "publishedAt": 1791475200000
+}

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shipinhao-video-data",
+  "displayName": "视频号-作品详情 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按 object_id、export_id 或分享短链查询视频号作品详情",
+  "publishedAt": 1791475200000
+}

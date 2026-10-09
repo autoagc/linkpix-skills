@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-shop-detail",
+  "displayName": "Shopee-店铺详情 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按店铺 ID 批量查询 Shopee 店铺的销量、销售额、商品数、评分（单次最多 10 个）",
+  "publishedAt": 1791475200000
+}

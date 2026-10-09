@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-douyin-comments",
+  "displayName": "抖音-视频评论采集 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按视频链接采集抖音视频评论（每页 10 条）",
+  "publishedAt": 1791475200000
+}

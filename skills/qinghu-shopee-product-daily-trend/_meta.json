@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-product-daily-trend",
+  "displayName": "Shopee-商品每日趋势 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按商品 ID 查询每天的价格、销量、GMV、评分、点赞、评论数（最长 720 天）",
+  "publishedAt": 1791475200000
+}

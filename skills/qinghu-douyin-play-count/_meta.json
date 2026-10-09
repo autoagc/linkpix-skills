@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-douyin-play-count",
+  "displayName": "抖音-视频播放量 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按视频链接只查询抖音视频的播放量",
+  "publishedAt": 1791475200000
+}

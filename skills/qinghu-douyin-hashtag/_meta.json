@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-douyin-hashtag",
+  "displayName": "抖音-话题详情 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按话题 ID 获取抖音话题的详情数据（播放量、参与人数等）",
+  "publishedAt": 1791475200000
+}

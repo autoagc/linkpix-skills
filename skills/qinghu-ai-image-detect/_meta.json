@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-ai-image-detect",
+  "displayName": "AI生成图片检测 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "检测图片是否由 AI 生成，返回 AI 生成置信度（0–1，越接近 1 越可能是 AI 图）",
+  "publishedAt": 1791475200000
+}

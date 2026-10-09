@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-ozon-product-trend",
+  "displayName": "Ozon-商品销售趋势 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按商品 ID 查询各账期的销售明细快照（近 7 天 / 28 天 / 自然月 / 季 / 年）",
+  "publishedAt": 1791475200000
+}

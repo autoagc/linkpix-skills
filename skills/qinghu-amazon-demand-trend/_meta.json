@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-amazon-demand-trend",
+  "displayName": "亚马逊-类目需求趋势 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "分析指定类目节点的页面浏览量、商品总数、退货率、搜索购买比等需求趋势指标",
+  "publishedAt": 1791475200000
+}

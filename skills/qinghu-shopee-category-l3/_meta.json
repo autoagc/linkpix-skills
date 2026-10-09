@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-category-l3",
+  "displayName": "Shopee-三级类目查询 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按二级类目 ID 查询 Shopee 三级（最细）类目 ID 与名称",
+  "publishedAt": 1791475200000
+}

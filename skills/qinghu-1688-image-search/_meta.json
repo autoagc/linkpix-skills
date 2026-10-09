@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-1688-image-search",
+  "displayName": "1688-以图搜货 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "给一张商品图片链接，在 1688 匹配同款或相似货源，返回供应商、价格、销量等",
+  "publishedAt": 1791475200000
+}

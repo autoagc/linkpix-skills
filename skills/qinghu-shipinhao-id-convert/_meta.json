@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shipinhao-id-convert",
+  "displayName": "视频号-ID转username | 青虎AI",
+  "version": "0.1.0",
+  "desc": "把 sph 开头的视频号 ID 转成后续接口需要的 finder username（v2_...@finder）",
+  "publishedAt": 1791475200000
+}

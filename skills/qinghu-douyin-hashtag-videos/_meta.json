@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-douyin-hashtag-videos",
+  "displayName": "抖音-话题下视频 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按话题 ID 获取话题下的视频列表，可按热度 / 时间排序、游标翻页",
+  "publishedAt": 1791475200000
+}

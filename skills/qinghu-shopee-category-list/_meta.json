@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-category-list",
+  "displayName": "Shopee-站点类目数据 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询某站点同一级别下所有类目的销量、销售额、商品数等汇总指标",
+  "publishedAt": 1791475200000
+}

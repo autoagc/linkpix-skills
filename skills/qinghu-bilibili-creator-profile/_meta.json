@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-bilibili-creator-profile",
+  "displayName": "B站-UP主数据 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按主页链接获取 B 站 UP 主的账号名、签名、关注数、粉丝数、获赞数、播放量",
+  "publishedAt": 1791475200000
+}

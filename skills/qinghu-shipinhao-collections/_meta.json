@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shipinhao-collections",
+  "displayName": "视频号-合集列表 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询视频号账号发布的合集列表，返回合集 topic_id / topic_type",
+  "publishedAt": 1791475200000
+}

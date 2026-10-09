@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-category-price-band",
+  "displayName": "Shopee-类目价格分布 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询二 / 三级类目在各价格区间的销量、销售额、商品数及占比，找主流价格带",
+  "publishedAt": 1791475200000
+}

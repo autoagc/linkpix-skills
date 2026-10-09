@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-google-trends",
+  "displayName": "Google-关键词趋势 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询 Google Trends 中关键词在指定市场的搜索热度变化，判断是上升期、稳定期、衰退期还是周期性波动",
+  "publishedAt": 1791475200000
+}

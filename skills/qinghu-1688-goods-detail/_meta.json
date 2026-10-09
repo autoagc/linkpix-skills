@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-1688-goods-detail",
+  "displayName": "1688-商品详情查询 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按 1688 商品 ID（offer_id）查询标题、价格、销量、店铺等详情",
+  "publishedAt": 1791475200000
+}

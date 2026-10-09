@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-tiktok-product-videos",
+  "displayName": "TikTok-商品带货视频 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按 product_id 查询该商品关联的带货视频列表",
+  "publishedAt": 1791475200000
+}

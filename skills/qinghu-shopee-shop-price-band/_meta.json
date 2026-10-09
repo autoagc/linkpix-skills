@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-shop-price-band",
+  "displayName": "Shopee-店铺价格分布 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按店铺 ID 查询店铺热销商品的价格区间分布（日 / 周 / 月榜，按销量或销售额）",
+  "publishedAt": 1791475200000
+}

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shipinhao-live-detail",
+  "displayName": "视频号-直播间详情 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按 live_id 查询视频号直播间详情",
+  "publishedAt": 1791475200000
+}

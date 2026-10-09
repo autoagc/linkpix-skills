@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-ozon-product-detail",
+  "displayName": "Ozon-商品详情 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按商品 ID 批量查询 Ozon 商品基础信息与销售数据（单次最多 10 个）",
+  "publishedAt": 1791475200000
+}

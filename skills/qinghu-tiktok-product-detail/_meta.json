@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-tiktok-product-detail",
+  "displayName": "TikTok-商品详情查询 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按 product_id 批量查询 TikTok Shop 商品详情（单次最多 10 个）",
+  "publishedAt": 1791475200000
+}

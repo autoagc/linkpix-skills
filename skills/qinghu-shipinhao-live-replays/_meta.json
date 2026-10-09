@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shipinhao-live-replays",
+  "displayName": "视频号-直播回放列表 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询视频号账号的直播回放列表，用于直播频次与回放素材分析",
+  "publishedAt": 1791475200000
+}

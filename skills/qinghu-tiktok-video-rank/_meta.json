@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-tiktok-video-rank",
+  "displayName": "TikTok-视频榜单 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按站点、类目查询 TikTok 热门视频榜 / 带货视频榜（日 / 周 / 月榜，返回周期增量）",
+  "publishedAt": 1791475200000
+}

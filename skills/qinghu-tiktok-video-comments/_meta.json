@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-tiktok-video-comments",
+  "displayName": "TikTok-视频评论 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按 video_id 实时获取 TikTok 视频评论列表",
+  "publishedAt": 1791475200000
+}

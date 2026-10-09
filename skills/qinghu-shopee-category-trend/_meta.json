@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-category-trend",
+  "displayName": "Shopee-类目长期趋势 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按月 / 季 / 年颗粒度查询类目长期趋势，支持多站点对比、产品类型与所在地筛选",
+  "publishedAt": 1791475200000
+}

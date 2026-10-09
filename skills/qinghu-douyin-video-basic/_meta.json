@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-douyin-video-basic",
+  "displayName": "抖音-视频基础信息 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按视频链接获取抖音视频基础信息（不含播放量）：作者、点赞、收藏、评论、标题、音乐、发布时间、图文集",
+  "publishedAt": 1791475200000
+}

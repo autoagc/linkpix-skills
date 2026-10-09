@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-amazon-price-band",
+  "displayName": "亚马逊-类目价格分布 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "分析指定类目节点下商品的价格区间分布、销量占比、销售效率和评分表现，找可切入价格带",
+  "publishedAt": 1791475200000
+}

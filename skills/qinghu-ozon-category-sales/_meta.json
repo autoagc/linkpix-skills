@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-ozon-category-sales",
+  "displayName": "Ozon-类目市场销售数据 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按三级类目 ID + 类目类型 ID 查询类目市场销售详情",
+  "publishedAt": 1791475200000
+}

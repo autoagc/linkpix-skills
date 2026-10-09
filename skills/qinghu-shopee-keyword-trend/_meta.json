@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-keyword-trend",
+  "displayName": "Shopee-热搜词趋势 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按热搜词 ID 查询近 30 天每天的销量、销售额、搜索指数趋势，支持模糊与精准搜索",
+  "publishedAt": 1791475200000
+}

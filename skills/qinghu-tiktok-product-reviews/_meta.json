@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-tiktok-product-reviews",
+  "displayName": "TikTok-商品评论 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按 product_id 获取 TikTok Shop 已采集的商品评论列表",
+  "publishedAt": 1791475200000
+}

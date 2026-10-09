@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-ozon-category-l3",
+  "displayName": "Ozon-三级类目查询 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按二级类目 ID 查询 Ozon 公共三级类目，返回类目类型 ID（typeId，三级类目查数据时必带）",
+  "publishedAt": 1791475200000
+}

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-bilibili-video-search",
+  "displayName": "B站-关键词搜视频 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按关键词搜索 B 站视频，返回标题、时长、播放、收藏、弹幕、是否合作视频等",
+  "publishedAt": 1791475200000
+}

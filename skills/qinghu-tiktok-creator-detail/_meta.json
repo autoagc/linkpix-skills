@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-tiktok-creator-detail",
+  "displayName": "TikTok-达人详情查询 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按 user_id 或 unique_id（@用户名）批量查询达人详情（单次最多 10 个）",
+  "publishedAt": 1791475200000
+}

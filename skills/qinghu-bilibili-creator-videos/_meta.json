@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-bilibili-creator-videos",
+  "displayName": "B站-UP主投稿视频 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按主页链接获取 UP 主的投稿视频列表，含播放、点赞、投币、收藏、转发、评论等",
+  "publishedAt": 1791475200000
+}

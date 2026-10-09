@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-subcategory",
+  "displayName": "Shopee-子类目数据 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询某类目下全部子类目的基础数据，用于逐级下钻",
+  "publishedAt": 1791475200000
+}

@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-ozon-market-trend",
+  "displayName": "Ozon-大盘趋势 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "查询 Ozon 全站大盘的历史趋势快照（按天或自然月）",
+  "publishedAt": 1791475200000
+}

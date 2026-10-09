@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "qinghu-shopee-keyword-detail",
+  "displayName": "Shopee-热搜词详情 | 青虎AI",
+  "version": "0.1.0",
+  "desc": "按关键词批量查询 Shopee 热搜词的销量、销售额、搜索指数、所属类目等（单次最多 10 个）",
+  "publishedAt": 1791475200000
+}
