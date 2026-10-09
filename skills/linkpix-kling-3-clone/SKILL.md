@@ -24,6 +24,7 @@ metadata: {"openclaw":{"emoji":"🎯","requires":{"bins":["qhkit"]},"install":[{
 - 清单里暂时没有对应项：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架 可灵 3.0 / Kling 3.0（目录里常见 `可灵3.0 Omni`）」，不要自造标签硬提交。
 - `maintenance: true` 或 `notice` 含「即将下线」的不要推荐。
 - 用户明确点了别的模型，以用户为准。
+- **可灵 3.0 必须带参考图**（`models` 里 `referenceImageRequired: true`）：用户没给商品图时先向用户要图，不要只凭文字提交；`estimate` 返回 `referenceImageRequired: true` 即表示入参里还没有图。
 
 ```bash
 # 1. 链接 → 脚本（resourceUrl 只收 http(s) 分享链接）

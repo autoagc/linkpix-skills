@@ -208,7 +208,7 @@ qhkit video estimate '{"modelLabel":"Seedance2.0","duration":12,"uploadedVideo":
 
 `options` 的 `models` 每个模型一条，给全选型所需字段：时长规格 `durationMode`（`range` 区间 / `options` 档位 / `fixed` 固定）+ `durationRange` 或 `durationOptions` + `defaultDuration`；`creditsPerSecond`（按秒单价）与 `credits`（默认时长的参考价）；`description`/`propertyTags`（效果、稳定性、提示词要求、画质）、`activityBadge`（如「限时6折」）、`free`、`supportsBatch:false`（只能生成 1 条）、`maintenance`、`notice`（如「即将下线」）、`category`；参考素材规则（见下）。
 
-**时点参考**（2026-09-24 国内版目录，仅帮你建立感觉，**以 `options` 实时返回为准**）：10 个模型、时长 5–30 秒自选。`Seedance2.5`（5–30 秒，**参考图必填**，参考视频≤10、参考音频≤3，约 3.6 积分/秒）、`阿里wanx3.0`（5–30 秒，限时折扣，参考视频≤5 且「参考视频总时长 + 生成时长」≤30 秒，约 1.8 积分/秒）、`Seedance2.0`/`全能电商2.0`（5–15 秒，经典带货档，参考视频≤3）、`MiniMax H3`（5–15 秒，约 1 积分/秒性价比档，768p，有 `超宽屏 21:9`，收参考音频不收参考视频）、`可灵3.0 Omni`（5–15 秒，参考图仅 jpg/png）、`Viduq3-turbo`（原「品牌质感大片」，5–16 秒，参考图必填，提示词要求「精准」）、`Viduq2-turbo`（原「品牌质感大片 5秒」，仅 5 秒首尾帧，免费额度内，只能 1 条）。
+**时点参考**（2026-09-24 国内版目录，仅帮你建立感觉，**以 `options` 实时返回为准**）：10 个模型、时长 5–30 秒自选。`Seedance2.5`（5–30 秒，**参考图必填**，参考视频≤10、参考音频≤3，约 3.6 积分/秒）、`阿里wanx3.0`（5–30 秒，限时折扣，参考视频≤5 且「参考视频总时长 + 生成时长」≤30 秒，约 1.8 积分/秒）、`Seedance2.0`/`全能电商2.0`（5–15 秒，经典带货档，参考视频≤3）、`MiniMax H3`（5–15 秒，约 1 积分/秒性价比档，768p，有 `超宽屏 21:9`，收参考音频不收参考视频）、`可灵3.0 Omni`（5–15 秒，**参考图必填**，仅 jpg/png）、`Viduq3-turbo`（原「品牌质感大片」，5–16 秒，参考图必填，提示词要求「精准」）、`Viduq2-turbo`（原「品牌质感大片 5秒」，仅 5 秒首尾帧，免费额度内，只能 1 条）。
 
 怎么选（原则，不绑定具体模型名）：
 
@@ -218,7 +218,7 @@ qhkit video estimate '{"modelLabel":"Seedance2.0","duration":12,"uploadedVideo":
 - `maintenance: true` 的模型不可提交（CLI 会拦截），`notice` 里有「即将下线」的不要再推荐。
 - 用户没点名模型时，把 2–3 个候选（含时长范围与按秒单价）列给用户选，不要替用户拍板。
 
-- **参考图规则按模型走**（`options` 的 `models` 里逐条给出）：`multi_reference` 多张（上限见 `maxReferenceImages`，7–30 张不等）、每张可带 `imageUsage` 用途文案；`first_frame` 只收 1 张首帧；`first_last_frame` 收 2 张（**首帧在前、尾帧在后**），这两种模式不接受用途文案。`referenceImageRequired: true` 的模型强制要图。`referenceImageRules` 给出格式、最短边、宽高比要求，不符的本地图 CLI 会在上传前报错。
+- **参考图规则按模型走**（`options` 的 `models` 里逐条给出）：`multi_reference` 多张（上限见 `maxReferenceImages`，7–30 张不等）、每张可带 `imageUsage` 用途文案；`first_frame` 只收 1 张首帧；`first_last_frame` 收 2 张（**首帧在前、尾帧在后**），这两种模式不接受用途文案。`referenceImageRequired: true` 的模型强制要图：用户没给商品图时先要图，不要只凭文字描述提交；`estimate` 返回里带 `referenceImageRequired: true` 就说明本次入参还没有图，确认参数时一并向用户索要。`referenceImageRules` 给出格式、最短边、宽高比要求，不符的本地图 CLI 会在上传前报错。
 - **参考视频**（`uploadedVideo`）只有 `supportsReferenceVideo: true` 的模型支持，**可传数组**，上限见 `maxReferenceVideos`；`referenceVideoRules` 给出格式、单条时长、总时长，以及个别模型的「参考视频总时长 + 生成时长」上限（`inputOutputDurationLimit`）——超了 CLI 会报错并算出当前还能选的最长生成时长，照着调 `duration` 或换短一点的参考视频。
 - **参考音频**（`uploadedAudio`，用户自带的音频文件）只有 `supportsReferenceAudio: true` 的模型支持，上限见 `maxReferenceAudios`；`referenceAudioRules` 给出格式（多为 wav/mp3）与时长要求。
 - `orientationLabel` 逐模型不同（`models` 里 `orientationLabel` 给全）：常见 `竖屏 9:16`（默认）/ `横屏 16:9` / `方屏 1:1` / `3:4` / `4:3`，个别模型有 `超宽屏 21:9`；新画幅 code 会原样透传，照 `options` 返回的写。
