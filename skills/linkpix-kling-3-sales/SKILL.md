@@ -25,6 +25,7 @@ metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{
 - `maintenance: true` 或 `notice` 含「即将下线」的不要推荐。
 - 用户明确点了别的模型，以用户为准。
 - **可灵 3.0 必须带参考图**（`models` 里 `referenceImageRequired: true`）：用户没给商品图时先向用户要图，不要只凭文字提交；`estimate` 返回 `referenceImageRequired: true` 即表示入参里还没有图。
+- **失败兜底**：没有商品图、未配置密钥或提交失败时不要空手结束——同一轮回复里先交付可直接用的成果：按卖点写好的视频提示词（开场钩子、镜头运动、画面与光影、口播或字幕、时长与画幅）和参数已填好的 `generate` 命令，再说明还差什么（商品图 / 密钥）；用户补齐后直接提交，不要把需求重新问一遍。
 
 ```bash
 qhkit video options '{"queryParams":["modelLabel","models"]}'
