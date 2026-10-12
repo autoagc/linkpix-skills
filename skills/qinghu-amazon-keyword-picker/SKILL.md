@@ -96,6 +96,7 @@ metadata: {"openclaw":{"emoji":"🔍"}}
 | `traffic_keyword` | 关键词反查 | 反查某 ASIN 的流量词、自然排名、广告排名、转化表现 |
 | `keyword_order` | 出单词反查 | 反查某 ASIN 真正带来转化的词（从结果倒推原因） |
 | `product_research` | 选热卖产品 | 按选中的词看该词下在卖的商品长什么样 |
+| `competitor_lookup` | 查同行竞品 | 按关键词（匹配商品标题）/ 类目 / 品牌筛在卖商品，按月销量或销售额排序，看这个词的钱被谁赚走 |
 | `product_node` | 查产品类目 | 需要按类目缩小挖词范围时用 |
 
 > **类目 ID 一律来自 `product_node`**：用户只给类目名或关键词时，先把词翻成目标站点语言，再用 `product_node` 查到 `nodeIdPath`，然后才调其他工具。**不要凭印象编类目 ID。**
@@ -125,7 +126,7 @@ metadata: {"openclaw":{"emoji":"🔍"}}
 
 ### 4) 反向溯源：这个词的钱被谁赚走了
 
-用 `product_research`（按该词筛商品）看在卖的是什么货、什么价、评论多少。
+用 `product_research`（按该词筛商品）看在卖的是什么货、什么价、评论多少；要按月销量 / 销售额排出头部卖家时，用 `competitor_lookup`（`keyword` 填该词，`order` 按 `total_units` 或 `total_amount` 倒序）。
 如果 Top 位都是评论几千的老 Listing，说明词虽好但进不去；如果 Top 位是评论几十的新品，说明窗口还开着。
 
 ### 5) 竞品流量结构拆解（可选但很有价值）

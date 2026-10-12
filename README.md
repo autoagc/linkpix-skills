@@ -1,6 +1,6 @@
 # LinkPix Agent Skills
 
-电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **264 个技能**。
+电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **267 个技能**。
 
 覆盖商品主图 / 详情图 / 广告素材 / 带货短视频 / 爆款复刻 / 视频翻译 / POD 印花，
 以及 TikTok、Shopee、Ozon、Amazon、1688、抖音、小红书、B站、视频号等平台的选品、达人与社媒数据查询。
@@ -37,12 +37,12 @@ npx skills add autoagc/linkpix-skills --list
 
 ## 前置依赖
 
-按技能正文实际调用的工具统计（有 2 个技能同时需要两种，故合计大于 264）：
+按技能正文实际调用的工具统计（有 2 个技能同时需要两种，故合计大于 267）：
 
 | 依赖 | 技能数 | 准备方式 |
 |---|---|---|
 | `qhkit` CLI | 97 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
-| 青虎 MCP | 26 | 在客户端接入青虎 MCP Server |
+| 青虎 MCP | 29 | 在客户端接入青虎 MCP Server |
 | `qhkit mcp`（青虎数据工具） | 139 | 同 `qhkit` CLI（需 0.14.0+），无需另配 MCP Server |
 | ImageMagick / ffmpeg | 4 | 本地安装，纯本地处理不联网 |
 
@@ -58,6 +58,7 @@ npx skills add autoagc/linkpix-skills --list
 - **热门模型截流** —— Seedream / Qwen-Image / GPT Image 2 / Nano Banana、可灵 Kling / Seedance / Vidu / 阿里 Wanx / MiniMax / HappyHorse / Grok
 - **平台专项素材** —— 淘宝天猫、抖音小店、拼多多、京东、1688、Amazon、Shopee、TikTok Shop、Lazada、Temu、Ozon、Wildberries、SHEIN 的商品图，以及抖音 / 小红书 / 视频号 / TikTok / YouTube 爆款视频
 - **选品分析** —— TikTok / Shopee / Ozon / Amazon / 1688 / 抖音的类目蓝海、爆款跟卖、关键词、竞店截流、达人建联
+- **社媒运营与工具专家** —— 抖音 / 小红书 / B站 / 视频号 / TikTok 的账号诊断与爆款拆解、AI 生成内容检测、蜂鸟跨境云号管理
 - **数据工具单项技能** —— 每个青虎数据工具一个技能：榜单、商品 / 店铺 / 品牌 / 达人详情、关键词挖掘与反查、类目价格分布、趋势快照、评论采集、热搜榜、AI 生成内容检测等
 
 ## 技能清单
@@ -162,11 +163,12 @@ npx skills add autoagc/linkpix-skills --list
 </details>
 
 <details>
-<summary><b>青虎 AI 电商运营（41 个）</b></summary>
+<summary><b>青虎 AI 电商运营（44 个）</b></summary>
 
 | 技能 | 名称 | 依赖 | 说明 |
 |---|---|---|---|
 | `qinghu-1688-sourcing` | 1688选品专家 &#124; 青虎AI | `MCP` | 支持1688平台，以图搜款、商品关键词搜索、商品详情查询 |
+| `qinghu-ai-detector` | AI检测专家 &#124; 青虎AI | `MCP` | 实现文本、图片全方位 AI 生成内容的精准识别与真伪判定。 |
 | `qinghu-amazon-asin-analyst` | 亚马逊-ASIN解析专家 &#124; 青虎AI | `MCP` | 查询商品 ASIN 详情，价格趋势等 |
 | `qinghu-amazon-keyword-picker` | 亚马逊-关键词选品专家 &#124; 青虎AI | `MCP` | 摆脱传统的「以货找人」，转为「以词定款」。从买家的高频搜索词出发，锁定未被满足的蓝海需求，再反向溯源这些流量流向了哪些商品，打造纯粹依靠自然搜索驱动的单品。 |
 | `qinghu-amazon-market-assessor` | 亚马逊-细分市场评估师 &#124; 青虎AI | `MCP` | 在决定进入某个品类前，调用市场大盘数据，分析该市场的容量、垄断程度、新品活跃度，出具市场准入可行性分析。 |
@@ -180,6 +182,7 @@ npx skills add autoagc/linkpix-skills --list
 | `qinghu-douyin-video-distribute` | 抖音-爆款视频跟卖与铺货专家 &#124; 青虎AI | `MCP` | 实现「爆款发现-链接采集-极速上架」链路打通，大幅缩短新品上架测试周期。 |
 | `qinghu-duo-viral-video` | 双人爆款视频模仿 &#124; 青虎AI | `qhkit` | 完成双人带货视频制作，精准同步人物动作神态，优化画面画质，适配童装直播带货各类创作场景。 |
 | `qinghu-ecom-sourcing` | AI电商选品上货 &#124; 青虎AI | `MCP` | 基于 AI 的智能选品与上货助手，覆盖 Amazon、TikTok Shop、Shopee、Ozon、1688 等多个电商平台，提供爆款挖掘、竞品分析、关键词选品、商品采集及智能上架等能力，帮助卖家提升运营效率。 |
+| `qinghu-fengniao-cloud-number` | 蜂鸟云号管理专家 &#124; 青虎AI | `MCP` | 电商专用手机云号，即开即用、号码统一管理、安全稳定长期有效。 |
 | `qinghu-image-deai-hd` | 图片高清写实去AI感 &#124; 青虎AI | `qhkit` | 极速出图，增强画面细节，去除图片AI油腻失真感，提升画面统一度，减少图像偏移，轻松打造写实高清图像 |
 | `qinghu-image-upscale-detail` | 超清修复强化细节质感 &#124; 青虎AI | `qhkit` | 采用分块放大算法对各类图片超清修复放大，完整留存原图原有细节不篡改，适配商品、人像、景物等全品类图像优化 |
 | `qinghu-image-watermark-remove` | 图片去水印 &#124; 青虎AI | `qhkit` | 极速版AI图片去水印工具，自动清除满屏和局部图片Logo、文字、图形水印，智能还原背景纹理，运行成功率100%，适配电商素材、自媒体配图处理 |
@@ -190,6 +193,7 @@ npx skills add autoagc/linkpix-skills --list
 | `qinghu-ozon-keyword-picker` | Ozon-关键词选品专家 &#124; 青虎AI | `MCP` | 从真实买家搜索需求出发选品，解决「做出来的产品没人搜」的痛点。 |
 | `qinghu-ozon-shop-intercept` | Ozon-竞店截流专家 &#124; 青虎AI | `MCP` | 复刻对标店铺的选品逻辑与出单矩阵，实时截流对标店铺的潜力新品。 |
 | `qinghu-rednote-social` | 小红书-社媒运营专家 &#124; 青虎AI | `MCP` | 构建「爆款笔记拆解 -> 种草痛点提取 -> 优质 KOC/KOL 筛选」的小红书高效种草与社媒矩阵搭建方案。 |
+| `qinghu-shipinhao-social` | 视频号-社媒运营专家 &#124; 青虎AI | `MCP` | 基于视频号账号信息、视频合集及直播数据，实现「全景诊断、爆款拆解、互动分析、直播复盘」的视频号全链路运营优化。 |
 | `qinghu-shopee-category-bluesea` | Shopee-类目蓝海挖掘专家 &#124; 青虎AI | `MCP` | 卖家准备进入新站点或新开店铺时，需要评估各大类目的市场容量和竞争激烈程度，寻找高增长、低竞争的蓝海细分类目。 |
 | `qinghu-shopee-cross-site` | Shopee-跨站点拓客专家 &#124; 青虎AI | `MCP` | 一店多开（如台湾站卖家想拓展马来、泰国站），需要调研该品牌或同类商品在其他站点的分布与存活情况。 |
 | `qinghu-shopee-decision` | Shopee-选品决策专家 &#124; 青虎AI | `MCP` | 针对重大项目立项，进行「大盘+竞店+爆款+搜词」的全景选品报告输出，一键完成多维度分析。 |

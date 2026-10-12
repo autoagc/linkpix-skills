@@ -92,6 +92,7 @@ Ozon 的日常选品排查：**看榜 → 挑款 → 验趋势 → 定跟卖还�
 | --- | --- | --- |
 | `queryhotproductrankings` | 选热卖产品 | 热卖/飙升商品榜（主力入口） |
 | `querycnzoneproductrankings` | 中国专区产品列表 | 中国卖家在售商品的表现，最贴近自有供应链 |
+| `queryhotcategoryrankings` | 行业热销榜单 | 用户只有大方向时，看该类目下哪些细分行业卖得最好，帮他圈定挑款范围 |
 | `queryproductdetails` | 查商品详情 | 批量看商品基础数据（`itemIds` 最多 10 个） |
 | `queryproducttrendsnapshots` | 产品趋势快照 | 单品的历史走势，判断是真爆还是一波流 |
 | `queryproductinfotracks` | 商品信息追踪 | 商品的价格/标题/图片等变更记录 |
@@ -105,7 +106,7 @@ Ozon 的日常选品排查：**看榜 → 挑款 → 验趋势 → 定跟卖还�
 
 ### 1) 圈范围
 
-问清类目（先用类目工具拿 ID）和榜单周期。没指定就先给热卖总榜，再让用户缩范围。
+问清类目（先用类目工具拿 ID）和榜单周期。用户只有大方向（比如「女装」）时，用 `queryhotcategoryrankings` 看该类目下哪些细分行业卖得最好，先把范围缩到具体类目；完全没指定就先给热卖总榜，再让用户缩范围。
 
 ### 2) 拉榜：`queryhotproductrankings` + `querycnzoneproductrankings`
 

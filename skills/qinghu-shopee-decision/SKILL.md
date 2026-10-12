@@ -93,9 +93,11 @@ metadata: {"openclaw":{"emoji":"🧭"}}
 | `queryshopeecatranking` | 查类目榜单 | 类目层面的表现排名（第二条线） |
 | `queryshopeecategorytrendoverview` | 类目趋势概览 | 类目增速与跨站点对比 |
 | `queryshopeeshopranking` | 店铺榜单 | 谁在这个类目赚钱（第三条线） |
+| `queryshopeeshopdetailbatch` | 查店铺详情 | 批量看头部店铺的销量、销售额、商品数、评分（`shopIds` 最多 10 个） |
 | `queryshopeeshopitemlist` | 店铺产品列表 | 头部店铺的出单矩阵 |
 | `queryshopeeitemranking` | 商品榜单 | 具体爆款（第四条线） |
 | `queryshopeewordranking` | 热搜词榜单 | 搜索需求侧（第五条线） |
+| `queryshopeeitemhotword` | 商品热搜词分析 | 候选爆款靠哪些词引流（`type=1`）或同类目热词（`type=2`），`itemIds` 最多 10 个 |
 | `queryshopeecatpricedistribute` | 查类目价格分布 | 找可切入价格带 |
 
 > Shopee 工具的 `site` 是必填，只认 `tw`(台湾) `my`(马来西亚) `id`(印尼) `th`(泰国) `ph`(菲律宾) `sg`(新加坡) `vn`(越南) `br`(巴西)。用户没说站点就问，不要默认。
@@ -118,7 +120,7 @@ metadata: {"openclaw":{"emoji":"🧭"}}
 
 ### 3) 竞店：谁在赚钱、怎么赚的
 
-`queryshopeeshopranking` 找头部店铺 → `queryshopeeshopitemlist` 拆它的出单矩阵。
+`queryshopeeshopranking` 找头部店铺 → `queryshopeeshopdetailbatch` 批量看体量与评分 → `queryshopeeshopitemlist` 拆它的出单矩阵。
 看它靠几个品撑起销量、价格怎么排。
 
 ### 4) 爆款：具体做什么款
@@ -127,7 +129,7 @@ metadata: {"openclaw":{"emoji":"🧭"}}
 
 ### 5) 搜词：需求是真的吗
 
-`queryshopeewordranking` 看该类目的热搜词。**榜上有货但没人搜的品类要警惕**（可能是活动流量带的）。
+`queryshopeewordranking` 看该类目的热搜词，再用 `queryshopeeitemhotword`（`type=1`）看第 4 步的候选爆款实际靠哪些词引流——两边对得上，需求才是真的。**榜上有货但没人搜的品类要警惕**（可能是活动流量带的）。
 
 ### 6) 汇总成报告
 
