@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-shopee-product-rank",
   "displayName": "Shopee-商品榜单 | 青虎AI",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "按类目查询 Shopee 商品热销榜 / 飙升榜（日 / 周 / 月榜），可筛跨境 / 本土、店铺类型",
   "publishedAt": 1791475200000
 }

@@ -26,7 +26,7 @@ ffmpeg -i "输入视频.mp4" -vn -acodec libmp3lame -q:a 2 输出音频.mp3
 ffmpeg -i "输入视频.mp4" -vn -acodec pcm_s16le 输出音频.wav
 ```
 
-只有抖音等平台**分享链接**（不是直链）时，先用 qhkit 解析。缺 qhkit（npm 包 `@iqinghu/qhkit`，需 Node ≥ 18）就地安装：`npm i -g @iqinghu/qhkit`（官方源慢或超时时加 `--registry=https://registry.npmmirror.com`）；无密钥（命令返回 `stage:"config"`）时执行 `qhkit config set --token <密钥> --env prod`（让用户在 https://www.iqinghu.com/workbench/login?type=1&urlCode=1788417527636 注册/登录后，到工作台 APIKeys 页 https://www.iqinghu.com/workbench/dashboard/api-keys 创建密钥发给你）：
+只有抖音等平台**分享链接**（不是直链）时，先用 qhkit 解析。缺 qhkit（npm 包 `@iqinghu/qhkit`，需 Node ≥ 18）就地安装：`npm i -g @iqinghu/qhkit`（官方源慢或超时时加 `--registry=https://registry.npmmirror.com`）；无密钥（命令返回 `stage:"config"`）时执行 `qhkit config set --token <密钥> --env prod`（让用户在 https://www.iqinghu.com/workbench/login?type=1&urlCode=1788417527636 注册/登录后，到工作台 APIKeys 页 https://www.iqinghu.com/workbench/dashboard/api-keys 创建密钥发给你）。本技能对接国内版：`qhkit config show` 的 `site` 不是 `cn`（如 `intl` / autoagc.com）说明本机残留了国际版配置，不要按国际站引导，照上面的国内站链接取密钥后 `--env prod` 覆盖（报 401 时也先核对这一项）：
 
 ```bash
 qhkit video-inspire generate '{"resourceUrl":"https://v.douyin.com/xxxx/"}'
@@ -34,6 +34,7 @@ qhkit video-inspire status   '{"inspireTaskId":276}'   # 返回里的 playVideo 
 ffmpeg -i "<playVideo 直链>" -vn -acodec libmp3lame -q:a 2 音频.mp3
 ```
 
+- **Windows 防乱码**：Windows 上经 PowerShell 调 qhkit 时，stdout 里的中文会按系统代码页 GBK 解码成乱码（如「专图模型」变成「涓撳浘妯″瀷」），模型名、选项、报错都对不上——**看到乱码不要据此判断模型或选项不存在**。每条 qhkit 命令在同一行先切 UTF-8 再调用：`[Console]::OutputEncoding=[Text.Encoding]::UTF8; qhkit <命令> <action> @params.json`；仍有乱码就加全局参数 `--out result.json`（qhkit 0.15.0+），stdout 只回一行纯 ASCII 的文件路径，再按 UTF-8 读该文件拿完整结果。PowerShell 5.1 还会吞掉命令行 JSON 里的双引号（报「json_args 解析失败」），Windows 上参数一律写进文件走 `@params.json`。macOS / Linux / Git Bash 不受影响。
 - 交付：给出本地文件路径；当前环境支持文件外发时按渠道约定发送音频文件。
 - 顺带产出的 `videoScript`（脚本）如果对用户有用可以一并交付。
 

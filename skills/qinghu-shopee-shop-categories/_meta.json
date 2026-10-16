@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-shopee-shop-categories",
   "displayName": "Shopee-店铺类目分布 | 青虎AI",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "按店铺 ID 查询店铺热销商品的类目分布与销量占比",
   "publishedAt": 1791475200000
 }

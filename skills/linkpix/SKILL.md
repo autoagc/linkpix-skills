@@ -69,6 +69,7 @@ LinkPix 是青虎工作台的全栈电商内容生产能力：从商品图、主
    >
    > 图文获取密钥教程：https://xcnzsfe4uxrw.feishu.cn/wiki/KJ0Ywsyw8iAXmRkz5l4cddDbn6g
 5. 自检：`qhkit config show` 输出脱敏配置即全部就绪。
+   **核对站点（本技能对接国内版 iqinghu.com）**：`config show` 返回的 `site` 必须是 `cn`。是 `intl`（`baseHost` 为 autoagc.com）说明本机残留了国际版配置——**不要按国际站引导用户取密钥，也不要拿国际站的模型清单答复**（那边是 `gpt-image-2` / `gemini-3.1-flash` 这类底层模型名，和本技能对不上）；直接把第 4 步的国内站取密钥文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod` 覆盖。`source` 为 `env` 时配置来自环境变量，要请用户删掉 `QHKIT_TOKEN` / `QHKIT_ENV` 或把 `QHKIT_ENV` 改成 `prod`。只有用户明确说自己用的是国际版（AutoAGC）账号时才保留 intl。调用报 401 / 未登录时同样先跑 `config show` 核对站点：国内版密钥配在国际站必然 401。
 
 **更新方式**：qhkit 已全局安装时，升级同样由你（智能体）执行全局安装完成：
 
@@ -89,6 +90,7 @@ qhkit <命令> <action> @params.json     # 参数写进文件，避免 shell 转
 
 - action 三段式：`options`（查可选值/列表）→ `generate`(提交) → `status`(轮询)；`mcp` 例外，走 `search`/`list` → `describe` → `estimate` → `call`（见第 4 节）。`storyboard` 多一个 `script`；`ad` 用 `templates` 查模板；`pod` 另有 `products` 查产品图库；`image`/`video`/`ad`/`pod`/`workflow` 另有 **`estimate`（报价）**——与 `generate` 完全相同的参数，返回本次提交会**实际扣除**的积分（`credits`）与余额是否足够（`enough`），不提交任务。前四个基本不上传文件、秒回；例外：**`workflow estimate` 会真上传本地素材**（工作流报价需要真实素材 URL），**`video estimate` 带本地参考视频时也会先上传**（按参考视频实际时长计价）。
 - stdout 恒为**一行 JSON**；成功含业务字段，失败为 `{"ok":false,"stage":"...","message":"..."}` 且退出码 1。把 message 原样转告用户即可。
+- **Windows 防乱码**：Windows 上经 PowerShell 调 qhkit 时，stdout 里的中文会按系统代码页 GBK 解码成乱码（如「专图模型」变成「涓撳浘妯″瀷」），模型名、选项、报错都对不上——**看到乱码不要据此判断模型或选项不存在**。每条 qhkit 命令在同一行先切 UTF-8 再调用：`[Console]::OutputEncoding=[Text.Encoding]::UTF8; qhkit <命令> <action> @params.json`；仍有乱码就加全局参数 `--out result.json`（qhkit 0.15.0+），stdout 只回一行纯 ASCII 的文件路径，再按 UTF-8 读该文件拿完整结果。PowerShell 5.1 还会吞掉命令行 JSON 里的双引号（报「json_args 解析失败」），Windows 上参数一律写进文件走 `@params.json`。macOS / Linux / Git Bash 不受影响。
 - 返回是**直接的数据结果**（无预渲染呈现字段）：产物 URL 从 `images` / `videos` / `primaryVideo` 取，文本产物在 `videoScript` / `imageText` / `script`，积分在 `credits`，任务号在各类 taskId 字段。如何展示给用户由你按当前环境决定。
 - stderr 可能出现提示行（如版本/模型目录告警），**不是错误**，不要当成失败。
 - 传参里的 `uploadedImages` / `urls` / 视频参数**直接填本地文件路径即可**（CLI 自动上传换取 URL，这是最常见用法）；素材已在公网上时也可以直接填 http(s) URL。唯一例外：`video-inspire` 的 `resourceUrl` 只收 http(s) 链接（抖音等平台分享链接，后端按链接拉取，不是上传文件）。

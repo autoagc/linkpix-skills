@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-tiktok-shop-creators",
   "displayName": "TikTok-店铺带货达人 | 青虎AI",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "按 seller_id 查询为该店铺带货的达人列表",
   "publishedAt": 1791475200000
 }
