@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-ai-text-detect",
   "displayName": "AI生成文本检测 | 青虎AI",
-  "version": "0.1.2",
-  "desc": "检测文本的 AI / 人工占比，返回整体 AI 置信度、疑似 AI 占比、各类型占比和分段明细",
+  "version": "0.1.3",
+  "desc": "通过青虎 text_moderation 检测文本并解释分类置信度、比例估计与分段结果；同时提供逐句风格审阅和保留原意的改写。缺密钥或工具失败时交付明确标注的人工风格审阅，不编造 AI 占比，不以风格判定作者身份。当用户要求 AI 文本检测、文章 AI 率或降 AI 味建议时使用。",
   "publishedAt": 1791475200000
 }

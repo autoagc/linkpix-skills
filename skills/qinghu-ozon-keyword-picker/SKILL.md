@@ -1,182 +1,102 @@
 ---
 name: qinghu-ozon-keyword-picker
-description: 青虎AI Ozon 关键词选品：从 Ozon 热搜词榜单出发看关键词详情与趋势快照，反查关键词关联的商品，并拆解目标商品的流量词结构，用真实搜索需求驱动选品，避免做出没人搜的产品。当用户要在 Ozon 挖关键词、看热搜词、分析搜索需求、反查词下的商品、看商品靠什么词拿流量时必须触发。关键词：青虎AI、Ozon、俄罗斯、关键词、热搜词、搜索需求、词榜、流量词、关键词选品。
+description: "通过 qhkit mcp 编排 Ozon 热搜词、关键词详情、趋势、关联商品和商品流量词，分析搜索需求与选品机会。交付俄语词中文释义、证据和做款建议；无实时数据时交付明确标注的候选词及验证计划，不虚构排名或搜索量。当用户要 Ozon 关键词选品、词榜分析、搜索需求验证时使用。"
 user-invocable: true
-metadata: {"openclaw":{"emoji":"🔑"}}
+metadata: {"openclaw":{"emoji":"🔑","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
 ---
 
 # Ozon-关键词选品专家 | 青虎AI
 
-Ozon 版「以词定款」：**先看俄语买家在搜什么，再看这些搜索流向了哪些商品，最后决定做什么。**
+从真实搜索需求分析 Ozon 商品机会：热搜词 → 详情 → 趋势 → 关联商品 → 用户商品的流量词。交付俄语词、中文释义、证据与做款建议；没有实时数据时，交付明确标注的选词假设和验证计划，禁止编造搜索量、排名、竞争度或利润。
 
-尤其适合解决「产品做出来了却没人搜」这个最常见的坑。
+## 输入与无数据时的交付
 
-## 何时触发
+- 从上下文提取目标品类、俄罗斯市场、查询周期、预算/目标售价及用户已有商品。已有信息不重复问；缺品类时只问一次品类，仍可先给通用验证表。
+- 有用户提供的表格或截图时先分析该材料，标明来源、日期、周期与样本量；有数据不等于最新全站数据。截图读不到的数字不得补猜。
+- 无密钥、无网络、用户未授权付费时，完成下面的候选词与验证计划，不只回复「请提供 APIKey」。候选词是研究假设，不能称为热搜榜或蓝海结论。
 
-- 「Ozon 上大家都在搜什么」「拉一下热搜词榜」
-- 「这个词在 Ozon 上有多少人搜」
-- 「搜这个词的人最后买了什么」
-- 「我这个款靠什么词拿流量」
+示例用户：「想做俄罗斯 Ozon 的桌面收纳，没有账号数据，给我选词思路。」
 
-## 数据接口
+| 候选俄语词（待验证） | 中文释义 | 对应商品方向 | 下一步核验证据 |
+|---|---|---|---|
+| органайзер для стола | 桌面收纳盒 | 分格收纳文具、小件 | 对应词的搜索指数、订单转化及关联商品价格 |
+| подставка для ручек | 笔筒 | 小体积笔具收纳 | 趋势是否持续、头部商品同质化与评价反馈 |
+| органайзер для канцелярии | 文具收纳器 | 多格文具收纳 | 长尾需求、尺寸/材质差异及可行供货成本 |
 
-本技能的数据全部来自**青虎数据接口**——一个普通的 HTTP 端点，用任何能发请求的方式调用即可（`curl`、`fetch`、`requests` 都行）。
-如果当前环境已经把这些工具做成了可直接调用的工具，那就直接调，不必自己拼请求。
+初步建议：「先验证桌面收纳的明确用途词，再决定款式。以上不是实时热搜榜，搜索量、趋势与竞争度均待验证，不能据此认定哪个词值得投产。」
 
-| 项 | 值 |
-| --- | --- |
-| 地址 | `POST https://www.iqinghu.com/api/desktop/qh/mcp` |
-| 必需请求头 | `Authorization: Bearer <青虎密钥>`、`Content-Type: application/json` |
-| 密钥来源 | 向用户索取，或读环境变量 `QINGHU_TOKEN` / `QHKIT_TOKEN`；用户先打开 https://www.iqinghu.com/workbench/login?type=1&urlCode=1788417527636 注册/登录，再到 https://www.iqinghu.com/workbench/dashboard/api-keys 生成 |
+为每个方向准备成本表：到岸成本、平台佣金/履约费、推广成本与退货预留；费用未知时不计算或虚构利润。没有供应商报价时，只给待填项和计算公式。
 
-**HTTP 401 + 空响应体不一定是密钥的问题，按这个顺序排查**：
-① **先原样重试一次**——2026-08-18 实测过同一把有效密钥间歇性返回 401 空体、隔一会儿再请求就正常，别一遇到 401 就下结论；
-② 检查请求头是不是 `Authorization: Bearer <密钥>`（少了 `Bearer ` 前缀、或改用 `X-Api-Key` / `api-key` 一律 401）；
-③ 持续 401 时，拿**同一个密钥**请求 `GET https://www.iqinghu.com/api/desktop/qh/workflow/page?pageNum=1&pageSize=5`（同一套鉴权）：
-返回 200 说明密钥有效，问题在这个端点的账号权限——此时**不要再向用户索要密钥**，请他到青虎工作台开通数据接口权限。
-返回一律是纯 JSON，不需要 `Accept: text/event-stream`。
+## 使用当前 CLI 工具通道
 
-### 1) 查工具入参
+使用 `qhkit mcp` 调用，不再要求用户手拼旧 HTTP JSON-RPC，也不需要另配 MCP server。先检查脱敏配置与国内站，再读取本次工具 schema：
 
-第一次用某个工具、或拿不准参数时先查一次，**不要猜参数**：
-
-```json
-{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}
+```bash
+qhkit mcp describe '{"names":["queryhotkeywordrankings","querykeyworddetails","querykeywordtrendsnapshots","querykeywordrelatedproducts","queryproducttraffickeywords","queryproductdetails","querylevel1categories"]}'
+qhkit mcp estimate '{"names":["queryhotkeywordrankings","querykeyworddetails","querykeywordtrendsnapshots","querykeywordrelatedproducts"]}'
 ```
 
-`result.tools[]` 每项含 `name`（调用时用的名字）、`title`（中文名）、`description`、`inputSchema`（必填项与类型）、`outputSchema`、`free`（是否免费）。
+| 阶段 | 工具 | 使用条件 |
+|---|---|---|
+| 查类目 | `querylevel1categories`，按需逐级查二/三级类目 | 用户只有类目名时先查 ID，禁止猜类目 ID |
+| 拉词榜 | `queryhotkeywordrankings` | 按当前 schema 填 `period`、`sortField`、`updatePeriod`；分页上限以 schema 为准 |
+| 看详情 | `querykeyworddetails` | `keywordIds` 必须来自本次真实词榜，单次最多 10 个（以当前 schema 为准） |
+| 验趋势 | `querykeywordtrendsnapshots` | 沿用真实 ID 与相同周期，区分持续增长与节庆尖峰 |
+| 找商品 | `querykeywordrelatedproducts`、按需 `queryproductdetails` | 使用工具真实返回的商品 ID，分析价格带和竞争结构 |
+| 反查已有款 | `queryproducttraffickeywords` | 仅在用户已有商品且 ID 可核实时调用 |
 
-### 2) 发起调用
+将每次参数写入 UTF-8 文件，统一结构为 `{"name":"实际工具名","params":{}}`，填齐本次 `describe` 的 required 后执行 `qhkit mcp call @params.json`。不要把其他平台工具或示例 ID 填进去。`period` 候选通常有 `WEEK/MONTH/QUARTER/YEAR`，以当前 schema 为准；`updatePeriod` 使用用户指定或工具确认的有效账期，不虚构「最新账期」。
 
-工具名照 `tools/list` 返回的 `name` 原样填：
+## 计费、失败处理与证据
 
-```json
-{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"hot_douyin_rank","arguments":{}}}
+- `describe` / `estimate` 可先查询；付费 `call` 前一次列清工具、用途及预计积分，取得用户授权。没有准确估价时说明实际计费，不能编造总价。
+- `call` 的 `credits` 已是青虎积分，不再除以 10000，不引用业务数据中的 points。每轮付费调用最多 10 次，优先复用结果，避免无目的批量查询。
+- 只有 `ok:true` 的真实返回才作为证据。`large:true` 时读 `file` 完整结果，不拿 preview 充当全量。`stage:validate` 按返回 schema 修正；鉴权或服务端失败时检查配置并停止重复扣费尝试，转为研究计划交付。
+- 区分搜索指数、搜索量、曝光、订单金额、转化率与供需比，按工具的定义和单位解读；不能把指数当绝对搜索次数，不能凭供需比一个指标就称为蓝海。
+- 至少用需求、趋势、竞争商品三个角度支持做款判断；数据不足就标「待验证」，列出缺哪项证据。不同周期不得直接横比。
+
+## 最终输出
+
+1. 先给「建议验证/暂缓/证据不足」及理由，再给最多 5 条关键证据。接口不可用时不要擅自改用浏览器抓取榜单或商品来冒充同口径数据；无网络时只用已提供材料与明确标注的选词假设完成研究计划。
+2. 每词附俄语原词、中文释义、真实指标与周期、关联商品特点、做款建议和风险；没有数据的字段留空并标待验证。
+3. 记录不少于 10 条时交付表格文件与少量预览，导出完整缓存文件；没有真实数据时交付研究计划表，不能伪造报表。
+4. 付费调用后在末尾单独写「本次共消耗 X 青虎积分」；无调用不报告虚构消耗。
+
+不执行 Ozon 站内投放、不自动上架商品。需要类目大盘或跟卖分析时再转交同系列场景技能，不用名字相近的工具凑结果。
+
+## 工具环境（仅实际调用时检查，离线策划不安装）
+
+仅在用户确实要执行工具且当前环境允许安装时执行本节；只要方案、提示词或离线审阅时跳过，不把安装作为交付前提。
+
+本技能依赖 `qhkit` 命令（npm 包 `@iqinghu/qhkit`，**`mcp` 命令需 0.14.0+**），可完全独立安装。按顺序检测，缺失就地补齐：
+
+1. **有 qhkit 吗？** `qhkit config show` 能跑通即就绪，跳到第 4 步。
+2. **没有 qhkit 但有 node/npm** → 全局安装（推荐）：
+
+   ```bash
+   npm i -g @iqinghu/qhkit
+   ```
+
+   默认走 npm 官方源；官方源访问慢或超时（国内网络常见）时，再加镜像参数 `--registry=https://registry.npmmirror.com`（阿里维护的 npm 官方镜像，仅作网络兜底）。仅当全局安装因权限失败且无法提权时，才退而用 `npx @iqinghu/qhkit <命令> ...`（npx 必须写包全名）。
+3. **连 node 都没有**（要求 Node ≥ 18）：先装 Node 再回到第 2 步。
+
+   ```bash
+   # Linux 二进制安装（装到用户目录，无需 root；先校验官方 SHA256 再解包）：
+   cd /tmp && curl -fsSLO https://nodejs.org/dist/v22.22.3/node-v22.22.3-linux-x64.tar.xz
+   cd /tmp && curl -fsSL https://nodejs.org/dist/v22.22.3/SHASUMS256.txt | grep ' node-v22.22.3-linux-x64.tar.xz$' | sha256sum -c -
+   mkdir -p "$HOME/.local/lib" && tar -xJf /tmp/node-v22.22.3-linux-x64.tar.xz -C "$HOME/.local/lib"
+   export PATH="$HOME/.local/lib/node-v22.22.3-linux-x64/bin:$PATH"
+   ```
+
+   校验行输出 `OK` 才继续；校验失败就删掉重下，**绝不解包未通过校验的文件**。nodejs.org 访问不通时，把两个下载 URL 的前缀 `https://nodejs.org/dist` 整体换成镜像 `https://registry.npmmirror.com/-/binary/node`（目录结构相同，SHASUMS256.txt 也有镜像，校验步骤不变）。`export PATH` 只对当前 shell 生效，跨命令调用时每个新 shell 都要先执行这行（或追加进 `~/.bashrc`）。macOS 用 `brew install node`；Windows 用 winget/官网安装包。arm64 机器把 `x64` 换成 `arm64`。
+4. **密钥**：无密钥时（命令返回 `stage:"config"`），执行 `qhkit config set --token <密钥> --env prod`（密钥让用户打开 https://www.iqinghu.com/workbench/login?type=1&urlCode=1788417527636 注册/登录后，从 https://www.iqinghu.com/workbench/dashboard/api-keys 获取），或设环境变量 `QHKIT_TOKEN`。
+5. **自检**：`qhkit config show` 输出脱敏配置即全部就绪。
+   **核对站点（本技能对接国内版 iqinghu.com）**：`config show` 返回的 `site` 必须是 `cn`。是 `intl`（`baseHost` 为 autoagc.com）说明本机残留了国际版配置——**不要按国际站引导用户取密钥，也不要拿国际站的模型清单答复**（那边是 `gpt-image-2` / `gemini-3.1-flash` 这类底层模型名，和本技能对不上）；直接把第 4 步的国内站取密钥文案发给用户，拿到密钥后执行 `qhkit config set --token <密钥> --env prod` 覆盖。`source` 为 `env` 时配置来自环境变量，要请用户删掉 `QHKIT_TOKEN` / `QHKIT_ENV` 或把 `QHKIT_ENV` 改成 `prod`。只有用户明确说自己用的是国际版（AutoAGC）账号时才保留 intl。调用报 401 / 未登录时同样先跑 `config show` 核对站点：国内版密钥配在国际站必然 401。
+
+**升级**：命令返回 `{"ok":false,"stage":"version",...}`（版本门禁，message 里就是升级命令），或返回 `stage:"runtime"` 且 message 为「未知命令：mcp」（本机 qhkit 太老），都先升级再重试原命令：
+
+```bash
+npm i -g @iqinghu/qhkit@latest
 ```
 
-### 3) 取业务数据：要解两层
-
-**业务数据是被 JSON 字符串化塞在 `content[0].text` 里的**，直接读 `content` 拿不到值：
-
-```json
-{"jsonrpc":"2.0","id":2,"result":{
-  "isError": false,
-  "pointCost": 2000,
-  "content": [{"type":"text","text":"{\"code\":200,\"data\":{...},\"success\":true}"}]
-}}
-```
-
-**必须对 `content[0].text` 再做一次 JSON 解析**，才拿得到里面的 `data`。
-
-### 4) 判断成没成功：三层都要看
-
-**HTTP 状态码永远是 200，`isError` 也可能骗人**，按顺序检查：
-
-| 检查 | 含义 |
-| --- | --- |
-| 顶层有 `error` 对象（此时没有 `result`） | 协议层失败，如工具名写错会返回「工具不存在: xxx」 |
-| `result.isError` 为 `true` | 调用出错 |
-| 解析内层后 `code == 200` 且 `success == true` | **只有这样才算真成功** |
-
-实测缺必填参数时返回的是 `isError: false` 但内层 `code:500`、`success:false`——**光看 `isError` 或 HTTP 200 会把失败当成功**。
-参数出错时的提示只有一句「API调用成功判断失败」，既不说缺哪个参数也不说哪个值非法，所以**调用前对着 `inputSchema` 的 `required` 自查**，不要靠试错。
-
-调用失败时 `pointCost` 为 0，不扣费。
-
-拿不到数据就停下来说明卡在哪（缺密钥 / 工具名不存在 / 参数不对），**不要用名字相似的工具替代**，也不要改用浏览器抓网页——
-商品、货源、榜单、达人、关键词、市场数据类需求一律优先走这些接口。
-
-下表是本技能要用的工具，写的是 `name` 原值；表里只补 `inputSchema` 里看不出来的取值来源与前置步骤。
-
-| 工具 | 中文名 | 用在哪一步 |
-| --- | --- | --- |
-| `queryhotkeywordrankings` | 热搜词榜单 | 词榜入口（`period`/`sortField`/`updatePeriod` 必填） |
-| `querykeyworddetails` | 关键词详情 | 词的搜索量、竞争等详细指标（需要 keywordIds） |
-| `querykeywordtrendsnapshots` | 关键词趋势快照 | 词的历史热度走势，判断长期需求还是短期热点 |
-| `querykeywordrelatedproducts` | 关键词关联商品 | 这个词的搜索流量流向了哪些商品 |
-| `queryproducttraffickeywords` | 商品流量词 | 反过来：某个商品靠哪些词拿流量 |
-| `queryproductdetails` | 查商品详情 | 补齐关联商品的明细 |
-| `querylevel1categories` | 查询公共一级类目 | 需要按类目缩范围时先查类目 ID |
-
-> Ozon 工具的类目 ID、关键词 ID、店铺 ID 都要**先查后用**：类目走 `querylevel1categories` → `querylevel2categories` → `querylevel3categories` 逐级下钻，关键词 ID 走 `queryhotkeywordrankings`，店铺 ID 走 `queryhotshoprankings`。不要编 ID。
-> `period` / `updatePeriod` 决定榜单周期（周榜 / 月榜 / 季度 / 年度），跨周期的数字不要混在一张表里比。
-
-## 工作流程
-
-### 1) 拉词榜：`queryhotkeywordrankings`
-
-`period`（周/月/季/年）、`sortField`、`updatePeriod` 都是必填。
-**周期选择直接影响结论**：找长期需求看月/季榜，抓短期热点看周榜。
-
-### 2) 拿词的 ID 再看详情：`querykeyworddetails`
-
-词榜返回的 `keywordId` 是后续所有词工具的钥匙，**不要用词的字面量去猜 ID**。
-
-### 3) 验趋势：`querykeywordtrendsnapshots`
-
-持续爬坡的词才值得做款；尖峰后回落的多半是节庆或事件带来的短期热度。
-
-### 4) 反向溯源：`querykeywordrelatedproducts`
-
-看这个词下在卖的是什么、什么价、销量多少。
-- Top 位都是老品牌 → 词好但难进；
-- Top 位分散、评分参差 → 有机会。
-
-### 5) 反查自己的款（可选）：`queryproducttraffickeywords`
-
-用户已有在售商品时，看它现在靠哪些词拿流量、哪些词没覆盖到，直接转成标题与属性优化建议。
-
-### 6) 出词单与做款建议
-
-俄语词要给出中文释义，别丢一串俄文让用户自己猜。
-
-## 输出
-
-- **热搜词单**：词（附中文释义）、搜索热度、趋势方向、竞争度。
-- **每个词对应的商品机会**：这个词下现在在卖什么、还缺什么。
-- **做款建议**：优先做哪几个词对应的产品，标题/属性该怎么覆盖。
-- 词单与商品明细按「数据交付」导出。
-
-## 数据交付
-
-- **工具返回的记录数组 ≥ 10 条时默认导出表格文件**（装了 `qinghu-excel-export` 技能就用它），不管用户有没有提「表格 / 导出」。**不要**把大数据集铺成聊天里的 markdown 表格，也**不要**反问「需要我导出吗」——先导出、给链接才是正确姿势。
-- 工具返回里出现「完整数据已缓存到本机文件: ...」时，后续筛选、导出一律用那个文件路径，**绝对不要逐行抄写数据**。
-- 导出后的回复保持精简：交付链接 + 一句话说明 + 不超过 5 行关键预览。
-- **结论先行**：先给判断和建议（能不能做、怎么做、风险在哪），再给支撑数据；不要把原始字段直接倒给用户。
-- 数字要标口径：站点 / 账期 / 周期 / 样本量。跨站点或跨周期的数字不要混在一张表里比。
-
-## 计费与授权
-
-- **所有工具统一在发起调用前先经用户确认**，不必按 `free` 字段区分收费与否，按下面的规则征求授权。
-- **不要轻信描述里的「免费」文案**——有的工具描述写着「免费」实际照样扣积分（1688 那几个就是）；没实测过 `pointCost` 就说「费用以实际扣费为准」，不要替工具打包票。
-- **实扣多少看返回信封里的 `pointCost`**（在 `result` 层，与 `isError` 同级）。这个值**要换算**：`pointCost ÷ 10000 = 青虎积分`（实测 10000 = 1 积分，16000 = 1.6 积分）。
-- **只认信封层的 `pointCost`，绝不去业务数据里翻积分字段**——工具返回的业务文本里常带 `charge_points` / `points_balance` 或「消耗 8 积分，剩余 1952 积分」之类的话，那是**上游数据源自己的积分体系**，和青虎积分不是一回事（实测同一条响应 `pointCost=16000`＝青虎 1.6 积分，而业务文本写「消耗 8 积分」）。照抄业务文本会把用户的账算错。
-- 信封里没有 `pointCost` 时按 0 报，或直接说这次拿不到消耗数据，**不要拿业务文本里的数字顶替，也不要自己估算**。
-- **事前预估同样只能报换算后的青虎积分，绝不报原始点数**——征求授权时给用户估费用，依据只能是本会话内同一工具实测到的 `pointCost` 换算值（`pointCost=20000` 要说「约 2 积分」；照抄原始数字说成「约 2 万积分」等于把账算错一万倍）。没实测过就写「费用以实际扣费为准」，不要编数字，也不要照抄工具描述里出现的任何点数。
-- **消耗写在回复的最末尾，单独一行，格式固定**：
-
-  ```
-  本次共消耗 9.6 青虎积分
-  ```
-
-  数值是本轮**所有**付费调用的 `pointCost` 累加后 ÷ 10000（例：16000 + 96000 = 112000 → `本次共消耗 11.2 青虎积分`）。小数按实际写，不补零也不四舍五入到整数。
-  这一行必须**另起一行、独占一行、放在正文全部结束之后**，前面空一行隔开。**不要把积分数字混写进正文段落**（写成「共返回 60 条笔记，实扣 96000 pointCost = 9.6 青虎积分」这种是错的）。
-  本轮一次付费调用都没有时，不输出这一行。
-- **本会话首次调用工具前**：一次性列清本次要用的**全部**工具，说明准备用它们做什么、会消耗青虎积分，征求**一次**同意，然后结束本轮。不要逐个询问把对话拖长。
-- 用户明确同意后，这些工具在**本会话内持续有效**，不再重复询问；新会话需要重新征求。
-- 用户拒绝、只授权其中一部分或答非所问时，**未获同意的工具一律不调用**。
-- **同一轮回复内工具最多调 10 次**。达到上限就用已有数据作答，还需要更多数据时先说明还差什么、要再调几次，征得同意后下一轮继续。参数写错先想清楚正确参数再重试，不要连续试错——每次失败同样可能扣费。
-- 同一个数据需求既有免费工具又有付费工具时，优先用免费的。
-
-## 能力边界
-
-- 本技能从**搜索需求**出发。要看榜单挑爆款走「Ozon-爆款跟卖与选品大师」，要选赛道走「Ozon-蓝海赛道挖掘专家」。
-- 不做 Ozon 站内广告投放操作。
-- 关键词 ID 必须来自词榜工具，不能凭字面量编造。
-
-## 相关技能
-
-同系列的其他「青虎AI」技能（按需转交，不要在本技能里硬做）：
-
-- **Ozon-蓝海赛道挖掘专家**：把词的机会放回类目大盘验证
-- **Ozon-爆款跟卖与选品大师**：对词下的候选商品做跟卖判断
+官方源慢或超时时同样加 `--registry=https://registry.npmmirror.com`。安装/配置失败时把具体报错告诉用户（常见：无写权限 → 提示用户提权或改用 npx；无网络 → 让用户处理网络）。

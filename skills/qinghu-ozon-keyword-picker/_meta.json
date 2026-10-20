@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "qinghu-ozon-keyword-picker",
   "displayName": "Ozon-关键词选品专家 | 青虎AI",
-  "version": "0.1.3",
-  "desc": "从真实买家搜索需求出发选品，解决「做出来的产品没人搜」的痛点。",
+  "version": "0.1.4",
+  "desc": "通过 qhkit mcp 编排 Ozon 热搜词、关键词详情、趋势、关联商品和商品流量词，分析搜索需求与选品机会。交付俄语词中文释义、证据和做款建议；无实时数据时交付明确标注的候选词及验证计划，不虚构排名或搜索量。当用户要 Ozon 关键词选品、词榜分析、搜索需求验证时使用。",
   "publishedAt": 1787011200000
 }
