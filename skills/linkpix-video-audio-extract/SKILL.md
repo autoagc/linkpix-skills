@@ -34,7 +34,9 @@ qhkit video-inspire status   '{"inspireTaskId":276}'   # 返回里的 playVideo 
 ffmpeg -i "<playVideo 直链>" -vn -acodec libmp3lame -q:a 2 音频.mp3
 ```
 
-- **Windows 防乱码**：Windows 上经 PowerShell 调 qhkit 时，stdout 里的中文会按系统代码页 GBK 解码成乱码（如「专图模型」变成「涓撳浘妯″瀷」），模型名、选项、报错都对不上——**看到乱码不要据此判断模型或选项不存在**。每条 qhkit 命令在同一行先切 UTF-8 再调用：`[Console]::OutputEncoding=[Text.Encoding]::UTF8; qhkit <命令> <action> @params.json`；仍有乱码就加全局参数 `--out result.json`（qhkit 0.15.0+），stdout 只回一行纯 ASCII 的文件路径，再按 UTF-8 读该文件拿完整结果。PowerShell 5.1 还会吞掉命令行 JSON 里的双引号（报「json_args 解析失败」），Windows 上参数一律写进文件走 `@params.json`。macOS / Linux / Git Bash 不受影响。
+- **版本检查与升级**：解析分享链接前运行 `qhkit --version`。若 CLI 返回 `stage:"version"`、stderr 提示有新版，或 `stage:"runtime"` 提示未知命令，先执行 `npm i -g @iqinghu/qhkit@latest`（官方源慢时加 `--registry=https://registry.npmmirror.com`）再重试；`config show` 能运行不代表版本足够。已有任务 ID 时升级后继续 `status`，不要重新提交 `generate`。本地文件或视频直链直接走 ffmpeg，无需安装、授权或升级 qhkit。
+
+- **Windows 防乱码**：Windows 上经 PowerShell 调 qhkit 时，stdout 里的中文会按系统代码页 GBK 解码成乱码（如「专图模型」变成「涓撳浘妯″瀷」），模型名、选项、报错都对不上——**看到乱码不要据此判断模型或选项不存在**。每条 qhkit 命令在同一行先切 UTF-8 再调用：`[Console]::OutputEncoding=[Text.Encoding]::UTF8; qhkit <命令> <action> @params.json`；仍有乱码时先运行 `qhkit --version`，低于 0.15.0 先执行 `npm i -g @iqinghu/qhkit@latest` 升级（官方源慢时加 `--registry=https://registry.npmmirror.com`），再加全局参数 `--out result.json`；stdout 只回一行纯 ASCII 的文件路径，再按 UTF-8 读该文件拿完整结果。PowerShell 5.1 还会吞掉命令行 JSON 里的双引号（报「json_args 解析失败」），Windows 上参数一律写进文件走 `@params.json`。macOS / Linux / Git Bash 不受影响。
 - 交付：给出本地文件路径；当前环境支持文件外发时按渠道约定发送音频文件。
 - 顺带产出的 `videoScript`（脚本）如果对用户有用可以一并交付。
 
