@@ -1,11 +1,11 @@
 # LinkPix Agent Skills
 
-电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **311 个技能**。
+电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **322 个技能**。
 
 覆盖商品主图 / 详情图 / 广告素材 / 带货短视频 / 爆款复刻 / 视频翻译 / POD 印花，
 以及 TikTok、Shopee、Ozon、Amazon、1688、抖音、小红书、B站、视频号等平台的选品、达人与社媒数据查询。
 
-> **English** — 311 Agent Skills for e-commerce content generation and product research
+> **English** — 322 Agent Skills for e-commerce content generation and product research
 > by LinkPix (青虎AI): product images, sales videos, viral video cloning, POD patterns,
 > and cross-border market analysis for TikTok, Shopee, Ozon, Amazon and 1688.
 > Install with `npx skills add autoagc/linkpix-skills`.
@@ -37,11 +37,11 @@ npx skills add autoagc/linkpix-skills --list
 
 ## 前置依赖
 
-按技能正文实际调用的工具统计（有 4 个技能同时需要两种，故合计大于 311）：
+按技能正文实际调用的工具统计（有 4 个技能同时需要两种，故合计大于 322）：
 
 | 依赖 | 技能数 | 准备方式 |
 |---|---|---|
-| `qhkit` CLI | 139 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
+| `qhkit` CLI | 150 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
 | 青虎 MCP | 29 | 在客户端接入青虎 MCP Server |
 | `qhkit mcp`（青虎数据工具） | 139 | 同 `qhkit` CLI（需 0.14.0+），无需另配 MCP Server |
 | ImageMagick / ffmpeg | 8 | 本地安装，纯本地处理不联网 |
@@ -55,7 +55,7 @@ npx skills add autoagc/linkpix-skills --list
 - **爆款复刻** —— 视频仿拍、角色替换、模特换装、脚本拆解、视频转图文
 - **视频处理** —— 去水印、去字幕、画质超清、智能补帧、视频翻译配音、音频提取
 - **POD 印花** —— 印花提取、智能贴合、图案裂变、产品图库
-- **热门模型截流** —— Seedream / Qwen-Image / GPT Image 2 / Nano Banana、可灵 Kling / Seedance / Vidu / 阿里 Wanx / MiniMax / HappyHorse / Grok
+- **热门模型截流** —— Seedream / Qwen-Image / GPT Image 2 / GPT Image 2.6 / Nano Banana、可灵 Kling / Seedance / Vidu / 阿里 Wanx / MiniMax / HappyHorse / Grok
 - **平台专项素材** —— 淘宝天猫、抖音小店、拼多多、京东、1688、Amazon、Shopee、TikTok Shop、Lazada、Temu、Ozon、Wildberries、SHEIN 的商品图，以及抖音 / 小红书 / 视频号 / TikTok / YouTube 爆款视频
 - **选品分析** —— TikTok / Shopee / Ozon / Amazon / 1688 / 抖音的类目蓝海、爆款跟卖、关键词、竞店截流、达人建联
 - **社媒运营与工具专家** —— 抖音 / 小红书 / B站 / 视频号 / TikTok 的账号诊断与爆款拆解、AI 生成内容检测、蜂鸟跨境云号管理
@@ -78,7 +78,7 @@ npx skills add autoagc/linkpix-skills --list
 | `linkpix-image-ad-assets` | AI电商图文广告素材生成器 &#124; LinkPix | `qhkit` | 自动生成适用于电商推广及广告投放的图文营销素材，提高内容创作效率。 |
 | `linkpix-image-compress` | AI图片压缩工具 &#124; LinkPix | `本地` | 智能压缩图片体积，在保证画质的同时减少文件大小，提高网页加载及上传效率。 |
 | `linkpix-image-eraser` | 商品图片元素智能消除工具 &#124; LinkPix | `qhkit` | 智能擦除图片中的人物、水印、文字及杂物，并自动补全背景，轻松完成商品修图与素材优化。 |
-| `linkpix-image-generate` | AI电商图像生成 &#124; LinkPix | `qhkit` | 按文字描述直出商业级电商图片，支持参考图（图生图），四个画质取向不同的模型可选，覆盖从快速出图到极致效果的全部场景。 |
+| `linkpix-image-generate` | AI电商图像生成 &#124; LinkPix | `qhkit` | 按文字描述直出商业级电商图片，支持参考图（图生图），多个画质取向不同的模型可选（含智慧模型2.6 / GPT Image 2.6），覆盖从快速出图到极致效果的全部场景。 |
 | `linkpix-image-text-edit` | 电商商品图文字修改器 &#124; LinkPix | `qhkit` | 自动识别并修改图片中的文字内容，无需重新设计图片，快速替换标题、价格、卖点及促销信息。 |
 | `linkpix-image-translate` | 电商商品图片翻译器 &#124; LinkPix | `qhkit` | 批量翻译商品图片中的文字内容，自动保持原有版式与设计风格，帮助跨境卖家快速完成多语言商品本地化。 |
 | `linkpix-image-variations` | 电商商品图裂变器 &#124; LinkPix | `qhkit` | 基于一张商品图快速生成多种营销版本，支持不同背景、布局和设计风格，轻松制作丰富的广告素材。 |
@@ -120,7 +120,7 @@ npx skills add autoagc/linkpix-skills --list
 | 技能 | 名称 | 依赖 | 说明 |
 |---|---|---|---|
 | `linkpix-seedream-5-pro` | Seedream 5.0 Pro 爆款电商图 &#124; LinkPix | `qhkit` | Seedream 5.0 / 图片 5.0 Pro 电商全场景生图，文生图与图生图，适配淘宝天猫京东及跨境平台。 |
-| `linkpix-seedream-5-lite` | Seedream 5.0 Lite 生成电商图 &#124; LinkPix | `qhkit` | Qwen-Image / 图片 5.0 Lite 国内电商爆款排版图，强化中文渲染与 2K 输出。 |
+| `linkpix-seedream-5-lite` | Seedream 5.0 Flash 快速生成电商图 &#124; LinkPix | `qhkit` | 图片 5.0 Flash 快速电商生图，真实质感、出图快、积分低（原图片 5.0 Lite 已下架，改走 Flash）。 |
 | `linkpix-gpt-image-2` | GPT Image 2 爆款电商主图 &#124; LinkPix | `qhkit` | GPT Image 2 / 智慧模型跨境多平台主图精修，支持参考图控制主体与风格。 |
 | `linkpix-nano-banana-2` | Nano Banana 2 电商爆款素材生成 &#124; LinkPix | `qhkit` | Nano Banana 2 / 专图模型高质量图生图与可控编辑，适合直通车钻展等高频素材。 |
 | `linkpix-kling-3-sales` | 可灵 Kling 3.0 电商带货视频 &#124; LinkPix | `qhkit` | 可灵 3.0 长镜头、多图参考与商品一致性带货视频。 |
@@ -159,6 +159,25 @@ npx skills add autoagc/linkpix-skills --list
 | `linkpix-shipinhao-viral-video` | 视频号 爆款视频生成 &#124; LinkPix | `qhkit` | 视频号情感故事、好物分享与私域引流视频。 |
 | `linkpix-tiktok-viral-video` | TikTok 爆款视频生成 &#124; LinkPix | `qhkit` | TikTok Shop / Ads 多语言口播、卡点变装与跨境种草。 |
 | `linkpix-youtube-viral-video` | YouTube 爆款视频生成 &#124; LinkPix | `qhkit` | YouTube 开箱测评、品牌 TVC 与横屏深度种草。 |
+
+</details>
+
+<details>
+<summary><b>GPT Image 2.6（11 个）</b></summary>
+
+| 技能 | 名称 | 依赖 | 说明 |
+|---|---|---|---|
+| `linkpix-gpt-image-2-6-generate` | GPT Image 2.6 AI 图像生成 &#124; 文生图 图生图 智能修图 创意图片制作 | `qhkit` | 面向电商、设计、营销与办公场景，支持文字生图、参考图创作、背景替换、细节优化和创意修图，可制作商品图、海报、插画及场景效果图。 |
+| `linkpix-gpt-image-2-6-ecom-main-image` | GPT Image 2.6 电商主图生成 &#124; 商品主图套图 &#124; 高点击率首图 &#124; SKU 图制作 | `qhkit` | 面向淘宝、天猫、拼多多、京东等渠道，制作商品首图、轮播套图和 SKU 图，可按商品参考图保留主体、材质与规格特征。 |
+| `linkpix-gpt-image-2-6-amazon-image` | GPT Image 2.6 亚马逊主图生成 &#124; Listing 主副图 &#124; A + 页面图 &#124; 纯白底图 | `qhkit` | 面向亚马逊跨境卖家，按 Listing 主图、副图与 A+ 模块分别制作纯白背景商品图、场景图与卖点图。 |
+| `linkpix-gpt-image-2-6-white-background` | GPT Image 2.6 电商白底图生成 &#124; 批量抠图去背景 &#124; 透明底图 &#124; 商品抠图 | `qhkit` | 按商品参考图制作纯白背景素材，支持多件商品逐件处理。透明底交付需验证实际 Alpha 通道，必要时对商品做独立分割。 |
+| `linkpix-gpt-image-2-6-scene-image` | GPT Image 2.6 电商场景图生成 &#124; 背景替换 &#124; 场景合成 &#124; 营销场景图 | `qhkit` | 面向家居、美妆、数码、服饰等商品，基于参考图生成生活方式场景、替换背景并制作营销场景图。 |
+| `linkpix-gpt-image-2-6-douyin-shop-image` | GPT Image 2.6 抖音小店主图生成 &#124; 短视频封面 &#124; 商城主图 &#124; 直播间贴片 | `qhkit` | 面向抖音电商制作商城商品主图、短视频带货封面和直播间贴片，按实际素材位调整商品构图和文案位置。 |
+| `linkpix-gpt-image-2-6-ad-assets` | GPT Image 2.6 千川投流图生成 &#124; 直通车广告图 &#124; 信息流素材 &#124; 钻展图 | `qhkit` | 面向千川、直通车、信息流与钻展等版位，生成电商投放素材并制作可用于测试的创意变体。 |
+| `linkpix-gpt-image-2-6-detail-image` | GPT Image 2.6 电商详情图生成 &#124; 卖点图 &#124; 详情页长图 &#124; 参数信息图 | `qhkit` | 将商品卖点、参数和使用场景拆成详情页首屏、卖点图、参数信息图与长图分段。 |
+| `linkpix-gpt-image-2-6-crossborder-image` | GPT Image 2.6 跨境电商主图生成 &#124; Temu Shopee TikTok Ozon 多平台素材 | `qhkit` | 面向 Temu、Shopee、TikTok Shop、Ozon 等渠道生成商品首图和营销图，按站点拆分画幅、文案与语言版本。 |
+| `linkpix-gpt-image-2-6-fashion-model` | GPT Image 2.6 电商模特图生成 &#124; 模特换装换脸 &#124; 服装试穿 &#124; 穿搭效果图 | `qhkit` | 面向服饰类目制作 AI 模特试穿与穿搭图，支持以服装和模特参考图组织换装、换脸或多风格模特生成。 |
+| `linkpix-gpt-image-2-6-promo-poster` | GPT Image 2.6 电商促销海报生成 &#124; 大促活动图 &#124; 节日营销图 &#124; 折扣海报 | `qhkit` | 为双 11、618、黑五、圣诞等活动制作电商促销海报、折扣视觉与多版位营销素材。 |
 
 </details>
 
@@ -386,7 +405,7 @@ npx skills add autoagc/linkpix-skills --list
 | `qinghu-image-ad-assets` | AI电商图文广告 &#124; 图文广告 &#124; 营销图文 &#124; 广告海报生成 &#124; 青虎AI | `qhkit` | 自动生成适用于电商推广及广告投放的图文营销素材，提高内容创作效率。 |
 | `qinghu-image-compress` | AI图片压缩 &#124; 批量压缩 &#124; 减小体积 &#124; 优化加载 &#124; 青虎AI | `本地` | 智能压缩图片体积，在保证画质的同时减少文件大小，提高网页加载及上传效率。 |
 | `qinghu-image-eraser` | 商品图消除 &#124; 去水印 &#124; 去除杂物 &#124; 智能擦除 &#124; 青虎AI | `qhkit` | 智能擦除图片中的人物、水印、文字及杂物，并自动补全背景，轻松完成商品修图与素材优化。 |
-| `qinghu-image-generate` | AI电商图像生成 &#124; 商品图生成 &#124; 产品图 &#124; 素材生成 &#124; 青虎AI | `qhkit` | 按文字描述直出商业级电商图片，支持参考图（图生图），四个画质取向不同的模型可选，覆盖从快速出图到极致效果的全部场景。 |
+| `qinghu-image-generate` | AI电商图像生成 &#124; 商品图生成 &#124; 产品图 &#124; 素材生成 &#124; 青虎AI | `qhkit` | 按文字描述直出商业级电商图片，支持参考图（图生图），多个画质取向不同的模型可选（含智慧模型2.6 / GPT Image 2.6），覆盖从快速出图到极致效果的全部场景。 |
 | `qinghu-image-text-edit` | 电商图文字修改 &#124; 图片改字 &#124; 替换文字 &#124; 修改价格文字 &#124; 青虎AI | `qhkit` | 自动识别并修改图片中的文字内容，无需重新设计图片，快速替换标题、价格、卖点及促销信息。 |
 | `qinghu-image-translate` | 电商图片翻译 &#124; 图片文字翻译 &#124; 多语言本地化 &#124; 跨境翻译 &#124; 青虎AI | `qhkit` | 批量翻译商品图片中的文字内容，自动保持原有版式与设计风格，帮助跨境卖家快速完成多语言商品本地化。 |
 | `qinghu-image-variations` | 电商图裂变 &#124; 图片裂变 &#124; 多版本生成 &#124; 广告素材裂变 &#124; 青虎AI | `qhkit` | 基于一张商品图快速生成多种营销版本，支持不同背景、布局和设计风格，轻松制作丰富的广告素材。 |

@@ -27,7 +27,7 @@ qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./印花.p
 - 位置与大小写清楚（正面居中/左胸小图/满印）；多载体（T恤+卫衣+杯子）逐载体循环提交。
 - 出图后核对图案是否变形失真、配色是否还原。
 
-**模型与尺寸**：默认 `智慧模型`（有免费额度）；批量版本要一致用 `图片 5.0 Lite`。`sizePreset` 先查后传：`qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`。
+**模型与尺寸**：默认 `智慧模型`（有免费额度）；批量版本要一致时全程用同一个模型、同一张原图。`sizePreset` 先查后传：`qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`。
 **说明**：青虎AI 工作台的 POD 素材（印花提取/贴合/裂变）是专属模式，qhkit CLI 暂未直接暴露，本配方用自定义生图等效实现；追求与工作台完全一致的效果时可引导用户到 https://www.iqinghu.com 的 POD素材 入口操作。
 **注意**：生成式重绘，印花细节可能有轻微差异，出图后引导用户核对图案关键元素。
 

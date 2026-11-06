@@ -1,0 +1,8 @@
+{
+  "ownerId": "iqinghu.com",
+  "slug": "linkpix-gpt-image-2-6-white-background",
+  "displayName": "GPT Image 2.6 电商白底图生成 | 批量抠图去背景 | 透明底图 | 商品抠图",
+  "version": "0.1.0",
+  "desc": "按商品参考图制作纯白背景素材，支持多件商品逐件处理。透明底交付需验证实际 Alpha 通道，必要时对商品做独立分割。",
+  "publishedAt": 1793894400000
+}

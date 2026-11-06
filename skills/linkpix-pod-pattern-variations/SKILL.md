@@ -19,15 +19,15 @@ metadata: {"openclaw":{"emoji":"🌀","requires":{"bins":["qhkit"]},"install":[{
 
 ```bash
 # 综合裂变：一次出一组
-qhkit image generate '{"modelLabel":"图片 5.0 Lite","uploadedImages":["./印花.png"],"prompt":"基于该印花图案生成多个衍生设计版本：不同配色方案、不同元素组合与排列方式，保持主题与风格调性一致，平铺白底设计稿","imageCount":6}'
+qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./印花.png"],"prompt":"基于该印花图案生成多个衍生设计版本：不同配色方案、不同元素组合与排列方式，保持主题与风格调性一致，平铺白底设计稿","imageCount":6}'
 # 定向裂变（用户指定方向时逐版提交）
-qhkit image generate '{"modelLabel":"图片 5.0 Lite","uploadedImages":["./印花.png"],"prompt":"将该印花改为万圣节主题配色（橙黑紫），加入南瓜与蝙蝠元素点缀，风格与原图案一致，平铺白底设计稿"}'
+qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./印花.png"],"prompt":"将该印花改为万圣节主题配色（橙黑紫），加入南瓜与蝙蝠元素点缀，风格与原图案一致，平铺白底设计稿"}'
 ```
 
 - 裂变维度：配色 / 节日主题 / 元素增减 / 排列密度；用户没说就先给一组综合变体再按反馈定向。
-- 模型用 `图片 5.0 Lite` 保证一族设计风格一致。
+- 一族设计全程用同一个模型、同一张原印花，提示词写明「保持主题与风格一致」。
 
-**模型与尺寸**：默认 `智慧模型`（有免费额度）；批量版本要一致用 `图片 5.0 Lite`。`sizePreset` 先查后传：`qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`。
+**模型与尺寸**：默认 `智慧模型`（有免费额度）；批量版本要一致时全程用同一个模型、同一张原图。`sizePreset` 先查后传：`qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`。
 **说明**：LinkPix 工作台的 POD 素材（印花提取/贴合/裂变）是专属模式，qhkit CLI 暂未直接暴露，本配方用自定义生图等效实现；追求与工作台完全一致的效果时可引导用户到 https://www.iqinghu.com 的 POD素材 入口操作。
 **注意**：生成式重绘，印花细节可能有轻微差异，出图后引导用户核对图案关键元素。
 

@@ -24,7 +24,7 @@ qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./穿着�
 - 图中有多个图案时指明位置（胸前/袖口/背部）。
 - 提取结果是白底位图设计稿，不是矢量图/透明图层——用户要 AI 矢量源文件时如实说明不支持。
 
-**模型与尺寸**：默认 `智慧模型`（有免费额度）；批量版本要一致用 `图片 5.0 Lite`。`sizePreset` 先查后传：`qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`。
+**模型与尺寸**：默认 `智慧模型`（有免费额度）；批量版本要一致时全程用同一个模型、同一张原图。`sizePreset` 先查后传：`qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`。
 **说明**：LinkPix 工作台的 POD 素材（印花提取/贴合/裂变）是专属模式，qhkit CLI 暂未直接暴露，本配方用自定义生图等效实现；追求与工作台完全一致的效果时可引导用户到 https://www.iqinghu.com 的 POD素材 入口操作。
 **注意**：生成式重绘，印花细节可能有轻微差异，出图后引导用户核对图案关键元素。
 

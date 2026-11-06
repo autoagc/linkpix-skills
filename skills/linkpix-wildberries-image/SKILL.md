@@ -31,7 +31,7 @@ qhkit image estimate '{"modelLabel":"套图模式","uploadedImages":["./商品�
 qhkit image options '{"queryParams":["themeLabel"],"modelLabel":"电商详情图"}'
 qhkit image generate '{"modelLabel":"电商详情图","uploadedImages":["./商品图.jpg"],"themeLabel":"海洋蓝"}'
 
-# 活动图/海报（自定义生图，先 options 再选智慧模型 / 图片 5.0 Pro / Lite / 专图模型）
+# 活动图/海报（自定义生图，先 options 再选智慧模型 / 智慧模型2.6 / 图片 5.0 Pro / 图片 5.0 Flash / 专图模型）
 qhkit image options '{"queryParams":["modelLabel","models"]}'
 qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./商品图.jpg"],"prompt":"将产品变为营销活动图，活动内容如下：【限时折扣】，适配Wildberries点击率构图"}'
 ```
@@ -39,7 +39,7 @@ qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./商品�
 平台适配要点：WB / 俄语区：服装类可街拍穿搭 + 白底细节；文案用俄语。options 无 Wildberries 时用最接近的跨境平台标签并在 prompt 写明 WB 规范。
 
 - `platform` 候选以 options 为准，本技能默认按 **Wildberries** 传。
-- 套图参考图与 `customCopy`（≤500 字）至少一个；画质缺省 1K，要 2K 显式传 `"quality":"2K"`。
+- 套图参考图与 `customCopy`（≤500 字）至少一个；画质缺省 1K；要 2K 时传该平台的主图 `sizePreset`（从 options 逐字复制）再加 `"quality":"2K"`，或选带「2K」的尺寸——只传 quality 不传尺寸会报错「固定为 1K」。
 - 多张图批量改白底 / 译图改走 `image-batch`，不要循环调 `image generate`。
 - 用户给了商品图就进 `uploadedImages`，不要只转写成 prompt。
 

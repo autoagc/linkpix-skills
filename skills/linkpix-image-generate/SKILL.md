@@ -1,6 +1,6 @@
 ---
 name: linkpix-image-generate
-description: 按文字描述直出商业级电商图片，支持可选参考图（图生图/改图），四个模型可选（智慧模型/图片5.0 Pro/图片5.0 Lite/专图模式）。当用户要求按描述生成图片、文生图、图生图、AI绘图、出一张商业大图/场景图/概念图时必须触发。关键词：LinkPix、qhkit、文生图、图生图、AI生图、AI绘图、自定义生图、商业大图、电商图像、提示词出图、参考图生成、prompt 生图。
+description: 按文字描述直出商业级电商图片，支持可选参考图（图生图/改图），多个模型可选（智慧模型/智慧模型2.6（GPT Image 2.6）/图片5.0 Pro/图片5.0 Flash/专图模型，以实时目录为准）。当用户要求按描述生成图片、文生图、图生图、AI绘图、出一张商业大图/场景图/概念图时必须触发。关键词：LinkPix、qhkit、文生图、图生图、AI生图、AI绘图、自定义生图、商业大图、电商图像、提示词出图、参考图生成、prompt 生图。
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🎨","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
@@ -22,7 +22,8 @@ metadata: {"openclaw":{"emoji":"🎨","requires":{"bins":["qhkit"]},"install":[{
 |---|---|
 | `智慧模型` | 默认首选：效果好、有免费额度 |
 | `图片 5.0 Pro` | 要真实感、要快 |
-| `图片 5.0 Lite` | 多张之间细节要一致 |
+| `智慧模型2.6` | 用户点名 GPT Image 2.6 / 智慧模型2.6 时用 |
+| `图片 5.0 Flash` | 真实、速度快，积分较低 |
 | `专图模式` | 明确要最好效果且不赶时间（线上叫「专图模型」，两种写法都收） |
 
 ```bash

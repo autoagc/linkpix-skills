@@ -43,7 +43,7 @@ qhkit image polish '{"uploadedImages":["./商品图.jpg"],"productName":"保温�
 
 - 用户只给一句模糊描述或只丢一张商品图时，先 `polish` 把提示词读给用户确认，再带进 `generate`。
 - `prompt` ≤ 5000 字：写清主体、场景、光影、材质、构图和要渲染的中文/外文案。
-- `imageCount` 1/2/4/6/8/10；画质缺省 1K，要 2K 就显式传 `"quality":"2K"`。
+- `imageCount` 1/2/4/6/8/10；画质缺省 1K；要 2K 选带「2K」的 `sizePreset`（如 `默认 1:1 2K（2048×2048）`），平台主图尺寸可另传 `"quality":"2K"`；尺寸是默认 1K 却只传 `quality:"2K"` 会报错。
 - 不要把一个模型的 `sizePreset` 套到另一个模型上。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）

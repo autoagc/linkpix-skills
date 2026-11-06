@@ -23,12 +23,12 @@ POD 设计三件套的总入口：提取（从图里抠出印花图案）→ 裂
 # 提取：从商品图/参考图中提取印花
 qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./参考图.jpg"],"prompt":"提取图中服装上的印花图案，输出为平铺展开的高清图案设计稿，纯白背景，无商品无褶皱无透视变形，图案细节完整"}'
 # 裂变：一个图案出多版衍生设计
-qhkit image generate '{"modelLabel":"图片 5.0 Lite","uploadedImages":["./印花.png"],"prompt":"基于该印花图案生成不同配色与元素组合的衍生设计，保持主题风格一致，平铺白底设计稿","imageCount":6}'
+qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./印花.png"],"prompt":"基于该印花图案生成不同配色与元素组合的衍生设计，保持主题风格一致，平铺白底设计稿","imageCount":6}'
 # 贴合：图案上身出效果图（图1 印花、图2 载体商品）
 qhkit image generate '{"modelLabel":"智慧模型","uploadedImages":["./印花.png","./白T恤.jpg"],"prompt":"将图1的印花图案自然贴合到图2商品的正面印刷区域，随布料褶皱与透视自然变形，真实产品实拍效果"}'
 ```
 
-**模型与尺寸**：默认 `智慧模型`（有免费额度）；批量版本要一致用 `图片 5.0 Lite`。`sizePreset` 先查后传：`qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`。
+**模型与尺寸**：默认 `智慧模型`（有免费额度）；批量版本要一致时全程用同一个模型、同一张原图。`sizePreset` 先查后传：`qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"智慧模型"}'`。
 **说明**：LinkPix 工作台的 POD 素材（印花提取/贴合/裂变）是专属模式，qhkit CLI 暂未直接暴露，本配方用自定义生图等效实现；追求与工作台完全一致的效果时可引导用户到 https://www.iqinghu.com 的 POD素材 入口操作。
 **注意**：生成式重绘，印花细节可能有轻微差异，出图后引导用户核对图案关键元素。
 

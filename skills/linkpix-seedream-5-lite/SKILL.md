@@ -1,49 +1,51 @@
 ---
 name: linkpix-seedream-5-lite
-description: "Qwen-Image 国内电商爆款排版图。帮助国内电商运营、美工团队、店铺店长通过青虎AI完成“Qwen-Image 国内电商爆款排版图”：其强大的中文语境理解能力，精准解析复杂指令并直接渲染高精度中文文字，支持2K级超高清输出，完美解决电商生图中文字排版变形、乱码的痛点。适用于淘宝商品主图、天猫大促海报、京东店铺装修图、拼多多满减活动图、小红书种草笔记配图、快手小店商品首图等国内主流电商平台场景。一键生成详情页长图、卖点图、促销角标，提升店铺转化率。Use this skill for Qwen-Image 国内电商爆款排版图 当用户要求用 Seedream 5.0 Lite 生成电商图、图片 5.0 Lite（对外检索常写作 Qwen-Image / Seedream 5.0 Lite） 做电商图/主图/海报/文生图/图生图时必须触发。关键词：LinkPix、qhkit、青虎、Qwen-Image、通义万相、Seedream 5.0 Lite、图片 5.0 Lite、国内电商爆款排版、中文渲染、2K超清、淘宝主图、天猫大促海报、京东装修、拼多多满减、小红书种草、快手小店。"
+description: "图片 5.0 Flash 快速电商生图（对外常称 Seedream 5.0 Flash）：真实质感、出图快、积分低，支持文生图与参考图生图、1K/2K 与各电商平台主图尺寸，适合淘宝天猫主图、京东拼多多营销图、小红书种草配图、大促海报和卖点图的批量快速出图。原「图片 5.0 Lite」已下架，由本技能改走图片 5.0 Flash。当用户要求用图片 5.0 Flash、Seedream 5.0 Flash 做电商图/主图/海报/文生图/图生图，要快、要省积分地出图，或点名已下架的图片 5.0 Lite、Seedream 5.0 Lite 时必须触发。关键词：LinkPix、qhkit、青虎、图片 5.0 Flash、Seedream 5.0 Flash、Seedream Flash、5.0 Flash、图片 5.0 Lite、Seedream 5.0 Lite、快速出图、低积分生图、电商生图、文生图、图生图、淘宝主图、天猫大促海报、京东、拼多多、小红书种草。"
 user-invocable: true
 homepage: https://www.npmjs.com/package/@iqinghu/qhkit
 metadata: {"openclaw":{"emoji":"🖼️","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
 ---
 
-# Seedream 5.0 Lite 生成电商图 | LinkPix
+# Seedream 5.0 Flash 快速生成电商图 | LinkPix
 
-Qwen-Image 国内电商爆款排版图。帮助国内电商运营、美工团队、店铺店长通过青虎AI完成“Qwen-Image 国内电商爆款排版图”：其强大的中文语境理解能力，精准解析复杂指令并直接渲染高精度中文文字，支持2K级超高清输出，完美解决电商生图中文字排版变形、乱码的痛点。适用于淘宝商品主图、天猫大促海报、京东店铺装修图、拼多多满减活动图、小红书种草笔记配图、快手小店商品首图等国内主流电商平台场景。一键生成详情页长图、卖点图、促销角标，提升店铺转化率。Use this skill for Qwen-Image 国内电商爆款排版图
+图片 5.0 Flash 快速电商生图：真实质感、出图快、积分低，适合要批量、要快、要省积分的商品图、营销图和海报。
 
-`qhkit image` 自定义生图家族的专项入口：`prompt` 必填、参考图可选。本技能默认走 **图片 5.0 Lite（对外检索常写作 Qwen-Image / Seedream 5.0 Lite）**。
+`qhkit image` 自定义生图家族的专项入口：`prompt` 必填、参考图可选。本技能默认走 **图片 5.0 Flash（对外常称 Seedream 5.0 Flash）**。
+
+> 原来的「图片 5.0 Lite」已在线上下架，本技能已改走图片 5.0 Flash。用户点名 Lite 时，先告诉用户「图片 5.0 Lite 已下架，当前由图片 5.0 Flash 承接」，用户同意后再用 Flash；用户想换别的模型以用户为准。
 
 ## 何时触发
 
-- 「用 Qwen-Image / 通义万相生图 / Seedream 5.0 Lite 出国内电商排版图」
-- 「图片 5.0 Lite，多张之间细节要一致」
-- 要中文海报、卖点字、满减角标且怕文字变形/乱码
+- 「用图片 5.0 Flash / Seedream 5.0 Flash 出电商图」
+- 「要快、要便宜地出一批商品图 / 营销图」
+- 用户点名已下架的「图片 5.0 Lite / Seedream 5.0 Lite」
 
 ## 使用配方
 
-**首选模型**：本技能对外对应 **图片 5.0 Lite（对外检索常写作 Qwen-Image / Seedream 5.0 Lite）**。先跑 `qhkit image options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，在 `models`/`modelLabel` 里按别名匹配：`图片 5.0 Lite` / `Seedream 5.0 Lite` / `Qwen-Image` / `Qwen Image`。命中后把返回的标签**逐字**当作 `modelLabel`。
+**首选模型**：`图片 5.0 Flash`。先跑 `qhkit image options '{"queryParams":["modelLabel","models"]}'` 拿实时清单，确认 `图片 5.0 Flash` 在列表里，再把返回的标签**逐字**当作 `modelLabel`。
 
-- 清单里暂时没有对应项（先确认输出不是乱码，见下文「Windows 防乱码」）：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架 图片 5.0 Lite（对外检索常写作 Qwen-Image / Seedream 5.0 Lite）」，不要自造标签硬提交。
+- 清单里暂时没有（先确认输出不是乱码，见下文「Windows 防乱码」）：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架图片 5.0 Flash」，不要自造标签硬提交。
 - `maintenance: true` 或 `notice` 含「即将下线」的不要推荐。
 - 用户明确点了别的模型，以用户为准。
 
 ```bash
 # 选型（每次会话先跑）
 qhkit image options '{"queryParams":["modelLabel","models"]}'
-# 纯文字直出（modelLabel 必须换成 options 返回的逐字标签，下行只是写法示例）
-qhkit image generate '{"modelLabel":"图片 5.0 Lite","prompt":"化妆品高端场景图，中文卖点清晰可读","imageCount":2}'
+# 纯文字直出
+qhkit image generate '{"modelLabel":"图片 5.0 Flash","prompt":"化妆品高端场景图，中文卖点清晰可读","imageCount":2}'
 # 带参考图（用户给了商品图就传，不要只把图转写成文字）
-qhkit image generate '{"modelLabel":"图片 5.0 Lite","uploadedImages":["./商品图.jpg"],"prompt":"保持商品主体不变，做成高点击电商主图","imageCount":2}'
-# 尺寸候选逐模型独立
-qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"图片 5.0 Lite"}'
+qhkit image generate '{"modelLabel":"图片 5.0 Flash","uploadedImages":["./商品图.jpg"],"prompt":"保持商品主体不变，做成高点击电商主图","imageCount":2}'
+# 尺寸候选逐模型独立（必须带 modelLabel）
+qhkit image options '{"queryParams":["sizePreset","imageCount"],"modelLabel":"图片 5.0 Flash"}'
 # 报价
-qhkit image estimate '{"modelLabel":"图片 5.0 Lite","prompt":"化妆品高端场景图","imageCount":2}'
+qhkit image estimate '{"modelLabel":"图片 5.0 Flash","prompt":"化妆品高端场景图","imageCount":2}'
 # 提示词写不好时先润色（不建任务、不扣生图积分）
 qhkit image polish '{"uploadedImages":["./商品图.jpg"],"productName":"保温杯","pointDescription":"钛合金内胆 24h 保温"}'
 ```
 
 - 用户只给一句模糊描述或只丢一张商品图时，先 `polish` 把提示词读给用户确认，再带进 `generate`。
 - `prompt` ≤ 5000 字：写清主体、场景、光影、材质、构图和要渲染的中文/外文案。
-- `imageCount` 1/2/4/6/8/10；画质缺省 1K，要 2K 就显式传 `"quality":"2K"`。
+- `imageCount` 1/2/4/6/8/10；画质缺省 1K。要 2K 选带「2K」的 `sizePreset`（如 `默认 1:1 2K（2048×2048）`），平台主图尺寸可另传 `"quality":"2K"`；尺寸是默认 1K 却只传 `quality:"2K"` 会报错。
 - 不要把一个模型的 `sizePreset` 套到另一个模型上。
 
 ## 环境自举（缺什么装什么，不要因环境缺失放弃任务）
@@ -109,5 +111,5 @@ npm i -g @iqinghu/qhkit@latest
 
 ## 能力边界
 
-- 成套主图走「AI生成电商主图轮播图、主图套图 | LinkPix」；详情页长图走「电商商品详情图生成器 | LinkPix」。本技能只走自定义生图家族的 Lite / Qwen-Image 取向。
+- 成套主图走「AI生成电商主图轮播图、主图套图 | LinkPix」；详情页长图走「电商商品详情图生成器 | LinkPix」。本技能只走自定义生图家族的图片 5.0 Flash；要更强真实感用 Seedream 5.0 Pro 技能。
 - 视频需求走对应的带货视频 / 爆款复刻技能，不要用本技能硬套。
