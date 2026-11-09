@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-gpt-image-2-6-fashion-model",
   "displayName": "GPT Image 2.6 电商模特图生成 | 模特换装换脸 | 服装试穿 | 穿搭效果图",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "面向服饰类目制作 AI 模特试穿与穿搭图，支持以服装和模特参考图组织换装、换脸或多风格模特生成。",
   "publishedAt": 1793894400000
 }

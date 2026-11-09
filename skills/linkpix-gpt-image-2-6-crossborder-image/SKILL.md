@@ -1,6 +1,6 @@
 ---
 name: linkpix-gpt-image-2-6-crossborder-image
-description: "用户指定 GPT Image 2.6 / 智慧模型2.6，制作 Temu、Shopee、TikTok Shop 或 Ozon 的多平台主图、铺货素材或本地化营销图时使用。Amazon 单独使用 2.6 亚马逊技能。"
+description: "用户指定 GPT Image 2.6 / 智慧模型2.6，制作 Temu、Shopee、TikTok Shop 或 Ozon 的多平台主图、铺货素材或本地化营销图时使用。Amazon 单独使用 2.6 亚马逊技能。按平台规范拆分任务并写好提示词，报价经用户确认后出图；没有 CLI 或密钥时交付可直接提交的出图方案。"
 metadata: {"openclaw":{"emoji":"🧠","requires":{"bins":["qhkit"]},"install":[{"kind":"node","package":"@iqinghu/qhkit","bins":["qhkit"]}]}}
 ---
 
@@ -8,37 +8,78 @@ metadata: {"openclaw":{"emoji":"🧠","requires":{"bins":["qhkit"]},"install":[{
 
 面向 Temu、Shopee、TikTok Shop、Ozon 等渠道生成商品首图和营销图，按站点拆分画幅、文案与语言版本。
 
-## 场景要求
+## 交付标准
 
-- 确认平台与国家站点，按每个平台的发布位置选择 `sizePreset`。每种语言使用独立任务与对应 `languageLabel`，同时在 `prompt` 写明原文、币种和单位，以便逐项核对。
-- 多个站点可共用商品参考图和视觉基调。交付前核对商品一致性、平台尺寸、本地化拼写、币种及促销条款，按平台、站点和语言命名文件。
+- **已出图**：交付 CLI 返回的真实图片，按用途分组、文件名写明用途，附逐张核对结论和 CLI 返回的实扣积分。
+- **本轮出不了图**（没有 CLI 或密钥、正在等用户确认报价、调用失败）：交付「出图方案」，开头写明「图片尚未生成」。方案包含每张图的用途、画幅和画面文字对照表，每张图的完整提示词，可直接提交的 `params.json`，以及用户下一步只需做什么。方案要写到拿去就能出图的程度，不能只回一句"任务未完成"。
+- 无论哪种情况，都不声称已出图，不编造任务 ID、图片链接或扣费；不编造商品参数、认证、功效、价格和优惠。
 
-## 调用青虎AI
+## 工作流程
 
-1. 用 `qhkit --version` 检查版本。缺少 CLI 或版本低于 0.15.0 时，运行 `npm i -g @iqinghu/qhkit@latest`。用 `qhkit config show` 核对 `site` 为 `cn`。未配置时，从[青虎 API Keys](https://www.iqinghu.com/workbench/dashboard/api-keys)获取国内站密钥，以进程环境变量 `QHKIT_TOKEN` 和 `QHKIT_ENV=prod` 使用。配置了 `QHKIT_BASE_HOST` 时，它会覆盖 `QHKIT_ENV`。密钥不要写入任务 JSON 或回复.
-2. 用 UTF-8 文件 `models.json` 传入 `{"queryParams":["modelLabel","models"]}`，运行 `qhkit image options @models.json --out models-result.json`。定位当前目录中明确对应 2.6 的自定义模型，使用返回的逐字标签 `智慧模型2.6`。目录缺失、无法确认版本或模型维护中时，说明情况并提供可编辑提示词。换模型须由用户决定。
-3. 用 `{"modelLabel":"智慧模型2.6","queryParams":["sizePreset","quality","imageCount","languageLabel"]}` 再查该模型的选项。平台、版位和布局要求写进 `prompt`，尺寸选 `sizePreset`。示例尺寸以当次返回值为准。提示词最多 5000 字。参考图使用本地路径或 HTTP(S) URL，CLI 会自动上传本地文件。单张本地图超过 10 MB 时先压缩副本并保留原图。
-4. 把参数保存为 `params.json`，运行 `qhkit image estimate @params.json --out estimate.json`。把参考图、模型、尺寸、画质、语言、各组张数和预计积分列给用户，收到确认且余额足够后再运行 `qhkit image generate @params.json --out result.json`。多个任务分别使用参数文件和结果文件，确认前汇总报价。报价失败时说明原因，由用户决定是否按实际扣费继续。
+1. **读需求**：从用户的文字和图片里提取商品、平台与版位、张数、画面文字和必须保留的细节。非关键信息缺失时按下文规范的常规做法补上并标为「假设」，放到回复末尾集中确认，不为此停下来追问；只有连商品是什么都无法判断时才先问。
+2. **拆任务**：用途、商品、语言或画幅不同的图各建一条任务；`imageCount` 只用于同一提示词出几张构图变体，不能用来凑出用途不同的图。
+3. **写提示词**：依次写「用途与画幅 → 主体保真 → 背景与场景 → 光线 → 构图与留白 → 画面文字 → 禁止项」。参考图里看得到的细节逐项点名保留；画面文字用「」给出原文，精确数字和长条款建议生成时留白、后期叠字。
+4. **出图**：环境就绪时按「调用青虎AI」报价，用户确认后生成，确认消息里附上整份方案。环境不就绪时直接按交付标准给出出图方案，不反复安装或索要密钥。
+5. **核对**：按「核对与交付」逐张检查后交付。
 
-## 参数示例
+## 跨境多平台规范
 
-把示例中的需求和素材路径换成本次任务的数据，保留目录确认过的模型和尺寸标签。
+- **画幅**：Temu、Shopee、Lazada、TikTok Shop 的首图以 1:1 为主；Ozon 服饰鞋包类常用 3:4 竖图（如 900×1200）。精确像素以本次目录的 `sizePreset` 和平台后台为准。
+- **语言跟站点**：Shopee 新加坡、马来西亚、菲律宾站多用英语，泰国站用泰语，越南站用越南语，印尼站用印尼语，台湾站用繁体中文；Ozon 用俄语。每种语言单独一条任务，`languageLabel` 选对应语言，并在提示词里用「」写出原文。
+- 泰语、俄语、阿拉伯语等非拉丁文字容易写错：长文案先留白、后期叠字；短标题生成后用翻译工具反查，或请母语者核对。
+- **本地化细节**：币种和单位跟着站点走（美国用 in、lb，多数站点用公制）；电器的插头和电压符合当地规格；避开宗教、政治敏感元素。
+- Amazon 用 GPT Image 2.6 亚马逊专项技能。
+
+## 示例
+
+用户：「同一款桌面收纳盒，要 Shopee 新加坡站和 Ozon 的主图。」（附 `收纳盒.jpg`）
+
+| # | 用途 | sizePreset（以本次目录为准） | 画面文字 |
+|---|---|---|---|
+| 1 | Shopee 新加坡首图 | 默认 1:1 2K（2048×2048） | 「Desk Organizer」 |
+| 2 | Ozon 首图 | 3:4 视频/笔记封面 2K（1536×2048） | 「Органайзер для стола」 |
+
+假设：新加坡站用英语；没有促销价，两张图都不写价格。
+
+**1 号提示词**
+
+> Shopee 商品首图，1:1。以参考图中的收纳盒为准，保留隔层数量、颜色和外观。收纳盒放在明亮的白色桌面上，旁边少量文具作衬托、不遮挡商品，商品居中、约占画面七成。画面顶部英文标题「Desk Organizer」，深灰色无衬线字体，全图只出现这一行文字。不出现价格、币种或认证标志。
+
+2 号 Ozon 版沿用同样的结构，改成 3:4 竖构图，标题换成「Органайзер для стола」，`languageLabel` 用 `俄语`。
+
+`params-1.json`：
 
 ```json
 {
   "modelLabel": "智慧模型2.6",
-  "prompt": "为美国站 TikTok Shop 生成商品首图。参考原图保持收纳盒造型、颜色和配件数量，使用明亮简洁的背景，让完整商品在移动端缩略图中清晰可见。无促销字、水印或未确认的卖点。",
+  "prompt": "Shopee 商品首图，1:1。以参考图中的收纳盒为准，保留隔层数量、颜色和外观。收纳盒放在明亮的白色桌面上，旁边少量文具作衬托、不遮挡商品，商品居中、约占画面七成。画面顶部英文标题「Desk Organizer」，深灰色无衬线字体，全图只出现这一行文字。不出现价格、币种或认证标志。",
   "uploadedImages": [
-    "./跨境商品.jpg"
+    "./收纳盒.jpg"
   ],
-  "sizePreset": "1:1 商品主图 · TikTok Shop（1024×1024）",
+  "sizePreset": "默认 1:1 2K（2048×2048）",
   "languageLabel": "英语",
   "imageCount": 1
 }
 ```
 
+出不了图时，回复以「图片尚未生成，以下是可直接提交的出图方案」开头，给出上表、全部提示词和参数文件，最后写明下一步：配置密钥后，我先报价，经你确认再出图。
+
+## 调用青虎AI
+
+本技能使用 `智慧模型2.6`（GPT Image 2.6）。目录里没有该模型或显示维护中时如实说明，换不换模型由用户决定。
+
+1. **环境**：`qhkit --version` 需 ≥ 0.15.0。缺失或版本过旧时运行 `npm i -g @iqinghu/qhkit@latest`；网络慢时加 `--registry=https://registry.npmmirror.com`，没有全局安装权限时改用 `npx -y @iqinghu/qhkit@latest <命令>`。仍装不上就按交付标准给出方案。
+2. **密钥与站点**：`qhkit config show` 返回的 `site` 须为 `cn`。没有密钥时，请用户在[青虎 API Keys](https://www.iqinghu.com/workbench/dashboard/api-keys)创建国内站密钥，拿到后运行 `qhkit config set --token <密钥> --env prod`；在此之前先交付出图方案。密钥不写进参数文件，也不在回复里复述。
+3. **查选项**（只读，不需确认）：先用 `qhkit image options '{"queryParams":["modelLabel","models"]}'` 确认 `智慧模型2.6` 在列，再用 `qhkit image options '{"modelLabel":"智慧模型2.6","queryParams":["sizePreset","quality","imageCount","languageLabel"]}'` 取尺寸、画质、张数和语言的可选值。标签逐字照抄返回值，不要自造，也不要沿用其他模型的 `sizePreset`。
+4. **参数**：`prompt` 必填，最多 5000 字；`uploadedImages` 可填本地路径或 http(s) URL，CLI 会自动上传，单张超过 10MB 先压缩副本（长边 ≤ 2048px）；`imageCount` 取 1/2/4/6/8/10；`languageLabel` 默认简体中文。要 2K 时选名称带「2K」的 `sizePreset`，平台主图预设可另传 `"quality":"2K"`；名称带 1K 的尺寸再传 `quality:"2K"` 会报错。
+5. **报价与确认（硬规则）**：参数写入 UTF-8 的 `params.json`，运行 `qhkit image estimate '@params.json'`。把每条任务的参考图、尺寸、画质、语言、张数、提示词和预计积分（`credits`）一次性列给用户，**用户明确同意后**才运行 `qhkit image generate '@params.json'`。`enough:false` 时先说明余额不足。
+6. **生成与续查**：`generate` 会自动轮询，最长约 14 分钟，返回 `images`。超时或状态不明时用 `qhkit image status '{"batchTaskId":"<返回的 ID>"}'` 续查原任务，不重复提交。
+7. **出错**：失败时 stdout 为 `{"ok":false,"stage":...,"message":...}`，把 message 原样转告用户。`stage` 为 `version` 或提示"未知命令"时先升级 CLI，再重试一次；同一个错误不反复重试。
+
+Windows：PowerShell 5.1 会吞掉命令行 JSON 里的双引号，参数一律写进 UTF-8（无 BOM）文件，命令里写成带引号的 `'@params.json'`（不加引号时 PowerShell 会把 `@` 当作展开运算符而报错）。再加 `--out result.json`，用 `Get-Content -Raw -Encoding UTF8 result.json` 读结果，避免中文乱码。
+
 ## 核对与交付
 
-- `generate` 自带轮询。读取 UTF-8 的结果文件，下载 `images` 返回的图片，逐张解码核对实际像素、格式、数量、商品一致性与关键文字。`sizePreset` 表示请求尺寸。用户要求精确规格时，保留原图并在本地生成符合尺寸和格式的交付副本。Windows 上用 `Get-Content -Raw -Encoding UTF8 result.json` 读取结果。
-- 有 `batchTaskId` 但任务仍在处理中或查询超时时，把 `{"batchTaskId":"返回的任务 ID"}` 保存为 UTF-8 的 `status.json`，运行 `qhkit image status @status.json --out status-result.json` 续查。提交状态不明时先定位原任务，避免重复创建和扣费。
-- 报告实际收到的图片、未完成项和 CLI 返回的报价积分。模型、凭据或接口不可用时交付可编辑提示词和素材清单，并标明图片生成状态。
+- 下载 `images` 里的每张图，核对张数、实际像素与格式、商品与参考图是否一致、画面文字是否逐字正确。`sizePreset` 只是请求尺寸；平台要求精确像素时，在本地另存一份符合规格的副本，保留原图。
+- 小语种文字逐字核对，必要时用翻译工具反查；文件名写明平台、站点和语言，如 `shopee-sg-en-01.png`。
+- 在同一轮回复里交付图片和"生成完成"的说明，按用途分组命名，并写明本次实扣积分。不合格的图如实标出并说明原因，不要只报好的、隐去差的。
