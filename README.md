@@ -1,11 +1,11 @@
 # LinkPix Agent Skills
 
-电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **322 个技能**。
+电商 AI 素材生成与选品分析技能集 —— 由[青虎 AI](https://www.iqinghu.com) 出品，共 **324 个技能**。
 
 覆盖商品主图 / 详情图 / 广告素材 / 带货短视频 / 爆款复刻 / 视频翻译 / POD 印花，
 以及 TikTok、Shopee、Ozon、Amazon、1688、抖音、小红书、B站、视频号等平台的选品、达人与社媒数据查询。
 
-> **English** — 322 Agent Skills for e-commerce content generation and product research
+> **English** — 324 Agent Skills for e-commerce content generation and product research
 > by LinkPix (青虎AI): product images, sales videos, viral video cloning, POD patterns,
 > and cross-border market analysis for TikTok, Shopee, Ozon, Amazon and 1688.
 > Install with `npx skills add autoagc/linkpix-skills`.
@@ -37,11 +37,11 @@ npx skills add autoagc/linkpix-skills --list
 
 ## 前置依赖
 
-按技能正文实际调用的工具统计（有 4 个技能同时需要两种，故合计大于 322）：
+按技能正文实际调用的工具统计（有 4 个技能同时需要两种，故合计大于 324）：
 
 | 依赖 | 技能数 | 准备方式 |
 |---|---|---|
-| `qhkit` CLI | 150 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
+| `qhkit` CLI | 152 | `npm i -g @iqinghu/qhkit`，并配置青虎账号凭据 |
 | 青虎 MCP | 29 | 在客户端接入青虎 MCP Server |
 | `qhkit mcp`（青虎数据工具） | 139 | 同 `qhkit` CLI（需 0.14.0+），无需另配 MCP Server |
 | ImageMagick / ffmpeg | 8 | 本地安装，纯本地处理不联网 |
@@ -115,7 +115,7 @@ npx skills add autoagc/linkpix-skills --list
 </details>
 
 <details>
-<summary><b>LinkPix 热门模型与平台（40 个）</b></summary>
+<summary><b>LinkPix 热门模型与平台（42 个）</b></summary>
 
 | 技能 | 名称 | 依赖 | 说明 |
 |---|---|---|---|
@@ -129,6 +129,8 @@ npx skills add autoagc/linkpix-skills --list
 | `linkpix-seedance-2-clone` | Seedance 2.0 爆款视频复刻 &#124; LinkPix | `qhkit` | 用 Seedance 2.0 复刻热门构图与运动节奏。 |
 | `linkpix-seedance-25-sales` | Seedance 2.5 电商带货视频 &#124; LinkPix | `qhkit` | Seedance 2.5 更高真实感与电影感的产品宣传片。 |
 | `linkpix-seedance-25-clone` | Seedance 2.5 爆款视频复刻 &#124; LinkPix | `qhkit` | 提取爆款情感节奏与画面质感，平移到自家商品。 |
+| `linkpix-seedance-25-flash-sales` | Seedance 2.5 Flash 电商带货视频 &#124; LinkPix | `qhkit` | Seedance 2.5 Flash 带货视频，按秒单价更低、4 秒起，适合批量试素材与主图视频。 |
+| `linkpix-seedance-25-flash-clone` | Seedance 2.5 Flash 爆款视频复刻 &#124; LinkPix | `qhkit` | 拆解爆款链接脚本并改写成自家商品，用 Seedance 2.5 Flash 低成本批量试对标方向。 |
 | `linkpix-vidu-q3-sales` | Vidu Q3 电商带货视频 &#124; LinkPix | `qhkit` | Vidu Q3 材质与包装细节高置信还原，适合珠宝服装家具。 |
 | `linkpix-vidu-q3-clone` | Vidu Q3 爆款视频复刻 &#124; LinkPix | `qhkit` | 还原机位、转场与定格动画感的时尚开箱二创。 |
 | `linkpix-vidu-q2-sales` | Vidu Q2 电商带货视频 &#124; LinkPix | `qhkit` | Vidu Q2 参考图一致性带货视频，适合精细类目展示。 |

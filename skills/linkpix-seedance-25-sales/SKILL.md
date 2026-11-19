@@ -24,6 +24,7 @@ metadata: {"openclaw":{"emoji":"🎬","requires":{"bins":["qhkit"]},"install":[{
 - 清单里暂时没有对应项（先确认输出不是乱码，见下文「Windows 防乱码」）：把最接近的 2–3 个候选（含单价/`credits`）列给用户选，说明「当前目录未上架 Seedance 2.5」，不要自造标签硬提交。
 - `maintenance: true` 或 `notice` 含「即将下线」的不要推荐。
 - 用户明确点了别的模型，以用户为准。
+- 用户说的是 **Seedance 2.5 Flash** 时，那是另一个模型（`Seedance2.5 Flash`），不要匹配成 `Seedance2.5`；带货需求改用「Seedance 2.5 Flash 电商带货视频 | LinkPix」。
 
 ```bash
 qhkit video options '{"queryParams":["modelLabel","models"]}'
@@ -105,5 +106,5 @@ npm i -g @iqinghu/qhkit@latest
 
 ## 能力边界
 
-- 复刻对标链接走「Seedance 2.5 爆款视频复刻 | LinkPix」；只要脚本走「AI电商带货脚本生成器 | LinkPix」；电影级 TVC 走「AI商品广告大片生成器 | LinkPix」。
+- 复刻对标链接走「Seedance 2.5 爆款视频复刻 | LinkPix」；只要脚本走「AI电商带货脚本 | LinkPix」（`linkpix-sales-script`）；电影级 TVC 走「AI商品广告大片 | LinkPix」（`linkpix-ad-film`）。
 - 音乐/MV、直播切片、长视频剪辑 qhkit 不支持，如实告知。

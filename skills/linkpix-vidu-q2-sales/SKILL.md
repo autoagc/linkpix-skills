@@ -105,5 +105,5 @@ npm i -g @iqinghu/qhkit@latest
 
 ## 能力边界
 
-- 复刻对标链接走「Vidu Q2 爆款视频复刻 | LinkPix」；只要脚本走「AI电商带货脚本生成器 | LinkPix」；电影级 TVC 走「AI商品广告大片生成器 | LinkPix」。
+- 复刻对标链接走「Vidu Q2 爆款视频复刻 | LinkPix」；只要脚本走「AI电商带货脚本 | LinkPix」（`linkpix-sales-script`）；电影级 TVC 走「AI商品广告大片 | LinkPix」（`linkpix-ad-film`）。
 - 音乐/MV、直播切片、长视频剪辑 qhkit 不支持，如实告知。

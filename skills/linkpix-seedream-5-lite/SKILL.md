@@ -111,5 +111,5 @@ npm i -g @iqinghu/qhkit@latest
 
 ## 能力边界
 
-- 成套主图走「AI生成电商主图轮播图、主图套图 | LinkPix」；详情页长图走「电商商品详情图生成器 | LinkPix」。本技能只走自定义生图家族的图片 5.0 Flash；要更强真实感用 Seedream 5.0 Pro 技能。
+- 成套主图走「AI电商主图轮播图 | LinkPix」（`linkpix-main-image-set`）；详情页长图走「电商详情图生成 | LinkPix」（`linkpix-detail-page`）。本技能只走自定义生图家族的图片 5.0 Flash；要更强真实感用 Seedream 5.0 Pro 技能。
 - 视频需求走对应的带货视频 / 爆款复刻技能，不要用本技能硬套。

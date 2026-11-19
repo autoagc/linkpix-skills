@@ -10,7 +10,7 @@ metadata: {"openclaw":{"emoji":"▶️","requires":{"bins":["qhkit"]},"install":
 
 TikTok 爆款带货视频生成。帮助跨境卖家、MCN机构、海外广告投放师通过青虎AI完成“TikTok 爆款带货视频生成”：可调用可灵Kling 3.0、阿里Wanx 3.0、MiniMax H3、Seedance 2.0、Seedance 2.5、HappyHorse 1.1等大模型，轻松生成多语言口播、卡点变装、搞笑短剧、跨境种草、信息流投放等视频类型，完美贴合TikTok病毒式传播和多国受众偏好。适用于TikTok Shop、TikTok Ads、东南亚及欧美站点等跨境短视频营销场景。Use this skill for TikTok爆款视频, 多语言口播, 卡点变装, 搞笑短剧, 跨境种草, 信息流投放, TikTok Shop, 病毒式传播, 全球化分发, MiniMax H3, Grok, Seedance, AIGC视频生成。通过青虎AI统一接入，支持素材上传、任务轮询和结果下载。
 
-平台向的电商视频总入口（第 1 批 `linkpix-ecom-video` 的拆分）：`qhkit video` 多模型成片 + `video-quick` 多图成片 + 需要分镜时 `storyboard`。默认画幅 **竖屏 9:16**，默认语言 **英语**。用户没点名模型时按 `Seedance2.5` → `阿里wanx3.0` → `Seedance2.0` → `全能电商2.0` 的顺序推荐。
+平台向的电商视频总入口（第 1 批 `linkpix-ecom-video` 的拆分）：`qhkit video` 多模型成片 + `video-quick` 多图成片 + 需要分镜时 `storyboard`。默认画幅 **竖屏 9:16**，默认语言 **英语**。用户没点名模型时按 `Seedance2.5` → `Seedance2.5 Flash` → `阿里wanx3.0` → `Seedance2.0` → `全能电商2.0` 的顺序推荐。
 
 ## 何时触发
 
@@ -35,7 +35,7 @@ qhkit storyboard script '{"uploadedImages":["./商品图.jpg"],"productName":"�
 
 平台提示词：病毒式前 3 秒钩子、卡点/变装/短剧都可以；默认英语，用户指定站点再换 `languageLabel`（西语/印尼语等）。信息流投放把卖点写进画面动作，不要只靠中文字幕。
 
-- **默认推荐顺序**（用户没点名模型时）：`Seedance2.5` → `阿里wanx3.0` → `Seedance2.0` → `全能电商2.0`。按这个顺序列候选（含时长范围与按秒单价），排第一的标为推荐，用户没有异议就用它；某个模型不满足本次条件（没有必填的参考图、时长超出范围、不支持要用的参考视频/音频、维护中）就顺延到下一个，并告诉用户原因或请用户补齐素材。其他模型只在用户点名时使用。
+- **默认推荐顺序**（用户没点名模型时）：`Seedance2.5` → `Seedance2.5 Flash` → `阿里wanx3.0` → `Seedance2.0` → `全能电商2.0`。按这个顺序列候选（含时长范围与按秒单价），排第一的标为推荐，用户没有异议就用它；某个模型不满足本次条件（没有必填的参考图、时长超出范围、不支持要用的参考视频/音频、维护中）就顺延到下一个，并告诉用户原因或请用户补齐素材。其他模型只在用户点名时使用。
 - 参考视频 / 参考音频是否可传以当次 `models` 为准。
 - `orientationLabel` 必须来自该模型的候选；目录没有 竖屏 9:16 时改用最接近的竖/横屏并告诉用户。
 

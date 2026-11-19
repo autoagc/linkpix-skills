@@ -106,5 +106,5 @@ npm i -g @iqinghu/qhkit@latest
 
 ## 能力边界
 
-- 不绑平台、只要通用套图走「AI生成电商主图轮播图、主图套图 | LinkPix」；只要详情走「电商商品详情图生成器 | LinkPix」。
-- 视频走对应平台的爆款视频技能或「AI生成电商视频 | LinkPix」。
+- 不绑平台、只要通用套图走「AI电商主图轮播图 | LinkPix」（`linkpix-main-image-set`）；只要详情走「电商详情图生成 | LinkPix」（`linkpix-detail-page`）。
+- 视频走对应平台的爆款视频技能或「AI电商带货视频 | LinkPix」（`linkpix-ecom-video`）。

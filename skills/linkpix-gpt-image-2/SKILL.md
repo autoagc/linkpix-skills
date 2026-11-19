@@ -109,5 +109,5 @@ npm i -g @iqinghu/qhkit@latest
 
 ## 能力边界
 
-- 成套主图走「AI生成电商主图轮播图、主图套图 | LinkPix」；定向换背景/消除/改文字用对应编辑类 LinkPix 技能。本技能只走自定义生图家族的智慧模型 / GPT Image 2 取向。
+- 成套主图走「AI电商主图轮播图 | LinkPix」（`linkpix-main-image-set`）；定向换背景/消除/改文字用对应编辑类 LinkPix 技能。本技能只走自定义生图家族的智慧模型 / GPT Image 2 取向。
 - 视频需求走对应的带货视频 / 爆款复刻技能，不要用本技能硬套。

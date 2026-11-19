@@ -107,5 +107,5 @@ npm i -g @iqinghu/qhkit@latest
 
 ## 能力边界
 
-- 只要脚本不要成片走「AI电商带货脚本生成器 | LinkPix」；不复刻、直接带货走「Grok 电商带货视频 | LinkPix」。
+- 只要脚本不要成片走「AI电商带货脚本 | LinkPix」（`linkpix-sales-script`）；不复刻、直接带货走「Grok 电商带货视频 | LinkPix」。
 - 音乐/MV、长视频剪辑 qhkit 不支持，如实告知。
