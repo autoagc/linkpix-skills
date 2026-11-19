@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-gpt-image-2-6-douyin-shop-image",
   "displayName": "GPT Image 2.6 抖音小店主图生成 | 短视频封面 | 商城主图 | 直播间贴片",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "面向抖音电商制作商城商品主图、短视频带货封面和直播间贴片，按实际素材位调整商品构图和文案位置。",
   "publishedAt": 1793894400000
 }

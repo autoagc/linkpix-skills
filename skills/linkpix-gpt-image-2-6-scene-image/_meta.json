@@ -2,7 +2,7 @@
   "ownerId": "iqinghu.com",
   "slug": "linkpix-gpt-image-2-6-scene-image",
   "displayName": "GPT Image 2.6 电商场景图生成 | 背景替换 | 场景合成 | 营销场景图",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "desc": "面向家居、美妆、数码、服饰等商品，基于参考图生成生活方式场景、替换背景并制作营销场景图。",
   "publishedAt": 1793894400000
 }
